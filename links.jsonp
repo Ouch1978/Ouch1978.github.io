@@ -1,0 +1,43 @@
+callback([
+
+  {
+    "text": "使用 Visual Studio 進行 Source Code 自動格式化",
+    "href": "http://ouch1978.github.io/2010/10/25/vs2010-format-sour-cecode-automatically/"
+  } ,
+
+  {
+    "text": "使用 Visual Studio 進行 Source Code 自動格式化 - 加強版",
+    "href": "http://ouch1978.github.io/2010/10/25/vs2010-format-sour-cecode-automatically-advanced/"
+  } ,
+
+  {
+    "text": "自製 Modal 元件",
+    "href": "http://ouch1978.github.io/2010/10/26/silverlight-fake-modal-dialog/"
+  } ,
+
+  {
+    "text": "輕鬆製作獨一無二的投影片",
+    "href": "http://ouch1978.github.io/2010/10/27/ppt-make-your-own-ptt-template/"
+  } ,
+
+  {
+    "text": "輕鬆製作獨一無二的投影片-加強版",
+    "href": "http://ouch1978.github.io/2010/10/29/ppt-make-your-own-ptt-template-advanced/"
+  } ,
+
+  {
+    "text": "C#命名方針",
+    "href": "http://ouch1978.github.io/2010/10/30/c-sharp-naming-convention/"
+  } ,
+
+  {
+    "text": "跟著Ouch寫程式 - 前言 ",
+    "href": "http://ouch1978.github.io/2010/10/30/learning-c-sharp-intro/"
+  } ,
+
+  {
+    "text": "移除Skype廣告",
+    "href": "http://ouch1978.github.io/2016/06/08/Remove-Skype-Ads/"
+  } 
+
+])

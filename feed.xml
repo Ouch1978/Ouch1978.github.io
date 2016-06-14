@@ -1,0 +1,1243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+
+
+
+<title type="text">Ouch1978 @ Github</title>
+<generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
+<link rel="self" type="application/atom+xml" href="http://ouch1978.github.io/feed.xml" />
+<link rel="alternate" type="text/html" href="http://ouch1978.github.io/" />
+<updated>2016-06-14T12:11:57+08:00</updated>
+<id>http://ouch1978.github.io/</id>
+<author>
+  <name>Ouch Liu (劉耀群)</name>
+  <uri>http://ouch1978.github.io/</uri>
+  <email>ouch1978@hotmail.com</email>
+</author>
+
+
+<entry>
+  <title type="html"><![CDATA[移除Skype廣告]]></title>
+  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2016/06/08/Remove-Skype-Ads/"/>
+  <id>http://ouch1978.github.io/2016/06/08/Remove-Skype-Ads</id>
+  <published>2016-06-08T00:00:00+08:00</published>
+  <updated>2016-06-08T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Ouch Liu (劉耀群)</name>
+    <uri>http://ouch1978.github.io</uri>
+    <email>ouch1978@hotmail.com</email>
+  </author>
+  <category scheme="http://ouch1978.github.io/tags/#Skype" term="Skype" /><category scheme="http://ouch1978.github.io/tags/#Windows" term="Windows" />
+  <content type="html">
+  
+    &lt;p&gt;最近新版的Skype預設都會開啟對話視窗和主視窗的廣告功能，佔掉不小的版面，實在是有點惱人。這邊就跟大家分享怎麼把討人厭的廣告移乾淨吧。&lt;/p&gt;
+
+&lt;p&gt;廢話不多說，我們直接來看看該怎麼把這個討人厭的東西給消滅掉~&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;方法一：治標不治本的方法&lt;/h2&gt;
+
+&lt;p&gt;可能大部份的朋友們都知道透過「網際網路選項」裡面的「限制的網站」功能來阻止廣告的顯示，但是光靠它來阻止廣告顯示，Skype視窗還是會被佔掉不小一塊區域。&lt;/p&gt;
+
+&lt;p&gt;不過還是分享一下這個方法，如果你不介意像上圖一樣出現一個空空的廣告區的話，這個方法就可以滿足你啦。&lt;/p&gt;
+
+&lt;p&gt;方法很簡單，只要到 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;控制台&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;網際網路選項&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;安全性&lt;/code&gt;&lt;/strong&gt; -&amp;gt; 點選 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;限制的網站&lt;/code&gt;&lt;/strong&gt; 之後 -&amp;gt; 按下下方的 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;網站&lt;/code&gt;&lt;/strong&gt; 按鈕之後，在出現的視窗中加入 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;https://apps.skype.com&lt;/code&gt;&lt;/strong&gt; 就行囉。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-08-Remove-Skype-Ads/01.png&quot; alt=&quot;設定限制的網站&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;如此一來，廣告區就不會再出現廣告，只會有空空一片了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-08-Remove-Skype-Ads/02.png&quot; alt=&quot;惱人的廣告區&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;不過，上面這個方法應該還是滿足不了看到空白的廣告區也會抓狂的人吧？如果你連空白的廣告區也不想看到的話，請跟著這樣作：&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;方法二：徹底移除廣告區的方法&lt;/h2&gt;
+
+&lt;p&gt;使用任一文字編輯器開啟 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;%UserProfile%\AppData\Roaming\Skype\你的帳號\config.xml&lt;/code&gt;&lt;/strong&gt; 檔。&lt;/p&gt;
+
+&lt;p&gt;尋找 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;AdvertPlaceholder&lt;/code&gt;&lt;/strong&gt; 關鍵字，將該行刪除之後存檔。(如果怕Skype更新之後又被改回來的話，可以直接把該檔案設定成唯讀。)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-08-Remove-Skype-Ads/03.png&quot; alt=&quot;刪除AdvertPlaceholder標籤&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;再開啟Skype的對話視窗看看，是不是舒服多了呢??&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-08-Remove-Skype-Ads/04.png&quot; alt=&quot;沒有廣告區的對話視窗&quot; /&gt;&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/06/08/Remove-Skype-Ads/&quot;&gt;移除Skype廣告&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on June 08, 2016.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[跟著Ouch寫程式 - 前言 ]]></title>
+  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2010/10/30/learning-c-sharp-intro/"/>
+  <id>http://ouch1978.github.io/2010/10/30/learning-c-sharp-intro</id>
+  <published>2010-10-30T00:00:00+08:00</published>
+  <updated>2010-10-30T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Ouch Liu (劉耀群)</name>
+    <uri>http://ouch1978.github.io</uri>
+    <email>ouch1978@hotmail.com</email>
+  </author>
+  <category scheme="http://ouch1978.github.io/tags/#C%23" term="C#" />
+  <content type="html">
+  
+    &lt;p&gt;最近身邊有些朋友正在學習寫程式，算是新手中的新手，想想我也曾是過來人，就在這邊順便一下分享我小小的經驗，希望能對剛起步的朋友們有所幫助。&lt;br /&gt;
+其實寫程式真的沒那麼難，真的!!&lt;/p&gt;
+
+&lt;p&gt;尤其是近年來比較熱門的語言，像是C#、VB.Net、JAVA、Action Script 3.0之類，比較偏向是物件導向的程式語言，只要先學會一種，再學別的就相對的快了。&lt;/p&gt;
+
+&lt;p&gt;在接下來的章節裡，我會以C#當主要的使用語言，用儘量簡單的方式，來幫助大家進入程式設計的世界。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;俗話說：工欲善其事，必先利其器。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;要寫C#，首推的工具當然是Visual Studio，目前最新版的Visual Studio是2010版，因為現在是學習階段，所以先下載免費的版本來用就行了。&lt;br /&gt;
+微軟有免費的精簡版可以下載使用: &lt;a href=&quot;http://www.microsoft.com/express/Downloads/#2010-Visual-Web-Developer&quot; title=&quot;http://www.microsoft.com/express/Downloads/#2010-Visual-Web-Developer&quot;&gt;網址在此&lt;/a&gt;&lt;br /&gt;
+可以選擇下載&lt;a href=&quot;http://www.microsoft.com/express/Downloads/#2010-Visual-CS&quot;&gt;Visual C# 2010 Express&lt;/a&gt;(可撰寫C#應用程式)，或是&lt;a href=&quot;http://www.microsoft.com/express/Downloads/#2010-Visual-Web-Developer&quot;&gt;Visual Web Developer 2010 Express&lt;/a&gt;(可以開發網站)&lt;br /&gt;
+注意：無論如何，請下載英文版，因為以後的教學都會使用英文版，而且英文版的更新與支援速度，通常都比中文快，加上寫程式用的語言也是英文，所以，無論如何，請逼自己習慣看英文。&lt;/p&gt;
+
+&lt;p&gt;利用下載和安裝的空檔，這邊先跟各位講解一下一般物件導向程式的基本小常識。&lt;/p&gt;
+
+&lt;p&gt;通常在物件導向程式設計裡面，最常見，也最基本的元素，叫做&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;class&lt;/code&gt;&lt;/strong&gt;(類別)&lt;br /&gt;
+我們通常會用class來定義一件事物，就以我們常見的RPG線上遊戲的角色為例，我們要怎麼用類別來描述一個角色呢?&lt;br /&gt;
+通常，一個角色，會有他基本的「屬性」，例如角色的名稱、等級、血量、攻擊力等等。還有他可以執行的「動作」，例如移動、攻擊、坐下、跳舞。&lt;br /&gt;
+而在程式的世界裡面呢，屬性就會被區分成「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Property&lt;/code&gt;&lt;/strong&gt;」(屬性)和「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Field&lt;/code&gt;&lt;/strong&gt;」(欄位)，欄位通常和屬性會做為搭配，需要透過屬性來存取欄位，而動作就會以「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Method&lt;/code&gt;&lt;/strong&gt;」(方法)來實現。&lt;/p&gt;
+
+&lt;p&gt;將上述的角色寫成程式的話，會寫成這樣：&lt;/p&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;Character.cs&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c#&quot; data-lang=&quot;c#&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Character&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;cm&quot;&gt;/*建構子*/&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Character&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;//角色編號
+&lt;/span&gt;  &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Id&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;_id&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;//角色名稱
+&lt;/span&gt;  &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Name&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;      
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;_name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;//等級
+&lt;/span&gt;  &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_level&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Level&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_level&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;_level&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;//血量
+&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//只允許外部讀取，不允許寫入
+&lt;/span&gt;  &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_healthPoint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HealthPoint&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_healthPoint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;cm&quot;&gt;/*攻擊力
+  只允許外部讀取，不允許寫入*/&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_attackPower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AttactkPower&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_attackPower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;cm&quot;&gt;/*
+  防禦力
+  只允許外部讀取，不允許寫入
+  */&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_defensePower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DefensePower&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_defensePower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;//跳舞
+&lt;/span&gt;  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Dance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//Do dance
+&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;//坐下
+&lt;/span&gt;  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Sit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//Do sit
+&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;//攻擊
+&lt;/span&gt;  &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Attack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//Do attack
+&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;嗯，看起來有點複雜對吧?其實有比較簡單一點的寫法，不過這個是比較傳統的寫法，為了幫助大家進入狀況，也為了方便講解，所以先用這種寫法。&lt;/p&gt;
+
+&lt;p&gt;首先要先有幾個小觀念：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;在程式語言中，去做出「定義一個值」這個動作，我們稱為「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;宣告&lt;/code&gt;&lt;/strong&gt;」；而在C#中，一般宣告的寫法會是「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;修飾詞&lt;/code&gt;&lt;/strong&gt;」 「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;型別&lt;/code&gt;&lt;/strong&gt;」 「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;名稱&lt;/code&gt;&lt;/strong&gt;」，中間以空白隔開。(關於C#的型別可以參考&lt;a href=&quot;http://msdn.microsoft.com/zh-tw/library/ya5y69ds.aspx&quot;&gt;內建型別列表&lt;/a&gt;和&lt;a href=&quot;http://msdn.microsoft.com/zh-tw/library/ms173104.aspx&quot;&gt;型別、變數和值&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;在程式裡面常常會看到&lt;code class=&quot;highlighter-rouge&quot;&gt;public&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;private&lt;/code&gt;這兩個修飾詞，這兩個字可以直接從字面上來看，就可以猜出他的差別：
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;public&lt;/code&gt;指的是允許公開給外部看得到，而且用得到的東西。&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;private&lt;/code&gt;指的則是只有在定義該物件的裡才看得到、能使用的東西，例如我們在上面的例子裡有不少地方都加了&lt;code class=&quot;highlighter-rouge&quot;&gt;private&lt;/code&gt;關鍵字，那就只有在這個class裡面才看得到、能存取這些東西。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;程式裡面的段落和範圍的定義，通常會使用大括弧&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt;和&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;}&lt;/code&gt;&lt;/strong&gt;來界定。&lt;/li&gt;
+  &lt;li&gt;在程式裡面要寫註解的話有兩種寫法，一種是在註解前面加上&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;//&lt;/code&gt;&lt;/strong&gt;(兩個斜線)，或是以&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/*&lt;/code&gt;&lt;/strong&gt;(斜線加星號)和&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*/&lt;/code&gt;&lt;/strong&gt;(星號加斜線)把註解的範圍標示出來，兩者的差別為，若註解的內容為多行，則每行的前面都要加上&lt;code class=&quot;highlighter-rouge&quot;&gt;//&lt;/code&gt;，若使用&lt;code class=&quot;highlighter-rouge&quot;&gt;/*&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;*/&lt;/code&gt;，則只需放在頭和尾，內容有幾行都可以。&lt;/li&gt;
+  &lt;li&gt;在許多程式語言裡，大小寫是有區隔的，例如name和Name會被視為是不一樣的東西。&lt;/li&gt;
+  &lt;li&gt;每種程式語言有它不同的關鍵字，要做命名的時候要避免使用到關鍵字(關於C#的關鍵字可以參考&lt;a href=&quot;http://msdn.microsoft.com/zh-tw/library/x53a06bb.aspx&quot;&gt;C#關鍵字列表&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ok,有了上面的小觀念之後，上面的程式碼看起來應該就不再那麼複雜了，以下來做個簡單的講解：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;前面有講過，我們通常會用class來定義一件事物，所以，程式的第一行，就是我們利用class這個關鍵字去定義出一個叫做Character(角色)的class，並且把它設為是公開的，而第二行的大括弧和第105行的大括弧是成對的，裡面的內容都會被視為Character這個class的成員。&lt;/li&gt;
+  &lt;li&gt;第4行的建構子，是用來提供被部創建該class實體的入口，我們可以想像成說，class被定義出來之後，只是一個軀殼，必需透過呼叫它的建構子，幫它注入靈魂，創造它的實體；通常每個class至少會有一個建構子，如果你沒寫的話，會使用預設的建構子，而建構子的名稱，必需和class名稱相同。&lt;/li&gt;
+  &lt;li&gt;第9到84行就是我們提到的「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Property&lt;/code&gt;&lt;/strong&gt;」和「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Field&lt;/code&gt;&lt;/strong&gt;」的組合，我們拿角色名稱來做說明，你會看到，有個private string _name，這個就是所謂的屬性，通常屬性會被定義為private，必需透過下面的public string Name來存取它，而在Property裡面則定義了該Property是否可以供存取，有get的表示可以供讀取，set則表示可以提供寫入，所以，如果該屬性是唯讀的，我們就可以透過Property的定義來達成，例如「血量」這個屬性。&lt;/li&gt;
+  &lt;li&gt;最後，第86到107行，則是定義了Character這個類別所提供的「方法」，通常凡是要和使用者進行互動，或是比較大量運算的動作，我們都會透過定義「方法」來被外部呼叫，為了不要搞得太複雜，範例的三個方法中都沒做任何的事。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;以上就是C#語言很基本很基本的結構，既然是前言，我想就到這邊為止，我們下次見!!&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2010/10/30/learning-c-sharp-intro/&quot;&gt;跟著Ouch寫程式 - 前言 &lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 30, 2010.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[C#命名方針]]></title>
+  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2010/10/30/c-sharp-naming-convention/"/>
+  <id>http://ouch1978.github.io/2010/10/30/c-sharp-naming-convention</id>
+  <published>2010-10-30T00:00:00+08:00</published>
+  <updated>2010-10-30T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Ouch Liu (劉耀群)</name>
+    <uri>http://ouch1978.github.io</uri>
+    <email>ouch1978@hotmail.com</email>
+  </author>
+  <category scheme="http://ouch1978.github.io/tags/#C%23" term="C#" />
+  <content type="html">
+  
+    &lt;p&gt;寫程式其實也是有規矩在的，尤其是要團體協同開發的時候，如果每個人使用的規則都不一樣，那要求每個人看得懂別人的程式碼，真的是會要了人的命。&lt;br /&gt;
+ 像是命名空間、類別、變數、檔案命名、控制項命名，其實都要去訂下命名的規則，對團隊來說才會容易溝通。&lt;/p&gt;
+
+&lt;p&gt;當然，規則很多，我在這邊只先列出和比較基本的命名相關的規則；而關於完整的C#的程式撰寫規範建議，則可以參考&lt;a href=&quot;http://msdn.microsoft.com/zh-tw/library/ms229042.aspx&quot;&gt;MSDN上的設計方針&lt;/a&gt;，再配合FXCop做程式碼撰寫後的規範驗證。&lt;/p&gt;
+
+&lt;p&gt;以下為C#命名的&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;一般原則&lt;/code&gt;&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;使用&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Pascal&lt;/code&gt;&lt;/strong&gt;( 如 : “VirtualDesign” )及&lt;strong&gt;‘Camel’&lt;/strong&gt;( 如 : “virtualDesign” )兩種命名方式，並建議避免使用分隔符號( 例如底線 “_” 或連字號 “-“ )來做命名 - &lt;a href=&quot;http://msdn.microsoft.com/library/bb264474(VS.100).aspx&quot;&gt;CA1702&lt;/a&gt;。&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;可讀性優先於簡潔性&lt;/code&gt;( CanScrollHorizontally 優於 ScrollableX )，並參考常用的命名( HorizontalAlignment 優於 AlignmentHorizontal )。&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;避免使用匈牙利命名法&lt;/code&gt;( 如 : “strName” )，並正確的使用前置及後置詞命名 - &lt;a href=&quot;http://msdn.microsoft.com/library/bb531486(VS.100).aspx&quot;&gt;CA1720&lt;/a&gt;、&lt;a href=&quot;http://msdn.microsoft.com/zh-tw/library/ms182244.aspx&quot;&gt;CA1710&lt;/a&gt;。&lt;/li&gt;
+  &lt;li&gt;正確的使用縮寫，&lt;code class=&quot;highlighter-rouge&quot;&gt;縮寫字為兩個字母以內，則兩字皆為大寫&lt;/code&gt;( 如 : “IO” )，&lt;code class=&quot;highlighter-rouge&quot;&gt;三個字以上，則使用Pascal命名規則&lt;/code&gt;( 如 : “Xml” )，且縮寫字不得高於五個字母 - &lt;a href=&quot;http://msdn.microsoft.com/library/ms182240(VS.100).aspx&quot;&gt;CA1709&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;c&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;C#物件命名原則&lt;/code&gt;&lt;/h2&gt;
+
+&lt;table cellpadding=&quot;2&quot; cellspacing=&quot;0&quot;&gt;
+&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th width=&quot;25%&quot;&gt;
+				種類&lt;/th&gt;
+			&lt;th width=&quot;15%&quot;&gt;
+				命名規則&lt;/th&gt;
+			&lt;th&gt;
+				範例&lt;/th&gt;
+			&lt;th&gt;
+				注意事項&lt;/th&gt;
+		&lt;/tr&gt;
+    &lt;/thead&gt;
+    	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td valign=&quot;middle&quot;&gt;
+				Project File&lt;/td&gt;
+			&lt;td align=&quot;center&quot;&gt;
+				&lt;font color=&quot;#9bbb59&quot;&gt;Pascal&lt;/font&gt;&lt;/td&gt;
+			&lt;td&gt;
+				Math.Algorithm.csproj&lt;/td&gt;
+			&lt;td&gt;
+				&amp;nbsp;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;
+				Source File&lt;/td&gt;
+			&lt;td align=&quot;center&quot;&gt;
+				&lt;font color=&quot;#9bbb59&quot;&gt;Pascal&lt;/font&gt;&lt;/td&gt;
+			&lt;td&gt;
+				RuleSetup.cs&lt;/td&gt;
+			&lt;td&gt;
+				保持檔案名稱與Class名稱一致&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;
+				Resource or Embedded File&lt;/td&gt;
+			&lt;td align=&quot;center&quot;&gt;
+				&lt;font color=&quot;#9bbb59&quot;&gt;Pascal&lt;/font&gt;&lt;/td&gt;
+			&lt;td&gt;
+				TestPicture.jpg&lt;/td&gt;
+			&lt;td&gt;
+				&amp;nbsp;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;
+				Namespace&lt;/td&gt;
+			&lt;td align=&quot;center&quot;&gt;
+				&lt;font color=&quot;#9bbb59&quot;&gt;Pascal&lt;/font&gt;&lt;/td&gt;
+			&lt;td&gt;
+				MyCompany.Wpf.Controls&lt;/td&gt;
+			&lt;td&gt;
+				儘量使用&quot;公司名稱.專案名稱|技術名稱.功能分類|子類別&quot;做為命名準則&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;
+				Class or Struct&lt;/td&gt;
+			&lt;td align=&quot;center&quot;&gt;
+				&lt;font color=&quot;#9bbb59&quot;&gt;Pascal&lt;/font&gt;&lt;/td&gt;
+			&lt;td&gt;
+				CustomAttribute&lt;/td&gt;
+			&lt;td&gt;
+				使用名詞命名，並使用基底類別名稱做為後置詞&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;
+				Interface&lt;/td&gt;
+			&lt;td align=&quot;center&quot;&gt;
+				&lt;font color=&quot;#9bbb59&quot;&gt;Pascal&lt;/font&gt;&lt;/td&gt;
+			&lt;td&gt;
+				ICustomer&lt;/td&gt;
+			&lt;td&gt;
+				使用前置詞&quot;I&quot;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;
+				Generic Class &amp;amp; Generic Parameter Type&lt;/td&gt;
+			&lt;td align=&quot;center&quot;&gt;
+				&lt;font color=&quot;#9bbb59&quot;&gt;Pascal&lt;/font&gt;&lt;/td&gt;
+			&lt;td&gt;
+				TKey,TValue&lt;/td&gt;
+			&lt;td&gt;
+				使用前置詞&quot;T&quot;或&quot;K&quot;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;
+				Method&lt;/td&gt;
+			&lt;td align=&quot;center&quot;&gt;
+				&lt;font color=&quot;#9bbb59&quot;&gt;Pascal&lt;/font&gt;&lt;/td&gt;
+			&lt;td&gt;
+				ValidateUser&lt;/td&gt;
+			&lt;td&gt;
+				使用動詞作為開頭&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;
+				Property&lt;/td&gt;
+			&lt;td align=&quot;center&quot;&gt;
+				&lt;font color=&quot;#9bbb59&quot;&gt;Pascal&lt;/font&gt;&lt;/td&gt;
+			&lt;td&gt;
+				Name&lt;/td&gt;
+			&lt;td&gt;
+				避免使用&quot;Get&quot;或&quot;Set&quot;當前置詞&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;
+				Field (Public, Protected, or Internal)&lt;/td&gt;
+			&lt;td align=&quot;center&quot;&gt;
+				&lt;font color=&quot;#9bbb59&quot;&gt;Pascal&lt;/font&gt;&lt;/td&gt;
+			&lt;td&gt;
+				Name&lt;/td&gt;
+			&lt;td&gt;
+				&amp;nbsp;&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;
+				Field (Private)&lt;/td&gt;
+			&lt;td align=&quot;center&quot;&gt;
+				&lt;font color=&quot;#809ec2&quot;&gt;Camel&lt;/font&gt;&lt;/td&gt;
+			&lt;td&gt;
+				_name&lt;/td&gt;
+			&lt;td&gt;
+				字首加上底線做為區隔&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;
+				Constant or Static Field&lt;/td&gt;
+			&lt;td align=&quot;center&quot;&gt;
+				&lt;font color=&quot;#9bbb59&quot;&gt;Pascal&lt;/font&gt;&lt;/td&gt;
+			&lt;td&gt;
+				Name&lt;/td&gt;
+			&lt;td&gt;
+				與Field處理方式相同&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;
+				Enum&lt;/td&gt;
+			&lt;td align=&quot;center&quot;&gt;
+				&lt;font color=&quot;#9bbb59&quot;&gt;Pascal&lt;/font&gt;&lt;/td&gt;
+			&lt;td&gt;
+				EncodeType&lt;/td&gt;
+			&lt;td&gt;
+				裡面包含選項也是使用Pascal命名法&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;
+				Delegate or Event&lt;/td&gt;
+			&lt;td align=&quot;center&quot;&gt;
+				&lt;font color=&quot;#9bbb59&quot;&gt;Pascal&lt;/font&gt;&lt;/td&gt;
+			&lt;td&gt;
+				public event EventHandler LoadPlugin&lt;/td&gt;
+			&lt;td&gt;
+				全都使用 Pascal 命名規則&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;
+				Local Variable (inline)&lt;/td&gt;
+			&lt;td align=&quot;center&quot;&gt;
+				&lt;font color=&quot;#809ec2&quot;&gt;Camel&lt;/font&gt;&lt;/td&gt;
+			&lt;td&gt;
+				string name&lt;/td&gt;
+			&lt;td&gt;
+				避免使用單一字元和列舉的名稱&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;
+				Parameter&lt;/td&gt;
+			&lt;td align=&quot;center&quot;&gt;
+				&lt;font color=&quot;#809ec2&quot;&gt;Camel&lt;/font&gt;&lt;/td&gt;
+			&lt;td&gt;
+				public void Execute(string commandText, int iterations)&lt;/td&gt;
+			&lt;td&gt;
+				&amp;nbsp;&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;其他注意事項：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;不要在列舉項目中使用”Reserved”做為命名 - &lt;a href=&quot;http://msdn.microsoft.com/zh-tw/library/ms182236.aspx&quot;&gt;CA1700&lt;/a&gt;。&lt;/li&gt;
+  &lt;li&gt;不要使用型別名稱做為列舉值的前置字元 - &lt;a href=&quot;http://msdn.microsoft.com/zh-tw/library/ms182237.aspx&quot;&gt;CA1712&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2010/10/30/c-sharp-naming-convention/&quot;&gt;C#命名方針&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 30, 2010.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[輕鬆製作獨一無二的投影片-加強版]]></title>
+  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2010/10/29/ppt-make-your-own-ptt-template-advanced/"/>
+  <id>http://ouch1978.github.io/2010/10/29/ppt-make-your-own-ptt-template-advanced</id>
+  <published>2010-10-29T00:00:00+08:00</published>
+  <updated>2010-10-29T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Ouch Liu (劉耀群)</name>
+    <uri>http://ouch1978.github.io</uri>
+    <email>ouch1978@hotmail.com</email>
+  </author>
+  <category scheme="http://ouch1978.github.io/tags/#Power%20Point" term="Power Point" />
+  <content type="html">
+  
+    &lt;p&gt;上次跟各位介紹了母片的應用，這次再來介紹兩個小撇步，一樣只利用PowerPoint原生的功能，&lt;code class=&quot;highlighter-rouge&quot;&gt;不借助任何外部圖片&lt;/code&gt;，做出類似璃鏡面的效果，以及可以放在標題頁的自我介紹小卡片。&lt;/p&gt;
+
+&lt;p&gt;我們沿用上次範例的pptx檔，來針對純黑的色塊動手腳，加入類似玻璃的反光效果，讓它看起來不再那麼單調。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;「一切都從母片開始」!!!&lt;/code&gt;&lt;/strong&gt;所以我們先進入母片編輯模式，選取位於母片上面的黑色矩形，選取工作列的&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;格式&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;圖案填滿&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;漸層&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;其他漸層&lt;/code&gt;&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_2.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_thumb.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;在跳出來的&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;格式化圖案&lt;/code&gt;&lt;/strong&gt;視窗中選取&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;漸層填滿&lt;/code&gt;&lt;/strong&gt;，並且依以下設定漸層停駐點：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;位置0%，黑色，亮度0%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;位置20%，黑色，亮度15%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;位置40%，黑色，亮度25%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;位置74%，黑色，亮度35%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;位置75%，黑色，亮度25%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;位置90%，黑色，亮度5%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;完成後的長相會如下圖，是不是更有質感了呢?&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_4.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_thumb_1.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;當然上面的改了，下面也要來一下：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;位置0%，黑色，亮度0%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;位置20%，黑色，亮度15%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;位置35%，黑色，亮度25%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;位置50%，黑色，亮度25&lt;/code&gt;%&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;位置51%，黑色，亮度5%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_6.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_thumb_2.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;這邊有一個重點，就是亮部和暗部要靠得很近，而且亮度要有足夠的反差，才能做出反光的感覺，亮部和暗部位置和顏色的拿捏，是影響整個質感最大的關鍵，為了讓各位練習，標題頁就交給各位自行發揮了。&lt;/p&gt;
+
+&lt;p&gt;接著來做說好的自我介紹小卡片。切換到標題投影片的母片編輯模式，切換到&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;插入&lt;/code&gt;&lt;/strong&gt;頁籤，插入一個「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;剪去單一角落矩形&lt;/code&gt;&lt;/strong&gt;」於右下角。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_8.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_thumb_3.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;把該矩形的外框拿掉，並且重新填色與加入陰影，完成後如下圖。&lt;/p&gt;
+
+&lt;p&gt;漸層填滿的設定值為：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;角度180度`&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;位置0%，橄欖綠，亮度-25%`&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;位置7%，橄欖綠，亮度60%`&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;位置15%，白色，亮度0%`&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_10.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_thumb_4.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;再來&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;把最重要的部門單位、姓名、聯絡方式打上去&lt;/code&gt;&lt;/strong&gt;，然後把名片稍稍&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;旋轉&lt;/code&gt;&lt;/strong&gt;並且&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;調整一下位置&lt;/code&gt;&lt;/strong&gt;，變成如下圖的樣子。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_12.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_thumb_5.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;斜斜的好像有點怪怪的，加個圖釘讓它看起來自然一點好了，&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;插入一個圓形&lt;/code&gt;&lt;/strong&gt;，並且將它調出&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;浮凸&lt;/code&gt;&lt;/strong&gt;的立體感，再調整一下&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;陰影&lt;/code&gt;&lt;/strong&gt;，讓它看起來自然一點。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_14.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_thumb_6.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;嗯~~大功告….還沒完!!怎麼可以草草結束呢!?再來要加入動畫，讓名片出場有魄力一點(這個步驟是異常的有意義的，它可以讓名片可以比較吸引觀眾的目光)。&lt;/p&gt;
+
+&lt;p&gt;切換到動畫頁籤，對我們的名片加入&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;彈跳&lt;/code&gt;&lt;/strong&gt;動畫，並設置開始條件為「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;接續前動畫&lt;/code&gt;&lt;/strong&gt;」。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_16.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_thumb_7.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;繼續對名片物件使用「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;新增動畫&lt;/code&gt;&lt;/strong&gt;」選項，這次使用「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;翹翹板&lt;/code&gt;&lt;/strong&gt;」效果，開始條件一樣設定為「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;接續前動畫&lt;/code&gt;&lt;/strong&gt;」。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_18.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_thumb_8.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;最後，真的是最後一步了，幫圖釘加上「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;弧形向上&lt;/code&gt;&lt;/strong&gt;」動畫效果(&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;新增動畫&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;其他進入效果&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;弧形向上&lt;/code&gt;&lt;/strong&gt;)，並設定其開始條件為「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;與前動畫同時&lt;/code&gt;&lt;/strong&gt;」。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_20.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_thumb_9.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;傳說中的加強版誕生了，請服用!!&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2010/10/29/ppt-make-your-own-ptt-template-advanced/&quot;&gt;輕鬆製作獨一無二的投影片-加強版&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 29, 2010.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[輕鬆製作獨一無二的投影片]]></title>
+  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2010/10/27/ppt-make-your-own-ptt-template/"/>
+  <id>http://ouch1978.github.io/2010/10/27/ppt-make-your-own-ptt-template</id>
+  <published>2010-10-27T00:00:00+08:00</published>
+  <updated>2010-10-27T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Ouch Liu (劉耀群)</name>
+    <uri>http://ouch1978.github.io</uri>
+    <email>ouch1978@hotmail.com</email>
+  </author>
+  <category scheme="http://ouch1978.github.io/tags/#Power%20Point" term="Power Point" />
+  <content type="html">
+  
+    &lt;p&gt;相信Power Point大家都會用，但是真的要自己從無到有，&lt;code class=&quot;highlighter-rouge&quot;&gt;不使用任何別人做好的樣板或是美工圖片&lt;/code&gt;，快速的製作出一份「看起來」有一定的專業程度的簡報，應該就會難倒某些人吧!?&lt;/p&gt;
+
+&lt;p&gt;其實沒那麼難，只要善用母片編輯的功能，再改變一下製作投影片的習慣，就可以輕鬆辦到囉!!&lt;/p&gt;
+
+&lt;p&gt;進入投影片母片的編輯的方法是：按下工具列的「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;檢視&lt;/code&gt;&lt;/strong&gt;」 -&amp;gt; 「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;投影片母片&lt;/code&gt;&lt;/strong&gt;」按鈕。&lt;/p&gt;
+
+&lt;p&gt;進入母片編輯模式後，原來在左邊的投影片縮圖窗格會變成如下的樣子。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_2.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_thumb.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;左邊最上面那張比較大的投影片，就是投影片的母片，也就是說，在他下面的投影片，都會繼承它的長相和屬性；而在它下面的，則是提供不同用途使用的各種版面配置，例如投影片標題頁、章節標題頁，以及內容頁面等等。&lt;/p&gt;
+
+&lt;p&gt;請記得一個重點「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;一切都從母片開始&lt;/code&gt;&lt;/strong&gt;」。所以先點選母片，開始來進行美化吧!!&lt;/p&gt;
+
+&lt;p&gt;我們先使用矩形工具(「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;插入&lt;/code&gt;&lt;/strong&gt;」 -&amp;gt; 「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;圖案&lt;/code&gt;&lt;/strong&gt;」 -&amp;gt; 「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;矩形&lt;/code&gt;&lt;/strong&gt;」)，在母片上加入兩個黑色的矩形，分別位於標題和頁尾處，如下圖。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_4.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_thumb_1.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;再來&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;分別將兩個矩形加入陰影特效&lt;/code&gt;&lt;/strong&gt;，上面的矩形加入下陰影，下面的加入上陰影，並且&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;將兩個矩形移到最下層&lt;/code&gt;&lt;/strong&gt;(在&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;矩形上按滑鼠右鍵&lt;/code&gt;&lt;/strong&gt;，點選「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;移到最下層&lt;/code&gt;&lt;/strong&gt;」)&lt;/p&gt;
+
+&lt;p&gt;以讓標題和頁尾不會被蓋住。&lt;/p&gt;
+
+&lt;p&gt;接著按下&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl+A&lt;/code&gt;&lt;/strong&gt;鍵，將畫面上的物件全選起來，進行&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;字型更改&lt;/code&gt;&lt;/strong&gt;的動作，將&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;文字設定為橘色&lt;/code&gt;&lt;/strong&gt;，並且&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;使用微軟正黑體&lt;/code&gt;&lt;/strong&gt;，如下圖。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_6.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_thumb_2.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;再來&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;使用文字藝術師&lt;/code&gt;&lt;/strong&gt;的功能，把標題改成有鍍金質感的感覺。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_8.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_thumb_3.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;這樣其實還不太像金色，把&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;文字的填滿色改為橙色&lt;/code&gt;&lt;/strong&gt;就可以得到如下圖的效果了。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_10.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_thumb_4.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;接著把標題文字加入&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;倒影&lt;/code&gt;&lt;/strong&gt;的特效，讓它更炫一點，如下圖。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_12.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_thumb_5.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;整個母片的編輯到這個地方算是完成了一半，再來就可以針對標題頁和內容頁的樣版和動畫下手了。&lt;/p&gt;
+
+&lt;p&gt;基於龜毛的個性，我想要標題頁和內頁是有所不同的，所以我們來對標題頁進行編輯。&lt;/p&gt;
+
+&lt;p&gt;首先&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;點選左邊的標題投影片樣版&lt;/code&gt;&lt;/strong&gt;，再於&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;投影片母片頁籤&lt;/code&gt;&lt;/strong&gt;中&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;將頁尾的打勾取消&lt;/code&gt;，&lt;/strong&gt;以及&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;將隱藏背景圖形勾選起來&lt;/code&gt;&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;再來使用先前用過的矩形工具，再&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;加入一個矩形&lt;/code&gt;&lt;/strong&gt;並將他&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;移到最下層&lt;/code&gt;&lt;/strong&gt;當背景(若想增加層次感，一樣可以加入陰影特效)，如下圖。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_14.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_thumb_6.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;如果覺得畫面單調，可以再使用插入圖案的功能，做出一些變化。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_16.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_thumb_7.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;最後就是進行動畫的設定了，我們只要&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;在每種頁面樣版中設定好動畫&lt;/code&gt;&lt;/strong&gt;，正式製作投影片時所有的頁面就都會自動套上動畫喔!!(這邊非常的重要，我發現很多人在製作投影片的時候，動畫都是一頁一頁去設定，這樣太累了，而且也容易讓每頁看起來不一致)&lt;/p&gt;
+
+&lt;p&gt;都編輯好之後，就可以結束母片編輯模式(&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;投影片母片頁籤&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;關閉母片檢視&lt;/code&gt;&lt;/strong&gt;)，享受剛才辛苦的成果啦!!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_18.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_thumb_8.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;接下來只要在每個區塊輸入我們想呈現的文字，就可以輕鬆做完整份投影片囉!!&lt;/p&gt;
+
+&lt;p&gt;如果想改變投影片使用的樣版，可以在&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;投影片上按下滑鼠右鍵&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;版面配置&lt;/code&gt;&lt;/strong&gt;，來快速的進行樣版的切換，大功告成啦!!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_20.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_thumb_9.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;這次的教學到此結束，希望對大家有所幫助喔!!&lt;/p&gt;
+
+&lt;p&gt;另外附上這次的範例，請各位笑納。&lt;/p&gt;
+
+&lt;iframe frameborder=&quot;0&quot; marginheight=&quot;0&quot; marginwidth=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;http://cid-f076b08733b95437.office.live.com/embedicon.aspx/%e5%85%ac%e9%96%8b/%e8%bc%95%e9%ac%86%e8%a3%bd%e4%bd%9c%e7%8d%a8%e4%b8%80%e7%84%a1%e4%ba%8c%e7%9a%84%e6%8a%95%e5%bd%b1%e7%89%87.rar&quot; style=&quot;padding: 0px; width: 98px; height: 115px; background-color: rgb(252, 252, 252);&quot; title=&quot;Preview&quot;&gt;&lt;/iframe&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2010/10/27/ppt-make-your-own-ptt-template/&quot;&gt;輕鬆製作獨一無二的投影片&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 27, 2010.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[自製 Modal 元件]]></title>
+  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2010/10/26/silverlight-fake-modal-dialog/"/>
+  <id>http://ouch1978.github.io/2010/10/26/silverlight-fake-modal-dialog</id>
+  <published>2010-10-26T00:00:00+08:00</published>
+  <updated>2010-10-26T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Ouch Liu (劉耀群)</name>
+    <uri>http://ouch1978.github.io</uri>
+    <email>ouch1978@hotmail.com</email>
+  </author>
+  <category scheme="http://ouch1978.github.io/tags/#Silverlight" term="Silverlight" />
+  <content type="html">
+  
+    &lt;p&gt;有使用過 Silverlight/WPF 的朋友們不知道有沒有遇過一個問題：有時候想要跳出一個元件跟使用者互動，而且要鎖住原來的主畫面，等使用者操作完才能繼續操作主畫面，可是用 MessageBox 的話功能不夠，用 ChildWindow 的話功能又太多或是太複雜之類的問題…&lt;/p&gt;
+
+&lt;p&gt;難道就不能自訂一個元件，當它顯示的時候，會自動讓主畫面被鎖住，而且該元件的外觀和操作方式都可以自訂嗎?其實只要善用 Grid 容器，就可以簡單的做到這個功能喔!!&lt;/p&gt;
+
+&lt;p&gt;方法如下：&lt;/p&gt;
+
+&lt;h4 id=&quot;section&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;步驟一&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;首先我們打開一個標準的 Silverlight+Web 專案( WPF 也可以喔)，接著增加一個 UserControl (範例中取名為 MyModalControl )。&lt;/p&gt;
+
+&lt;p&gt;接著修改 MyModalControl.xaml 的內容，將&lt;code class=&quot;highlighter-rouge&quot;&gt;控制項本身&lt;/code&gt;與 LayoutRoot 這個 Grid 的&lt;code class=&quot;highlighter-rouge&quot;&gt;寬和高都設為 Auto&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_2.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_thumb.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;步驟二&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;修改 &lt;code class=&quot;highlighter-rouge&quot;&gt;LayoutRoot&lt;/code&gt; 的&lt;code class=&quot;highlighter-rouge&quot;&gt;背景色為 #4C4969CC&lt;/code&gt;(透明度為 30%)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_4.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_thumb_1.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;section-2&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;步驟三&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;放置要和使用者互動的元件，為了精簡教學過程，怎麼做的這邊就不詳述，完成後如下圖。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_6.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_thumb_2.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;section-3&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;步驟四&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;加入按鈕的 Click 事件，並加入移除這個控制項的程式碼，完成後的 xaml 與 cs 檔如下：&lt;/p&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;MyModalControl.xaml&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;UserControl&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;FakeModal.MyModalControl&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;xmlns=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;xmlns:x=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;xmlns:d=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/expression/blend/2008&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;xmlns:ei=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/expression/2010/interactions&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;xmlns:i=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/expression/2010/interactivity&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;xmlns:mc=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;d:DesignHeight=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;480&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;d:DesignWidth=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;640&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;mc:Ignorable=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;d&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;Grid&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;LayoutRoot&quot;&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;Background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#4C4969CC&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;StackPanel&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;HorizontalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;VerticalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;StackPanel.Effect&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;DropShadowEffect&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Opacity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0.5&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/StackPanel.Effect&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;i:Interaction.Behaviors&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;ei:MouseDragElementBehavior&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ConstrainToParentBounds=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;True&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/i:Interaction.Behaviors&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;Border&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;200&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;Height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;32&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10,0,0,0&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;HorizontalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Left&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;Background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;White&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;BorderBrush=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Black&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;BorderThickness=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;2,2,2,0&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;CornerRadius=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10,10,0,0&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;TextBlock&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;HorizontalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt;
+                           &lt;span class=&quot;na&quot;&gt;VerticalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt;
+                           &lt;span class=&quot;na&quot;&gt;FontSize=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;18.667&quot;&lt;/span&gt;
+                           &lt;span class=&quot;na&quot;&gt;Text=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;FakeModal&quot;&lt;/span&gt;
+                           &lt;span class=&quot;na&quot;&gt;TextWrapping=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Wrap&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Border&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;Border&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;400&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;Height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;150&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;Background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;White&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;BorderBrush=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Black&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;BorderThickness=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;2&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;CornerRadius=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;StackPanel&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;HorizontalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt;
+                            &lt;span class=&quot;na&quot;&gt;VerticalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;TextBlock&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0&quot;&lt;/span&gt;
+                               &lt;span class=&quot;na&quot;&gt;FontSize=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;18.667&quot;&lt;/span&gt;
+                               &lt;span class=&quot;na&quot;&gt;Text=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Is to make a fake modal that simple?&quot;&lt;/span&gt;
+                               &lt;span class=&quot;na&quot;&gt;TextWrapping=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Wrap&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;StackPanel&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0,30,0,0&quot;&lt;/span&gt;
+                                &lt;span class=&quot;na&quot;&gt;HorizontalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt;
+                                &lt;span class=&quot;na&quot;&gt;VerticalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt;
+                                &lt;span class=&quot;na&quot;&gt;Orientation=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Horizontal&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;Button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btnYes&quot;&lt;/span&gt;
+                                &lt;span class=&quot;na&quot;&gt;Width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;80&quot;&lt;/span&gt;
+                                &lt;span class=&quot;na&quot;&gt;Height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;32&quot;&lt;/span&gt;
+                                &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10,0&quot;&lt;/span&gt;
+                                &lt;span class=&quot;na&quot;&gt;Click=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btnYes_Click&quot;&lt;/span&gt;
+                                &lt;span class=&quot;na&quot;&gt;Content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Yes&quot;&lt;/span&gt;
+                                &lt;span class=&quot;na&quot;&gt;FontSize=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;16&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;Button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btnNo&quot;&lt;/span&gt;
+                                &lt;span class=&quot;na&quot;&gt;Width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;80&quot;&lt;/span&gt;
+                                &lt;span class=&quot;na&quot;&gt;Height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;32&quot;&lt;/span&gt;
+                                &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10,0&quot;&lt;/span&gt;
+                                &lt;span class=&quot;na&quot;&gt;Click=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btnNo_Click&quot;&lt;/span&gt;
+                                &lt;span class=&quot;na&quot;&gt;Content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;No&quot;&lt;/span&gt;
+                                &lt;span class=&quot;na&quot;&gt;FontSize=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;16&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/StackPanel&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/StackPanel&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Border&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/StackPanel&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Grid&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/UserControl&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;MyModalControl.xaml.cs&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c#&quot; data-lang=&quot;c#&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;System.Windows.Controls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;FakeModal&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;partial&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyModalControl&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UserControl&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MyModalControl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nf&quot;&gt;InitializeComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;btnYes_Click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Windows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RoutedEventArgs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;//you can do something here.
+&lt;/span&gt;            &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Parent&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Panel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Remove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;btnNo_Click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Windows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RoutedEventArgs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;//you can do something here.
+&lt;/span&gt;            &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Parent&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Panel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Remove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;section-4&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;步驟五&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;到這邊就算是完成啦，再來就是讓它上場表演的時候了，在 MainPage.xaml 放一個 Button 叫它出來吧!!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_8.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_thumb_3.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;MainPage.xaml&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;UserControl&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;FakeModal.MainPage&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;xmlns=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;xmlns:x=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;Width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Auto&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;Height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Auto&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;Grid&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;LayoutRoot&quot;&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;Background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;White&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;Button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btnShowModal&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;HorizontalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;VerticalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;Click=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btnShowModal_Click&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;Content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Show Fake Modal&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;FontSize=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;18.667&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Grid&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/UserControl&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;MainPage.xaml.cs&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c#&quot; data-lang=&quot;c#&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;System.Windows.Controls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;FakeModal&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;partial&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MainPage&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UserControl&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MainPage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;nf&quot;&gt;InitializeComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+        &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;btnShowModal_Click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Windows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RoutedEventArgs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;            
+            &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LayoutRoot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MyModalControl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;section-5&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;大功告成&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;執行結果如下：&lt;/p&gt;
+&lt;div align=&quot;center&quot;&gt;
+&lt;iframe allowtransparency=&quot;allowtransparency&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;http://ouch1978.azurewebsites.net/demo/silverlight/SL-FakeModal/FakeModalDemo.html&quot; style=&quot;width: 510px; height: 510px; overflow: hidden;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;專案下載：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1307/20137132234085.rar&quot;&gt;&lt;img src=&quot;http://ouch1978.azurewebsites.net/Images/SampleDownload.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2010/10/26/silverlight-fake-modal-dialog/&quot;&gt;自製 Modal 元件&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 26, 2010.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[使用 Visual Studio 進行 Source Code 自動格式化 - 加強版]]></title>
+  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2010/10/25/vs2010-format-sour-cecode-automatically-advanced/"/>
+  <id>http://ouch1978.github.io/2010/10/25/vs2010-format-sour-cecode-automatically-advanced</id>
+  <published>2010-10-25T08:30:00+08:00</published>
+  <updated>2010-10-25T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Ouch Liu (劉耀群)</name>
+    <uri>http://ouch1978.github.io</uri>
+    <email>ouch1978@hotmail.com</email>
+  </author>
+  <category scheme="http://ouch1978.github.io/tags/#Visual%20Studio" term="Visual Studio" />
+  <content type="html">
+  
+    &lt;p&gt;上篇講到了怎麼做 Source Code 的自動格式化，但是用內建的功能，其實有個不太方便的地方 — 一次只能格式化一個檔案，這個問題對於我來說就頭很大了，通常一個專案不太可能只有兩三個檔，動不動就要每個檔案都開來自動格式化一下也是很累人而且浪費時間的一件事，這時候，整個專案裡面的檔案都可以自動格式化的功能就變成是必備的了!!&lt;/p&gt;
+
+&lt;p&gt;有這種東西嗎??當然有，不然寫這篇幹嘛，不過 Visual Studio 並沒有內建這個功能。&lt;/p&gt;
+
+&lt;p&gt;很好運的，有個佛心來的外國人幫我們寫好這個功能的巨集，該巨集的網址為：&lt;a href=&quot;http://github.com/timabell/vs-formatter-macro&quot;&gt;http://github.com/timabell/vs-formatter-macro&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;只要下載 Formatting.vb 檔，並且使用 Visual Studio 的巨集編輯功能，將其匯入，就可以更輕鬆的做 Source Code 自動格式化的工作啦，操作步驟如下：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;點選 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Tools&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Macros&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Macros IDE*&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_2.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_thumb.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;點選 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Project Explorer&lt;/code&gt;&lt;/strong&gt; 中的 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MyMacors&lt;/code&gt;&lt;/strong&gt; ，再點選 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Project&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Add Existing Item&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_4.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_thumb_1.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;於檔案選取視窗中選擇 Formatting.vb 檔，並按下 Add 鈕，完畢之後，點選 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Tools&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Macros&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Macro Explorer&lt;/code&gt;&lt;/strong&gt; (快捷鍵 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Alt+F8&lt;/code&gt;&lt;/strong&gt; )，如果看到 Macro Explorer 中有出現剛剛新增的巨集，就代表成功匯入巨集了。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;要執行該巨集，只需要在巨集上按下右鍵，選擇 Run 即可。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_6.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_thumb_2.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;額外附送，利用自訂工具列的功能執行該巨集：點選 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Tools&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Customize&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Commands&lt;/code&gt;&lt;/strong&gt; 頁籤 -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Toolbar&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Text Editor&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_8.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_thumb_3.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;點選 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Add Command&lt;/code&gt;&lt;/strong&gt; 按鈕，在 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Categories清單&lt;/code&gt;&lt;/strong&gt; 中的 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Macros&lt;/code&gt;&lt;/strong&gt; ，並選取 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Commands清單&lt;/code&gt;&lt;/strong&gt; 中的 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Macros.MyMacros.Formatting.FormatProject&lt;/code&gt;&lt;/strong&gt; 項目，再來按下 OK。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_10.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_thumb_4.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;最後可依個人喜好使用 Move Up/Move Down 或 Modify Selection 按鈕來調整巨集按鈕的位置，就大功告成啦!!以後只要按下該按鈕，就可以一次格式化整個專案喔!!&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_12.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_thumb_5.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2010/10/25/vs2010-format-sour-cecode-automatically-advanced/&quot;&gt;使用 Visual Studio 進行 Source Code 自動格式化 - 加強版&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 25, 2010.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[使用 Visual Studio 進行 Source Code 自動格式化]]></title>
+  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2010/10/25/vs2010-format-sour-cecode-automatically/"/>
+  <id>http://ouch1978.github.io/2010/10/25/vs2010-format-sour-cecode-automatically</id>
+  <published>2010-10-25T08:00:00+08:00</published>
+  <updated>2010-10-25T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Ouch Liu (劉耀群)</name>
+    <uri>http://ouch1978.github.io</uri>
+    <email>ouch1978@hotmail.com</email>
+  </author>
+  <category scheme="http://ouch1978.github.io/tags/#Visual%20Studio" term="Visual Studio" />
+  <content type="html">
+  
+    &lt;p&gt;通常自己一個人在寫 Code 的時候，想怎麼編排就怎麼排，自己看得懂、看得開心就好；但是遇到多人協力開發的專案，程式碼可能會來自不同的人手上，如果沒有事先規範好程式碼的編排規則的話，那讀別人的 Code 就會很吃力了，更別說要接手下去改，這個時候， Visual Studio 內建的格式化工具就很管用了。&lt;/p&gt;
+
+&lt;p&gt;而使用內建的格式化工具的方式非常的簡單，只要點選 &lt;strong&gt;Edit&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Advanced&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Format Document&lt;/strong&gt; (快捷鍵為 &lt;strong&gt;Ctrl+K&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Ctrl+D&lt;/strong&gt; )就可以啦。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_2.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_thumb.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;有圖有真相，讓大家看看整容前和整容後的程式碼。&lt;/p&gt;
+
+&lt;p&gt;整容前：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_4.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_thumb_1.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;整容後：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_6.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_thumb_2.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;是不是完全不費吹灰之力呢?&lt;/p&gt;
+
+&lt;p&gt;不過!!!!&lt;/p&gt;
+
+&lt;p&gt;戲還沒唱完，只介紹這樣的功能就真的太虛了，你可能會說，可是他自動排版出來的樣子跟原來習慣的排版格式和我們組規定的格式差太多了啊!!&lt;/p&gt;
+
+&lt;p&gt;沒關係，自動排版的格式是可以設定的，只要選取 &lt;strong&gt;Tools&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Options…&lt;/strong&gt; -&amp;gt;在Options視窗中 &lt;strong&gt;展開 Text Editor&lt;/strong&gt; 選項，你就會看到如下的畫面：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_8.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_thumb_3.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;是什麼巫術!!?&lt;/p&gt;
+
+&lt;p&gt;沒錯，各種語言的排版格式都是可以設定的，你可以針對不同的語言，設定它的排版規則，比較基本的例如大括弧是不是要換行、變數的對齊方式、細到連 for 迴圈裡面分號和條件式之間是否要空格、變數和運算符號間是否要空格都可以設定。&lt;/p&gt;
+
+&lt;p&gt;設定好成為你要的格式規則之後，按下 OK 鈕，再來個 Ctrl+K -&amp;gt; Ctrl+D ，噹噹!!就變成你要的格式了吧!!&lt;/p&gt;
+
+&lt;p&gt;下圖就是我個人習慣的格式。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_10.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_thumb_4.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;有的人會說，難道我不能用自己喜歡的方式排版，等到要傳給別人或是要上傳到 Source Control 的時候再重新排嗎?&lt;/p&gt;
+
+&lt;p&gt;當然可以!!可是每次都要這樣改規則，不是很累嗎?這時候，就又可以利用設定檔的匯入/匯出功能啦!!&lt;/p&gt;
+
+&lt;p&gt;只要選取 &lt;strong&gt;Tools&lt;/strong&gt; -&amp;gt; &lt;strong&gt;Import and Export Settings…&lt;/strong&gt; 就會看到如下的視窗：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_12.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_thumb_5.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;現在就可以依照不同的需求，進行匯入/匯出的工作，選擇匯入或匯出之後，會看到如下的畫面，可以依照自己的需求去選取要匯入/匯出的設定部份，這邊我們就只要勾選 Options 下面的 Text Editor 項目就可以把排版格式的部份匯出囉。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_14.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_thumb_6.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;按下下一步按鈕之後，輸入要存檔的檔名和路徑就大功告成啦!!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_16.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_thumb_7.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;匯入/匯出設定檔的功能其實在很多地方是很好用的，例如說，你工作的小組希望有一致的 Coding Style ，那只要把設定檔提供給大家匯入，就可以不費吹灰之力做到囉!!&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2010/10/25/vs2010-format-sour-cecode-automatically/&quot;&gt;使用 Visual Studio 進行 Source Code 自動格式化&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 25, 2010.&lt;/p&gt;</content>
+</entry>
+
+</feed>

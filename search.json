@@ -1,0 +1,159 @@
+[
+  
+    {
+      "title"    : "移除Skype廣告",
+      "category" : "實用小技巧",
+      "tags"     : "Skype, Windows",
+      "url"      : "/2016/06/08/Remove-Skype-Ads/",
+      "date"     : "2016-06-08 00:00:00 +0800",
+      "content"   : "[\n  {% for post in site.posts %}\n    {\n      \"title\"    : \"{{ post.title | escape }}\",\n      \"category\" : \"{{ post.category }}\",\n      \"tags\"     : \"{{ post.tags | join: ', ' }}\",\n      \"url\"      : \"{{ site.baseurl }}{{ post.url }}\",\n      \"date\"     : \"{{ post.date }}\",\n      \"content\"   : {{ page.content | jsonify }}\n    } {% unless forloop.last %},{% endunless %}\n  {% endfor %}\n  ,\n  {% for page in site.pages %}\n   {\n     {% if page.title != nil %}\n        \"title\"    : \"{{ page.title | escape }}\",\n        \"category\" : \"{{ page.category }}\",\n        \"tags\"     : \"{{ page.tags | join: ', ' }}\",\n        \"url\"      : \"{{ site.baseurl }}{{ page.url }}\",\n        \"date\"     : \"{{ page.date }}\",\n       \"content\"   : {{ page.content | jsonify }}\n     {% endif %}\n   } {% unless forloop.last %},{% endunless %}\n  {% endfor %}\n]\n"
+    } ,
+  
+    {
+      "title"    : "跟著Ouch寫程式 - 前言 ",
+      "category" : "程式開發",
+      "tags"     : "C#",
+      "url"      : "/2010/10/30/learning-c-sharp-intro/",
+      "date"     : "2010-10-30 00:00:00 +0800",
+      "content"   : "[\n  {% for post in site.posts %}\n    {\n      \"title\"    : \"{{ post.title | escape }}\",\n      \"category\" : \"{{ post.category }}\",\n      \"tags\"     : \"{{ post.tags | join: ', ' }}\",\n      \"url\"      : \"{{ site.baseurl }}{{ post.url }}\",\n      \"date\"     : \"{{ post.date }}\",\n      \"content\"   : {{ page.content | jsonify }}\n    } {% unless forloop.last %},{% endunless %}\n  {% endfor %}\n  ,\n  {% for page in site.pages %}\n   {\n     {% if page.title != nil %}\n        \"title\"    : \"{{ page.title | escape }}\",\n        \"category\" : \"{{ page.category }}\",\n        \"tags\"     : \"{{ page.tags | join: ', ' }}\",\n        \"url\"      : \"{{ site.baseurl }}{{ page.url }}\",\n        \"date\"     : \"{{ page.date }}\",\n       \"content\"   : {{ page.content | jsonify }}\n     {% endif %}\n   } {% unless forloop.last %},{% endunless %}\n  {% endfor %}\n]\n"
+    } ,
+  
+    {
+      "title"    : "C#命名方針",
+      "category" : "程式開發",
+      "tags"     : "C#",
+      "url"      : "/2010/10/30/c-sharp-naming-convention/",
+      "date"     : "2010-10-30 00:00:00 +0800",
+      "content"   : "[\n  {% for post in site.posts %}\n    {\n      \"title\"    : \"{{ post.title | escape }}\",\n      \"category\" : \"{{ post.category }}\",\n      \"tags\"     : \"{{ post.tags | join: ', ' }}\",\n      \"url\"      : \"{{ site.baseurl }}{{ post.url }}\",\n      \"date\"     : \"{{ post.date }}\",\n      \"content\"   : {{ page.content | jsonify }}\n    } {% unless forloop.last %},{% endunless %}\n  {% endfor %}\n  ,\n  {% for page in site.pages %}\n   {\n     {% if page.title != nil %}\n        \"title\"    : \"{{ page.title | escape }}\",\n        \"category\" : \"{{ page.category }}\",\n        \"tags\"     : \"{{ page.tags | join: ', ' }}\",\n        \"url\"      : \"{{ site.baseurl }}{{ page.url }}\",\n        \"date\"     : \"{{ page.date }}\",\n       \"content\"   : {{ page.content | jsonify }}\n     {% endif %}\n   } {% unless forloop.last %},{% endunless %}\n  {% endfor %}\n]\n"
+    } ,
+  
+    {
+      "title"    : "輕鬆製作獨一無二的投影片-加強版",
+      "category" : "設計",
+      "tags"     : "Power Point",
+      "url"      : "/2010/10/29/ppt-make-your-own-ptt-template-advanced/",
+      "date"     : "2010-10-29 00:00:00 +0800",
+      "content"   : "[\n  {% for post in site.posts %}\n    {\n      \"title\"    : \"{{ post.title | escape }}\",\n      \"category\" : \"{{ post.category }}\",\n      \"tags\"     : \"{{ post.tags | join: ', ' }}\",\n      \"url\"      : \"{{ site.baseurl }}{{ post.url }}\",\n      \"date\"     : \"{{ post.date }}\",\n      \"content\"   : {{ page.content | jsonify }}\n    } {% unless forloop.last %},{% endunless %}\n  {% endfor %}\n  ,\n  {% for page in site.pages %}\n   {\n     {% if page.title != nil %}\n        \"title\"    : \"{{ page.title | escape }}\",\n        \"category\" : \"{{ page.category }}\",\n        \"tags\"     : \"{{ page.tags | join: ', ' }}\",\n        \"url\"      : \"{{ site.baseurl }}{{ page.url }}\",\n        \"date\"     : \"{{ page.date }}\",\n       \"content\"   : {{ page.content | jsonify }}\n     {% endif %}\n   } {% unless forloop.last %},{% endunless %}\n  {% endfor %}\n]\n"
+    } ,
+  
+    {
+      "title"    : "輕鬆製作獨一無二的投影片",
+      "category" : "設計",
+      "tags"     : "Power Point",
+      "url"      : "/2010/10/27/ppt-make-your-own-ptt-template/",
+      "date"     : "2010-10-27 00:00:00 +0800",
+      "content"   : "[\n  {% for post in site.posts %}\n    {\n      \"title\"    : \"{{ post.title | escape }}\",\n      \"category\" : \"{{ post.category }}\",\n      \"tags\"     : \"{{ post.tags | join: ', ' }}\",\n      \"url\"      : \"{{ site.baseurl }}{{ post.url }}\",\n      \"date\"     : \"{{ post.date }}\",\n      \"content\"   : {{ page.content | jsonify }}\n    } {% unless forloop.last %},{% endunless %}\n  {% endfor %}\n  ,\n  {% for page in site.pages %}\n   {\n     {% if page.title != nil %}\n        \"title\"    : \"{{ page.title | escape }}\",\n        \"category\" : \"{{ page.category }}\",\n        \"tags\"     : \"{{ page.tags | join: ', ' }}\",\n        \"url\"      : \"{{ site.baseurl }}{{ page.url }}\",\n        \"date\"     : \"{{ page.date }}\",\n       \"content\"   : {{ page.content | jsonify }}\n     {% endif %}\n   } {% unless forloop.last %},{% endunless %}\n  {% endfor %}\n]\n"
+    } ,
+  
+    {
+      "title"    : "自製 Modal 元件",
+      "category" : "程式開發",
+      "tags"     : "Silverlight",
+      "url"      : "/2010/10/26/silverlight-fake-modal-dialog/",
+      "date"     : "2010-10-26 00:00:00 +0800",
+      "content"   : "[\n  {% for post in site.posts %}\n    {\n      \"title\"    : \"{{ post.title | escape }}\",\n      \"category\" : \"{{ post.category }}\",\n      \"tags\"     : \"{{ post.tags | join: ', ' }}\",\n      \"url\"      : \"{{ site.baseurl }}{{ post.url }}\",\n      \"date\"     : \"{{ post.date }}\",\n      \"content\"   : {{ page.content | jsonify }}\n    } {% unless forloop.last %},{% endunless %}\n  {% endfor %}\n  ,\n  {% for page in site.pages %}\n   {\n     {% if page.title != nil %}\n        \"title\"    : \"{{ page.title | escape }}\",\n        \"category\" : \"{{ page.category }}\",\n        \"tags\"     : \"{{ page.tags | join: ', ' }}\",\n        \"url\"      : \"{{ site.baseurl }}{{ page.url }}\",\n        \"date\"     : \"{{ page.date }}\",\n       \"content\"   : {{ page.content | jsonify }}\n     {% endif %}\n   } {% unless forloop.last %},{% endunless %}\n  {% endfor %}\n]\n"
+    } ,
+  
+    {
+      "title"    : "使用 Visual Studio 進行 Source Code 自動格式化 - 加強版",
+      "category" : "程式開發",
+      "tags"     : "Visual Studio",
+      "url"      : "/2010/10/25/vs2010-format-sour-cecode-automatically-advanced/",
+      "date"     : "2010-10-25 08:30:00 +0800",
+      "content"   : "[\n  {% for post in site.posts %}\n    {\n      \"title\"    : \"{{ post.title | escape }}\",\n      \"category\" : \"{{ post.category }}\",\n      \"tags\"     : \"{{ post.tags | join: ', ' }}\",\n      \"url\"      : \"{{ site.baseurl }}{{ post.url }}\",\n      \"date\"     : \"{{ post.date }}\",\n      \"content\"   : {{ page.content | jsonify }}\n    } {% unless forloop.last %},{% endunless %}\n  {% endfor %}\n  ,\n  {% for page in site.pages %}\n   {\n     {% if page.title != nil %}\n        \"title\"    : \"{{ page.title | escape }}\",\n        \"category\" : \"{{ page.category }}\",\n        \"tags\"     : \"{{ page.tags | join: ', ' }}\",\n        \"url\"      : \"{{ site.baseurl }}{{ page.url }}\",\n        \"date\"     : \"{{ page.date }}\",\n       \"content\"   : {{ page.content | jsonify }}\n     {% endif %}\n   } {% unless forloop.last %},{% endunless %}\n  {% endfor %}\n]\n"
+    } ,
+  
+    {
+      "title"    : "使用 Visual Studio 進行 Source Code 自動格式化",
+      "category" : "程式開發",
+      "tags"     : "Visual Studio",
+      "url"      : "/2010/10/25/vs2010-format-sour-cecode-automatically/",
+      "date"     : "2010-10-25 08:00:00 +0800",
+      "content"   : "[\n  {% for post in site.posts %}\n    {\n      \"title\"    : \"{{ post.title | escape }}\",\n      \"category\" : \"{{ post.category }}\",\n      \"tags\"     : \"{{ post.tags | join: ', ' }}\",\n      \"url\"      : \"{{ site.baseurl }}{{ post.url }}\",\n      \"date\"     : \"{{ post.date }}\",\n      \"content\"   : {{ page.content | jsonify }}\n    } {% unless forloop.last %},{% endunless %}\n  {% endfor %}\n  ,\n  {% for page in site.pages %}\n   {\n     {% if page.title != nil %}\n        \"title\"    : \"{{ page.title | escape }}\",\n        \"category\" : \"{{ page.category }}\",\n        \"tags\"     : \"{{ page.tags | join: ', ' }}\",\n        \"url\"      : \"{{ site.baseurl }}{{ page.url }}\",\n        \"date\"     : \"{{ page.date }}\",\n       \"content\"   : {{ page.content | jsonify }}\n     {% endif %}\n   } {% unless forloop.last %},{% endunless %}\n  {% endfor %}\n]\n"
+    } 
+  
+  ,
+  
+   {
+     
+        "title"    : "PAGE NOT FOUND",
+        "category" : "",
+        "tags"     : "",
+        "url"      : "/404/",
+        "date"     : "",
+       "content"   : "<p><img src=\"http://ouch1978.github.io/images/hmfaysal-404.jpg\" alt=\"PAGE NOT FOUND at Ouch1978 @ Github\" /></p>\n\n<div class=\"text-center\">\n\t<h1>I am sorry</h1>\n\t<p>The Adorable Monkey has eaten the page you are looking for,\n\tplease try one of the links above instead</p>\n</div>\n"
+     
+   } ,
+  
+   {
+     
+        "title"    : "Ouch1978",
+        "category" : "",
+        "tags"     : "Ouch1978, Liu, Ouch",
+        "url"      : "/about/index.html",
+        "date"     : "",
+       "content"   : "<figure>\n  <img src=\"http://ouch1978.github.io/images/hossain-faysal.jpg\" alt=\"Ouch1978\" />\n  <figcaption>Ouch Liu</figcaption>\n</figure>\n\n<p>略懂 .Net Framework 程式開發，\nMy name is <strong>Hossain Mohd. Faysal</strong>, and this is my personal blog. It currently has 8 posts in 3 categories which combinedly have 1100 words, which will take an average reader ( WPM) approximately <span class=\"time\">5.5</span> minutes to read.  The most recent post is <a href=\"http://ouch1978.github.io/2016/06/08/Remove-Skype-Ads/\" title=\"最近新版的Skype預設都會開啟對話視窗和主視窗的廣告功能，佔掉不小的版面，實在是有點惱人。這邊就跟大家分享怎麼把討人厭的廣告移乾淨吧。\">“移除Skype廣告”</a> which was published on <time datetime=\"2016-06-08T00:00:00+08:00\" class=\"post-time\">08 Jun 2016</time>. The last commit was on Tuesday, 14 Jun 2016 at 12:11 PM <a href=\"http://en.wikipedia.org/wiki/Coordinated_Universal_Time\" title=\"Temps Universel Coordonné\">UTC</a>.</p>\n\n<p>I am an PhD candidate in <em><abbr title=\"Electrical and Systems Engineering\">ESE</abbr></em> at the <a href=\"http://www.seas.upenn.edu/\"><abbr title=\"School of Engineering and Applied Science\">SEAS</abbr></a> at <strong><abbr title=\"University of Pennsylvania\">UPENN</abbr></strong>. I am licensed as a Professional Engineer (P.E) to practice in the states of Texas, Massachusetts and California. I double majored in <abbr title=\"Electrical and Computer Engineering\">EECS</abbr> and Mathematics during my undergraduate life at <a href=\"http://www.mit.edu/\"><abbr title=\"Massachusetts Institute of Technology\">MIT</abbr></a>, and currently focusing on Electrical Engineering for my post-graduate studies.</p>\n\n<figure>\n\t<img src=\"http://ouch1978.github.io/images/Hossain-Mohd-Faysal.jpg\" alt=\"Hossain Mohammad Faysal\" />\n\t<figcaption>At Bates Linear Accelerator Center</figcaption>\n</figure>\n\n<p>I was born and brought up in Doha. Yes, its a desert peninsula, yes we have camels and falcons and all the other Middle Eastern traits/stereotypes you can think of.</p>\n\n<figure class=\"third\">\n\t<a href=\"http://ouch1978.github.io/images/about/1.jpg\"><img src=\"http://ouch1978.github.io/images/about/1-001.jpg\" /></a>\n\t<a href=\"http://ouch1978.github.io/images/about/2.jpg\"><img src=\"http://ouch1978.github.io/images/about/2-001.jpg\" /></a>\n\t<a href=\"http://ouch1978.github.io/images/about/3.jpg\"><img src=\"http://ouch1978.github.io/images/about/3-001.jpg\" /></a>\n</figure>\n<figure class=\"half\">\n\t<a href=\"http://ouch1978.github.io/images/about/4.jpg\"><img src=\"http://ouch1978.github.io/images/about/4-001.jpg\" /></a>\n\t<a href=\"http://ouch1978.github.io/images/about/5.jpg\"><img src=\"http://ouch1978.github.io/images/about/5-001.jpg\" /></a>\n</figure>\n<figure class=\"third\">\n\t<a href=\"http://ouch1978.github.io/images/about/6.jpg\"><img src=\"http://ouch1978.github.io/images/about/6-001.jpg\" /></a>\n\t<a href=\"http://ouch1978.github.io/images/about/7.jpg\"><img src=\"http://ouch1978.github.io/images/about/7-001.jpg\" /></a>\n\t<a href=\"http://ouch1978.github.io/images/about/8.jpg\"><img src=\"http://ouch1978.github.io/images/about/8-001.jpg\" /></a>\n\t<figcaption>Doha at its full glory.</figcaption>\n</figure>\n\n<p>At some point in the not-terribly-distant future, I hope to found a self-sustaining collective of clever people, for fun, profit(?), and the promotion of human life in the universe. This might wind up in Qatar, Bangladesh, Scandinavia, the Massachusetts Bay Area, the SF Bay Area, Japan, Germany, or the dustbin of overly idealistic plans. (Yes, I have a special bin for overly idealistic plans. In my district they can’t be recycled with residential mixed paper.) The most challenging aspect of this concept is to curtail unproductive competition with other people who will inevitably have the same idea. (Some sort of cooperative federation…) I’m presently looking for people who might be interested in being a part of such an organization.</p>\n\n<p>Anyways, for now I’m just working toward changing the face of Electrical Engineering forever. Not that I necessarily expect to succeed, but it’s something to strive for, and it’s a fun problem to work on.</p>\n\n<p>Entrepreneur<br />\nDesigner<br />\n<strong><em>Engineer</em></strong><br />\nInventor</p>\n\n<p>I\nmake\nstuff.</p>\n\n<p><em>Beautiful, practical, meaningful stuff.</em></p>\n\n<p>I make what I love.</p>\n\n<p><em>I love what I do.</em></p>\n\n<p>But over the years, I noticed that somehow, along the way, software designed to help us be creative, actually made us less creative. That’s because we believe our best ideas emerge when we use pencils and paper.\nSo I set out to build tools that work the way I do.</p>\n\n<p>Tools for the creative space — the 53 centimeters that magically link head, heart, and hand. Tools as simple as pencil and paper. Tools so essential, I  really can’t imagine work without them.</p>\n\n<p>For\nthe makers,<br />\nthe creators,<br />\nthe discoverers,<br />\nthe original thinkers,<br />\n<strong><em>This is the space to create.</em></strong></p>\n"
+     
+   } ,
+  
+   {
+     
+        "title"    : "Category Index",
+        "category" : "",
+        "tags"     : "Categories",
+        "url"      : "/categories/index.html",
+        "date"     : "",
+       "content"   : "<ul class=\"tag-box inline\">\n  \n  \n     \n      <li><a href=\"#程式開發\">程式開發 <span>5</span></a></li>\n     \n      <li><a href=\"#設計\">設計 <span>2</span></a></li>\n     \n      <li><a href=\"#實用小技巧\">實用小技巧 <span>1</span></a></li>\n    \n  \n\n</ul>\n\n \n  <h2 id=\"程式開發\">程式開發</h2>\n  <ul class=\"post-list\">\n      \n    \n      \n      \n      <li><a href=\"http://ouch1978.github.io/2010/10/30/learning-c-sharp-intro/\">跟著Ouch寫程式 - 前言 <span class=\"entry-date\"><time datetime=\"2010-10-30T00:00:00+08:00\" itemprop=\"datePublished\">October 30, 2010</time></a></li>\n      \n      \n    \n      \n      \n      <li><a href=\"http://ouch1978.github.io/2010/10/30/c-sharp-naming-convention/\">C#命名方針<span class=\"entry-date\"><time datetime=\"2010-10-30T00:00:00+08:00\" itemprop=\"datePublished\">October 30, 2010</time></a></li>\n      \n      \n    \n      \n      \n      <li><a href=\"http://ouch1978.github.io/2010/10/26/silverlight-fake-modal-dialog/\">自製 Modal 元件<span class=\"entry-date\"><time datetime=\"2010-10-26T00:00:00+08:00\" itemprop=\"datePublished\">October 26, 2010</time></a></li>\n      \n      \n    \n      \n      \n      <li><a href=\"http://ouch1978.github.io/2010/10/25/vs2010-format-sour-cecode-automatically-advanced/\">使用 Visual Studio 進行 Source Code 自動格式化 - 加強版<span class=\"entry-date\"><time datetime=\"2010-10-25T08:30:00+08:00\" itemprop=\"datePublished\">October 25, 2010</time></a></li>\n      \n      \n    \n      \n      \n      <li><a href=\"http://ouch1978.github.io/2010/10/25/vs2010-format-sour-cecode-automatically/\">使用 Visual Studio 進行 Source Code 自動格式化<span class=\"entry-date\"><time datetime=\"2010-10-25T08:00:00+08:00\" itemprop=\"datePublished\">October 25, 2010</time></a></li>\n      \n      \n    \n    \n    \n  </ul>\n \n  <h2 id=\"設計\">設計</h2>\n  <ul class=\"post-list\">\n      \n    \n      \n      \n      <li><a href=\"http://ouch1978.github.io/2010/10/29/ppt-make-your-own-ptt-template-advanced/\">輕鬆製作獨一無二的投影片-加強版<span class=\"entry-date\"><time datetime=\"2010-10-29T00:00:00+08:00\" itemprop=\"datePublished\">October 29, 2010</time></a></li>\n      \n      \n    \n      \n      \n      <li><a href=\"http://ouch1978.github.io/2010/10/27/ppt-make-your-own-ptt-template/\">輕鬆製作獨一無二的投影片<span class=\"entry-date\"><time datetime=\"2010-10-27T00:00:00+08:00\" itemprop=\"datePublished\">October 27, 2010</time></a></li>\n      \n      \n    \n    \n    \n  </ul>\n \n  <h2 id=\"實用小技巧\">實用小技巧</h2>\n  <ul class=\"post-list\">\n      \n    \n      \n      \n      <li><a href=\"http://ouch1978.github.io/2016/06/08/Remove-Skype-Ads/\">移除Skype廣告<span class=\"entry-date\"><time datetime=\"2016-06-08T00:00:00+08:00\" itemprop=\"datePublished\">June 08, 2016</time></a></li>\n      \n      \n    \n    \n    \n  </ul>\n"
+     
+   } ,
+  
+   {
+     
+        "title"    : "FEATURED POSTS",
+        "category" : "",
+        "tags"     : "",
+        "url"      : "/featured/",
+        "date"     : "",
+       "content"   : "\n<ul class=\"post-list\">\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n</ul>\n\n<div class=\"notepad-page-title row\">\n    <h1>No posts has been featured yet</h1>\n</div>\n"
+     
+   } ,
+  
+   {
+     
+   } ,
+  
+   {
+     
+        "title"    : "BLOG",
+        "category" : "",
+        "tags"     : "",
+        "url"      : "/",
+        "date"     : "",
+       "content"   : "\n\t\n    <article class=\"notepad-index-post post row\">\n        <div class=\"small-12 medium-3 large-2 columns datetime\">\n            <span class=\"notepad-post-meta\">\n                <time datetime=\"2016-06-08T00:00:00+08:00\">\n                    <span class=\"day\">\n                        08\n                    </span>\n                    <span class=\"month-year\">\n                        June 2016\n                    </span>\n                </time>\n            </span>\n        </div>\n        <div class=\"small-12 medium-9 large-10 columns\">\n            <header class=\"notepad-post-header\">\n                <h3 class=\"notepad-post-title\">\n                    <a href=\"http://ouch1978.github.io/2016/06/08/Remove-Skype-Ads/\">\n                        移除Skype廣告\n                    </a>\n                </h3>\n            </header>\n            <section class=\"notepad-post-excerpt\">\n                <p>最近新版的Skype預設都會開啟對話視窗和主視窗的廣告功能，佔掉不小的版面，實在是有點惱人。這邊就跟大家分享怎麼把討人厭的廣告移乾淨吧。</p>\n            </section>\n\n                <div class=\"notepad-index-post-tags\">\n                <a href=\"http://ouch1978.github.io/categories/index.html#實用小技巧\" title=\"Other posts from the 實用小技巧 category\">實用小技巧</a>\n\n                </div>\n\n        </div>\n    </article>\n\t\n    <article class=\"notepad-index-post post row\">\n        <div class=\"small-12 medium-3 large-2 columns datetime\">\n            <span class=\"notepad-post-meta\">\n                <time datetime=\"2010-10-30T00:00:00+08:00\">\n                    <span class=\"day\">\n                        30\n                    </span>\n                    <span class=\"month-year\">\n                        October 2010\n                    </span>\n                </time>\n            </span>\n        </div>\n        <div class=\"small-12 medium-9 large-10 columns\">\n            <header class=\"notepad-post-header\">\n                <h3 class=\"notepad-post-title\">\n                    <a href=\"http://ouch1978.github.io/2010/10/30/learning-c-sharp-intro/\">\n                        跟著Ouch寫程式 - 前言 \n                    </a>\n                </h3>\n            </header>\n            <section class=\"notepad-post-excerpt\">\n                <p>最近身邊有些朋友正在學習寫程式，算是新手中的新手，想想我也曾是過來人，就在這邊順便一下分享我小小的經驗，希望能對剛起步的朋友們有所幫助。其實寫程式真的沒那麼難，真的!! </p>\n            </section>\n\n                <div class=\"notepad-index-post-tags\">\n                <a href=\"http://ouch1978.github.io/categories/index.html#程式開發\" title=\"Other posts from the 程式開發 category\">程式開發</a>\n\n                </div>\n\n        </div>\n    </article>\n\t\n    <article class=\"notepad-index-post post row\">\n        <div class=\"small-12 medium-3 large-2 columns datetime\">\n            <span class=\"notepad-post-meta\">\n                <time datetime=\"2010-10-30T00:00:00+08:00\">\n                    <span class=\"day\">\n                        30\n                    </span>\n                    <span class=\"month-year\">\n                        October 2010\n                    </span>\n                </time>\n            </span>\n        </div>\n        <div class=\"small-12 medium-9 large-10 columns\">\n            <header class=\"notepad-post-header\">\n                <h3 class=\"notepad-post-title\">\n                    <a href=\"http://ouch1978.github.io/2010/10/30/c-sharp-naming-convention/\">\n                        C#命名方針\n                    </a>\n                </h3>\n            </header>\n            <section class=\"notepad-post-excerpt\">\n                <p>寫程式其實也是有規矩在的，尤其是要團體協同開發的時候，如果每個人使用的規則都不一樣，那要求每個人看得懂別人的程式碼，真的是會要了人的命。像是命名空間、類別、變數、檔案命名、控制項命名，其實都要去訂下命名的規則，對團隊來說才會容易溝通。</p>\n            </section>\n\n                <div class=\"notepad-index-post-tags\">\n                <a href=\"http://ouch1978.github.io/categories/index.html#程式開發\" title=\"Other posts from the 程式開發 category\">程式開發</a>\n\n                </div>\n\n        </div>\n    </article>\n\t\n    <article class=\"notepad-index-post post row\">\n        <div class=\"small-12 medium-3 large-2 columns datetime\">\n            <span class=\"notepad-post-meta\">\n                <time datetime=\"2010-10-29T00:00:00+08:00\">\n                    <span class=\"day\">\n                        29\n                    </span>\n                    <span class=\"month-year\">\n                        October 2010\n                    </span>\n                </time>\n            </span>\n        </div>\n        <div class=\"small-12 medium-9 large-10 columns\">\n            <header class=\"notepad-post-header\">\n                <h3 class=\"notepad-post-title\">\n                    <a href=\"http://ouch1978.github.io/2010/10/29/ppt-make-your-own-ptt-template-advanced/\">\n                        輕鬆製作獨一無二的投影片-加強版\n                    </a>\n                </h3>\n            </header>\n            <section class=\"notepad-post-excerpt\">\n                <p>上次跟各位介紹了母片的應用，這次再來介紹兩個小撇步，一樣只利用PowerPoint原生的功能，不借助任何外部圖片，做出類似玻璃鏡面的效果，以及可以放在標題頁的自我介紹小卡片。</p>\n            </section>\n\n                <div class=\"notepad-index-post-tags\">\n                <a href=\"http://ouch1978.github.io/categories/index.html#設計\" title=\"Other posts from the 設計 category\">設計</a>\n\n                </div>\n\n        </div>\n    </article>\n\t\n    <article class=\"notepad-index-post post row\">\n        <div class=\"small-12 medium-3 large-2 columns datetime\">\n            <span class=\"notepad-post-meta\">\n                <time datetime=\"2010-10-27T00:00:00+08:00\">\n                    <span class=\"day\">\n                        27\n                    </span>\n                    <span class=\"month-year\">\n                        October 2010\n                    </span>\n                </time>\n            </span>\n        </div>\n        <div class=\"small-12 medium-9 large-10 columns\">\n            <header class=\"notepad-post-header\">\n                <h3 class=\"notepad-post-title\">\n                    <a href=\"http://ouch1978.github.io/2010/10/27/ppt-make-your-own-ptt-template/\">\n                        輕鬆製作獨一無二的投影片\n                    </a>\n                </h3>\n            </header>\n            <section class=\"notepad-post-excerpt\">\n                <p>相信Power Point大家都會用，但是真的要自己從無到有，不使用任何別人做好的樣板或是美工圖片，快速的製作出一份「看起來」有一定的專業程度的簡報，應該就會難倒某些人吧!? 其實沒那麼難，只要善用母片編輯的功能，再改變一下製作投影片的習慣，就可以輕鬆辦到囉!! </p>\n            </section>\n\n                <div class=\"notepad-index-post-tags\">\n                <a href=\"http://ouch1978.github.io/categories/index.html#設計\" title=\"Other posts from the 設計 category\">設計</a>\n\n                </div>\n\n        </div>\n    </article>\n\t\n    <article class=\"notepad-index-post post row\">\n        <div class=\"small-12 medium-3 large-2 columns datetime\">\n            <span class=\"notepad-post-meta\">\n                <time datetime=\"2010-10-26T00:00:00+08:00\">\n                    <span class=\"day\">\n                        26\n                    </span>\n                    <span class=\"month-year\">\n                        October 2010\n                    </span>\n                </time>\n            </span>\n        </div>\n        <div class=\"small-12 medium-9 large-10 columns\">\n            <header class=\"notepad-post-header\">\n                <h3 class=\"notepad-post-title\">\n                    <a href=\"http://ouch1978.github.io/2010/10/26/silverlight-fake-modal-dialog/\">\n                        自製 Modal 元件\n                    </a>\n                </h3>\n            </header>\n            <section class=\"notepad-post-excerpt\">\n                <p>有使用過 Silverlight/WPF 的朋友們不知道有沒有遇過一個問題：有時候想要跳出一個元件跟使用者互動，而且要鎖住原來的主畫面，等使用者操作完才能繼續操作主畫面，可是用 MessageBox 的話功能不夠，用 ChildWindow 的話功能又太多或是太複雜之類的問題…</p>\n            </section>\n\n                <div class=\"notepad-index-post-tags\">\n                <a href=\"http://ouch1978.github.io/categories/index.html#程式開發\" title=\"Other posts from the 程式開發 category\">程式開發</a>\n\n                </div>\n\n        </div>\n    </article>\n\t\n    <article class=\"notepad-index-post post row\">\n        <div class=\"small-12 medium-3 large-2 columns datetime\">\n            <span class=\"notepad-post-meta\">\n                <time datetime=\"2010-10-25T08:30:00+08:00\">\n                    <span class=\"day\">\n                        25\n                    </span>\n                    <span class=\"month-year\">\n                        October 2010\n                    </span>\n                </time>\n            </span>\n        </div>\n        <div class=\"small-12 medium-9 large-10 columns\">\n            <header class=\"notepad-post-header\">\n                <h3 class=\"notepad-post-title\">\n                    <a href=\"http://ouch1978.github.io/2010/10/25/vs2010-format-sour-cecode-automatically-advanced/\">\n                        使用 Visual Studio 進行 Source Code 自動格式化 - 加強版\n                    </a>\n                </h3>\n            </header>\n            <section class=\"notepad-post-excerpt\">\n                <p>上篇講到了怎麼做 Source Code 的自動格式化，但是用內建的功能，其實有個不太方便的地方 — 一次只能格式化一個檔案，這個問題對於我來說就頭很大了…</p>\n            </section>\n\n                <div class=\"notepad-index-post-tags\">\n                <a href=\"http://ouch1978.github.io/categories/index.html#程式開發\" title=\"Other posts from the 程式開發 category\">程式開發</a>\n\n                </div>\n\n        </div>\n    </article>\n\t\n    <article class=\"notepad-index-post post row\">\n        <div class=\"small-12 medium-3 large-2 columns datetime\">\n            <span class=\"notepad-post-meta\">\n                <time datetime=\"2010-10-25T08:00:00+08:00\">\n                    <span class=\"day\">\n                        25\n                    </span>\n                    <span class=\"month-year\">\n                        October 2010\n                    </span>\n                </time>\n            </span>\n        </div>\n        <div class=\"small-12 medium-9 large-10 columns\">\n            <header class=\"notepad-post-header\">\n                <h3 class=\"notepad-post-title\">\n                    <a href=\"http://ouch1978.github.io/2010/10/25/vs2010-format-sour-cecode-automatically/\">\n                        使用 Visual Studio 進行 Source Code 自動格式化\n                    </a>\n                </h3>\n            </header>\n            <section class=\"notepad-post-excerpt\">\n                <p>通常自己一個人在寫 Code 的時候，想怎麼編排就怎麼排，自己看得懂、看得開心就好；但是遇到多人協力開發的專案，程式碼可能會來自不同的人手上，如果沒有事先規範好程式碼的編排規則的話，讀別人的 Code 就會很吃力了，更別說要接手下去改…</p>\n            </section>\n\n                <div class=\"notepad-index-post-tags\">\n                <a href=\"http://ouch1978.github.io/categories/index.html#程式開發\" title=\"Other posts from the 程式開發 category\">程式開發</a>\n\n                </div>\n\n        </div>\n    </article>\n\t\n    <nav class=\"pagination\" role=\"navigation\">\n    \n    <span class=\"newer-posts faded\"><i class=\"fa fa-chevron-left\"></i> Newer</span>\n    \n\n\n    <span class=\"page-number\">Page 1 of 1</span>\n    \t\n    \t<span class=\"older-posts faded\">Older <i class=\"fa fa-chevron-right\"></i></span>\n    \t\n\t</nav>\n\n"
+     
+   } ,
+  
+   {
+     
+   } ,
+  
+   {
+     
+   } ,
+  
+   {
+     
+   } ,
+  
+   {
+     
+        "title"    : "Tag Index",
+        "category" : "",
+        "tags"     : "",
+        "url"      : "/tags/index.html",
+        "date"     : "",
+       "content"   : "<ul class=\"tag-box inline\">\n{% assign tags_list = site.tags %}  \n  {% if tags_list.first[0] == null %}\n    {% for tag in tags_list %} \n    \t<li><a href=\"#{{ tag }}\">{{ tag | capitalize }} <span>{{ site.tags[tag].size }}</span></a></li>\n    {% endfor %}\n  {% else %}\n    {% for tag in tags_list %} \n    \t<li><a href=\"#{{ tag[0] }}\">{{ tag[0] | capitalize }} <span>{{ tag[1].size }}</span></a></li>\n    {% endfor %}\n  {% endif %}\n{% assign tags_list = nil %}\n</ul>\n\n{% for tag in site.tags %} \n\t<h2 id=\"{{ tag[0] }}\">{{ tag[0] | capitalize }}</h2>\n\t<ul class=\"post-list\">\n\t\t{% assign pages_list = tag[1] %}  \n\t\t{% for post in pages_list %}\n\t\t\t{% if post.title != null %}\n\t\t\t{% if group == null or group == post.group %}\n\t\t\t<li><a href=\"{{ site.url }}{{ post.url }}\">{{ post.title }}<span class=\"entry-date\"><time datetime=\"{{ post.date | date_to_xmlschema }}\" itemprop=\"datePublished\">{{ post.date | date: \"%B %d, %Y\" }}</time></a></li>\n\t\t\t{% endif %}\n\t\t\t{% endif %}\n\t\t{% endfor %}\n\t\t{% assign pages_list = nil %}\n\t\t{% assign group = nil %}\n\t</ul>\n{% endfor %}"
+     
+   } 
+  
+]
