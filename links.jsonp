@@ -37,7 +37,12 @@ callback([
 
   {
     "text": "移除Skype廣告",
-    "href": "http://ouch1978.github.io/2016/06/08/Remove-Skype-Ads/"
+    "href": "http://ouch1978.github.io/2016/06/08/remove-skype-ads/"
+  } ,
+
+  {
+    "text": "Line原創貼圖-尼古這一家系列",
+    "href": "http://ouch1978.github.io/2016/06/14/line-stickers-nicolas-family/"
   } 
 
 ])

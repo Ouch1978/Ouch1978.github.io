@@ -2,23 +2,23 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>使用 VISUAL STUDIO 進行 SOURCE CODE 自動格式化 - 加強版 &vert; OUCH1978 @ GITHUB</title>
-<meta name="description" content="上篇講到了怎麼做 Source Code 的自動格式化，但是用內建的功能，其實有個不太方便的地方 — 一次只能格式化一個檔案，這個問題對於我來說就頭很大了…">
-<meta name="keywords" content="Visual Studio">
+<title>LINE原創貼圖-尼古這一家系列 &vert; OUCH1978 @ GITHUB</title>
+<meta name="description" content="我畫的Line貼圖也終於在幾次退稿之後成功上架囉！請大家多多支持！！">
+<meta name="keywords" content="Line, 貼圖">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://ouch1978.github.io/images/logo.png">
-<meta name="twitter:title" content="使用 Visual Studio 進行 Source Code 自動格式化 - 加強版">
-<meta name="twitter:description" content="上篇講到了怎麼做 Source Code 的自動格式化，但是用內建的功能，其實有個不太方便的地方 — 一次只能格式化一個檔案，這個問題對於我來說就頭很大了…">
+<meta name="twitter:title" content="Line原創貼圖-尼古這一家系列">
+<meta name="twitter:description" content="我畫的Line貼圖也終於在幾次退稿之後成功上架囉！請大家多多支持！！">
 <meta name="twitter:creator" content="@Ouch1978">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用 Visual Studio 進行 Source Code 自動格式化 - 加強版">
-<meta property="og:description" content="上篇講到了怎麼做 Source Code 的自動格式化，但是用內建的功能，其實有個不太方便的地方 — 一次只能格式化一個檔案，這個問題對於我來說就頭很大了…">
-<meta property="og:url" content="http://ouch1978.github.io/2010/10/25/vs2010-format-sour-cecode-automatically-advanced/">
+<meta property="og:title" content="Line原創貼圖-尼古這一家系列">
+<meta property="og:description" content="我畫的Line貼圖也終於在幾次退稿之後成功上架囉！請大家多多支持！！">
+<meta property="og:url" content="http://ouch1978.github.io/2016/06/14/line-stickers-nicolas-family/">
 <meta property="og:site_name" content="Ouch1978 @ Github">
 <meta property="og:image" content="http://ouch1978.github.io/images/cover3.jpg">
 
@@ -26,7 +26,7 @@
 
 
 
-<link rel="canonical" href="http://ouch1978.github.io/2010/10/25/vs2010-format-sour-cecode-automatically-advanced/">
+<link rel="canonical" href="http://ouch1978.github.io/2016/06/14/line-stickers-nicolas-family/">
 <link href="http://ouch1978.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Ouch1978 @ Github Feed">
 <link rel="author" href="https://plus.google.com/u/0/110363696453312268733?rel=author">
 
@@ -104,62 +104,47 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h1>使用 Visual Studio 進行 Source Code 自動格式化 - 加強版</h1>
-                            <p>by <strong>Ouch Liu (劉耀群)</strong> &#8212; on <a href="http://ouch1978.github.io/tags/index.html#Visual Studio" data-toggle="tooltip" title="Posts tagged with Visual Studio" rel="tag">Visual Studio</a> <strong><time datetime="2010-10-25T08:30:00+08:00">25 Oct 2010</time></strong></p>
+                            <h1>Line原創貼圖-尼古這一家系列</h1>
+                            <p>by <strong>Ouch Liu (劉耀群)</strong> &#8212; on <a href="http://ouch1978.github.io/tags/index.html#Line" data-toggle="tooltip" title="Posts tagged with Line" rel="tag">Line</a>&nbsp;&comma;&nbsp;<a href="http://ouch1978.github.io/tags/index.html#貼圖" data-toggle="tooltip" title="Posts tagged with 貼圖" rel="tag">貼圖</a> <strong><time datetime="2016-06-14T15:49:00+08:00">14 Jun 2016</time></strong></p>
                         </div>
                     </div>
                 </div>
             </header>
 
         <article class="notepad-post-content post tag-simple">
-            <div><p>上篇講到了怎麼做 Source Code 的自動格式化，但是用內建的功能，其實有個不太方便的地方 — 一次只能格式化一個檔案，這個問題對於我來說就頭很大了，通常一個專案不太可能只有兩三個檔，動不動就要每個檔案都開來自動格式化一下也是很累人而且浪費時間的一件事，這時候，整個專案裡面的檔案都可以自動格式化的功能就變成是必備的了!!</p>
+            <div><p>其實我早在兩年前就一直想要畫以我家的喵星人們為主題的Line貼圖了，但是夢想總是美好的，現實是殘酷的。一直拖到了今年，才有空真的動筆下去生出四十張一組的貼圖。</p>
 
-<p>有這種東西嗎??當然有，不然寫這篇幹嘛，不過 Visual Studio 並沒有內建這個功能。</p>
+<p>更殘酷的是，就算很開心的衝完了四十張，上架的過程也不如想像中順利，兩組貼圖來來回回被退了三次。(我不禁想大喊：<strong>Line的審查人員們，我真的搞不懂你們的標準和邏輯啊！！！！</strong>)</p>
 
-<p>很好運的，有個佛心來的外國人幫我們寫好這個功能的巨集，該巨集的網址為：<a href="http://github.com/timabell/vs-formatter-macro">http://github.com/timabell/vs-formatter-macro</a></p>
+<p>不過，看到辛苦畫出來的圖片出現在對話裡，還是很有成就感的啊～</p>
 
-<p>只要下載 Formatting.vb 檔，並且使用 Visual Studio 的巨集編輯功能，將其匯入，就可以更輕鬆的做 Source Code 自動格式化的工作啦，操作步驟如下：</p>
+<p>目前上架的貼圖有兩組，還請大家多多支持和捧場～</p>
 
-<ol>
-  <li>點選 <strong><code class="highlighter-rouge">Tools</code></strong> -&gt; <strong><code class="highlighter-rouge">Macros</code></strong> -&gt; <strong><code class="highlighter-rouge">Macros IDE*</code></strong></li>
-</ol>
+<h2 id="httpsstorelinemestickershopproduct1265613"><a href="https://store.line.me/stickershop/product/1265613">尼古這一家</a></h2>
 
-<p><a href="https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_2.png"><img src="https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_thumb.png" alt="image" title="image" /></a></p>
+<p><a href="https://store.line.me/stickershop/product/1265613"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/1265613.png" alt="尼古這一家" /></a></p>
 
-<ol>
-  <li>點選 <strong><code class="highlighter-rouge">Project Explorer</code></strong> 中的 <strong><code class="highlighter-rouge">MyMacors</code></strong> ，再點選 <strong><code class="highlighter-rouge">Project</code></strong> -&gt; <strong><code class="highlighter-rouge">Add Existing Item</code></strong></li>
-</ol>
+<h2 id="httpsstorelinemestickershopproduct1279302"><a href="https://store.line.me/stickershop/product/1279302">尼古這一家 之 鄉民來了</a></h2>
 
-<p><a href="https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_4.png"><img src="https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_thumb_1.png" alt="image" title="image" /></a></p>
+<p><a href="https://store.line.me/stickershop/product/1279302"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/1279302.png" alt="尼古這一家 之 鄉民來了" /></a></p>
 
-<ol>
-  <li>
-    <p>於檔案選取視窗中選擇 Formatting.vb 檔，並按下 Add 鈕，完畢之後，點選 <strong><code class="highlighter-rouge">Tools</code></strong> -&gt; <strong><code class="highlighter-rouge">Macros</code></strong> -&gt; <strong><code class="highlighter-rouge">Macro Explorer</code></strong> (快捷鍵 <strong><code class="highlighter-rouge">Alt+F8</code></strong> )，如果看到 Macro Explorer 中有出現剛剛新增的巨集，就代表成功匯入巨集了。</p>
-  </li>
-  <li>
-    <p>要執行該巨集，只需要在巨集上按下右鍵，選擇 Run 即可。</p>
-  </li>
-</ol>
+<blockquote>
+  <p>連結已經給你了，還不快買！？</p>
+</blockquote>
 
-<p><a href="https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_6.png"><img src="https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_thumb_2.png" alt="image" title="image" /></a></p>
+<hr />
 
-<ol>
-  <li>額外附送，利用自訂工具列的功能執行該巨集：點選 <strong><code class="highlighter-rouge">Tools</code></strong> -&gt; <strong><code class="highlighter-rouge">Customize</code></strong> -&gt; <strong><code class="highlighter-rouge">Commands</code></strong> 頁籤 -&gt; <strong><code class="highlighter-rouge">Toolbar</code></strong> -&gt; <strong><code class="highlighter-rouge">Text Editor</code></strong></li>
-</ol>
+<p>以下是很心酸被退的圖，無緣上架，只好放在這邊曬一曬…</p>
 
-<p><a href="https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_8.png"><img src="https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_thumb_3.png" alt="image" title="image" /></a></p>
-
-<ol>
-  <li>點選 <strong><code class="highlighter-rouge">Add Command</code></strong> 按鈕，在 <strong><code class="highlighter-rouge">Categories清單</code></strong> 中的 <strong><code class="highlighter-rouge">Macros</code></strong> ，並選取 <strong><code class="highlighter-rouge">Commands清單</code></strong> 中的 <strong><code class="highlighter-rouge">Macros.MyMacros.Formatting.FormatProject</code></strong> 項目，再來按下 OK。</li>
-</ol>
-
-<p><a href="https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_10.png"><img src="https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_thumb_4.png" alt="image" title="image" /></a></p>
-
-<ol>
-  <li>最後可依個人喜好使用 Move Up/Move Down 或 Modify Selection 按鈕來調整巨集按鈕的位置，就大功告成啦!!以後只要按下該按鈕，就可以一次格式化整個專案喔!!</li>
-</ol>
-
-<p><a href="https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_12.png"><img src="https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_thumb_5.png" alt="image" title="image" /></a></p>
+<p><a href="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/06.png"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/06.png" width="200px" /></a>
+<a href="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/12.png"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/12.png" width="200px" /></a>
+<a href="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/12-02.png"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/12-02.png" width="200px" /></a>
+<a href="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/16.png"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/16.png" width="200px" /></a>
+<a href="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/19.png"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/19.png" width="200px" /></a>
+<a href="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/20.png"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/20.png" width="200px" /></a>
+<a href="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/22.png"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/22.png" width="200px" /></a>
+<a href="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/25.png"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/25.png" width="200px" /></a>
+<a href="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/26.png"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/26.png" width="200px" /></a></p>
 
             </div>
         </article>
@@ -167,15 +152,15 @@
         <div class="cf"></div>
         <div class="row text-center">
             <section class="notepad-post-share">
-                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;使用 Visual Studio 進行 Source Code 自動格式化 - 加強版&quot;%20http://ouch1978.github.io/2010/10/25/vs2010-format-sour-cecode-automatically-advanced/%20via%20&#64;Ouch1978"
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Line原創貼圖-尼古這一家系列&quot;%20http://ouch1978.github.io/2016/06/14/line-stickers-nicolas-family/%20via%20&#64;Ouch1978"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
                     <i class="fa fa-twitter"></i>
                 </a>
-                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=http://ouch1978.github.io/2010/10/25/vs2010-format-sour-cecode-automatically-advanced/"
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=http://ouch1978.github.io/2016/06/14/line-stickers-nicolas-family/"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
                     <i class="fa fa-facebook"></i>
                 </a>
-                <a class="google-icon" href="https://plus.google.com/share?url=http://ouch1978.github.io/2010/10/25/vs2010-format-sour-cecode-automatically-advanced/"
+                <a class="google-icon" href="https://plus.google.com/share?url=http://ouch1978.github.io/2016/06/14/line-stickers-nicolas-family/"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
                     <i class="fa fa-google-plus"></i>
                 </a>
@@ -186,10 +171,8 @@
 
         <div class="PageNavigation">
           
-            <a class="prev" href="/2010/10/25/vs2010-format-sour-cecode-automatically/">&laquo; 使用 Visual Studio 進行 Source Code 自動格式化</a>
+            <a class="prev" href="/2016/06/08/remove-skype-ads/">&laquo; 移除Skype廣告</a>
           
-          
-            <a class="next" href="/2010/10/26/silverlight-fake-modal-dialog/">自製 Modal 元件 &raquo;</a>
           
         </div>
 
