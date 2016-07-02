@@ -2,23 +2,23 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>透過VISUAL STUDIO對XAMARIN ANDROID專案進行除錯 &vert; OUCH1978 @ GITHUB</title>
-<meta name="description" content="很開心的可以成功建置出Android應用程式之後...咦!? 怎麼不能Debug!!?? Visual Studio把應用程式被佈署到模擬器之後就不管了?? 哪招啊!?">
-<meta name="keywords" content="Xamarin, Visual Studio">
+<title>解決遊戲在 WINDOWS 10 執行時出現 XAUDIO2_7.DLL_UNLOADED 錯誤造成的閃退 &vert; OUCH1978 @ GITHUB</title>
+<meta name="description" content="放假的時候想要玩個遊戲放鬆一下，但是遊戲卻動不動就自己閃退，在事件檢視器中看到失敗的模組名稱為 XAudio2_7.dll_unloaded ，這邊就來分享解決之道。">
+<meta name="keywords" content="Windows 10">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://ouch1978.github.io/images/logo.png">
-<meta name="twitter:title" content="透過Visual Studio對Xamarin Android專案進行除錯">
-<meta name="twitter:description" content="很開心的可以成功建置出Android應用程式之後...咦!? 怎麼不能Debug!!?? Visual Studio把應用程式被佈署到模擬器之後就不管了?? 哪招啊!?">
+<meta name="twitter:title" content="解決遊戲在 Windows 10 執行時出現 XAudio2_7.dll_unloaded 錯誤造成的閃退">
+<meta name="twitter:description" content="放假的時候想要玩個遊戲放鬆一下，但是遊戲卻動不動就自己閃退，在事件檢視器中看到失敗的模組名稱為 XAudio2_7.dll_unloaded ，這邊就來分享解決之道。">
 <meta name="twitter:creator" content="@Ouch1978">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="透過Visual Studio對Xamarin Android專案進行除錯">
-<meta property="og:description" content="很開心的可以成功建置出Android應用程式之後...咦!? 怎麼不能Debug!!?? Visual Studio把應用程式被佈署到模擬器之後就不管了?? 哪招啊!?">
-<meta property="og:url" content="http://ouch1978.github.io/2016/07/01/debugging-xamarin-android-app-with-vs/">
+<meta property="og:title" content="解決遊戲在 Windows 10 執行時出現 XAudio2_7.dll_unloaded 錯誤造成的閃退">
+<meta property="og:description" content="放假的時候想要玩個遊戲放鬆一下，但是遊戲卻動不動就自己閃退，在事件檢視器中看到失敗的模組名稱為 XAudio2_7.dll_unloaded ，這邊就來分享解決之道。">
+<meta property="og:url" content="http://ouch1978.github.io/2016/07/02/solve-xaudio2_7.dll-unloaded-error/">
 <meta property="og:site_name" content="Ouch1978 @ Github">
 <meta property="og:image" content="http://ouch1978.github.io/images/cover3.jpg">
 
@@ -26,7 +26,7 @@
 
 
 
-<link rel="canonical" href="http://ouch1978.github.io/2016/07/01/debugging-xamarin-android-app-with-vs/">
+<link rel="canonical" href="http://ouch1978.github.io/2016/07/02/solve-xaudio2_7.dll-unloaded-error/">
 <link href="http://ouch1978.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Ouch1978 @ Github Feed">
 <link rel="author" href="https://plus.google.com/u/0/110363696453312268733?rel=author">
 
@@ -104,33 +104,36 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h1>透過Visual Studio對Xamarin Android專案進行除錯</h1>
-                            <p>by <strong>Ouch Liu (劉耀群)</strong> &#8212; on <a href="http://ouch1978.github.io/tags/index.html#Xamarin" data-toggle="tooltip" title="Posts tagged with Xamarin" rel="tag">Xamarin</a>&nbsp;&comma;&nbsp;<a href="http://ouch1978.github.io/tags/index.html#Visual Studio" data-toggle="tooltip" title="Posts tagged with Visual Studio" rel="tag">Visual Studio</a> <strong><time datetime="2016-07-01T22:00:00+08:00">01 Jul 2016</time></strong></p>
+                            <h1>解決遊戲在 Windows 10 執行時出現 XAudio2_7.dll_unloaded 錯誤造成的閃退</h1>
+                            <p>by <strong>Ouch Liu (劉耀群)</strong> &#8212; on <a href="http://ouch1978.github.io/tags/index.html#Windows 10" data-toggle="tooltip" title="Posts tagged with Windows 10" rel="tag">Windows 10</a> <strong><time datetime="2016-07-02T17:00:00+08:00">02 Jul 2016</time></strong></p>
                         </div>
                     </div>
                 </div>
             </header>
 
         <article class="notepad-post-content post tag-simple">
-            <div><p>很開心的可以成功建置出Android應用程式之後…咦!? 怎麼不能Debug!!??Visual Studio把應用程式佈署到模擬器之後就不管了??哪招啊!?</p>
+            <div><p>放假的時候想要玩個遊戲放鬆一下，但是遊戲卻動不動就自己閃退，在事件檢視器中看到失敗的模組名稱為 XAudio2_7.dll_unloaded ，這邊就來分享解決之道。</p>
 
-<p>相信大家應該都知道Visual Studio 2015裡面很佛心的包含了多種Android裝置的模擬器，讓我們在開發Android應用程式的時候也可以透過它來進行除錯。</p>
+<h3 id="tabletinputservice">直接講結論： <strong><code class="highlighter-rouge">關閉 TabletInputService</code></strong></h3>
 
-<p>我們也可以透過Visual Studio選單裡的 -&gt; <strong><code class="highlighter-rouge">Tools</code></strong> -&gt; <strong><code class="highlighter-rouge">Android</code></strong> -&gt; <strong><code class="highlighter-rouge">Android Emulator Manager</code></strong> 來建立虛擬的Android裝置以便於進行除錯。</p>
+<p><br />
+是的，你沒看錯，我也不懂為什麼平板輸入服務會影響到音效模組…</p>
 
-<p><a href="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-debugging-xamarin-android-app-in-vs/Android-Emulator-Manager.png"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-debugging-xamarin-android-app-in-vs/Android-Emulator-Manager.png" alt="Android Emulator Manager" title="Android Emulator Manager" /></a></p>
+<p>如果你也在事件檢視器中看到如下的資訊：</p>
 
-<p>正常的情況下，應用程式被佈署到模擬器之後，Visual Studio應該還是會處於在除錯的模式下，但是我遇到的神奇狀況是這樣：應用程式的確有被佈署到模擬器中，但是Visual Studio就自動結束了除錯模式了，而且模擬器裡的應用程式也會自動被送到背景去。</p>
+<p><a href="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-07-02-solve-xaudio2_7.dll-unloaded-error/Error-In-Event-Viewer.png"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-07-02-solve-xaudio2_7.dll-unloaded-error/Error-In-Event-Viewer.png" alt="事件檢視器中顯示的錯誤資訊" title="事件檢視器中顯示的錯誤資訊" /></a></p>
 
-<p>經過Google大神的協助，原來這個問題是出在Hyper-V裡虛擬機器的設定上。</p>
+<p>那就不妨也試看看這樣作能不能解決這個問題吧~(至少我個人這樣作是成功的啦…)</p>
 
-<p>只需要開啟 <strong><code class="highlighter-rouge">Hyper-V Manager</code></strong> ，在Android虛擬機上按下滑鼠右鍵，點選 <strong><code class="highlighter-rouge">Settings...</code></strong>，然後進入 <strong><code class="highlighter-rouge">Processor</code></strong> 的 <strong><code class="highlighter-rouge">Compatibility</code></strong> 設定項目中，把 <strong><code class="highlighter-rouge">Migrate to a physical computer with a different processor version</code></strong> 勾選起來就行啦。</p>
+<p>首先開啟工作管理員，並且找到 TabletInputService 這個服務，確認它的狀態是否為執行中，如果是的話，直接在它上面按下滑鼠右鍵，透過彈出式選單將它停止即可。</p>
 
-<p><a href="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-debugging-xamarin-android-app-in-vs/Compatibility-Setting.png"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-debugging-xamarin-android-app-in-vs/Compatibility-Setting.png" alt="Compatibility Setting" title="Compatibility Setting" /></a></p>
+<p><a href="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-07-02-solve-xaudio2_7.dll-unloaded-error/Turn-Off-Tablet-Input-Service.png"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-07-02-solve-xaudio2_7.dll-unloaded-error/Turn-Off-Tablet-Input-Service.png" alt="關閉 TabletInputService" title="關閉 TabletInputService" /></a></p>
 
-<p>喔耶，除錯模式回來了，設好的中斷點也不會再被無視了，Happy Coding~</p>
+<p>是的，就是這麼簡單。</p>
 
-<p><a href="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-debugging-xamarin-android-app-in-vs/BreakPoint-Is-Back.png"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-debugging-xamarin-android-app-in-vs/BreakPoint-Is-Back.png" alt="Break Point Is Back" title="Break Point Is Back" /></a></p>
+<p>但是為什麼平板輸入服務會影響到音效模組呢??</p>
+
+<p>不要問，很可怕。我們還是乖乖打電動吧~</p>
 
             </div>
         </article>
@@ -138,15 +141,15 @@
         <div class="cf"></div>
         <div class="row text-center">
             <section class="notepad-post-share">
-                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;透過Visual Studio對Xamarin Android專案進行除錯&quot;%20http://ouch1978.github.io/2016/07/01/debugging-xamarin-android-app-with-vs/%20via%20&#64;Ouch1978"
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;解決遊戲在 Windows 10 執行時出現 XAudio2_7.dll_unloaded 錯誤造成的閃退&quot;%20http://ouch1978.github.io/2016/07/02/solve-xaudio2_7.dll-unloaded-error/%20via%20&#64;Ouch1978"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
                     <i class="fa fa-twitter"></i>
                 </a>
-                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=http://ouch1978.github.io/2016/07/01/debugging-xamarin-android-app-with-vs/"
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=http://ouch1978.github.io/2016/07/02/solve-xaudio2_7.dll-unloaded-error/"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
                     <i class="fa fa-facebook"></i>
                 </a>
-                <a class="google-icon" href="https://plus.google.com/share?url=http://ouch1978.github.io/2016/07/01/debugging-xamarin-android-app-with-vs/"
+                <a class="google-icon" href="https://plus.google.com/share?url=http://ouch1978.github.io/2016/07/02/solve-xaudio2_7.dll-unloaded-error/"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
                     <i class="fa fa-google-plus"></i>
                 </a>
@@ -157,10 +160,8 @@
 
         <div class="PageNavigation">
           
-            <a class="prev" href="/2016/07/01/hello-xamarin/">&laquo; Hello Xamarin</a>
+            <a class="prev" href="/2016/07/01/debugging-xamarin-android-app-with-vs/">&laquo; 透過Visual Studio對Xamarin Android專案進行除錯</a>
           
-          
-            <a class="next" href="/2016/07/02/solve-xaudio2_7.dll-unloaded-error/">解決遊戲在 Windows 10 執行時出現 XAudio2_7.dll_unloaded 錯誤造成的閃退 &raquo;</a>
           
         </div>
 
