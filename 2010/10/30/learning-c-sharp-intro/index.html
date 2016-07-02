@@ -3,21 +3,21 @@
 <head>
 <meta charset="utf-8">
 <title>跟著OUCH寫程式 - 前言  &vert; OUCH1978 @ GITHUB</title>
-<meta name="description" content="最近身邊有些朋友正在學習寫程式，算是新手中的新手，想想我也曾是過來人，就在這邊順便一下分享我小小的經驗，希望能對剛起步的朋友們有所幫助。其實寫程式真的沒那麼難，真的!! ">
+<meta name="description" content="最近身邊有些朋友正在學習寫程式，算是新手中的新手，想想我也曾是過來人，就在這邊順便一下分享我小小的經驗，希望能對剛起步的朋友們有所幫助。其實寫程式真的沒那麼難，真的!!">
 <meta name="keywords" content="C#">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://ouch1978.github.io/images/logo.png">
 <meta name="twitter:title" content="跟著Ouch寫程式 - 前言 ">
-<meta name="twitter:description" content="最近身邊有些朋友正在學習寫程式，算是新手中的新手，想想我也曾是過來人，就在這邊順便一下分享我小小的經驗，希望能對剛起步的朋友們有所幫助。其實寫程式真的沒那麼難，真的!! ">
+<meta name="twitter:description" content="最近身邊有些朋友正在學習寫程式，算是新手中的新手，想想我也曾是過來人，就在這邊順便一下分享我小小的經驗，希望能對剛起步的朋友們有所幫助。其實寫程式真的沒那麼難，真的!!">
 <meta name="twitter:creator" content="@Ouch1978">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
 <meta property="og:title" content="跟著Ouch寫程式 - 前言 ">
-<meta property="og:description" content="最近身邊有些朋友正在學習寫程式，算是新手中的新手，想想我也曾是過來人，就在這邊順便一下分享我小小的經驗，希望能對剛起步的朋友們有所幫助。其實寫程式真的沒那麼難，真的!! ">
+<meta property="og:description" content="最近身邊有些朋友正在學習寫程式，算是新手中的新手，想想我也曾是過來人，就在這邊順便一下分享我小小的經驗，希望能對剛起步的朋友們有所幫助。其實寫程式真的沒那麼難，真的!!">
 <meta property="og:url" content="http://ouch1978.github.io/2010/10/30/learning-c-sharp-intro/">
 <meta property="og:site_name" content="Ouch1978 @ Github">
 <meta property="og:image" content="http://ouch1978.github.io/images/cover3.jpg">
@@ -137,8 +137,8 @@
 
 <p>將上述的角色寫成程式的話，會寫成這樣：</p>
 
-<blockquote class="filename">
-  <p>Character.cs</p>
+<blockquote>
+  <p>Character.cs {:.filename}</p>
 </blockquote>
 
 <figure class="highlight"><pre><code class="language-c#" data-lang="c#"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
@@ -164,190 +164,30 @@
 21
 22
 23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85
-86
-87
-88
-89
-90
-91
-92
-93
-94
-95
-96
-97
-98
-99
-100
-101
-102
-103
-104</pre></td><td class="code"><pre><span class="k">public</span> <span class="k">class</span> <span class="nc">Character</span>
-<span class="p">{</span>
-  <span class="cm">/*建構子*/</span>
-  <span class="k">public</span> <span class="nf">Character</span><span class="p">()</span>
-  <span class="p">{</span>
+24</pre></td><td class="code"><pre> <span class="k">public</span> <span class="k">class</span> <span class="nc">Character</span> <span class="p">{</span> <span class="p">/</span><span class="n">_</span><span class="err">建構子</span><span class="n">_</span><span class="p">/</span> <span class="k">public</span> <span class="nf">Character</span><span class="p">()</span> <span class="p">{</span>
 
-  <span class="p">}</span>
+<span class="p">}</span>
 
-  <span class="c1">//角色編號
-</span>  <span class="k">private</span> <span class="kt">int</span> <span class="n">_id</span><span class="p">;</span>
-  <span class="k">public</span> <span class="kt">int</span> <span class="n">Id</span>
-  <span class="p">{</span>
-    <span class="k">get</span>
-    <span class="p">{</span>
-      <span class="k">return</span> <span class="n">_id</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">set</span>
-    <span class="p">{</span>
-      <span class="n">_id</span> <span class="p">=</span> <span class="k">value</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
+<span class="c1">//角色編號 private int _id; public int Id { get { return _id; } set { _id = value; } }
+</span>
+<span class="c1">//角色名稱 private string _name; public string Name { get { return _name;&lt;br&gt;
+</span><span class="p">}</span> <span class="k">set</span> <span class="p">{</span> <span class="n">_name</span> <span class="p">=</span> <span class="k">value</span><span class="p">;</span> <span class="p">}</span> <span class="p">}</span>
 
-  <span class="c1">//角色名稱
-</span>  <span class="k">private</span> <span class="kt">string</span> <span class="n">_name</span><span class="p">;</span>
-  <span class="k">public</span> <span class="kt">string</span> <span class="n">Name</span>
-  <span class="p">{</span>
-    <span class="k">get</span>
-    <span class="p">{</span>
-      <span class="k">return</span> <span class="n">_name</span><span class="p">;</span>      
-    <span class="p">}</span>
-    <span class="k">set</span>
-    <span class="p">{</span>
-      <span class="n">_name</span> <span class="p">=</span> <span class="k">value</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
+<span class="c1">//等級 private int _level; public int Level { get { return _level; } set { _level = value; } }
+</span>
+<span class="c1">//血量 //只允許外部讀取，不允許寫入 private int _healthPoint; public int HealthPoint { get { return _healthPoint; } }
+</span>
+<span class="p">/</span><span class="n">_</span><span class="err">攻擊力</span> <span class="err">只允許外部讀取，不允許寫入</span><span class="n">_</span><span class="p">/</span> <span class="k">private</span> <span class="kt">double</span> <span class="n">_attackPower</span><span class="p">;</span> <span class="k">public</span> <span class="kt">double</span> <span class="n">AttactkPower</span> <span class="p">{</span> <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_attackPower</span><span class="p">;</span> <span class="p">}</span> <span class="p">}</span>
 
-  <span class="c1">//等級
-</span>  <span class="k">private</span> <span class="kt">int</span> <span class="n">_level</span><span class="p">;</span>
-  <span class="k">public</span> <span class="kt">int</span> <span class="n">Level</span>
-  <span class="p">{</span>
-    <span class="k">get</span>
-    <span class="p">{</span>
-      <span class="k">return</span> <span class="n">_level</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">set</span>
-    <span class="p">{</span>
-      <span class="n">_level</span> <span class="p">=</span> <span class="k">value</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
+<span class="p">/</span> <span class="n">_</span><span class="err">防禦力</span> <span class="err">只允許外部讀取，不允許寫入</span><span class="n">_</span> <span class="p">/</span> <span class="k">private</span> <span class="kt">double</span> <span class="n">_defensePower</span><span class="p">;</span> <span class="k">public</span> <span class="kt">double</span> <span class="n">DefensePower</span> <span class="p">{</span> <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_defensePower</span><span class="p">;</span> <span class="p">}</span> <span class="p">}</span>
 
-  <span class="c1">//血量
-</span>  <span class="c1">//只允許外部讀取，不允許寫入
-</span>  <span class="k">private</span> <span class="kt">int</span> <span class="n">_healthPoint</span><span class="p">;</span>
-  <span class="k">public</span> <span class="kt">int</span> <span class="n">HealthPoint</span>
-  <span class="p">{</span>
-    <span class="k">get</span>
-    <span class="p">{</span>
-      <span class="k">return</span> <span class="n">_healthPoint</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-
-  <span class="cm">/*攻擊力
-  只允許外部讀取，不允許寫入*/</span>
-  <span class="k">private</span> <span class="kt">double</span> <span class="n">_attackPower</span><span class="p">;</span>
-  <span class="k">public</span> <span class="kt">double</span> <span class="n">AttactkPower</span>
-  <span class="p">{</span>
-    <span class="k">get</span>
-    <span class="p">{</span>
-      <span class="k">return</span> <span class="n">_attackPower</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-
-  <span class="cm">/*
-  防禦力
-  只允許外部讀取，不允許寫入
-  */</span>
-  <span class="k">private</span> <span class="kt">double</span> <span class="n">_defensePower</span><span class="p">;</span>
-  <span class="k">public</span> <span class="kt">double</span> <span class="n">DefensePower</span>
-  <span class="p">{</span>
-    <span class="k">get</span>
-    <span class="p">{</span>
-      <span class="k">return</span> <span class="n">_defensePower</span><span class="p">;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-
-  <span class="c1">//跳舞
-</span>  <span class="k">public</span> <span class="k">void</span> <span class="nf">Dance</span><span class="p">()</span>
-  <span class="p">{</span>
-    <span class="c1">//Do dance
-</span>  <span class="p">}</span>
-
-  <span class="c1">//坐下
-</span>  <span class="k">public</span> <span class="k">void</span> <span class="nf">Sit</span><span class="p">()</span>
-  <span class="p">{</span>
-    <span class="c1">//Do sit
-</span>  <span class="p">}</span>
-
-  <span class="c1">//攻擊
-</span>  <span class="k">public</span> <span class="k">void</span> <span class="nf">Attack</span><span class="p">()</span>
-  <span class="p">{</span>
-    <span class="c1">//Do attack
-</span>  <span class="p">}</span>
-
-<span class="p">}</span><span class="w">
+<span class="c1">//跳舞 public void Dance() { //Do dance }
+</span>
+<span class="c1">//坐下 public void Sit() { //Do sit }
+</span>
+<span class="c1">//攻擊 public void Attack() { //Do attack }
+</span>
+<span class="p">}</span> <span class="w">
 </span></pre></td></tr></tbody></table></code></pre></figure>
 
 <p>嗯，看起來有點複雜對吧?其實有比較簡單一點的寫法，不過這個是比較傳統的寫法，為了幫助大家進入狀況，也為了方便講解，所以先用這種寫法。</p>
@@ -356,7 +196,9 @@
 
 <ul>
   <li>在程式語言中，去做出「定義一個值」這個動作，我們稱為「<strong><code class="highlighter-rouge">宣告</code></strong>」；而在C#中，一般宣告的寫法會是「<strong><code class="highlighter-rouge">修飾詞</code></strong>」 「<strong><code class="highlighter-rouge">型別</code></strong>」 「<strong><code class="highlighter-rouge">名稱</code></strong>」，中間以空白隔開。(關於C#的型別可以參考<a href="http://msdn.microsoft.com/zh-tw/library/ya5y69ds.aspx">內建型別列表</a>和<a href="http://msdn.microsoft.com/zh-tw/library/ms173104.aspx">型別、變數和值</a>)</li>
-  <li>在程式裡面常常會看到<code class="highlighter-rouge">public</code>和<code class="highlighter-rouge">private</code>這兩個修飾詞，這兩個字可以直接從字面上來看，就可以猜出他的差別：
+  <li>
+    <p>在程式裡面常常會看到<code class="highlighter-rouge">public</code>和<code class="highlighter-rouge">private</code>這兩個修飾詞，這兩個字可以直接從字面上來看，就可以猜出他的差別：</p>
+
     <ul>
       <li><code class="highlighter-rouge">public</code>指的是允許公開給外部看得到，而且用得到的東西。</li>
       <li><code class="highlighter-rouge">private</code>指的則是只有在定義該物件的裡才看得到、能使用的東西，例如我們在上面的例子裡有不少地方都加了<code class="highlighter-rouge">private</code>關鍵字，那就只有在這個class裡面才看得到、能存取這些東西。</li>
@@ -407,7 +249,7 @@
             <a class="prev" href="/2010/10/30/c-sharp-naming-convention/">&laquo; C#命名方針</a>
           
           
-            <a class="next" href="/2016/06/08/remove-skype-ads/">移除Skype廣告 &raquo;</a>
+            <a class="next" href="/2016/06/08/remove-skype-ads/">徹底移除Skype廣告 &raquo;</a>
           
         </div>
 

@@ -36,13 +36,23 @@ callback([
   } ,
 
   {
-    "text": "移除Skype廣告",
+    "text": "徹底移除Skype廣告",
     "href": "http://ouch1978.github.io/2016/06/08/remove-skype-ads/"
   } ,
 
   {
     "text": "Line原創貼圖-尼古這一家系列",
     "href": "http://ouch1978.github.io/2016/06/14/line-stickers-nicolas-family/"
+  } ,
+
+  {
+    "text": "Hello Xamarin",
+    "href": "http://ouch1978.github.io/2016/07/01/hello-xamarin/"
+  } ,
+
+  {
+    "text": "透過Visual Studio對Xamarin Android專案進行除錯",
+    "href": "http://ouch1978.github.io/2016/07/01/debugging-xamarin-android-app-with-vs/"
   } 
 
 ])

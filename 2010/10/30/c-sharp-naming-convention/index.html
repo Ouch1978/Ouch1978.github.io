@@ -113,7 +113,7 @@
 
         <article class="notepad-post-content post tag-simple">
             <div><p>寫程式其實也是有規矩在的，尤其是要團體協同開發的時候，如果每個人使用的規則都不一樣，那要求每個人看得懂別人的程式碼，真的是會要了人的命。<br />
- 像是命名空間、類別、變數、檔案命名、控制項命名，其實都要去訂下命名的規則，對團隊來說才會容易溝通。</p>
+像是命名空間、類別、變數、檔案命名、控制項命名，其實都要去訂下命名的規則，對團隊來說才會容易溝通。</p>
 
 <p>當然，規則很多，我在這邊只先列出和比較基本的命名相關的規則；而關於完整的C#的程式撰寫規範建議，則可以參考<a href="http://msdn.microsoft.com/zh-tw/library/ms229042.aspx">MSDN上的設計方針</a>，再配合FXCop做程式碼撰寫後的規範驗證。</p>
 
@@ -126,183 +126,149 @@
   <li>正確的使用縮寫，<code class="highlighter-rouge">縮寫字為兩個字母以內，則兩字皆為大寫</code>( 如 : “IO” )，<code class="highlighter-rouge">三個字以上，則使用Pascal命名規則</code>( 如 : “Xml” )，且縮寫字不得高於五個字母 - <a href="http://msdn.microsoft.com/library/ms182240(VS.100).aspx">CA1709</a>。</li>
 </ul>
 
-<h2 id="c"><code class="highlighter-rouge">C#物件命名原則</code></h2>
+<h1 id="c"><code class="highlighter-rouge">C#物件命名原則</code></h1>
 
-<table cellpadding="2" cellspacing="0">
-<thead>
-		<tr>
-			<th width="25%">
-				種類</th>
-			<th width="15%">
-				命名規則</th>
-			<th>
-				範例</th>
-			<th>
-				注意事項</th>
-		</tr>
-    </thead>
-    	<tbody>
-		<tr>
-			<td valign="middle">
-				Project File</td>
-			<td align="center">
-				<font color="#9bbb59">Pascal</font></td>
-			<td>
-				Math.Algorithm.csproj</td>
-			<td>
-				&nbsp;</td>
-		</tr>
-		<tr>
-			<td>
-				Source File</td>
-			<td align="center">
-				<font color="#9bbb59">Pascal</font></td>
-			<td>
-				RuleSetup.cs</td>
-			<td>
-				保持檔案名稱與Class名稱一致</td>
-		</tr>
-		<tr>
-			<td>
-				Resource or Embedded File</td>
-			<td align="center">
-				<font color="#9bbb59">Pascal</font></td>
-			<td>
-				TestPicture.jpg</td>
-			<td>
-				&nbsp;</td>
-		</tr>
-		<tr>
-			<td>
-				Namespace</td>
-			<td align="center">
-				<font color="#9bbb59">Pascal</font></td>
-			<td>
-				MyCompany.Wpf.Controls</td>
-			<td>
-				儘量使用"公司名稱.專案名稱|技術名稱.功能分類|子類別"做為命名準則</td>
-		</tr>
-		<tr>
-			<td>
-				Class or Struct</td>
-			<td align="center">
-				<font color="#9bbb59">Pascal</font></td>
-			<td>
-				CustomAttribute</td>
-			<td>
-				使用名詞命名，並使用基底類別名稱做為後置詞</td>
-		</tr>
-		<tr>
-			<td>
-				Interface</td>
-			<td align="center">
-				<font color="#9bbb59">Pascal</font></td>
-			<td>
-				ICustomer</td>
-			<td>
-				使用前置詞"I"</td>
-		</tr>
-		<tr>
-			<td>
-				Generic Class &amp; Generic Parameter Type</td>
-			<td align="center">
-				<font color="#9bbb59">Pascal</font></td>
-			<td>
-				TKey,TValue</td>
-			<td>
-				使用前置詞"T"或"K"</td>
-		</tr>
-		<tr>
-			<td>
-				Method</td>
-			<td align="center">
-				<font color="#9bbb59">Pascal</font></td>
-			<td>
-				ValidateUser</td>
-			<td>
-				使用動詞作為開頭</td>
-		</tr>
-		<tr>
-			<td>
-				Property</td>
-			<td align="center">
-				<font color="#9bbb59">Pascal</font></td>
-			<td>
-				Name</td>
-			<td>
-				避免使用"Get"或"Set"當前置詞</td>
-		</tr>
-		<tr>
-			<td>
-				Field (Public, Protected, or Internal)</td>
-			<td align="center">
-				<font color="#9bbb59">Pascal</font></td>
-			<td>
-				Name</td>
-			<td>
-				&nbsp;</td>
-		</tr>
-		<tr>
-			<td>
-				Field (Private)</td>
-			<td align="center">
-				<font color="#809ec2">Camel</font></td>
-			<td>
-				_name</td>
-			<td>
-				字首加上底線做為區隔</td>
-		</tr>
-		<tr>
-			<td>
-				Constant or Static Field</td>
-			<td align="center">
-				<font color="#9bbb59">Pascal</font></td>
-			<td>
-				Name</td>
-			<td>
-				與Field處理方式相同</td>
-		</tr>
-		<tr>
-			<td>
-				Enum</td>
-			<td align="center">
-				<font color="#9bbb59">Pascal</font></td>
-			<td>
-				EncodeType</td>
-			<td>
-				裡面包含選項也是使用Pascal命名法</td>
-		</tr>
-		<tr>
-			<td>
-				Delegate or Event</td>
-			<td align="center">
-				<font color="#9bbb59">Pascal</font></td>
-			<td>
-				public event EventHandler LoadPlugin</td>
-			<td>
-				全都使用 Pascal 命名規則</td>
-		</tr>
-		<tr>
-			<td>
-				Local Variable (inline)</td>
-			<td align="center">
-				<font color="#809ec2">Camel</font></td>
-			<td>
-				string name</td>
-			<td>
-				避免使用單一字元和列舉的名稱</td>
-		</tr>
-		<tr>
-			<td>
-				Parameter</td>
-			<td align="center">
-				<font color="#809ec2">Camel</font></td>
-			<td>
-				public void Execute(string commandText, int iterations)</td>
-			<td>
-				&nbsp;</td>
-		</tr>
-	</tbody>
+<table>
+  <thead>
+    <tr>
+      <th>種類</th>
+      <th>命名規則</th>
+      <th>範例</th>
+      <th>注意事項</th>
+      <th> </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Project File</td>
+      <td><font color="#9bbb59">Pascal</font></td>
+      <td>Math.Algorithm.csproj</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Source File</td>
+      <td><font color="#9bbb59">Pascal</font></td>
+      <td>RuleSetup.cs</td>
+      <td>保持檔案名稱與Class名稱一致</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Resource or Embedded File</td>
+      <td><font color="#9bbb59">Pascal</font></td>
+      <td>TestPicture.jpg</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Namespace</td>
+      <td><font color="#9bbb59">Pascal</font></td>
+      <td>MyCompany.Wpf.Controls</td>
+      <td>儘量使用”公司名稱.專案名稱</td>
+      <td>技術名稱.功能分類</td>
+      <td>子類別”做為命名準則</td>
+    </tr>
+    <tr>
+      <td>Class or Struct</td>
+      <td><font color="#9bbb59">Pascal</font></td>
+      <td>CustomAttribute</td>
+      <td>使用名詞命名，並使用基底類別名稱做為後置詞</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Interface</td>
+      <td><font color="#9bbb59">Pascal</font></td>
+      <td>ICustomer</td>
+      <td>使用前置詞”I”</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Generic Class &amp; Generic Parameter Type</td>
+      <td><font color="#9bbb59">Pascal</font></td>
+      <td>TKey,TValue</td>
+      <td>使用前置詞”T”或”K”</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Method</td>
+      <td><font color="#9bbb59">Pascal</font></td>
+      <td>ValidateUser</td>
+      <td>使用動詞作為開頭</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Property</td>
+      <td><font color="#9bbb59">Pascal</font></td>
+      <td>Name</td>
+      <td>避免使用”Get”或”Set”當前置詞</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Field (Public, Protected, or Internal)</td>
+      <td><font color="#9bbb59">Pascal</font></td>
+      <td>Name</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Field (Private)</td>
+      <td><font color="#809ec2">Camel</font></td>
+      <td>_name</td>
+      <td>字首加上底線做為區隔</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Constant or Static Field</td>
+      <td><font color="#9bbb59">Pascal</font></td>
+      <td>Name</td>
+      <td>與Field處理方式相同</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Enum</td>
+      <td><font color="#9bbb59">Pascal</font></td>
+      <td>EncodeType</td>
+      <td>裡面包含選項也是使用Pascal命名法</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Delegate or Event</td>
+      <td><font color="#9bbb59">Pascal</font></td>
+      <td>public event EventHandler LoadPlugin</td>
+      <td>全都使用 Pascal 命名規則</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Local Variable (inline)</td>
+      <td><font color="#809ec2">Camel</font></td>
+      <td>string name</td>
+      <td>避免使用單一字元和列舉的名稱</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Parameter</td>
+      <td><font color="#809ec2">Camel</font></td>
+      <td>public void Execute(string commandText, int iterations)</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
 </table>
 
 <p>其他注意事項：</p>

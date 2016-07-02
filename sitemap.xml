@@ -6,7 +6,7 @@
     
     
     <url>
-        <loc>http://ouch1978.github.io/404/</loc>
+        <loc>http://ouch1978.github.io/404.html</loc>
     </url>
     
     <url>
@@ -45,7 +45,19 @@
         <loc>http://ouch1978.github.io/tags/index.html</loc>
     </url>
     
+    <url>
+        <loc>http://ouch1978.github.io/page2/</loc>
+    </url>
+    
 
+    
+    <url>
+        <loc>http://ouch1978.github.io/2016/07/01/debugging-xamarin-android-app-with-vs/</loc>
+    </url>
+    
+    <url>
+        <loc>http://ouch1978.github.io/2016/07/01/hello-xamarin/</loc>
+    </url>
     
     <url>
         <loc>http://ouch1978.github.io/2016/06/14/line-stickers-nicolas-family/</loc>
