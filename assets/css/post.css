@@ -207,11 +207,11 @@ html, body, .notepad-post-container, .notepad-post-header {
         margin: 0 auto 2em auto;
         max-width: 56.25rem;
         font-size: 1.125rem; }
-        .post-template .notepad-post-content > div:not(.notepad-post-title) p:first-child {
+        .post-template .notepad-post-content > div:not(.notepad-post-title) > p:first-child {
           font-size: 1.375rem;
           font-weight: 300; }
           @media only screen and (min-width: 40.063em) {
-            .post-template .notepad-post-content > div:not(.notepad-post-title) p:first-child {
+            .post-template .notepad-post-content > div:not(.notepad-post-title) > p:first-child {
               font-size: 1.625rem; } }
         .post-template .notepad-post-content > div:not(.notepad-post-title) p.with-image {
           text-align: center;
@@ -648,7 +648,6 @@ iframe {
   text-align: right;
 }
 
-
 blockquote.filename {
     padding: 0px;
     margin: 0px;
@@ -657,9 +656,11 @@ blockquote.filename {
     border-top-right-radius: 5px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    margin-bottom: -50px;
+    margin-bottom: -24px;
     padding-left: 1em;
-    border-left: 0px;
+    border-left: 24px;
+    border-left-color: #E51843;
+    border-left-style: solid;
 }
 
 blockquote.filename p {

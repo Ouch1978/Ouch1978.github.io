@@ -122,13 +122,13 @@
 
 <p>首先我們打開一個標準的 Silverlight+Web 專案( WPF 也可以喔)，接著增加一個 UserControl (範例中取名為 MyModalControl )。</p>
 
-<p>接著修改 MyModalControl.xaml 的內容，將<code class="highlighter-rouge">控制項本身</code>與 LayoutRoot 這個 Grid 的<code class="highlighter-rouge">寬和高都設為 Auto</code>。</p>
+<p>接著修改 MyModalControl.xaml 的內容，將 <code class="highlighter-rouge">控制項本身</code> 與 LayoutRoot 這個 Grid 的 <code class="highlighter-rouge">寬和高都設為 Auto</code>。</p>
 
 <p><a href="https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_2.png"><img src="https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_thumb.png" alt="image" title="image" /></a></p>
 
 <h1 id="section-1"><code class="highlighter-rouge">步驟二</code></h1>
 
-<p>修改 <code class="highlighter-rouge">LayoutRoot</code> 的<code class="highlighter-rouge">背景色為 #4C4969CC</code>(透明度為 30%)</p>
+<p>修改 <code class="highlighter-rouge">LayoutRoot</code> 的 <code class="highlighter-rouge">背景色為 #4C4969CC</code>(透明度為 30%)</p>
 
 <p><a href="https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_4.png"><img src="https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_thumb_1.png" alt="image" title="image" /></a></p>
 
@@ -142,8 +142,8 @@
 
 <p>加入按鈕的 Click 事件，並加入移除這個控制項的程式碼，完成後的 xaml 與 cs 檔如下：</p>
 
-<blockquote>
-  <p>MyModalControl.xaml {:.filename}</p>
+<blockquote class="filename">
+  <p>MyModalControl.xaml</p>
 </blockquote>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
@@ -166,32 +166,131 @@
 18
 19
 20
-21</pre></td><td class="code"><pre><span class="nt">&lt;usercontrol</span> <span class="na">x:class=</span><span class="s">"FakeModal.MyModalControl"</span> <span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span> <span class="na">xmlns:x=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml"</span> <span class="na">xmlns:d=</span><span class="s">"http://schemas.microsoft.com/expression/blend/2008"</span> <span class="na">xmlns:ei=</span><span class="s">"http://schemas.microsoft.com/expression/2010/interactions"</span> <span class="na">xmlns:i=</span><span class="s">"http://schemas.microsoft.com/expression/2010/interactivity"</span> <span class="na">xmlns:mc=</span><span class="s">"http://schemas.openxmlformats.org/markup-compatibility/2006"</span> <span class="na">d:designheight=</span><span class="s">"480"</span> <span class="na">d:designwidth=</span><span class="s">"640"</span> <span class="na">mc:ignorable=</span><span class="s">"d"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;grid</span> <span class="na">x:name=</span><span class="s">"LayoutRoot"</span> <span class="na">background=</span><span class="s">"#4C4969CC"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;stackpanel</span> <span class="na">horizontalalignment=</span><span class="s">"Center"</span> <span class="na">verticalalignment=</span><span class="s">"Center"</span><span class="nt">&gt;&lt;stackpanel.effect&gt;</span>
-  <span class="nt">&lt;dropshadoweffect</span> <span class="na">opacity=</span><span class="s">"0.5"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/dropshadoweffect&gt;</span>
-<span class="nt">&lt;/stackpanel.effect&gt;</span>
-            <span class="nt">&lt;i:interaction.behaviors&gt;</span>
-  <span class="nt">&lt;ei:mousedragelementbehavior</span> <span class="na">constraintoparentbounds=</span><span class="s">"True"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/ei:mousedragelementbehavior&gt;</span>
-<span class="nt">&lt;/i:interaction.behaviors&gt;</span>
-            <span class="nt">&lt;border</span> <span class="na">width=</span><span class="s">"200"</span> <span class="na">height=</span><span class="s">"32"</span> <span class="na">margin=</span><span class="s">"10,0,0,0"</span> <span class="na">horizontalalignment=</span><span class="s">"Left"</span> <span class="na">background=</span><span class="s">"White"</span> <span class="na">borderbrush=</span><span class="s">"Black"</span> <span class="na">borderthickness=</span><span class="s">"2,2,2,0"</span> <span class="na">cornerradius=</span><span class="s">"10,10,0,0"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;textblock</span> <span class="na">horizontalalignment=</span><span class="s">"Center"</span> <span class="na">verticalalignment=</span><span class="s">"Center"</span> <span class="na">fontsize=</span><span class="s">"18.667"</span> <span class="na">text=</span><span class="s">"FakeModal"</span> <span class="na">textwrapping=</span><span class="s">"Wrap"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/textblock&gt;</span>
-<span class="nt">&lt;/border&gt;</span>
-            <span class="nt">&lt;border</span> <span class="na">width=</span><span class="s">"400"</span> <span class="na">height=</span><span class="s">"150"</span> <span class="na">background=</span><span class="s">"White"</span> <span class="na">borderbrush=</span><span class="s">"Black"</span> <span class="na">borderthickness=</span><span class="s">"2"</span> <span class="na">cornerradius=</span><span class="s">"10"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;stackpanel</span> <span class="na">horizontalalignment=</span><span class="s">"Center"</span> <span class="na">verticalalignment=</span><span class="s">"Center"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;textblock</span> <span class="na">margin=</span><span class="s">"0"</span> <span class="na">fontsize=</span><span class="s">"18.667"</span> <span class="na">text=</span><span class="s">"Is to make a fake modal that simple?"</span> <span class="na">textwrapping=</span><span class="s">"Wrap"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;stackpanel</span> <span class="na">margin=</span><span class="s">"0,30,0,0"</span> <span class="na">horizontalalignment=</span><span class="s">"Center"</span> <span class="na">verticalalignment=</span><span class="s">"Center"</span> <span class="na">orientation=</span><span class="s">"Horizontal"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;button</span> <span class="na">x:name=</span><span class="s">"btnYes"</span> <span class="na">width=</span><span class="s">"80"</span> <span class="na">height=</span><span class="s">"32"</span> <span class="na">margin=</span><span class="s">"10,0"</span> <span class="na">click=</span><span class="s">"btnYes_Click"</span> <span class="na">content=</span><span class="s">"Yes"</span> <span class="na">fontsize=</span><span class="s">"16"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/button&gt;</span>
-  <span class="nt">&lt;button</span> <span class="na">x:name=</span><span class="s">"btnNo"</span> <span class="na">width=</span><span class="s">"80"</span> <span class="na">height=</span><span class="s">"32"</span> <span class="na">margin=</span><span class="s">"10,0"</span> <span class="na">click=</span><span class="s">"btnNo_Click"</span> <span class="na">content=</span><span class="s">"No"</span> <span class="na">fontsize=</span><span class="s">"16"</span><span class="nt">&gt;</span><span class="w">
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70</pre></td><td class="code"><pre><span class="nt">&lt;UserControl</span> <span class="na">x:Class=</span><span class="s">"FakeModal.MyModalControl"</span>
+             <span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span>
+             <span class="na">xmlns:x=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml"</span>
+             <span class="na">xmlns:d=</span><span class="s">"http://schemas.microsoft.com/expression/blend/2008"</span>
+             <span class="na">xmlns:ei=</span><span class="s">"http://schemas.microsoft.com/expression/2010/interactions"</span>
+             <span class="na">xmlns:i=</span><span class="s">"http://schemas.microsoft.com/expression/2010/interactivity"</span>
+             <span class="na">xmlns:mc=</span><span class="s">"http://schemas.openxmlformats.org/markup-compatibility/2006"</span>
+             <span class="na">d:DesignHeight=</span><span class="s">"480"</span>
+             <span class="na">d:DesignWidth=</span><span class="s">"640"</span>
+             <span class="na">mc:Ignorable=</span><span class="s">"d"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;Grid</span> <span class="na">x:Name=</span><span class="s">"LayoutRoot"</span>
+          <span class="na">Background=</span><span class="s">"#4C4969CC"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;StackPanel</span> <span class="na">HorizontalAlignment=</span><span class="s">"Center"</span>
+                    <span class="na">VerticalAlignment=</span><span class="s">"Center"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;StackPanel.Effect&gt;</span>
+                <span class="nt">&lt;DropShadowEffect</span> <span class="na">Opacity=</span><span class="s">"0.5"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/StackPanel.Effect&gt;</span>
+            <span class="nt">&lt;i:Interaction.Behaviors&gt;</span>
+                <span class="nt">&lt;ei:MouseDragElementBehavior</span> <span class="na">ConstrainToParentBounds=</span><span class="s">"True"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/i:Interaction.Behaviors&gt;</span>
+            <span class="nt">&lt;Border</span> <span class="na">Width=</span><span class="s">"200"</span>
+                    <span class="na">Height=</span><span class="s">"32"</span>
+                    <span class="na">Margin=</span><span class="s">"10,0,0,0"</span>
+                    <span class="na">HorizontalAlignment=</span><span class="s">"Left"</span>
+                    <span class="na">Background=</span><span class="s">"White"</span>
+                    <span class="na">BorderBrush=</span><span class="s">"Black"</span>
+                    <span class="na">BorderThickness=</span><span class="s">"2,2,2,0"</span>
+                    <span class="na">CornerRadius=</span><span class="s">"10,10,0,0"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;TextBlock</span> <span class="na">HorizontalAlignment=</span><span class="s">"Center"</span>
+                           <span class="na">VerticalAlignment=</span><span class="s">"Center"</span>
+                           <span class="na">FontSize=</span><span class="s">"18.667"</span>
+                           <span class="na">Text=</span><span class="s">"FakeModal"</span>
+                           <span class="na">TextWrapping=</span><span class="s">"Wrap"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;/Border&gt;</span>
+            <span class="nt">&lt;Border</span> <span class="na">Width=</span><span class="s">"400"</span>
+                    <span class="na">Height=</span><span class="s">"150"</span>
+                    <span class="na">Background=</span><span class="s">"White"</span>
+                    <span class="na">BorderBrush=</span><span class="s">"Black"</span>
+                    <span class="na">BorderThickness=</span><span class="s">"2"</span>
+                    <span class="na">CornerRadius=</span><span class="s">"10"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;StackPanel</span> <span class="na">HorizontalAlignment=</span><span class="s">"Center"</span>
+                            <span class="na">VerticalAlignment=</span><span class="s">"Center"</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;TextBlock</span> <span class="na">Margin=</span><span class="s">"0"</span>
+                               <span class="na">FontSize=</span><span class="s">"18.667"</span>
+                               <span class="na">Text=</span><span class="s">"Is to make a fake modal that simple?"</span>
+                               <span class="na">TextWrapping=</span><span class="s">"Wrap"</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;StackPanel</span> <span class="na">Margin=</span><span class="s">"0,30,0,0"</span>
+                                <span class="na">HorizontalAlignment=</span><span class="s">"Center"</span>
+                                <span class="na">VerticalAlignment=</span><span class="s">"Center"</span>
+                                <span class="na">Orientation=</span><span class="s">"Horizontal"</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;Button</span> <span class="na">x:Name=</span><span class="s">"btnYes"</span>
+                                <span class="na">Width=</span><span class="s">"80"</span>
+                                <span class="na">Height=</span><span class="s">"32"</span>
+                                <span class="na">Margin=</span><span class="s">"10,0"</span>
+                                <span class="na">Click=</span><span class="s">"btnYes_Click"</span>
+                                <span class="na">Content=</span><span class="s">"Yes"</span>
+                                <span class="na">FontSize=</span><span class="s">"16"</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;Button</span> <span class="na">x:Name=</span><span class="s">"btnNo"</span>
+                                <span class="na">Width=</span><span class="s">"80"</span>
+                                <span class="na">Height=</span><span class="s">"32"</span>
+                                <span class="na">Margin=</span><span class="s">"10,0"</span>
+                                <span class="na">Click=</span><span class="s">"btnNo_Click"</span>
+                                <span class="na">Content=</span><span class="s">"No"</span>
+                                <span class="na">FontSize=</span><span class="s">"16"</span> <span class="nt">/&gt;</span>
+                    <span class="nt">&lt;/StackPanel&gt;</span>
+                <span class="nt">&lt;/StackPanel&gt;</span>
+            <span class="nt">&lt;/Border&gt;</span>
+        <span class="nt">&lt;/StackPanel&gt;</span>
+    <span class="nt">&lt;/Grid&gt;</span>
+<span class="nt">&lt;/UserControl&gt;</span><span class="w">
 </span></pre></td></tr></tbody></table></code></pre></figure>
-<p></p>
-<blockquote><p>MyModalControl.xaml.cs
-{:.filename}</p></blockquote>
-<p>
+
+<blockquote class="filename">
+  <p>MyModalControl.xaml.cs</p>
+</blockquote>
+
 <figure class="highlight"><pre><code class="language-c#" data-lang="c#"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
@@ -211,46 +310,82 @@
 17
 18
 19
-20</pre></td><td class="code"><pre><span class="k">using</span> <span class="nn">System.Windows.Controls</span><span class="p">;&lt;/</span><span class="n">p</span><span class="p">&gt;&lt;</span><span class="n">p</span><span class="p">&gt;</span><span class="k">namespace</span> <span class="nn">FakeModal</span>
-<span class="p">{</span>
-    <span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">MyModalControl</span> <span class="p">:</span> <span class="n">UserControl</span>
-    <span class="p">{</span>
-        <span class="k">public</span> <span class="nf">MyModalControl</span><span class="p">()</span>
-        <span class="p">{</span>
-            <span class="nf">InitializeComponent</span><span class="p">();</span>
-        <span class="p">}&lt;/</span><span class="n">p</span><span class="p">&gt;&lt;</span><span class="n">pre</span><span class="p">&gt;&lt;</span><span class="n">code</span><span class="p">&gt;</span>    <span class="k">private</span> <span class="k">void</span> <span class="nf">btnYes_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">RoutedEventArgs</span> <span class="n">e</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="c1">//you can do something here.
-</span>        <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">Parent</span> <span class="k">as</span> <span class="n">Panel</span><span class="p">).</span><span class="n">Children</span><span class="p">.</span><span class="nf">Remove</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-    <span class="p">}</span>
+20
+21
+22
+23
+24</pre></td><td class="code"><pre><span class="k">using</span> <span class="nn">System.Windows.Controls</span><span class="p">;</span>
 
-    <span class="k">private</span> <span class="k">void</span> <span class="nf">btnNo_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">RoutedEventArgs</span> <span class="n">e</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="c1">//you can do something here.
-</span>        <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">Parent</span> <span class="k">as</span> <span class="n">Panel</span><span class="p">).</span><span class="n">Children</span><span class="p">.</span><span class="nf">Remove</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="p">&lt;/</span><span class="n">code</span><span class="p">&gt;&lt;/</span><span class="n">pre</span><span class="p">&gt;&lt;</span><span class="n">p</span><span class="p">&gt;}</span><span class="w">
+<span class="k">namespace</span> <span class="nn">FakeModal</span>
+<span class="p">{</span>
+	<span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">MyModalControl</span> <span class="p">:</span> <span class="n">UserControl</span>
+	<span class="p">{</span>
+		<span class="k">public</span> <span class="nf">MyModalControl</span><span class="p">()</span>
+		<span class="p">{</span>
+			<span class="nf">InitializeComponent</span><span class="p">();</span>
+		<span class="p">}</span>
+
+		<span class="k">private</span> <span class="k">void</span> <span class="nf">btnYes_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">RoutedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="c1">//you can do something here.
+</span>			<span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">Parent</span> <span class="k">as</span> <span class="n">Panel</span><span class="p">).</span><span class="n">Children</span><span class="p">.</span><span class="nf">Remove</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+		<span class="p">}</span>
+
+		<span class="k">private</span> <span class="k">void</span> <span class="nf">btnNo_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">RoutedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="c1">//you can do something here.
+</span>			<span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">Parent</span> <span class="k">as</span> <span class="n">Panel</span><span class="p">).</span><span class="n">Children</span><span class="p">.</span><span class="nf">Remove</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span><span class="w">
 </span></pre></td></tr></tbody></table></code></pre></figure>
-</p>
-<h4 id="-"><code>步驟五</code></h4>
+
+<h1 id="section-4"><code class="highlighter-rouge">步驟五</code></h1>
 <p>到這邊就算是完成啦，再來就是讓它上場表演的時候了，在 MainPage.xaml 放一個 Button 叫它出來吧!!</p>
+
 <p><a href="https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_8.png"><img src="https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_thumb_3.png" alt="image" title="image" /></a></p>
-<blockquote><p>MainPage.xaml
-{:.filename}</p></blockquote>
-<p>
+
+<blockquote class="filename">
+  <p>MainPage.xaml</p>
+</blockquote>
+
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
 4
-5</pre></td><td class="code"><pre><span class="nt">&lt;/p&gt;&lt;p&gt;&lt;usercontrol</span> <span class="na">x:class=</span><span class="s">"FakeModal.MainPage"</span> <span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span> <span class="na">xmlns:x=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml"</span> <span class="na">width=</span><span class="s">"Auto"</span> <span class="na">height=</span><span class="s">"Auto"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;grid</span> <span class="na">x:name=</span><span class="s">"LayoutRoot"</span> <span class="na">background=</span><span class="s">"White"</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/grid&gt;</span>
-<span class="nt">&lt;/usercontrol&gt;&lt;/p&gt;&lt;/button&gt;</span>
-  <span class="nt">&lt;button</span> <span class="na">x:name=</span><span class="s">"btnShowModal"</span> <span class="na">horizontalalignment=</span><span class="s">"Center"</span> <span class="na">verticalalignment=</span><span class="s">"Center"</span> <span class="na">click=</span><span class="s">"btnShowModal_Click"</span> <span class="na">content=</span><span class="s">"Show Fake Modal"</span> <span class="na">fontsize=</span><span class="s">"18.667"</span><span class="nt">&gt;</span><span class="w">
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16</pre></td><td class="code"><pre><span class="nt">&lt;UserControl</span> <span class="na">x:Class=</span><span class="s">"FakeModal.MainPage"</span>
+             <span class="na">xmlns=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span>
+             <span class="na">xmlns:x=</span><span class="s">"http://schemas.microsoft.com/winfx/2006/xaml"</span>
+             <span class="na">Width=</span><span class="s">"Auto"</span>
+             <span class="na">Height=</span><span class="s">"Auto"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;Grid</span> <span class="na">x:Name=</span><span class="s">"LayoutRoot"</span>
+          <span class="na">Background=</span><span class="s">"White"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;Button</span> <span class="na">x:Name=</span><span class="s">"btnShowModal"</span>
+                <span class="na">HorizontalAlignment=</span><span class="s">"Center"</span>
+                <span class="na">VerticalAlignment=</span><span class="s">"Center"</span>
+                <span class="na">Click=</span><span class="s">"btnShowModal_Click"</span>
+                <span class="na">Content=</span><span class="s">"Show Fake Modal"</span>
+                <span class="na">FontSize=</span><span class="s">"18.667"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/Grid&gt;</span>
+<span class="nt">&lt;/UserControl&gt;</span><span class="w">
 </span></pre></td></tr></tbody></table></code></pre></figure>
-<p></p><blockquote><p>MainPage.xaml.cs
-{:.filename}</p></blockquote><p>
+
+<blockquote class="filename">
+  <p>MainPage.xaml.cs</p>
+</blockquote>
+
 <figure class="highlight"><pre><code class="language-c#" data-lang="c#"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
 2
 3
@@ -263,31 +398,39 @@
 10
 11
 12
-13</pre></td><td class="code"><pre><span class="k">using</span> <span class="nn">System.Windows.Controls</span><span class="p">;&lt;/</span><span class="n">p</span><span class="p">&gt;&lt;</span><span class="n">p</span><span class="p">&gt;</span><span class="k">namespace</span> <span class="nn">FakeModal</span>
+13
+14
+15
+16
+17</pre></td><td class="code"><pre><span class="k">using</span> <span class="nn">System.Windows.Controls</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">FakeModal</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">MainPage</span> <span class="p">:</span> <span class="n">UserControl</span>
-    <span class="p">{</span>
-        <span class="k">public</span> <span class="nf">MainPage</span><span class="p">()</span>
-        <span class="p">{</span>
-            <span class="nf">InitializeComponent</span><span class="p">();</span>
-        <span class="p">}&lt;/</span><span class="n">p</span><span class="p">&gt;&lt;</span><span class="n">pre</span><span class="p">&gt;&lt;</span><span class="n">code</span><span class="p">&gt;</span>    <span class="k">private</span> <span class="k">void</span> <span class="nf">btnShowModal_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">RoutedEventArgs</span> <span class="n">e</span><span class="p">)</span>
-    <span class="p">{</span>            
-        <span class="k">this</span><span class="p">.</span><span class="n">LayoutRoot</span><span class="p">.</span><span class="n">Children</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span> <span class="k">new</span> <span class="nf">MyModalControl</span><span class="p">());</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="p">&lt;/</span><span class="n">code</span><span class="p">&gt;&lt;/</span><span class="n">pre</span><span class="p">&gt;&lt;</span><span class="n">p</span><span class="p">&gt;}</span><span class="w">
+	<span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">MainPage</span> <span class="p">:</span> <span class="n">UserControl</span>
+	<span class="p">{</span>
+		<span class="k">public</span> <span class="nf">MainPage</span><span class="p">()</span>
+		<span class="p">{</span>
+			<span class="nf">InitializeComponent</span><span class="p">();</span>
+		<span class="p">}</span>
+
+		<span class="k">private</span> <span class="k">void</span> <span class="nf">btnShowModal_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">RoutedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+		<span class="p">{</span>			
+			<span class="k">this</span><span class="p">.</span><span class="n">LayoutRoot</span><span class="p">.</span><span class="n">Children</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span> <span class="k">new</span> <span class="nf">MyModalControl</span><span class="p">());</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span><span class="w">
 </span></pre></td></tr></tbody></table></code></pre></figure>
-</p><h4 id="-"><code>大功告成</code></h4><p>執行結果如下：</p><div align="center">
+
+<p>大功告成!!</p>
+
+<p>執行結果如下：</p>
+<div align="center">
   <iframe allowtransparency="allowtransparency" frameborder="0" scrolling="no" src="http://ouch1978.azurewebsites.net/demo/silverlight/SL-FakeModal/FakeModalDemo.html" style="width: 510px; height: 510px; overflow: hidden;">
 </iframe>
-</div><p><strong>專案下載：</strong></p><p><a href="https://az787680.vo.msecnd.net/user/ouch1978/1307/20137132234085.rar"><img src="http://ouch1978.azurewebsites.net/Images/SampleDownload.png" alt="" /></a></p>&lt;/button&gt;
-&lt;/stackpanel&gt;
-&lt;/textblock&gt;
-&lt;/stackpanel&gt;
-&lt;/border&gt;&lt;/stackpanel&gt;
-&lt;/grid&gt;
-&lt;/usercontrol&gt;
-</p>
+</div>
+<p><strong>專案下載：</strong></p>
+<p><a href="https://az787680.vo.msecnd.net/user/ouch1978/1307/20137132234085.rar"><img src="http://ouch1978.azurewebsites.net/Images/SampleDownload.png" alt="" />
+</a></p>
 
             </div>
         </article>

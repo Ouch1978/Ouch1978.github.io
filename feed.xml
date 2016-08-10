@@ -7,7 +7,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://ouch1978.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://ouch1978.github.io/" />
-<updated>2016-07-02T21:06:28+08:00</updated>
+<updated>2016-08-10T16:24:29+08:00</updated>
 <id>http://ouch1978.github.io/</id>
 <author>
   <name>Ouch Liu (劉耀群)</name>
@@ -266,10 +266,10 @@
   <category scheme="http://ouch1978.github.io/tags/#C%23" term="C#" />
   <content type="html">
   
-    &lt;p&gt;最近身邊有些朋友正在學習寫程式，算是新手中的新手，想想我也曾是過來人，就在這邊順便一下分享我小小的經驗，希望能對剛起步的朋友們有所幫助。&lt;br /&gt;
+    &lt;p&gt;最近身邊有些朋友正在學習寫程式，算是新手中的新手，想想我也曾是過來人，就在這邊順便一下分享我小小的經驗，希望能對剛起步的朋友們有所幫助。
 其實寫程式真的沒那麼難，真的!!&lt;/p&gt;
 
-&lt;p&gt;尤其是近年來比較熱門的語言，像是C#、VB.Net、JAVA、Action Script 3.0之類，比較偏向是物件導向的程式語言，只要先學會一種，再學別的就相對的快了。&lt;/p&gt;
+&lt;p&gt;尤其是近年來比較熱門的語言，像是 C#、VB.Net、JAVA、Action Script 3.0之類，比較偏向是物件導向的程式語言，只要先學會一種，再學別的就相對的快了。&lt;/p&gt;
 
 &lt;p&gt;在接下來的章節裡，我會以C#當主要的使用語言，用儘量簡單的方式，來幫助大家進入程式設計的世界。&lt;/p&gt;
 
@@ -277,22 +277,27 @@
   &lt;p&gt;俗話說：工欲善其事，必先利其器。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;要寫C#，首推的工具當然是Visual Studio，目前最新版的Visual Studio是2010版，因為現在是學習階段，所以先下載免費的版本來用就行了。&lt;br /&gt;
-微軟有免費的精簡版可以下載使用: &lt;a href=&quot;http://www.microsoft.com/express/Downloads/#2010-Visual-Web-Developer&quot; title=&quot;http://www.microsoft.com/express/Downloads/#2010-Visual-Web-Developer&quot;&gt;網址在此&lt;/a&gt;&lt;br /&gt;
-可以選擇下載&lt;a href=&quot;http://www.microsoft.com/express/Downloads/#2010-Visual-CS&quot;&gt;Visual C# 2010 Express&lt;/a&gt;(可撰寫C#應用程式)，或是&lt;a href=&quot;http://www.microsoft.com/express/Downloads/#2010-Visual-Web-Developer&quot;&gt;Visual Web Developer 2010 Express&lt;/a&gt;(可以開發網站)&lt;br /&gt;
-注意：無論如何，請下載英文版，因為以後的教學都會使用英文版，而且英文版的更新與支援速度，通常都比中文快，加上寫程式用的語言也是英文，所以，無論如何，請逼自己習慣看英文。&lt;/p&gt;
+&lt;p&gt;要寫C#，首推的工具當然是Visual Studio，目前最新版的Visual Studio是2010版，因為現在是學習階段，所以先下載免費的版本來用就行了。&lt;/p&gt;
+
+&lt;p&gt;微軟有免費的精簡版可以下載使用: &lt;a href=&quot;http://www.microsoft.com/express/Downloads/#2010-Visual-Web-Developer&quot; title=&quot;http://www.microsoft.com/express/Downloads/#2010-Visual-Web-Developer&quot;&gt;網址在此&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;可以選擇下載&lt;a href=&quot;http://www.microsoft.com/express/Downloads/#2010-Visual-CS&quot;&gt;Visual C# 2010 Express&lt;/a&gt;(可撰寫C#應用程式)，或是&lt;a href=&quot;http://www.microsoft.com/express/Downloads/#2010-Visual-Web-Developer&quot;&gt;Visual Web Developer 2010 Express&lt;/a&gt;(可以開發網站)&lt;/p&gt;
+
+&lt;p&gt;注意：無論如何，請下載英文版，因為以後的教學都會使用英文版，而且英文版的更新與支援速度，通常都比中文快，加上寫程式用的語言也是英文，所以，無論如何，請逼自己習慣看英文。&lt;/p&gt;
 
 &lt;p&gt;利用下載和安裝的空檔，這邊先跟各位講解一下一般物件導向程式的基本小常識。&lt;/p&gt;
 
-&lt;p&gt;通常在物件導向程式設計裡面，最常見，也最基本的元素，叫做&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;class&lt;/code&gt;&lt;/strong&gt;(類別)&lt;br /&gt;
-我們通常會用class來定義一件事物，就以我們常見的RPG線上遊戲的角色為例，我們要怎麼用類別來描述一個角色呢?&lt;br /&gt;
-通常，一個角色，會有他基本的「屬性」，例如角色的名稱、等級、血量、攻擊力等等。還有他可以執行的「動作」，例如移動、攻擊、坐下、跳舞。&lt;br /&gt;
-而在程式的世界裡面呢，屬性就會被區分成「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Property&lt;/code&gt;&lt;/strong&gt;」(屬性)和「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Field&lt;/code&gt;&lt;/strong&gt;」(欄位)，欄位通常和屬性會做為搭配，需要透過屬性來存取欄位，而動作就會以「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Method&lt;/code&gt;&lt;/strong&gt;」(方法)來實現。&lt;/p&gt;
+&lt;p&gt;通常在物件導向程式設計裡面，最常見，也最基本的元素，叫做 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;class&lt;/code&gt;&lt;/strong&gt; (類別)
+我們通常會用class來定義一件事物，就以我們常見的RPG線上遊戲的角色為例，我們要怎麼用類別來描述一個角色呢?&lt;/p&gt;
+
+&lt;p&gt;通常，一個角色，會有他基本的「屬性」，例如角色的名稱、等級、血量、攻擊力等等。還有他可以執行的「動作」，例如移動、攻擊、坐下、跳舞。&lt;/p&gt;
+
+&lt;p&gt;而在程式的世界裡面呢，屬性就會被區分成「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Property&lt;/code&gt;&lt;/strong&gt;」(屬性)和「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Field&lt;/code&gt;&lt;/strong&gt;」(欄位)，欄位通常和屬性會做為搭配，需要透過屬性來存取欄位，而動作就會以「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Method&lt;/code&gt;&lt;/strong&gt;」(方法)來實現。&lt;/p&gt;
 
 &lt;p&gt;將上述的角色寫成程式的話，會寫成這樣：&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;Character.cs {:.filename}&lt;/p&gt;
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;Character.cs&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c#&quot; data-lang=&quot;c#&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
@@ -318,30 +323,178 @@
 21
 22
 23
-24&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt; &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Character&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;建構子&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Character&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Character&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//建構子
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Character&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//角色編號
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Id&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;_id&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;//角色編號 private int _id; public int Id { get { return _id; } set { _id = value; } }
-&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//角色名稱 private string _name; public string Name { get { return _name;&amp;lt;br&amp;gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//角色名稱
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Name&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;_name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;//等級 private int _level; public int Level { get { return _level; } set { _level = value; } }
-&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//血量 //只允許外部讀取，不允許寫入 private int _healthPoint; public int HealthPoint { get { return _healthPoint; } }
-&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;攻擊力&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;只允許外部讀取，不允許寫入&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_attackPower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AttactkPower&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_attackPower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//等級
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_level&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Level&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_level&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;_level&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;p&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;防禦力&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;只允許外部讀取，不允許寫入&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_defensePower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DefensePower&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_defensePower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//血量
+&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;//只允許外部讀取，不允許寫入
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_healthPoint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HealthPoint&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_healthPoint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;c1&quot;&gt;//跳舞 public void Dance() { //Do dance }
-&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//坐下 public void Sit() { //Do sit }
-&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;//攻擊 public void Attack() { //Do attack }
-&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;w&quot;&gt;
+    &lt;span class=&quot;c1&quot;&gt;//攻擊力 只允許外部讀取，不允許寫入
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_attackPower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AttactkPower&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_attackPower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;//防禦力 只允許外部讀取，不允許寫入
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_defensePower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DefensePower&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_defensePower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;//跳舞
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Dance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//Do dance
+&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;//坐下
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Sit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//Do sit
+&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;//攻擊
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Attack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//Do attack
+&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;嗯，看起來有點複雜對吧?其實有比較簡單一點的寫法，不過這個是比較傳統的寫法，為了幫助大家進入狀況，也為了方便講解，所以先用這種寫法。&lt;/p&gt;
@@ -349,28 +502,43 @@
 &lt;p&gt;首先要先有幾個小觀念：&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;在程式語言中，去做出「定義一個值」這個動作，我們稱為「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;宣告&lt;/code&gt;&lt;/strong&gt;」；而在C#中，一般宣告的寫法會是「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;修飾詞&lt;/code&gt;&lt;/strong&gt;」 「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;型別&lt;/code&gt;&lt;/strong&gt;」 「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;名稱&lt;/code&gt;&lt;/strong&gt;」，中間以空白隔開。(關於C#的型別可以參考&lt;a href=&quot;http://msdn.microsoft.com/zh-tw/library/ya5y69ds.aspx&quot;&gt;內建型別列表&lt;/a&gt;和&lt;a href=&quot;http://msdn.microsoft.com/zh-tw/library/ms173104.aspx&quot;&gt;型別、變數和值&lt;/a&gt;)&lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;在程式裡面常常會看到&lt;code class=&quot;highlighter-rouge&quot;&gt;public&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;private&lt;/code&gt;這兩個修飾詞，這兩個字可以直接從字面上來看，就可以猜出他的差別：&lt;/p&gt;
-
+    &lt;p&gt;在程式語言中，去做出「定義一個值」這個動作，我們稱為「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;宣告&lt;/code&gt;&lt;/strong&gt;」；而在C#中，一般宣告的寫法會是「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;修飾詞&lt;/code&gt;&lt;/strong&gt;」 「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;型別&lt;/code&gt;&lt;/strong&gt;」 「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;名稱&lt;/code&gt;&lt;/strong&gt;」，中間以空白隔開。(關於C#的型別可以參考&lt;a href=&quot;http://msdn.microsoft.com/zh-tw/library/ya5y69ds.aspx&quot;&gt;內建型別列表&lt;/a&gt;和&lt;a href=&quot;http://msdn.microsoft.com/zh-tw/library/ms173104.aspx&quot;&gt;型別、變數和值&lt;/a&gt;)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;在程式裡面常常會看到 &lt;code class=&quot;highlighter-rouge&quot;&gt;public&lt;/code&gt; 和 &lt;code class=&quot;highlighter-rouge&quot;&gt;private&lt;/code&gt; 這兩個修飾詞，這兩個字可以直接從字面上來看，就可以猜出他的差別：
     &lt;ul&gt;
       &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;public&lt;/code&gt;指的是允許公開給外部看得到，而且用得到的東西。&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;private&lt;/code&gt;指的則是只有在定義該物件的裡才看得到、能使用的東西，例如我們在上面的例子裡有不少地方都加了&lt;code class=&quot;highlighter-rouge&quot;&gt;private&lt;/code&gt;關鍵字，那就只有在這個class裡面才看得到、能存取這些東西。&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;private&lt;/code&gt;指的則是只有在定義該物件的裡才看得到、能使用的東西，例如我們在上面的例子裡有不少地方都加了 &lt;code class=&quot;highlighter-rouge&quot;&gt;private&lt;/code&gt; 關鍵字，那就只有在這個 class 裡面才看得到、能存取這些東西。
+&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;程式裡面的段落和範圍的定義，通常會使用大括弧&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt;和&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;}&lt;/code&gt;&lt;/strong&gt;來界定。&lt;/li&gt;
-  &lt;li&gt;在程式裡面要寫註解的話有兩種寫法，一種是在註解前面加上&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;//&lt;/code&gt;&lt;/strong&gt;(兩個斜線)，或是以&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/*&lt;/code&gt;&lt;/strong&gt;(斜線加星號)和&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*/&lt;/code&gt;&lt;/strong&gt;(星號加斜線)把註解的範圍標示出來，兩者的差別為，若註解的內容為多行，則每行的前面都要加上&lt;code class=&quot;highlighter-rouge&quot;&gt;//&lt;/code&gt;，若使用&lt;code class=&quot;highlighter-rouge&quot;&gt;/*&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;*/&lt;/code&gt;，則只需放在頭和尾，內容有幾行都可以。&lt;/li&gt;
-  &lt;li&gt;在許多程式語言裡，大小寫是有區隔的，例如name和Name會被視為是不一樣的東西。&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;程式裡面的段落和範圍的定義，通常會使用大括弧 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt; 和 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;}&lt;/code&gt;&lt;/strong&gt; 來界定。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;在程式裡面要寫註解的話有兩種寫法，一種是在註解前面加上 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;//&lt;/code&gt;&lt;/strong&gt; (兩個斜線)，或是以 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/*&lt;/code&gt;&lt;/strong&gt; (斜線加星號)和 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*/&lt;/code&gt;&lt;/strong&gt; (星號加斜線)把註解的範圍標示出來，兩者的差別為，若註解的內容為多行，則每行的前面都要加上 &lt;code class=&quot;highlighter-rouge&quot;&gt;//&lt;/code&gt; ，若使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;/*&lt;/code&gt; 和 &lt;code class=&quot;highlighter-rouge&quot;&gt;*/&lt;/code&gt; ，則只需放在頭和尾，內容有幾行都可以。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;在許多程式語言裡，大小寫是有區隔的，例如name和Name會被視為是不一樣的東西。&lt;/p&gt;
+  &lt;/li&gt;
   &lt;li&gt;每種程式語言有它不同的關鍵字，要做命名的時候要避免使用到關鍵字(關於C#的關鍵字可以參考&lt;a href=&quot;http://msdn.microsoft.com/zh-tw/library/x53a06bb.aspx&quot;&gt;C#關鍵字列表&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Ok,有了上面的小觀念之後，上面的程式碼看起來應該就不再那麼複雜了，以下來做個簡單的講解：&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;前面有講過，我們通常會用class來定義一件事物，所以，程式的第一行，就是我們利用class這個關鍵字去定義出一個叫做Character(角色)的class，並且把它設為是公開的，而第二行的大括弧和第105行的大括弧是成對的，裡面的內容都會被視為Character這個class的成員。&lt;/li&gt;
-  &lt;li&gt;第4行的建構子，是用來提供被部創建該class實體的入口，我們可以想像成說，class被定義出來之後，只是一個軀殼，必需透過呼叫它的建構子，幫它注入靈魂，創造它的實體；通常每個class至少會有一個建構子，如果你沒寫的話，會使用預設的建構子，而建構子的名稱，必需和class名稱相同。&lt;/li&gt;
-  &lt;li&gt;第9到84行就是我們提到的「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Property&lt;/code&gt;&lt;/strong&gt;」和「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Field&lt;/code&gt;&lt;/strong&gt;」的組合，我們拿角色名稱來做說明，你會看到，有個private string _name，這個就是所謂的屬性，通常屬性會被定義為private，必需透過下面的public string Name來存取它，而在Property裡面則定義了該Property是否可以供存取，有get的表示可以供讀取，set則表示可以提供寫入，所以，如果該屬性是唯讀的，我們就可以透過Property的定義來達成，例如「血量」這個屬性。&lt;/li&gt;
-  &lt;li&gt;最後，第86到107行，則是定義了Character這個類別所提供的「方法」，通常凡是要和使用者進行互動，或是比較大量運算的動作，我們都會透過定義「方法」來被外部呼叫，為了不要搞得太複雜，範例的三個方法中都沒做任何的事。&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;前面有講過，我們通常會用class來定義一件事物，所以，程式的第一行，就是我們利用class這個關鍵字去定義出一個叫做Character(角色)的class，並且把它設為是公開的，而第二行的大括弧和第98行的大括弧是成對的，裡面的內容都會被視為Character這個class的成員。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;第4行的建構子，是用來提供被部創建該class實體的入口，我們可以想像成說，class被定義出來之後，只是一個軀殼，必需透過呼叫它的建構子，幫它注入靈魂，創造它的實體；通常每個class至少會有一個建構子，如果你沒寫的話，會使用預設的建構子，而建構子的名稱，必需和class名稱相同。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;第9到79行就是我們提到的「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Property&lt;/code&gt;&lt;/strong&gt;」和「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Field&lt;/code&gt;&lt;/strong&gt;」的組合，我們拿角色名稱來做說明，你會看到，有個private string _name，這個就是所謂的屬性，通常屬性會被定義為private，必需透過下面的public string Name來存取它，而在Property裡面則定義了該Property是否可以供存取，有get的表示可以供讀取，set則表示可以提供寫入，所以，如果該屬性是唯讀的，我們就可以透過Property的定義來達成，例如「血量」這個屬性。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;最後，第82到97行，則是定義了Character這個類別所提供的「方法」，通常凡是要和使用者進行互動，或是比較大量運算的動作，我們都會透過定義「方法」來被外部呼叫，為了不要搞得太複雜，範例的三個方法中都沒做任何的事。&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;以上就是C#語言很基本很基本的結構，既然是前言，我想就到這邊為止，我們下次見!!&lt;/p&gt;
@@ -782,13 +950,13 @@
 
 &lt;p&gt;首先我們打開一個標準的 Silverlight+Web 專案( WPF 也可以喔)，接著增加一個 UserControl (範例中取名為 MyModalControl )。&lt;/p&gt;
 
-&lt;p&gt;接著修改 MyModalControl.xaml 的內容，將&lt;code class=&quot;highlighter-rouge&quot;&gt;控制項本身&lt;/code&gt;與 LayoutRoot 這個 Grid 的&lt;code class=&quot;highlighter-rouge&quot;&gt;寬和高都設為 Auto&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;接著修改 MyModalControl.xaml 的內容，將 &lt;code class=&quot;highlighter-rouge&quot;&gt;控制項本身&lt;/code&gt; 與 LayoutRoot 這個 Grid 的 &lt;code class=&quot;highlighter-rouge&quot;&gt;寬和高都設為 Auto&lt;/code&gt;。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_2.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_thumb.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;section-1&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;步驟二&lt;/code&gt;&lt;/h1&gt;
 
-&lt;p&gt;修改 &lt;code class=&quot;highlighter-rouge&quot;&gt;LayoutRoot&lt;/code&gt; 的&lt;code class=&quot;highlighter-rouge&quot;&gt;背景色為 #4C4969CC&lt;/code&gt;(透明度為 30%)&lt;/p&gt;
+&lt;p&gt;修改 &lt;code class=&quot;highlighter-rouge&quot;&gt;LayoutRoot&lt;/code&gt; 的 &lt;code class=&quot;highlighter-rouge&quot;&gt;背景色為 #4C4969CC&lt;/code&gt;(透明度為 30%)&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_4.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_thumb_1.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -802,8 +970,8 @@
 
 &lt;p&gt;加入按鈕的 Click 事件，並加入移除這個控制項的程式碼，完成後的 xaml 與 cs 檔如下：&lt;/p&gt;
 
-&lt;blockquote&gt;
-  &lt;p&gt;MyModalControl.xaml {:.filename}&lt;/p&gt;
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;MyModalControl.xaml&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
@@ -826,32 +994,131 @@
 18
 19
 20
-21&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;usercontrol&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;FakeModal.MyModalControl&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:x=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:d=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/expression/blend/2008&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:ei=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/expression/2010/interactions&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:i=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/expression/2010/interactivity&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:mc=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;d:designheight=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;480&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;d:designwidth=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;640&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;mc:ignorable=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;d&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;grid&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;LayoutRoot&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#4C4969CC&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;stackpanel&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;horizontalalignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;verticalalignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;stackpanel.effect&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;dropshadoweffect&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;opacity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0.5&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/dropshadoweffect&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/stackpanel.effect&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;i:interaction.behaviors&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;ei:mousedragelementbehavior&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;constraintoparentbounds=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;True&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ei:mousedragelementbehavior&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/i:interaction.behaviors&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;border&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;200&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;32&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10,0,0,0&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;horizontalalignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Left&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;White&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;borderbrush=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Black&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;borderthickness=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;2,2,2,0&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;cornerradius=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10,10,0,0&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;textblock&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;horizontalalignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;verticalalignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;fontsize=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;18.667&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;text=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;FakeModal&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;textwrapping=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Wrap&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/textblock&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/border&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;border&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;400&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;150&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;White&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;borderbrush=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Black&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;borderthickness=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;2&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;cornerradius=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;stackpanel&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;horizontalalignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;verticalalignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;textblock&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;fontsize=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;18.667&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;text=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Is to make a fake modal that simple?&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;textwrapping=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Wrap&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;stackpanel&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0,30,0,0&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;horizontalalignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;verticalalignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;orientation=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Horizontal&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btnYes&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;80&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;32&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10,0&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;click=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btnYes_Click&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Yes&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;fontsize=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;16&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btnNo&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;80&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;32&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10,0&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;click=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btnNo_Click&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;No&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;fontsize=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;16&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;UserControl&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;FakeModal.MyModalControl&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;xmlns=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;xmlns:x=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;xmlns:d=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/expression/blend/2008&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;xmlns:ei=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/expression/2010/interactions&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;xmlns:i=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/expression/2010/interactivity&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;xmlns:mc=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;d:DesignHeight=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;480&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;d:DesignWidth=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;640&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;mc:Ignorable=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;d&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;Grid&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;LayoutRoot&quot;&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;Background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#4C4969CC&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;StackPanel&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;HorizontalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;VerticalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;StackPanel.Effect&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;DropShadowEffect&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Opacity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0.5&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/StackPanel.Effect&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;i:Interaction.Behaviors&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;ei:MouseDragElementBehavior&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ConstrainToParentBounds=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;True&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/i:Interaction.Behaviors&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;Border&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;200&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;Height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;32&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10,0,0,0&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;HorizontalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Left&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;Background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;White&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;BorderBrush=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Black&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;BorderThickness=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;2,2,2,0&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;CornerRadius=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10,10,0,0&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;TextBlock&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;HorizontalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt;
+                           &lt;span class=&quot;na&quot;&gt;VerticalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt;
+                           &lt;span class=&quot;na&quot;&gt;FontSize=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;18.667&quot;&lt;/span&gt;
+                           &lt;span class=&quot;na&quot;&gt;Text=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;FakeModal&quot;&lt;/span&gt;
+                           &lt;span class=&quot;na&quot;&gt;TextWrapping=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Wrap&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Border&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;Border&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;400&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;Height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;150&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;Background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;White&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;BorderBrush=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Black&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;BorderThickness=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;2&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;CornerRadius=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;StackPanel&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;HorizontalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt;
+                            &lt;span class=&quot;na&quot;&gt;VerticalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;TextBlock&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0&quot;&lt;/span&gt;
+                               &lt;span class=&quot;na&quot;&gt;FontSize=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;18.667&quot;&lt;/span&gt;
+                               &lt;span class=&quot;na&quot;&gt;Text=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Is to make a fake modal that simple?&quot;&lt;/span&gt;
+                               &lt;span class=&quot;na&quot;&gt;TextWrapping=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Wrap&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;StackPanel&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0,30,0,0&quot;&lt;/span&gt;
+                                &lt;span class=&quot;na&quot;&gt;HorizontalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt;
+                                &lt;span class=&quot;na&quot;&gt;VerticalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt;
+                                &lt;span class=&quot;na&quot;&gt;Orientation=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Horizontal&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;Button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btnYes&quot;&lt;/span&gt;
+                                &lt;span class=&quot;na&quot;&gt;Width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;80&quot;&lt;/span&gt;
+                                &lt;span class=&quot;na&quot;&gt;Height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;32&quot;&lt;/span&gt;
+                                &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10,0&quot;&lt;/span&gt;
+                                &lt;span class=&quot;na&quot;&gt;Click=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btnYes_Click&quot;&lt;/span&gt;
+                                &lt;span class=&quot;na&quot;&gt;Content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Yes&quot;&lt;/span&gt;
+                                &lt;span class=&quot;na&quot;&gt;FontSize=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;16&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;Button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btnNo&quot;&lt;/span&gt;
+                                &lt;span class=&quot;na&quot;&gt;Width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;80&quot;&lt;/span&gt;
+                                &lt;span class=&quot;na&quot;&gt;Height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;32&quot;&lt;/span&gt;
+                                &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10,0&quot;&lt;/span&gt;
+                                &lt;span class=&quot;na&quot;&gt;Click=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btnNo_Click&quot;&lt;/span&gt;
+                                &lt;span class=&quot;na&quot;&gt;Content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;No&quot;&lt;/span&gt;
+                                &lt;span class=&quot;na&quot;&gt;FontSize=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;16&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/StackPanel&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/StackPanel&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Border&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/StackPanel&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Grid&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/UserControl&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;/p&gt;
-&lt;blockquote&gt;&lt;p&gt;MyModalControl.xaml.cs
-{:.filename}&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;MyModalControl.xaml.cs&lt;/p&gt;
+&lt;/blockquote&gt;
+
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c#&quot; data-lang=&quot;c#&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
 3
@@ -871,46 +1138,82 @@
 17
 18
 19
-20&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;System.Windows.Controls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;FakeModal&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;partial&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyModalControl&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UserControl&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MyModalControl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nf&quot;&gt;InitializeComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pre&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;btnYes_Click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Windows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RoutedEventArgs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//you can do something here.
-&lt;/span&gt;        &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Parent&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Panel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Remove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+20
+21
+22
+23
+24&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;System.Windows.Controls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;btnNo_Click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Windows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RoutedEventArgs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//you can do something here.
-&lt;/span&gt;        &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Parent&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Panel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Remove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pre&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;FakeModal&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;partial&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyModalControl&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UserControl&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MyModalControl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+			&lt;span class=&quot;nf&quot;&gt;InitializeComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+		&lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;btnYes_Click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Windows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RoutedEventArgs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+			&lt;span class=&quot;c1&quot;&gt;//you can do something here.
+&lt;/span&gt;			&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Parent&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Panel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Remove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+		&lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;btnNo_Click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Windows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RoutedEventArgs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+			&lt;span class=&quot;c1&quot;&gt;//you can do something here.
+&lt;/span&gt;			&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Parent&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Panel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Remove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;/p&gt;
-&lt;h4 id=&quot;-&quot;&gt;&lt;code&gt;步驟五&lt;/code&gt;&lt;/h4&gt;
+
+&lt;h1 id=&quot;section-4&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;步驟五&lt;/code&gt;&lt;/h1&gt;
 &lt;p&gt;到這邊就算是完成啦，再來就是讓它上場表演的時候了，在 MainPage.xaml 放一個 Button 叫它出來吧!!&lt;/p&gt;
+
 &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_8.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_thumb_3.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;&lt;p&gt;MainPage.xaml
-{:.filename}&lt;/p&gt;&lt;/blockquote&gt;
-&lt;p&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;MainPage.xaml&lt;/p&gt;
+&lt;/blockquote&gt;
+
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
 3
 4
-5&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;&amp;lt;usercontrol&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;FakeModal.MainPage&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:x=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Auto&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Auto&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;grid&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;LayoutRoot&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;White&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/grid&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/usercontrol&amp;gt;&amp;lt;/p&amp;gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btnShowModal&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;horizontalalignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;verticalalignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;click=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btnShowModal_Click&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Show Fake Modal&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;fontsize=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;18.667&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;UserControl&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;FakeModal.MainPage&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;xmlns=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;xmlns:x=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;Width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Auto&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;Height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Auto&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;Grid&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;LayoutRoot&quot;&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;Background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;White&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;Button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btnShowModal&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;HorizontalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;VerticalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;Click=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btnShowModal_Click&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;Content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Show Fake Modal&quot;&lt;/span&gt;
+                &lt;span class=&quot;na&quot;&gt;FontSize=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;18.667&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Grid&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/UserControl&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;MainPage.xaml.cs
-{:.filename}&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;MainPage.xaml.cs&lt;/p&gt;
+&lt;/blockquote&gt;
+
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c#&quot; data-lang=&quot;c#&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
 3
@@ -923,31 +1226,39 @@
 10
 11
 12
-13&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;System.Windows.Controls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;FakeModal&lt;/span&gt;
+13
+14
+15
+16
+17&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;System.Windows.Controls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;FakeModal&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;partial&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MainPage&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UserControl&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MainPage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;nf&quot;&gt;InitializeComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pre&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;btnShowModal_Click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Windows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RoutedEventArgs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;            
-        &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LayoutRoot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MyModalControl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pre&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;&amp;gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;partial&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MainPage&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UserControl&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MainPage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+			&lt;span class=&quot;nf&quot;&gt;InitializeComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+		&lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;btnShowModal_Click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Windows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RoutedEventArgs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;			
+			&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LayoutRoot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MyModalControl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-&lt;/p&gt;&lt;h4 id=&quot;-&quot;&gt;&lt;code&gt;大功告成&lt;/code&gt;&lt;/h4&gt;&lt;p&gt;執行結果如下：&lt;/p&gt;&lt;div align=&quot;center&quot;&gt;
+
+&lt;p&gt;大功告成!!&lt;/p&gt;
+
+&lt;p&gt;執行結果如下：&lt;/p&gt;
+&lt;div align=&quot;center&quot;&gt;
   &lt;iframe allowtransparency=&quot;allowtransparency&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;http://ouch1978.azurewebsites.net/demo/silverlight/SL-FakeModal/FakeModalDemo.html&quot; style=&quot;width: 510px; height: 510px; overflow: hidden;&quot;&gt;
 &lt;/iframe&gt;
-&lt;/div&gt;&lt;p&gt;&lt;strong&gt;專案下載：&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1307/20137132234085.rar&quot;&gt;&lt;img src=&quot;http://ouch1978.azurewebsites.net/Images/SampleDownload.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;&amp;lt;/button&amp;gt;
-&amp;lt;/stackpanel&amp;gt;
-&amp;lt;/textblock&amp;gt;
-&amp;lt;/stackpanel&amp;gt;
-&amp;lt;/border&amp;gt;&amp;lt;/stackpanel&amp;gt;
-&amp;lt;/grid&amp;gt;
-&amp;lt;/usercontrol&amp;gt;
-&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;專案下載：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1307/20137132234085.rar&quot;&gt;&lt;img src=&quot;http://ouch1978.azurewebsites.net/Images/SampleDownload.png&quot; alt=&quot;&quot; /&gt;
+&lt;/a&gt;&lt;/p&gt;
 
   
   &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2010/10/26/silverlight-fake-modal-dialog/&quot;&gt;自製 Modal 元件&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 26, 2010.&lt;/p&gt;</content>

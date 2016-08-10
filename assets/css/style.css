@@ -1046,3 +1046,8 @@ button, .button {
 #search-results-container a{
     color:#E51843;
 }
+
+article h1 {
+    border-bottom: black 4px solid;
+    margin-bottom: 20px;
+}
