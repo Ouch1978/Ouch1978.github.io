@@ -648,6 +648,22 @@ iframe {
   text-align: right;
 }
 
+blockquote, blockquote p {
+    line-height: 2.4;
+    color: #fff;
+}
+
+blockquote {
+    display: block;
+    background: #292929;
+    padding: 0px 10px;
+    margin: 0 0 20px;
+    position: relative;
+    text-align: justify;
+    border-left: 24px solid #E51843;
+    border-right: 2px solid #E51843;
+}
+
 blockquote.filename {
     padding: 0px;
     margin: 0px;
@@ -661,10 +677,11 @@ blockquote.filename {
     border-left: 24px;
     border-left-color: #E51843;
     border-left-style: solid;
+    border-right-style: none;
 }
 
 blockquote.filename p {
     font-size: 0.8em;
     color: white;
-    line-height: 1.5;
+    line-height: 2.4;
 }
