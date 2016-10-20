@@ -133,12 +133,12 @@
 
 <p>利用下載和安裝的空檔，這邊先跟各位講解一下一般物件導向程式的基本小常識。</p>
 
-<p>通常在物件導向程式設計裡面，最常見，也最基本的元素，叫做 <strong><code class="highlighter-rouge">class</code></strong> (類別)
+<p>通常在物件導向程式設計裡面，最常見，也最基本的元素，叫做 <strong><code>class</code></strong> (類別)
 我們通常會用class來定義一件事物，就以我們常見的RPG線上遊戲的角色為例，我們要怎麼用類別來描述一個角色呢?</p>
 
 <p>通常，一個角色，會有他基本的「屬性」，例如角色的名稱、等級、血量、攻擊力等等。還有他可以執行的「動作」，例如移動、攻擊、坐下、跳舞。</p>
 
-<p>而在程式的世界裡面呢，屬性就會被區分成「<strong><code class="highlighter-rouge">Property</code></strong>」(屬性)和「<strong><code class="highlighter-rouge">Field</code></strong>」(欄位)，欄位通常和屬性會做為搭配，需要透過屬性來存取欄位，而動作就會以「<strong><code class="highlighter-rouge">Method</code></strong>」(方法)來實現。</p>
+<p>而在程式的世界裡面呢，屬性就會被區分成「<strong><code>Property</code></strong>」(屬性)和「<strong><code>Field</code></strong>」(欄位)，欄位通常和屬性會做為搭配，需要透過屬性來存取欄位，而動作就會以「<strong><code>Method</code></strong>」(方法)來實現。</p>
 
 <p>將上述的角色寫成程式的話，會寫成這樣：</p>
 
@@ -349,20 +349,20 @@
 
 <ul>
   <li>
-    <p>在程式語言中，去做出「定義一個值」這個動作，我們稱為「<strong><code class="highlighter-rouge">宣告</code></strong>」；而在C#中，一般宣告的寫法會是「<strong><code class="highlighter-rouge">修飾詞</code></strong>」 「<strong><code class="highlighter-rouge">型別</code></strong>」 「<strong><code class="highlighter-rouge">名稱</code></strong>」，中間以空白隔開。(關於C#的型別可以參考<a href="http://msdn.microsoft.com/zh-tw/library/ya5y69ds.aspx">內建型別列表</a>和<a href="http://msdn.microsoft.com/zh-tw/library/ms173104.aspx">型別、變數和值</a>)</p>
+    <p>在程式語言中，去做出「定義一個值」這個動作，我們稱為「<strong><code>宣告</code></strong>」；而在C#中，一般宣告的寫法會是「<strong><code>修飾詞</code></strong>」 「<strong><code>型別</code></strong>」 「<strong><code>名稱</code></strong>」，中間以空白隔開。(關於C#的型別可以參考<a href="http://msdn.microsoft.com/zh-tw/library/ya5y69ds.aspx">內建型別列表</a>和<a href="http://msdn.microsoft.com/zh-tw/library/ms173104.aspx">型別、變數和值</a>)</p>
   </li>
-  <li>在程式裡面常常會看到 <code class="highlighter-rouge">public</code> 和 <code class="highlighter-rouge">private</code> 這兩個修飾詞，這兩個字可以直接從字面上來看，就可以猜出他的差別：
+  <li>在程式裡面常常會看到 <code>public</code> 和 <code>private</code> 這兩個修飾詞，這兩個字可以直接從字面上來看，就可以猜出他的差別：
     <ul>
-      <li><code class="highlighter-rouge">public</code>指的是允許公開給外部看得到，而且用得到的東西。</li>
-      <li><code class="highlighter-rouge">private</code>指的則是只有在定義該物件的裡才看得到、能使用的東西，例如我們在上面的例子裡有不少地方都加了 <code class="highlighter-rouge">private</code> 關鍵字，那就只有在這個 class 裡面才看得到、能存取這些東西。
+      <li><code>public</code>指的是允許公開給外部看得到，而且用得到的東西。</li>
+      <li><code>private</code>指的則是只有在定義該物件的裡才看得到、能使用的東西，例如我們在上面的例子裡有不少地方都加了 <code>private</code> 關鍵字，那就只有在這個 class 裡面才看得到、能存取這些東西。
 <br /><br /></li>
     </ul>
   </li>
   <li>
-    <p>程式裡面的段落和範圍的定義，通常會使用大括弧 <strong><code class="highlighter-rouge"><span class="p">{</span></code></strong> 和 <strong><code class="highlighter-rouge">}</code></strong> 來界定。</p>
+    <p>程式裡面的段落和範圍的定義，通常會使用大括弧 <strong><code>{</code></strong> 和 <strong><code>}</code></strong> 來界定。</p>
   </li>
   <li>
-    <p>在程式裡面要寫註解的話有兩種寫法，一種是在註解前面加上 <strong><code class="highlighter-rouge">//</code></strong> (兩個斜線)，或是以 <strong><code class="highlighter-rouge">/*</code></strong> (斜線加星號)和 <strong><code class="highlighter-rouge">*/</code></strong> (星號加斜線)把註解的範圍標示出來，兩者的差別為，若註解的內容為多行，則每行的前面都要加上 <code class="highlighter-rouge">//</code> ，若使用 <code class="highlighter-rouge">/*</code> 和 <code class="highlighter-rouge">*/</code> ，則只需放在頭和尾，內容有幾行都可以。</p>
+    <p>在程式裡面要寫註解的話有兩種寫法，一種是在註解前面加上 <strong><code>//</code></strong> (兩個斜線)，或是以 <strong><code>/*</code></strong> (斜線加星號)和 <strong><code>*/</code></strong> (星號加斜線)把註解的範圍標示出來，兩者的差別為，若註解的內容為多行，則每行的前面都要加上 <code>//</code> ，若使用 <code>/*</code> 和 <code>*/</code> ，則只需放在頭和尾，內容有幾行都可以。</p>
   </li>
   <li>
     <p>在許多程式語言裡，大小寫是有區隔的，例如name和Name會被視為是不一樣的東西。</p>
@@ -380,7 +380,7 @@
     <p>第4行的建構子，是用來提供被部創建該class實體的入口，我們可以想像成說，class被定義出來之後，只是一個軀殼，必需透過呼叫它的建構子，幫它注入靈魂，創造它的實體；通常每個class至少會有一個建構子，如果你沒寫的話，會使用預設的建構子，而建構子的名稱，必需和class名稱相同。</p>
   </li>
   <li>
-    <p>第9到79行就是我們提到的「<strong><code class="highlighter-rouge">Property</code></strong>」和「<strong><code class="highlighter-rouge">Field</code></strong>」的組合，我們拿角色名稱來做說明，你會看到，有個private string _name，這個就是所謂的屬性，通常屬性會被定義為private，必需透過下面的public string Name來存取它，而在Property裡面則定義了該Property是否可以供存取，有get的表示可以供讀取，set則表示可以提供寫入，所以，如果該屬性是唯讀的，我們就可以透過Property的定義來達成，例如「血量」這個屬性。</p>
+    <p>第9到79行就是我們提到的「<strong><code>Property</code></strong>」和「<strong><code>Field</code></strong>」的組合，我們拿角色名稱來做說明，你會看到，有個private string _name，這個就是所謂的屬性，通常屬性會被定義為private，必需透過下面的public string Name來存取它，而在Property裡面則定義了該Property是否可以供存取，有get的表示可以供讀取，set則表示可以提供寫入，所以，如果該屬性是唯讀的，我們就可以透過Property的定義來達成，例如「血量」這個屬性。</p>
   </li>
   <li>
     <p>最後，第82到97行，則是定義了Character這個類別所提供的「方法」，通常凡是要和使用者進行互動，或是比較大量運算的動作，我們都會透過定義「方法」來被外部呼叫，為了不要搞得太複雜，範例的三個方法中都沒做任何的事。</p>

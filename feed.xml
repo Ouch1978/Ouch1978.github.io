@@ -7,13 +7,96 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://ouch1978.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://ouch1978.github.io/" />
-<updated>2016-08-10T16:24:29+08:00</updated>
+<updated>2016-10-20T22:40:57+08:00</updated>
 <id>http://ouch1978.github.io/</id>
 <author>
   <name>Ouch Liu (劉耀群)</name>
   <uri>http://ouch1978.github.io/</uri>
   <email>ouch1978@hotmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[解決 Windows 10 10586 英文版無法正常顯示 Non-Unicode 中文的問題]]></title>
+  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2016/10/18/windows-10-10158-english-version-missing-tchinese-fonts/"/>
+  <id>http://ouch1978.github.io/2016/10/18/windows-10-10158-english-version-missing-tchinese-fonts</id>
+  <published>2016-10-18T22:00:00+08:00</published>
+  <updated>2016-10-18T22:00:00+08:00</updated>
+  <author>
+    <name>Ouch Liu (劉耀群)</name>
+    <uri>http://ouch1978.github.io</uri>
+    <email>ouch1978@hotmail.com</email>
+  </author>
+  <category scheme="http://ouch1978.github.io/tags/#Windows%2010" term="Windows 10" />
+  <content type="html">
+  
+    &lt;p&gt;話說，之前重灌工作機的時候，試了不同的 Windows 10 版本，一開始安裝的是 10586(1511) 英文版，但是發現非 Unicode 的中文無法正常顯示。&lt;/p&gt;
+
+&lt;h1 id=&quot;section&quot;&gt;症狀&lt;/h1&gt;
+&lt;p&gt;只要是Non-Unicde的中文部份，全部都變成了一個一個的方塊。
+&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/non-unicode-chinese-not-displayed-correctly.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/non-unicode-chinese-not-displayed-correctly.png&quot; alt=&quot;無法正確顯示非Unicode中文內容&quot; title=&quot;無法正確顯示非Unicode中文內容&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-1&quot;&gt;直接講結論&lt;/h1&gt;
+&lt;p&gt;其實解法非常簡單，只要 &lt;strong&gt;&lt;code&gt;手動安裝新細明體和標楷體字型&lt;/code&gt;&lt;/strong&gt; 就可以解決這個問題了。
+但是這一連串的插波休停 (Trouble Shooting) 的過程可是花了我好幾個小時啊!!!~&lt;/p&gt;
+
+&lt;h1 id=&quot;section-2&quot;&gt;對我插波休停過程有興趣的請繼續往下閱讀&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;通常，遇到中文沒辦法正常顯示的情況都會先檢查 Non-Unicode Language 的設定。很好，我的確有選繁中，台灣。
+  &lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/setting-for-non-unicode-language.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/setting-for-non-unicode-language.png&quot; alt=&quot;Non-Unicode 語言設定&quot; title=&quot;Non-Unicode 語言設定&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;設了沒效的話，再到語言設定裡面加入中文(台灣)看看囉。
+  &lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/chinese-taiwan-is-already-added.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/chinese-taiwan-is-already-added.png&quot; alt=&quot;確認已經在語言選單中加入中文(台灣)&quot; title=&quot;確認已經在語言選單中加入中文(台灣)&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://answers.microsoft.com/en-us/windows/forum/windows_10-start/some-fonts-are-missing-after-upgrade/95839dfa-0df2-4bc0-875a-fd6b57e61fe4&quot; title=&quot;Some fonts are missing after upgrade&quot;&gt;Microsoft Community 上有一篇文章&lt;/a&gt;說 Windows 10 的部份字型被挪到選用功能去了。那…透過新增選用功能的方式來看看有沒有救好了…很好!!因為 Group Policy 的關係不能用!!
+  &lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/not-able-to-add-optional-features.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/not-able-to-add-optional-features.png&quot; alt=&quot;選用功能完全空白&quot; title=&quot;選用功能完全空白&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;還是不行!? 那我下載繁體中文語言包來安裝，總該行了吧!!? 蝦毀!? 一樣 GG 啊!!!!~~~ (崩潰中…)
+  &lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/install-language-pack.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/install-language-pack.png&quot; alt=&quot;安裝語言包&quot; title=&quot;安裝語言包&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;好吧…看看是不是有缺什麼字型才沒辦法正常顯示…
+ 咦!? &lt;strong&gt;&lt;code&gt;沒有新細明體和標楷體! 沒有新細明體和標楷體!! 沒有新細明體和標楷體!!!&lt;/code&gt;&lt;/strong&gt;
+  &lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/pre-installed-fonts-in-10586.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/pre-installed-fonts-in-10586.png&quot; alt=&quot;Windows 10 10586 英文版預設安裝的字型&quot; title=&quot;Windows 10 10586 英文版預設安裝的字型&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;死馬當活馬醫看看，從別台電腦複製這兩個字型過來裝吧。
+  &lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/install-mingliu-and-kaiu.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/install-mingliu-and-kaiu.png&quot; alt=&quot;手動安裝新細明體和標楷體字型&quot; title=&quot;手動安裝新細明體和標楷體字型&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;喔耶!! 中文回來了~~大家都回來了!!
+  &lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/get-chinese-back.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/get-chinese-back.png&quot; alt=&quot;可以正常顯示中文啦&quot; title=&quot;可以正常顯示中文啦&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;section-3&quot;&gt;後記&lt;/h1&gt;
+&lt;p&gt;這真的是一件很神奇的事…&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;乾淨安裝 10240 再升上 10586(1511) -&amp;gt; 不會有這個問題。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;乾淨安裝年度更新版(1607) -&amp;gt; 不會有這個問題。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;乾淨安裝 10586(1511) -&amp;gt; &lt;strong&gt;&lt;code&gt;中標&lt;/code&gt;&lt;/strong&gt;。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;乾淨安裝 10586(1511) 再升上年度更新版(1607) -&amp;gt; &lt;strong&gt;&lt;code&gt;中標&lt;/code&gt;&lt;/strong&gt;。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;我只能說，我真的是搞不懂你啊~~&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/10/18/windows-10-10158-english-version-missing-tchinese-fonts/&quot;&gt;解決 Windows 10 10586 英文版無法正常顯示 Non-Unicode 中文的問題&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 18, 2016.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -32,7 +115,7 @@
   
     &lt;p&gt;放假的時候想要玩個遊戲放鬆一下，但是遊戲卻動不動就自己閃退，在事件檢視器中看到失敗的模組名稱為 XAudio2_7.dll_unloaded ，這邊就來分享解決之道。&lt;/p&gt;
 
-&lt;h3 id=&quot;tabletinputservice&quot;&gt;直接講結論： &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;關閉 TabletInputService&lt;/code&gt;&lt;/strong&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;tabletinputservice&quot;&gt;直接講結論： &lt;strong&gt;&lt;code&gt;關閉 TabletInputService&lt;/code&gt;&lt;/strong&gt;&lt;/h3&gt;
 
 &lt;p&gt;&lt;br /&gt;
 是的，你沒看錯，我也不懂為什麼平板輸入服務會影響到音效模組…&lt;/p&gt;
@@ -76,7 +159,7 @@
 
 &lt;p&gt;相信大家應該都知道Visual Studio 2015裡面很佛心的包含了多種Android裝置的模擬器，讓我們在開發Android應用程式的時候也可以透過它來進行除錯。&lt;/p&gt;
 
-&lt;p&gt;我們也可以透過Visual Studio選單裡的 -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Tools&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Android&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Android Emulator Manager&lt;/code&gt;&lt;/strong&gt; 來建立虛擬的Android裝置以便於進行除錯。&lt;/p&gt;
+&lt;p&gt;我們也可以透過Visual Studio選單裡的 -&amp;gt; &lt;strong&gt;&lt;code&gt;Tools&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Android&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Android Emulator Manager&lt;/code&gt;&lt;/strong&gt; 來建立虛擬的Android裝置以便於進行除錯。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-debugging-xamarin-android-app-in-vs/Android-Emulator-Manager.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-debugging-xamarin-android-app-in-vs/Android-Emulator-Manager.png&quot; alt=&quot;Android Emulator Manager&quot; title=&quot;Android Emulator Manager&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -84,7 +167,7 @@
 
 &lt;p&gt;經過Google大神的協助，原來這個問題是出在Hyper-V裡虛擬機器的設定上。&lt;/p&gt;
 
-&lt;p&gt;只需要開啟 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Hyper-V Manager&lt;/code&gt;&lt;/strong&gt; ，在Android虛擬機上按下滑鼠右鍵，點選 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Settings...&lt;/code&gt;&lt;/strong&gt;，然後進入 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Processor&lt;/code&gt;&lt;/strong&gt; 的 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Compatibility&lt;/code&gt;&lt;/strong&gt; 設定項目中，把 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Migrate to a physical computer with a different processor version&lt;/code&gt;&lt;/strong&gt; 勾選起來就行啦。&lt;/p&gt;
+&lt;p&gt;只需要開啟 &lt;strong&gt;&lt;code&gt;Hyper-V Manager&lt;/code&gt;&lt;/strong&gt; ，在Android虛擬機上按下滑鼠右鍵，點選 &lt;strong&gt;&lt;code&gt;Settings...&lt;/code&gt;&lt;/strong&gt;，然後進入 &lt;strong&gt;&lt;code&gt;Processor&lt;/code&gt;&lt;/strong&gt; 的 &lt;strong&gt;&lt;code&gt;Compatibility&lt;/code&gt;&lt;/strong&gt; 設定項目中，把 &lt;strong&gt;&lt;code&gt;Migrate to a physical computer with a different processor version&lt;/code&gt;&lt;/strong&gt; 勾選起來就行啦。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-debugging-xamarin-android-app-in-vs/Compatibility-Setting.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-debugging-xamarin-android-app-in-vs/Compatibility-Setting.png&quot; alt=&quot;Compatibility Setting&quot; title=&quot;Compatibility Setting&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -117,7 +200,7 @@
 
 &lt;p&gt;但是，故事的發展永遠沒有想像得那麼簡單…&lt;/p&gt;
 
-&lt;p&gt;專案成功建立了，但是Android專案建置失敗!!! &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Build Failed! Build Failed!! Build Failed!!!&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;專案成功建立了，但是Android專案建置失敗!!! &lt;strong&gt;&lt;code&gt;Build Failed! Build Failed!! Build Failed!!!&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-hello-xamarin/Build-Failed.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-hello-xamarin/Build-Failed.png&quot; alt=&quot;Build Fail&quot; title=&quot;Build Fail&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -125,19 +208,19 @@
 
 &lt;h1 id=&quot;xamarin&quot;&gt;檢查Xamarin更新&lt;/h1&gt;
 
-&lt;p&gt;其實我也試過了解除安裝Xamarin之後重新安裝，但是一樣無解。後來發現就算從Xamarin官網上下載的安裝檔也不見得會是最新的，要更新的話還是得透過Visual Studio比較保險。 檢查 Xamarin 更新的方式為：點選Visual Studio的選單中點選 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Tools&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Options&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Xamarin&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Other&lt;/code&gt;&lt;/strong&gt; -&amp;gt; 再點選 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Check Now&lt;/code&gt;&lt;/strong&gt; 即可。&lt;/p&gt;
+&lt;p&gt;其實我也試過了解除安裝Xamarin之後重新安裝，但是一樣無解。後來發現就算從Xamarin官網上下載的安裝檔也不見得會是最新的，要更新的話還是得透過Visual Studio比較保險。 檢查 Xamarin 更新的方式為：點選Visual Studio的選單中點選 &lt;strong&gt;&lt;code&gt;Tools&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Options&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Xamarin&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Other&lt;/code&gt;&lt;/strong&gt; -&amp;gt; 再點選 &lt;strong&gt;&lt;code&gt;Check Now&lt;/code&gt;&lt;/strong&gt; 即可。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-hello-xamarin/Check-Xamarin-Update.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-hello-xamarin/Check-Xamarin-Update.png&quot; alt=&quot;檢查Xamarin更新&quot; title=&quot;檢查Xamarin更新&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;xamarinandroidsupport&quot;&gt;刪除Xamarin.Android.Support相關檔案&lt;/h1&gt;
 
-&lt;p&gt;還有很多次在建置專案的時候出現了找不到 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;Xamarin.Android.Support.Design&quot;&lt;/code&gt;&lt;/strong&gt; 相關檔案的錯誤訊息，而經過Google大神的指示，只要把 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;%UserProfile%\AppData\Local\Xamarin&lt;/code&gt;&lt;/strong&gt; 下的資料夾砍掉，再重新進行建置，就會自動下載完相關的檔案了。(這也是為什麼第一次進行建置都會花特別久的原因，所以千萬別以為它掛掉了就按下停止建置的按鈕。)&lt;/p&gt;
+&lt;p&gt;還有很多次在建置專案的時候出現了找不到 &lt;strong&gt;&lt;code&gt;&quot;Xamarin.Android.Support.Design&quot;&lt;/code&gt;&lt;/strong&gt; 相關檔案的錯誤訊息，而經過Google大神的指示，只要把 &lt;strong&gt;&lt;code&gt;%UserProfile%\AppData\Local\Xamarin&lt;/code&gt;&lt;/strong&gt; 下的資料夾砍掉，再重新進行建置，就會自動下載完相關的檔案了。(這也是為什麼第一次進行建置都會花特別久的原因，所以千萬別以為它掛掉了就按下停止建置的按鈕。)&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-hello-xamarin/Delete-Xamarin-Android-Related-Files.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-hello-xamarin/Delete-Xamarin-Android-Related-Files.png&quot; alt=&quot;建置專案時所需要的相關檔案&quot; title=&quot;建置專案時所需要的相關檔案&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;android-sdk&quot;&gt;檢查Android SDK&lt;/h1&gt;
 
-&lt;p&gt;在Visual Studio的選單中點選 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Tools&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Android&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Android SDK Manager&lt;/code&gt;&lt;/strong&gt; 就可以看到已經安裝了哪些SDK或是建置工具。 而我遇到的問題呢，是因為我很開心的安裝了 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Android SDK Build-tools Rev 24&lt;/code&gt;&lt;/strong&gt; 的關係。&lt;/p&gt;
+&lt;p&gt;在Visual Studio的選單中點選 &lt;strong&gt;&lt;code&gt;Tools&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Android&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Android SDK Manager&lt;/code&gt;&lt;/strong&gt; 就可以看到已經安裝了哪些SDK或是建置工具。 而我遇到的問題呢，是因為我很開心的安裝了 &lt;strong&gt;&lt;code&gt;Android SDK Build-tools Rev 24&lt;/code&gt;&lt;/strong&gt; 的關係。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-hello-xamarin/Remove-Build-Tools-Rev24.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-hello-xamarin/Remove-Build-Tools-Rev24.png&quot; alt=&quot;兇手就是它&quot; title=&quot;兇手就是它&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -222,7 +305,7 @@
 
 &lt;p&gt;不過還是分享一下這個方法，如果你不介意像上圖一樣出現一個空空的廣告區的話，這個方法就可以滿足你啦。&lt;/p&gt;
 
-&lt;p&gt;方法很簡單，只要到 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;控制台&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;網際網路選項&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;安全性&lt;/code&gt;&lt;/strong&gt; -&amp;gt; 點選 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;限制的網站&lt;/code&gt;&lt;/strong&gt; 之後 -&amp;gt; 按下下方的 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;網站&lt;/code&gt;&lt;/strong&gt; 按鈕之後，在出現的視窗中加入 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;https://apps.skype.com&lt;/code&gt;&lt;/strong&gt; 就行囉。&lt;/p&gt;
+&lt;p&gt;方法很簡單，只要到 &lt;strong&gt;&lt;code&gt;控制台&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;網際網路選項&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;安全性&lt;/code&gt;&lt;/strong&gt; -&amp;gt; 點選 &lt;strong&gt;&lt;code&gt;限制的網站&lt;/code&gt;&lt;/strong&gt; 之後 -&amp;gt; 按下下方的 &lt;strong&gt;&lt;code&gt;網站&lt;/code&gt;&lt;/strong&gt; 按鈕之後，在出現的視窗中加入 &lt;strong&gt;&lt;code&gt;https://apps.skype.com&lt;/code&gt;&lt;/strong&gt; 就行囉。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-08-Remove-Skype-Ads/01.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-08-Remove-Skype-Ads/01.png&quot; alt=&quot;設定限制的網站&quot; title=&quot;設定限制的網站&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -236,9 +319,9 @@
 
 &lt;h1 id=&quot;section-1&quot;&gt;方法二：徹底移除廣告區的方法&lt;/h1&gt;
 
-&lt;p&gt;使用任一文字編輯器開啟 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;%UserProfile%\AppData\Roaming\Skype\你的帳號\config.xml&lt;/code&gt;&lt;/strong&gt; 檔。&lt;/p&gt;
+&lt;p&gt;使用任一文字編輯器開啟 &lt;strong&gt;&lt;code&gt;%UserProfile%\AppData\Roaming\Skype\你的帳號\config.xml&lt;/code&gt;&lt;/strong&gt; 檔。&lt;/p&gt;
 
-&lt;p&gt;尋找 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;AdvertPlaceholder&lt;/code&gt;&lt;/strong&gt; 關鍵字，將該行刪除之後存檔。(如果怕Skype更新之後又被改回來的話，可以直接把該檔案設定成唯讀。)&lt;/p&gt;
+&lt;p&gt;尋找 &lt;strong&gt;&lt;code&gt;AdvertPlaceholder&lt;/code&gt;&lt;/strong&gt; 關鍵字，將該行刪除之後存檔。(如果怕Skype更新之後又被改回來的話，可以直接把該檔案設定成唯讀。)&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-08-Remove-Skype-Ads/03.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-08-Remove-Skype-Ads/03.png&quot; alt=&quot;刪除AdvertPlaceholder標籤&quot; title=&quot;刪除AdvertPlaceholder標籤&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -287,12 +370,12 @@
 
 &lt;p&gt;利用下載和安裝的空檔，這邊先跟各位講解一下一般物件導向程式的基本小常識。&lt;/p&gt;
 
-&lt;p&gt;通常在物件導向程式設計裡面，最常見，也最基本的元素，叫做 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;class&lt;/code&gt;&lt;/strong&gt; (類別)
+&lt;p&gt;通常在物件導向程式設計裡面，最常見，也最基本的元素，叫做 &lt;strong&gt;&lt;code&gt;class&lt;/code&gt;&lt;/strong&gt; (類別)
 我們通常會用class來定義一件事物，就以我們常見的RPG線上遊戲的角色為例，我們要怎麼用類別來描述一個角色呢?&lt;/p&gt;
 
 &lt;p&gt;通常，一個角色，會有他基本的「屬性」，例如角色的名稱、等級、血量、攻擊力等等。還有他可以執行的「動作」，例如移動、攻擊、坐下、跳舞。&lt;/p&gt;
 
-&lt;p&gt;而在程式的世界裡面呢，屬性就會被區分成「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Property&lt;/code&gt;&lt;/strong&gt;」(屬性)和「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Field&lt;/code&gt;&lt;/strong&gt;」(欄位)，欄位通常和屬性會做為搭配，需要透過屬性來存取欄位，而動作就會以「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Method&lt;/code&gt;&lt;/strong&gt;」(方法)來實現。&lt;/p&gt;
+&lt;p&gt;而在程式的世界裡面呢，屬性就會被區分成「&lt;strong&gt;&lt;code&gt;Property&lt;/code&gt;&lt;/strong&gt;」(屬性)和「&lt;strong&gt;&lt;code&gt;Field&lt;/code&gt;&lt;/strong&gt;」(欄位)，欄位通常和屬性會做為搭配，需要透過屬性來存取欄位，而動作就會以「&lt;strong&gt;&lt;code&gt;Method&lt;/code&gt;&lt;/strong&gt;」(方法)來實現。&lt;/p&gt;
 
 &lt;p&gt;將上述的角色寫成程式的話，會寫成這樣：&lt;/p&gt;
 
@@ -503,20 +586,20 @@
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;在程式語言中，去做出「定義一個值」這個動作，我們稱為「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;宣告&lt;/code&gt;&lt;/strong&gt;」；而在C#中，一般宣告的寫法會是「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;修飾詞&lt;/code&gt;&lt;/strong&gt;」 「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;型別&lt;/code&gt;&lt;/strong&gt;」 「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;名稱&lt;/code&gt;&lt;/strong&gt;」，中間以空白隔開。(關於C#的型別可以參考&lt;a href=&quot;http://msdn.microsoft.com/zh-tw/library/ya5y69ds.aspx&quot;&gt;內建型別列表&lt;/a&gt;和&lt;a href=&quot;http://msdn.microsoft.com/zh-tw/library/ms173104.aspx&quot;&gt;型別、變數和值&lt;/a&gt;)&lt;/p&gt;
+    &lt;p&gt;在程式語言中，去做出「定義一個值」這個動作，我們稱為「&lt;strong&gt;&lt;code&gt;宣告&lt;/code&gt;&lt;/strong&gt;」；而在C#中，一般宣告的寫法會是「&lt;strong&gt;&lt;code&gt;修飾詞&lt;/code&gt;&lt;/strong&gt;」 「&lt;strong&gt;&lt;code&gt;型別&lt;/code&gt;&lt;/strong&gt;」 「&lt;strong&gt;&lt;code&gt;名稱&lt;/code&gt;&lt;/strong&gt;」，中間以空白隔開。(關於C#的型別可以參考&lt;a href=&quot;http://msdn.microsoft.com/zh-tw/library/ya5y69ds.aspx&quot;&gt;內建型別列表&lt;/a&gt;和&lt;a href=&quot;http://msdn.microsoft.com/zh-tw/library/ms173104.aspx&quot;&gt;型別、變數和值&lt;/a&gt;)&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;在程式裡面常常會看到 &lt;code class=&quot;highlighter-rouge&quot;&gt;public&lt;/code&gt; 和 &lt;code class=&quot;highlighter-rouge&quot;&gt;private&lt;/code&gt; 這兩個修飾詞，這兩個字可以直接從字面上來看，就可以猜出他的差別：
+  &lt;li&gt;在程式裡面常常會看到 &lt;code&gt;public&lt;/code&gt; 和 &lt;code&gt;private&lt;/code&gt; 這兩個修飾詞，這兩個字可以直接從字面上來看，就可以猜出他的差別：
     &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;public&lt;/code&gt;指的是允許公開給外部看得到，而且用得到的東西。&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;private&lt;/code&gt;指的則是只有在定義該物件的裡才看得到、能使用的東西，例如我們在上面的例子裡有不少地方都加了 &lt;code class=&quot;highlighter-rouge&quot;&gt;private&lt;/code&gt; 關鍵字，那就只有在這個 class 裡面才看得到、能存取這些東西。
+      &lt;li&gt;&lt;code&gt;public&lt;/code&gt;指的是允許公開給外部看得到，而且用得到的東西。&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;private&lt;/code&gt;指的則是只有在定義該物件的裡才看得到、能使用的東西，例如我們在上面的例子裡有不少地方都加了 &lt;code&gt;private&lt;/code&gt; 關鍵字，那就只有在這個 class 裡面才看得到、能存取這些東西。
 &lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;程式裡面的段落和範圍的定義，通常會使用大括弧 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;/code&gt;&lt;/strong&gt; 和 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;}&lt;/code&gt;&lt;/strong&gt; 來界定。&lt;/p&gt;
+    &lt;p&gt;程式裡面的段落和範圍的定義，通常會使用大括弧 &lt;strong&gt;&lt;code&gt;{&lt;/code&gt;&lt;/strong&gt; 和 &lt;strong&gt;&lt;code&gt;}&lt;/code&gt;&lt;/strong&gt; 來界定。&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;在程式裡面要寫註解的話有兩種寫法，一種是在註解前面加上 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;//&lt;/code&gt;&lt;/strong&gt; (兩個斜線)，或是以 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;/*&lt;/code&gt;&lt;/strong&gt; (斜線加星號)和 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*/&lt;/code&gt;&lt;/strong&gt; (星號加斜線)把註解的範圍標示出來，兩者的差別為，若註解的內容為多行，則每行的前面都要加上 &lt;code class=&quot;highlighter-rouge&quot;&gt;//&lt;/code&gt; ，若使用 &lt;code class=&quot;highlighter-rouge&quot;&gt;/*&lt;/code&gt; 和 &lt;code class=&quot;highlighter-rouge&quot;&gt;*/&lt;/code&gt; ，則只需放在頭和尾，內容有幾行都可以。&lt;/p&gt;
+    &lt;p&gt;在程式裡面要寫註解的話有兩種寫法，一種是在註解前面加上 &lt;strong&gt;&lt;code&gt;//&lt;/code&gt;&lt;/strong&gt; (兩個斜線)，或是以 &lt;strong&gt;&lt;code&gt;/*&lt;/code&gt;&lt;/strong&gt; (斜線加星號)和 &lt;strong&gt;&lt;code&gt;*/&lt;/code&gt;&lt;/strong&gt; (星號加斜線)把註解的範圍標示出來，兩者的差別為，若註解的內容為多行，則每行的前面都要加上 &lt;code&gt;//&lt;/code&gt; ，若使用 &lt;code&gt;/*&lt;/code&gt; 和 &lt;code&gt;*/&lt;/code&gt; ，則只需放在頭和尾，內容有幾行都可以。&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;在許多程式語言裡，大小寫是有區隔的，例如name和Name會被視為是不一樣的東西。&lt;/p&gt;
@@ -534,7 +617,7 @@
     &lt;p&gt;第4行的建構子，是用來提供被部創建該class實體的入口，我們可以想像成說，class被定義出來之後，只是一個軀殼，必需透過呼叫它的建構子，幫它注入靈魂，創造它的實體；通常每個class至少會有一個建構子，如果你沒寫的話，會使用預設的建構子，而建構子的名稱，必需和class名稱相同。&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;第9到79行就是我們提到的「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Property&lt;/code&gt;&lt;/strong&gt;」和「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Field&lt;/code&gt;&lt;/strong&gt;」的組合，我們拿角色名稱來做說明，你會看到，有個private string _name，這個就是所謂的屬性，通常屬性會被定義為private，必需透過下面的public string Name來存取它，而在Property裡面則定義了該Property是否可以供存取，有get的表示可以供讀取，set則表示可以提供寫入，所以，如果該屬性是唯讀的，我們就可以透過Property的定義來達成，例如「血量」這個屬性。&lt;/p&gt;
+    &lt;p&gt;第9到79行就是我們提到的「&lt;strong&gt;&lt;code&gt;Property&lt;/code&gt;&lt;/strong&gt;」和「&lt;strong&gt;&lt;code&gt;Field&lt;/code&gt;&lt;/strong&gt;」的組合，我們拿角色名稱來做說明，你會看到，有個private string _name，這個就是所謂的屬性，通常屬性會被定義為private，必需透過下面的public string Name來存取它，而在Property裡面則定義了該Property是否可以供存取，有get的表示可以供讀取，set則表示可以提供寫入，所以，如果該屬性是唯讀的，我們就可以透過Property的定義來達成，例如「血量」這個屬性。&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;最後，第82到97行，則是定義了Character這個類別所提供的「方法」，通常凡是要和使用者進行互動，或是比較大量運算的動作，我們都會透過定義「方法」來被外部呼叫，為了不要搞得太複雜，範例的三個方法中都沒做任何的事。&lt;/p&gt;
@@ -568,16 +651,16 @@
 
 &lt;p&gt;當然，規則很多，我在這邊只先列出和比較基本的命名相關的規則；而關於完整的C#的程式撰寫規範建議，則可以參考&lt;a href=&quot;http://msdn.microsoft.com/zh-tw/library/ms229042.aspx&quot;&gt;MSDN上的設計方針&lt;/a&gt;，再配合FXCop做程式碼撰寫後的規範驗證。&lt;/p&gt;
 
-&lt;p&gt;以下為C#命名的&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;一般原則&lt;/code&gt;&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;以下為C#命名的&lt;strong&gt;&lt;code&gt;一般原則&lt;/code&gt;&lt;/strong&gt;：&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;使用&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Pascal&lt;/code&gt;&lt;/strong&gt;( 如 : “VirtualDesign” )及&lt;strong&gt;‘Camel’&lt;/strong&gt;( 如 : “virtualDesign” )兩種命名方式，並建議避免使用分隔符號( 例如底線 “_” 或連字號 “-“ )來做命名 - &lt;a href=&quot;http://msdn.microsoft.com/library/bb264474(VS.100).aspx&quot;&gt;CA1702&lt;/a&gt;。&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;可讀性優先於簡潔性&lt;/code&gt;( CanScrollHorizontally 優於 ScrollableX )，並參考常用的命名( HorizontalAlignment 優於 AlignmentHorizontal )。&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;避免使用匈牙利命名法&lt;/code&gt;( 如 : “strName” )，並正確的使用前置及後置詞命名 - &lt;a href=&quot;http://msdn.microsoft.com/library/bb531486(VS.100).aspx&quot;&gt;CA1720&lt;/a&gt;、&lt;a href=&quot;http://msdn.microsoft.com/zh-tw/library/ms182244.aspx&quot;&gt;CA1710&lt;/a&gt;。&lt;/li&gt;
-  &lt;li&gt;正確的使用縮寫，&lt;code class=&quot;highlighter-rouge&quot;&gt;縮寫字為兩個字母以內，則兩字皆為大寫&lt;/code&gt;( 如 : “IO” )，&lt;code class=&quot;highlighter-rouge&quot;&gt;三個字以上，則使用Pascal命名規則&lt;/code&gt;( 如 : “Xml” )，且縮寫字不得高於五個字母 - &lt;a href=&quot;http://msdn.microsoft.com/library/ms182240(VS.100).aspx&quot;&gt;CA1709&lt;/a&gt;。&lt;/li&gt;
+  &lt;li&gt;使用&lt;strong&gt;&lt;code&gt;Pascal&lt;/code&gt;&lt;/strong&gt;( 如 : “VirtualDesign” )及&lt;strong&gt;‘Camel’&lt;/strong&gt;( 如 : “virtualDesign” )兩種命名方式，並建議避免使用分隔符號( 例如底線 “_” 或連字號 “-“ )來做命名 - &lt;a href=&quot;http://msdn.microsoft.com/library/bb264474(VS.100).aspx&quot;&gt;CA1702&lt;/a&gt;。&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;可讀性優先於簡潔性&lt;/code&gt;( CanScrollHorizontally 優於 ScrollableX )，並參考常用的命名( HorizontalAlignment 優於 AlignmentHorizontal )。&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;避免使用匈牙利命名法&lt;/code&gt;( 如 : “strName” )，並正確的使用前置及後置詞命名 - &lt;a href=&quot;http://msdn.microsoft.com/library/bb531486(VS.100).aspx&quot;&gt;CA1720&lt;/a&gt;、&lt;a href=&quot;http://msdn.microsoft.com/zh-tw/library/ms182244.aspx&quot;&gt;CA1710&lt;/a&gt;。&lt;/li&gt;
+  &lt;li&gt;正確的使用縮寫，&lt;code&gt;縮寫字為兩個字母以內，則兩字皆為大寫&lt;/code&gt;( 如 : “IO” )，&lt;code&gt;三個字以上，則使用Pascal命名規則&lt;/code&gt;( 如 : “Xml” )，且縮寫字不得高於五個字母 - &lt;a href=&quot;http://msdn.microsoft.com/library/ms182240(VS.100).aspx&quot;&gt;CA1709&lt;/a&gt;。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&quot;c&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;C#物件命名原則&lt;/code&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;c&quot;&gt;&lt;code&gt;C#物件命名原則&lt;/code&gt;&lt;/h1&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
@@ -749,24 +832,24 @@
   <category scheme="http://ouch1978.github.io/tags/#Power%20Point" term="Power Point" />
   <content type="html">
   
-    &lt;p&gt;上次跟各位介紹了母片的應用，這次再來介紹兩個小撇步，一樣只利用PowerPoint原生的功能，&lt;code class=&quot;highlighter-rouge&quot;&gt;不借助任何外部圖片&lt;/code&gt;，做出類似璃鏡面的效果，以及可以放在標題頁的自我介紹小卡片。&lt;/p&gt;
+    &lt;p&gt;上次跟各位介紹了母片的應用，這次再來介紹兩個小撇步，一樣只利用PowerPoint原生的功能，&lt;code&gt;不借助任何外部圖片&lt;/code&gt;，做出類似璃鏡面的效果，以及可以放在標題頁的自我介紹小卡片。&lt;/p&gt;
 
 &lt;p&gt;我們沿用上次範例的pptx檔，來針對純黑的色塊動手腳，加入類似玻璃的反光效果，讓它看起來不再那麼單調。&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;「一切都從母片開始」!!!&lt;/code&gt;&lt;/strong&gt;所以我們先進入母片編輯模式，選取位於母片上面的黑色矩形，選取工作列的&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;格式&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;圖案填滿&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;漸層&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;其他漸層&lt;/code&gt;&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;「一切都從母片開始」!!!&lt;/code&gt;&lt;/strong&gt;所以我們先進入母片編輯模式，選取位於母片上面的黑色矩形，選取工作列的&lt;strong&gt;&lt;code&gt;格式&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;圖案填滿&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;漸層&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;其他漸層&lt;/code&gt;&lt;/strong&gt;。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_2.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_thumb.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;在跳出來的&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;格式化圖案&lt;/code&gt;&lt;/strong&gt;視窗中選取&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;漸層填滿&lt;/code&gt;&lt;/strong&gt;，並且依以下設定漸層停駐點：&lt;/p&gt;
+&lt;p&gt;在跳出來的&lt;strong&gt;&lt;code&gt;格式化圖案&lt;/code&gt;&lt;/strong&gt;視窗中選取&lt;strong&gt;&lt;code&gt;漸層填滿&lt;/code&gt;&lt;/strong&gt;，並且依以下設定漸層停駐點：&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;位置0%，黑色，亮度0%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;位置20%，黑色，亮度15%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;位置40%，黑色，亮度25%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;位置74%，黑色，亮度35%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;位置75%，黑色，亮度25%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code&gt;位置0%，黑色，亮度0%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code&gt;位置20%，黑色，亮度15%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code&gt;位置40%，黑色，亮度25%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code&gt;位置74%，黑色，亮度35%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code&gt;位置75%，黑色，亮度25%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;位置90%，黑色，亮度5%&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;&lt;code&gt;位置90%，黑色，亮度5%&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 
     &lt;p&gt;完成後的長相會如下圖，是不是更有質感了呢?&lt;/p&gt;
 
@@ -775,18 +858,18 @@
     &lt;p&gt;當然上面的改了，下面也要來一下：&lt;/p&gt;
 
     &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;位置0%，黑色，亮度0%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;位置20%，黑色，亮度15%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;位置35%，黑色，亮度25%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;位置50%，黑色，亮度25&lt;/code&gt;%&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;位置51%，黑色，亮度5%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code&gt;位置0%，黑色，亮度0%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code&gt;位置20%，黑色，亮度15%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code&gt;位置35%，黑色，亮度25%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code&gt;位置50%，黑色，亮度25&lt;/code&gt;%&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;&lt;code&gt;位置51%，黑色，亮度5%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
     &lt;/ul&gt;
 
     &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_6.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_thumb_2.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
     &lt;p&gt;這邊有一個重點，就是亮部和暗部要靠得很近，而且亮度要有足夠的反差，才能做出反光的感覺，亮部和暗部位置和顏色的拿捏，是影響整個質感最大的關鍵，為了讓各位練習，標題頁就交給各位自行發揮了。&lt;/p&gt;
 
-    &lt;p&gt;接著來做說好的自我介紹小卡片。切換到標題投影片的母片編輯模式，切換到&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;插入&lt;/code&gt;&lt;/strong&gt;頁籤，插入一個「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;剪去單一角落矩形&lt;/code&gt;&lt;/strong&gt;」於右下角。&lt;/p&gt;
+    &lt;p&gt;接著來做說好的自我介紹小卡片。切換到標題投影片的母片編輯模式，切換到&lt;strong&gt;&lt;code&gt;插入&lt;/code&gt;&lt;/strong&gt;頁籤，插入一個「&lt;strong&gt;&lt;code&gt;剪去單一角落矩形&lt;/code&gt;&lt;/strong&gt;」於右下角。&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_8.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_thumb_3.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -803,25 +886,25 @@
 
     &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_10.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_thumb_4.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-    &lt;p&gt;再來&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;把最重要的部門單位、姓名、聯絡方式打上去&lt;/code&gt;&lt;/strong&gt;，然後把名片稍稍&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;旋轉&lt;/code&gt;&lt;/strong&gt;並且&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;調整一下位置&lt;/code&gt;&lt;/strong&gt;，變成如下圖的樣子。&lt;/p&gt;
+    &lt;p&gt;再來&lt;strong&gt;&lt;code&gt;把最重要的部門單位、姓名、聯絡方式打上去&lt;/code&gt;&lt;/strong&gt;，然後把名片稍稍&lt;strong&gt;&lt;code&gt;旋轉&lt;/code&gt;&lt;/strong&gt;並且&lt;strong&gt;&lt;code&gt;調整一下位置&lt;/code&gt;&lt;/strong&gt;，變成如下圖的樣子。&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_12.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_thumb_5.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-    &lt;p&gt;斜斜的好像有點怪怪的，加個圖釘讓它看起來自然一點好了，&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;插入一個圓形&lt;/code&gt;&lt;/strong&gt;，並且將它調出&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;浮凸&lt;/code&gt;&lt;/strong&gt;的立體感，再調整一下&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;陰影&lt;/code&gt;&lt;/strong&gt;，讓它看起來自然一點。&lt;/p&gt;
+    &lt;p&gt;斜斜的好像有點怪怪的，加個圖釘讓它看起來自然一點好了，&lt;strong&gt;&lt;code&gt;插入一個圓形&lt;/code&gt;&lt;/strong&gt;，並且將它調出&lt;strong&gt;&lt;code&gt;浮凸&lt;/code&gt;&lt;/strong&gt;的立體感，再調整一下&lt;strong&gt;&lt;code&gt;陰影&lt;/code&gt;&lt;/strong&gt;，讓它看起來自然一點。&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_14.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_thumb_6.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
     &lt;p&gt;嗯~~大功告….還沒完!!怎麼可以草草結束呢!?再來要加入動畫，讓名片出場有魄力一點(這個步驟是異常的有意義的，它可以讓名片可以比較吸引觀眾的目光)。&lt;/p&gt;
 
-    &lt;p&gt;切換到動畫頁籤，對我們的名片加入&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;彈跳&lt;/code&gt;&lt;/strong&gt;動畫，並設置開始條件為「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;接續前動畫&lt;/code&gt;&lt;/strong&gt;」。&lt;/p&gt;
+    &lt;p&gt;切換到動畫頁籤，對我們的名片加入&lt;strong&gt;&lt;code&gt;彈跳&lt;/code&gt;&lt;/strong&gt;動畫，並設置開始條件為「&lt;strong&gt;&lt;code&gt;接續前動畫&lt;/code&gt;&lt;/strong&gt;」。&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_16.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_thumb_7.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-    &lt;p&gt;繼續對名片物件使用「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;新增動畫&lt;/code&gt;&lt;/strong&gt;」選項，這次使用「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;翹翹板&lt;/code&gt;&lt;/strong&gt;」效果，開始條件一樣設定為「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;接續前動畫&lt;/code&gt;&lt;/strong&gt;」。&lt;/p&gt;
+    &lt;p&gt;繼續對名片物件使用「&lt;strong&gt;&lt;code&gt;新增動畫&lt;/code&gt;&lt;/strong&gt;」選項，這次使用「&lt;strong&gt;&lt;code&gt;翹翹板&lt;/code&gt;&lt;/strong&gt;」效果，開始條件一樣設定為「&lt;strong&gt;&lt;code&gt;接續前動畫&lt;/code&gt;&lt;/strong&gt;」。&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_18.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_thumb_8.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-    &lt;p&gt;最後，真的是最後一步了，幫圖釘加上「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;弧形向上&lt;/code&gt;&lt;/strong&gt;」動畫效果(&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;新增動畫&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;其他進入效果&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;弧形向上&lt;/code&gt;&lt;/strong&gt;)，並設定其開始條件為「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;與前動畫同時&lt;/code&gt;&lt;/strong&gt;」。&lt;/p&gt;
+    &lt;p&gt;最後，真的是最後一步了，幫圖釘加上「&lt;strong&gt;&lt;code&gt;弧形向上&lt;/code&gt;&lt;/strong&gt;」動畫效果(&lt;strong&gt;&lt;code&gt;新增動畫&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;其他進入效果&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;弧形向上&lt;/code&gt;&lt;/strong&gt;)，並設定其開始條件為「&lt;strong&gt;&lt;code&gt;與前動畫同時&lt;/code&gt;&lt;/strong&gt;」。&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_20.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_thumb_9.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -849,11 +932,11 @@
   <category scheme="http://ouch1978.github.io/tags/#Power%20Point" term="Power Point" />
   <content type="html">
   
-    &lt;p&gt;相信Power Point大家都會用，但是真的要自己從無到有，&lt;code class=&quot;highlighter-rouge&quot;&gt;不使用任何別人做好的樣板或是美工圖片&lt;/code&gt;，快速的製作出一份「看起來」有一定的專業程度的簡報，應該就會難倒某些人吧!?&lt;/p&gt;
+    &lt;p&gt;相信Power Point大家都會用，但是真的要自己從無到有，&lt;code&gt;不使用任何別人做好的樣板或是美工圖片&lt;/code&gt;，快速的製作出一份「看起來」有一定的專業程度的簡報，應該就會難倒某些人吧!?&lt;/p&gt;
 
 &lt;p&gt;其實沒那麼難，只要善用母片編輯的功能，再改變一下製作投影片的習慣，就可以輕鬆辦到囉!!&lt;/p&gt;
 
-&lt;p&gt;進入投影片母片的編輯的方法是：按下工具列的「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;檢視&lt;/code&gt;&lt;/strong&gt;」 -&amp;gt; 「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;投影片母片&lt;/code&gt;&lt;/strong&gt;」按鈕。&lt;/p&gt;
+&lt;p&gt;進入投影片母片的編輯的方法是：按下工具列的「&lt;strong&gt;&lt;code&gt;檢視&lt;/code&gt;&lt;/strong&gt;」 -&amp;gt; 「&lt;strong&gt;&lt;code&gt;投影片母片&lt;/code&gt;&lt;/strong&gt;」按鈕。&lt;/p&gt;
 
 &lt;p&gt;進入母片編輯模式後，原來在左邊的投影片縮圖窗格會變成如下的樣子。&lt;/p&gt;
 
@@ -861,29 +944,29 @@
 
 &lt;p&gt;左邊最上面那張比較大的投影片，就是投影片的母片，也就是說，在他下面的投影片，都會繼承它的長相和屬性；而在它下面的，則是提供不同用途使用的各種版面配置，例如投影片標題頁、章節標題頁，以及內容頁面等等。&lt;/p&gt;
 
-&lt;p&gt;請記得一個重點「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;一切都從母片開始&lt;/code&gt;&lt;/strong&gt;」。所以先點選母片，開始來進行美化吧!!&lt;/p&gt;
+&lt;p&gt;請記得一個重點「&lt;strong&gt;&lt;code&gt;一切都從母片開始&lt;/code&gt;&lt;/strong&gt;」。所以先點選母片，開始來進行美化吧!!&lt;/p&gt;
 
-&lt;p&gt;我們先使用矩形工具(「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;插入&lt;/code&gt;&lt;/strong&gt;」 -&amp;gt; 「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;圖案&lt;/code&gt;&lt;/strong&gt;」 -&amp;gt; 「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;矩形&lt;/code&gt;&lt;/strong&gt;」)，在母片上加入兩個黑色的矩形，分別位於標題和頁尾處，如下圖。&lt;/p&gt;
+&lt;p&gt;我們先使用矩形工具(「&lt;strong&gt;&lt;code&gt;插入&lt;/code&gt;&lt;/strong&gt;」 -&amp;gt; 「&lt;strong&gt;&lt;code&gt;圖案&lt;/code&gt;&lt;/strong&gt;」 -&amp;gt; 「&lt;strong&gt;&lt;code&gt;矩形&lt;/code&gt;&lt;/strong&gt;」)，在母片上加入兩個黑色的矩形，分別位於標題和頁尾處，如下圖。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_4.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_thumb_1.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;再來&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;分別將兩個矩形加入陰影特效&lt;/code&gt;&lt;/strong&gt;，上面的矩形加入下陰影，下面的加入上陰影，並且&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;將兩個矩形移到最下層&lt;/code&gt;&lt;/strong&gt;(在&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;矩形上按滑鼠右鍵&lt;/code&gt;&lt;/strong&gt;，點選「&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;移到最下層&lt;/code&gt;&lt;/strong&gt;」)&lt;/p&gt;
+&lt;p&gt;再來&lt;strong&gt;&lt;code&gt;分別將兩個矩形加入陰影特效&lt;/code&gt;&lt;/strong&gt;，上面的矩形加入下陰影，下面的加入上陰影，並且&lt;strong&gt;&lt;code&gt;將兩個矩形移到最下層&lt;/code&gt;&lt;/strong&gt;(在&lt;strong&gt;&lt;code&gt;矩形上按滑鼠右鍵&lt;/code&gt;&lt;/strong&gt;，點選「&lt;strong&gt;&lt;code&gt;移到最下層&lt;/code&gt;&lt;/strong&gt;」)&lt;/p&gt;
 
 &lt;p&gt;以讓標題和頁尾不會被蓋住。&lt;/p&gt;
 
-&lt;p&gt;接著按下&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl+A&lt;/code&gt;&lt;/strong&gt;鍵，將畫面上的物件全選起來，進行&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;字型更改&lt;/code&gt;&lt;/strong&gt;的動作，將&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;文字設定為橘色&lt;/code&gt;&lt;/strong&gt;，並且&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;使用微軟正黑體&lt;/code&gt;&lt;/strong&gt;，如下圖。&lt;/p&gt;
+&lt;p&gt;接著按下&lt;strong&gt;&lt;code&gt;Ctrl+A&lt;/code&gt;&lt;/strong&gt;鍵，將畫面上的物件全選起來，進行&lt;strong&gt;&lt;code&gt;字型更改&lt;/code&gt;&lt;/strong&gt;的動作，將&lt;strong&gt;&lt;code&gt;文字設定為橘色&lt;/code&gt;&lt;/strong&gt;，並且&lt;strong&gt;&lt;code&gt;使用微軟正黑體&lt;/code&gt;&lt;/strong&gt;，如下圖。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_6.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_thumb_2.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;再來&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;使用文字藝術師&lt;/code&gt;&lt;/strong&gt;的功能，把標題改成有鍍金質感的感覺。&lt;/p&gt;
+&lt;p&gt;再來&lt;strong&gt;&lt;code&gt;使用文字藝術師&lt;/code&gt;&lt;/strong&gt;的功能，把標題改成有鍍金質感的感覺。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_8.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_thumb_3.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;這樣其實還不太像金色，把&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;文字的填滿色改為橙色&lt;/code&gt;&lt;/strong&gt;就可以得到如下圖的效果了。&lt;/p&gt;
+&lt;p&gt;這樣其實還不太像金色，把&lt;strong&gt;&lt;code&gt;文字的填滿色改為橙色&lt;/code&gt;&lt;/strong&gt;就可以得到如下圖的效果了。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_10.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_thumb_4.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;接著把標題文字加入&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;倒影&lt;/code&gt;&lt;/strong&gt;的特效，讓它更炫一點，如下圖。&lt;/p&gt;
+&lt;p&gt;接著把標題文字加入&lt;strong&gt;&lt;code&gt;倒影&lt;/code&gt;&lt;/strong&gt;的特效，讓它更炫一點，如下圖。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_12.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_thumb_5.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -891,9 +974,9 @@
 
 &lt;p&gt;基於龜毛的個性，我想要標題頁和內頁是有所不同的，所以我們來對標題頁進行編輯。&lt;/p&gt;
 
-&lt;p&gt;首先&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;點選左邊的標題投影片樣版&lt;/code&gt;&lt;/strong&gt;，再於&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;投影片母片頁籤&lt;/code&gt;&lt;/strong&gt;中&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;將頁尾的打勾取消&lt;/code&gt;，&lt;/strong&gt;以及&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;將隱藏背景圖形勾選起來&lt;/code&gt;&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;首先&lt;strong&gt;&lt;code&gt;點選左邊的標題投影片樣版&lt;/code&gt;&lt;/strong&gt;，再於&lt;strong&gt;&lt;code&gt;投影片母片頁籤&lt;/code&gt;&lt;/strong&gt;中&lt;strong&gt;&lt;code&gt;將頁尾的打勾取消&lt;/code&gt;，&lt;/strong&gt;以及&lt;strong&gt;&lt;code&gt;將隱藏背景圖形勾選起來&lt;/code&gt;&lt;/strong&gt;。&lt;/p&gt;
 
-&lt;p&gt;再來使用先前用過的矩形工具，再&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;加入一個矩形&lt;/code&gt;&lt;/strong&gt;並將他&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;移到最下層&lt;/code&gt;&lt;/strong&gt;當背景(若想增加層次感，一樣可以加入陰影特效)，如下圖。&lt;/p&gt;
+&lt;p&gt;再來使用先前用過的矩形工具，再&lt;strong&gt;&lt;code&gt;加入一個矩形&lt;/code&gt;&lt;/strong&gt;並將他&lt;strong&gt;&lt;code&gt;移到最下層&lt;/code&gt;&lt;/strong&gt;當背景(若想增加層次感，一樣可以加入陰影特效)，如下圖。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_14.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_thumb_6.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -901,15 +984,15 @@
 
 &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_16.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_thumb_7.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;最後就是進行動畫的設定了，我們只要&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;在每種頁面樣版中設定好動畫&lt;/code&gt;&lt;/strong&gt;，正式製作投影片時所有的頁面就都會自動套上動畫喔!!(這邊非常的重要，我發現很多人在製作投影片的時候，動畫都是一頁一頁去設定，這樣太累了，而且也容易讓每頁看起來不一致)&lt;/p&gt;
+&lt;p&gt;最後就是進行動畫的設定了，我們只要&lt;strong&gt;&lt;code&gt;在每種頁面樣版中設定好動畫&lt;/code&gt;&lt;/strong&gt;，正式製作投影片時所有的頁面就都會自動套上動畫喔!!(這邊非常的重要，我發現很多人在製作投影片的時候，動畫都是一頁一頁去設定，這樣太累了，而且也容易讓每頁看起來不一致)&lt;/p&gt;
 
-&lt;p&gt;都編輯好之後，就可以結束母片編輯模式(&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;投影片母片頁籤&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;關閉母片檢視&lt;/code&gt;&lt;/strong&gt;)，享受剛才辛苦的成果啦!!&lt;/p&gt;
+&lt;p&gt;都編輯好之後，就可以結束母片編輯模式(&lt;strong&gt;&lt;code&gt;投影片母片頁籤&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;關閉母片檢視&lt;/code&gt;&lt;/strong&gt;)，享受剛才辛苦的成果啦!!&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_18.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_thumb_8.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;接下來只要在每個區塊輸入我們想呈現的文字，就可以輕鬆做完整份投影片囉!!&lt;/p&gt;
 
-&lt;p&gt;如果想改變投影片使用的樣版，可以在&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;投影片上按下滑鼠右鍵&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;版面配置&lt;/code&gt;&lt;/strong&gt;，來快速的進行樣版的切換，大功告成啦!!&lt;/p&gt;
+&lt;p&gt;如果想改變投影片使用的樣版，可以在&lt;strong&gt;&lt;code&gt;投影片上按下滑鼠右鍵&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;版面配置&lt;/code&gt;&lt;/strong&gt;，來快速的進行樣版的切換，大功告成啦!!&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_20.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/c86347aafabe_11231/image_thumb_9.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -946,27 +1029,27 @@
 
 &lt;p&gt;方法如下：&lt;/p&gt;
 
-&lt;h1 id=&quot;section&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;步驟一&lt;/code&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;section&quot;&gt;&lt;code&gt;步驟一&lt;/code&gt;&lt;/h1&gt;
 
 &lt;p&gt;首先我們打開一個標準的 Silverlight+Web 專案( WPF 也可以喔)，接著增加一個 UserControl (範例中取名為 MyModalControl )。&lt;/p&gt;
 
-&lt;p&gt;接著修改 MyModalControl.xaml 的內容，將 &lt;code class=&quot;highlighter-rouge&quot;&gt;控制項本身&lt;/code&gt; 與 LayoutRoot 這個 Grid 的 &lt;code class=&quot;highlighter-rouge&quot;&gt;寬和高都設為 Auto&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;接著修改 MyModalControl.xaml 的內容，將 &lt;code&gt;控制項本身&lt;/code&gt; 與 LayoutRoot 這個 Grid 的 &lt;code&gt;寬和高都設為 Auto&lt;/code&gt;。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_2.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_thumb.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;section-1&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;步驟二&lt;/code&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;section-1&quot;&gt;&lt;code&gt;步驟二&lt;/code&gt;&lt;/h1&gt;
 
-&lt;p&gt;修改 &lt;code class=&quot;highlighter-rouge&quot;&gt;LayoutRoot&lt;/code&gt; 的 &lt;code class=&quot;highlighter-rouge&quot;&gt;背景色為 #4C4969CC&lt;/code&gt;(透明度為 30%)&lt;/p&gt;
+&lt;p&gt;修改 &lt;code&gt;LayoutRoot&lt;/code&gt; 的 &lt;code&gt;背景色為 #4C4969CC&lt;/code&gt;(透明度為 30%)&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_4.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_thumb_1.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;section-2&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;步驟三&lt;/code&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;section-2&quot;&gt;&lt;code&gt;步驟三&lt;/code&gt;&lt;/h1&gt;
 
 &lt;p&gt;放置要和使用者互動的元件，為了精簡教學過程，怎麼做的這邊就不詳述，完成後如下圖。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_6.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_thumb_2.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;section-3&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;步驟四&lt;/code&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;section-3&quot;&gt;&lt;code&gt;步驟四&lt;/code&gt;&lt;/h1&gt;
 
 &lt;p&gt;加入按鈕的 Click 事件，並加入移除這個控制項的程式碼，完成後的 xaml 與 cs 檔如下：&lt;/p&gt;
 
@@ -1168,7 +1251,7 @@
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
 &lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;h1 id=&quot;section-4&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;步驟五&lt;/code&gt;&lt;/h1&gt;
+&lt;h1 id=&quot;section-4&quot;&gt;&lt;code&gt;步驟五&lt;/code&gt;&lt;/h1&gt;
 &lt;p&gt;到這邊就算是完成啦，再來就是讓它上場表演的時候了，在 MainPage.xaml 放一個 Button 叫它出來吧!!&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_8.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_thumb_3.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
@@ -1251,11 +1334,11 @@
 
 &lt;p&gt;大功告成!!&lt;/p&gt;
 
-&lt;p&gt;執行結果如下：&lt;/p&gt;
-&lt;div align=&quot;center&quot;&gt;
-  &lt;iframe allowtransparency=&quot;allowtransparency&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;http://ouch1978.azurewebsites.net/demo/silverlight/SL-FakeModal/FakeModalDemo.html&quot; style=&quot;width: 510px; height: 510px; overflow: hidden;&quot;&gt;
-&lt;/iframe&gt;
-&lt;/div&gt;
+&lt;p&gt;執行結果如下：
+&amp;lt;div align=&quot;center&quot;&amp;gt;
+  &amp;lt;iframe allowtransparency=&quot;allowtransparency&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;http://ouch1978.azurewebsites.net/demo/silverlight/SL-FakeModal/FakeModalDemo.html&quot; style=&quot;width: 510px; height: 510px; overflow: hidden;&quot;&amp;gt;
+&amp;lt;/iframe&amp;gt;
+&amp;lt;/div&amp;gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;專案下載：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1307/20137132234085.rar&quot;&gt;&lt;img src=&quot;http://ouch1978.azurewebsites.net/Images/SampleDownload.png&quot; alt=&quot;&quot; /&gt;
 &lt;/a&gt;&lt;/p&gt;
@@ -1289,20 +1372,20 @@
 &lt;p&gt;只要下載 Formatting.vb 檔，並且使用 Visual Studio 的巨集編輯功能，將其匯入，就可以更輕鬆的做 Source Code 自動格式化的工作啦，操作步驟如下：&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;點選 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Tools&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Macros&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Macros IDE*&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;點選 &lt;strong&gt;&lt;code&gt;Tools&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Macros&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Macros IDE*&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_2.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_thumb.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;點選 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Project Explorer&lt;/code&gt;&lt;/strong&gt; 中的 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;MyMacors&lt;/code&gt;&lt;/strong&gt; ，再點選 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Project&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Add Existing Item&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;點選 &lt;strong&gt;&lt;code&gt;Project Explorer&lt;/code&gt;&lt;/strong&gt; 中的 &lt;strong&gt;&lt;code&gt;MyMacors&lt;/code&gt;&lt;/strong&gt; ，再點選 &lt;strong&gt;&lt;code&gt;Project&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Add Existing Item&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_4.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_thumb_1.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;
-    &lt;p&gt;於檔案選取視窗中選擇 Formatting.vb 檔，並按下 Add 鈕，完畢之後，點選 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Tools&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Macros&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Macro Explorer&lt;/code&gt;&lt;/strong&gt; (快捷鍵 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Alt+F8&lt;/code&gt;&lt;/strong&gt; )，如果看到 Macro Explorer 中有出現剛剛新增的巨集，就代表成功匯入巨集了。&lt;/p&gt;
+    &lt;p&gt;於檔案選取視窗中選擇 Formatting.vb 檔，並按下 Add 鈕，完畢之後，點選 &lt;strong&gt;&lt;code&gt;Tools&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Macros&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Macro Explorer&lt;/code&gt;&lt;/strong&gt; (快捷鍵 &lt;strong&gt;&lt;code&gt;Alt+F8&lt;/code&gt;&lt;/strong&gt; )，如果看到 Macro Explorer 中有出現剛剛新增的巨集，就代表成功匯入巨集了。&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;要執行該巨集，只需要在巨集上按下右鍵，選擇 Run 即可。&lt;/p&gt;
@@ -1312,13 +1395,13 @@
 &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_6.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_thumb_2.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;額外附送，利用自訂工具列的功能執行該巨集：點選 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Tools&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Customize&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Commands&lt;/code&gt;&lt;/strong&gt; 頁籤 -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Toolbar&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Text Editor&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;額外附送，利用自訂工具列的功能執行該巨集：點選 &lt;strong&gt;&lt;code&gt;Tools&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Customize&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Commands&lt;/code&gt;&lt;/strong&gt; 頁籤 -&amp;gt; &lt;strong&gt;&lt;code&gt;Toolbar&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Text Editor&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_8.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_thumb_3.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;點選 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Add Command&lt;/code&gt;&lt;/strong&gt; 按鈕，在 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Categories清單&lt;/code&gt;&lt;/strong&gt; 中的 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Macros&lt;/code&gt;&lt;/strong&gt; ，並選取 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Commands清單&lt;/code&gt;&lt;/strong&gt; 中的 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Macros.MyMacros.Formatting.FormatProject&lt;/code&gt;&lt;/strong&gt; 項目，再來按下 OK。&lt;/li&gt;
+  &lt;li&gt;點選 &lt;strong&gt;&lt;code&gt;Add Command&lt;/code&gt;&lt;/strong&gt; 按鈕，在 &lt;strong&gt;&lt;code&gt;Categories清單&lt;/code&gt;&lt;/strong&gt; 中的 &lt;strong&gt;&lt;code&gt;Macros&lt;/code&gt;&lt;/strong&gt; ，並選取 &lt;strong&gt;&lt;code&gt;Commands清單&lt;/code&gt;&lt;/strong&gt; 中的 &lt;strong&gt;&lt;code&gt;Macros.MyMacros.Formatting.FormatProject&lt;/code&gt;&lt;/strong&gt; 項目，再來按下 OK。&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_10.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_thumb_4.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
@@ -1351,7 +1434,7 @@
   
     &lt;p&gt;通常自己一個人在寫 Code 的時候，想怎麼編排就怎麼排，自己看得懂、看得開心就好；但是遇到多人協力開發的專案，程式碼可能會來自不同的人手上，如果沒有事先規範好程式碼的編排規則的話，那讀別人的 Code 就會很吃力了，更別說要接手下去改，這個時候， Visual Studio 內建的格式化工具就很管用了。&lt;/p&gt;
 
-&lt;p&gt;而使用內建的格式化工具的方式非常的簡單，只要點選 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Edit&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Advanced&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Format Document&lt;/code&gt;&lt;/strong&gt; (快捷鍵為 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl+K&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl+D&lt;/code&gt;&lt;/strong&gt; )就可以啦。&lt;/p&gt;
+&lt;p&gt;而使用內建的格式化工具的方式非常的簡單，只要點選 &lt;strong&gt;&lt;code&gt;Edit&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Advanced&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Format Document&lt;/code&gt;&lt;/strong&gt; (快捷鍵為 &lt;strong&gt;&lt;code&gt;Ctrl+K&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Ctrl+D&lt;/code&gt;&lt;/strong&gt; )就可以啦。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_2.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_thumb.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -1371,7 +1454,7 @@
 
 &lt;p&gt;戲還沒唱完，只介紹這樣的功能就真的太虛了，你可能會說，可是他自動排版出來的樣子跟原來習慣的排版格式和我們組規定的格式差太多了啊!!&lt;/p&gt;
 
-&lt;p&gt;沒關係，自動排版的格式是可以設定的，只要選取 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Tools&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Options...&lt;/code&gt;&lt;/strong&gt; -&amp;gt;在Options視窗中 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;展開 Text Editor&lt;/code&gt;&lt;/strong&gt; 選項，你就會看到如下的畫面：&lt;/p&gt;
+&lt;p&gt;沒關係，自動排版的格式是可以設定的，只要選取 &lt;strong&gt;&lt;code&gt;Tools&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Options...&lt;/code&gt;&lt;/strong&gt; -&amp;gt;在Options視窗中 &lt;strong&gt;&lt;code&gt;展開 Text Editor&lt;/code&gt;&lt;/strong&gt; 選項，你就會看到如下的畫面：&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_8.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_thumb_3.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
@@ -1379,7 +1462,7 @@
 
 &lt;p&gt;沒錯，各種語言的排版格式都是可以設定的，你可以針對不同的語言，設定它的排版規則，比較基本的例如大括弧是不是要換行、變數的對齊方式、細到連 for 迴圈裡面分號和條件式之間是否要空格、變數和運算符號間是否要空格都可以設定。&lt;/p&gt;
 
-&lt;p&gt;設定好成為你要的格式規則之後，按下 OK 鈕，再來個 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl+K&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Ctrl+D&lt;/code&gt;&lt;/strong&gt; ，噹噹!!就變成你要的格式了吧!!&lt;/p&gt;
+&lt;p&gt;設定好成為你要的格式規則之後，按下 OK 鈕，再來個 &lt;strong&gt;&lt;code&gt;Ctrl+K&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Ctrl+D&lt;/code&gt;&lt;/strong&gt; ，噹噹!!就變成你要的格式了吧!!&lt;/p&gt;
 
 &lt;p&gt;下圖就是我個人習慣的格式。&lt;/p&gt;
 
@@ -1389,7 +1472,7 @@
 
 &lt;p&gt;當然可以!!可是每次都要這樣改規則，不是很累嗎?這時候，就又可以利用設定檔的匯入/匯出功能啦!!&lt;/p&gt;
 
-&lt;p&gt;只要選取 &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Tools&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Import and Export Settings...&lt;/code&gt;&lt;/strong&gt; 就會看到如下的視窗：&lt;/p&gt;
+&lt;p&gt;只要選取 &lt;strong&gt;&lt;code&gt;Tools&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Import and Export Settings...&lt;/code&gt;&lt;/strong&gt; 就會看到如下的視窗：&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_12.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_thumb_5.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 

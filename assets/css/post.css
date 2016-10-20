@@ -685,3 +685,8 @@ blockquote.filename p {
     color: white;
     line-height: 2.4;
 }
+
+li p img {
+    display: block;
+    padding-top: 12px;
+}
