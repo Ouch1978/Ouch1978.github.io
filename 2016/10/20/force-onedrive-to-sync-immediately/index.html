@@ -2,23 +2,23 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>解決 WINDOWS 10 10586 英文版無法正常顯示 NON-UNICODE 中文的問題 &vert; OUCH1978 @ GITHUB</title>
-<meta name="description" content="之前重灌工作機的時候，發現一個 Windows 10 10586 英文版神奇的問題，特別寫篇文章來記念一下。">
-<meta name="keywords" content="Windows 10">
+<title>強制 ONEDRIVE 立刻與伺服器的檔案進行同步 &vert; OUCH1978 @ GITHUB</title>
+<meta name="description" content="把 OneDrive 當作主要雲端備份方案的我，常常遇到它不聽話的狀況，得要重新啟動它才能讓它乖乖同步，這邊就來記錄一下透過命令列讓它醒來的方法。">
+<meta name="keywords" content="Windows 10, OneDrive">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://ouch1978.github.io/images/logo.png">
-<meta name="twitter:title" content="解決 Windows 10 10586 英文版無法正常顯示 Non-Unicode 中文的問題">
-<meta name="twitter:description" content="之前重灌工作機的時候，發現一個 Windows 10 10586 英文版神奇的問題，特別寫篇文章來記念一下。">
+<meta name="twitter:title" content="強制 OneDrive 立刻與伺服器的檔案進行同步">
+<meta name="twitter:description" content="把 OneDrive 當作主要雲端備份方案的我，常常遇到它不聽話的狀況，得要重新啟動它才能讓它乖乖同步，這邊就來記錄一下透過命令列讓它醒來的方法。">
 <meta name="twitter:creator" content="@Ouch1978">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="解決 Windows 10 10586 英文版無法正常顯示 Non-Unicode 中文的問題">
-<meta property="og:description" content="之前重灌工作機的時候，發現一個 Windows 10 10586 英文版神奇的問題，特別寫篇文章來記念一下。">
-<meta property="og:url" content="http://ouch1978.github.io/2016/10/18/windows-10-10158-english-version-missing-tchinese-fonts/">
+<meta property="og:title" content="強制 OneDrive 立刻與伺服器的檔案進行同步">
+<meta property="og:description" content="把 OneDrive 當作主要雲端備份方案的我，常常遇到它不聽話的狀況，得要重新啟動它才能讓它乖乖同步，這邊就來記錄一下透過命令列讓它醒來的方法。">
+<meta property="og:url" content="http://ouch1978.github.io/2016/10/20/force-onedrive-to-sync-immediately/">
 <meta property="og:site_name" content="Ouch1978 @ Github">
 <meta property="og:image" content="http://ouch1978.github.io/images/cover3.jpg">
 
@@ -26,7 +26,7 @@
 
 
 
-<link rel="canonical" href="http://ouch1978.github.io/2016/10/18/windows-10-10158-english-version-missing-tchinese-fonts/">
+<link rel="canonical" href="http://ouch1978.github.io/2016/10/20/force-onedrive-to-sync-immediately/">
 <link href="http://ouch1978.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Ouch1978 @ Github Feed">
 <link rel="author" href="https://plus.google.com/u/0/110363696453312268733?rel=author">
 
@@ -104,77 +104,43 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h1>解決 Windows 10 10586 英文版無法正常顯示 Non-Unicode 中文的問題</h1>
-                            <p>by <strong>Ouch Liu (劉耀群)</strong> &#8212; on <a href="http://ouch1978.github.io/tags/index.html#Windows 10" data-toggle="tooltip" title="Posts tagged with Windows 10" rel="tag">Windows 10</a> <strong><time datetime="2016-10-18T22:00:00+08:00">18 Oct 2016</time></strong></p>
+                            <h1>強制 OneDrive 立刻與伺服器的檔案進行同步</h1>
+                            <p>by <strong>Ouch Liu (劉耀群)</strong> &#8212; on <a href="http://ouch1978.github.io/tags/index.html#Windows 10" data-toggle="tooltip" title="Posts tagged with Windows 10" rel="tag">Windows 10</a>&nbsp;&comma;&nbsp;<a href="http://ouch1978.github.io/tags/index.html#OneDrive" data-toggle="tooltip" title="Posts tagged with OneDrive" rel="tag">OneDrive</a> <strong><time datetime="2016-10-20T23:00:00+08:00">20 Oct 2016</time></strong></p>
                         </div>
                     </div>
                 </div>
             </header>
 
         <article class="notepad-post-content post tag-simple">
-            <div><p>話說，之前重灌工作機的時候，試了不同的 Windows 10 版本，一開始安裝的是 10586(1511) 英文版，但是發現非 Unicode 的中文無法正常顯示。</p>
+            <div><p>把 OneDrive 當作主要雲端備份方案的我，常常遇到它不聽話的狀況，得要重新啟動它才能讓它乖乖同步，這邊就來記錄一下透過命令列讓它醒來的方法。</p>
 
-<h1 id="section">症狀</h1>
-<p>只要是Non-Unicde的中文部份，全部都變成了一個一個的方塊。
-<a href="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/non-unicode-chinese-not-displayed-correctly.png"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/non-unicode-chinese-not-displayed-correctly.png" alt="無法正確顯示非Unicode中文內容" title="無法正確顯示非Unicode中文內容" /></a></p>
+<p>有的時候 OneDrive 同步到一半就會突然卡住不動，像是下圖的狀況，但是檢查網路明明沒有任何問題。
+<a href="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-20-force-onedrive-to-sync-immediately/onedrive-stops-transfer.png"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-20-force-onedrive-to-sync-immediately/onedrive-stops-transfer.png" alt="OneDrive的傳輸速度卡在0.0KB" title="Non-Unicode 語言設定" /></a></p>
 
-<h1 id="section-1">直接講結論</h1>
-<p>其實解法非常簡單，只要 <strong><code>手動安裝新細明體和標楷體字型</code></strong> 就可以解決這個問題了。
-但是這一連串的插波休停 (Trouble Shooting) 的過程可是花了我好幾個小時啊!!!~</p>
+<p>之前遇到這種狀況的時候，我都會在 OneDrive 圖示上按下滑鼠右鍵把它關閉，再透過檔案總管瀏覽本機 OneDrive 繫結的資料夾來喚醒它。</p>
 
-<h1 id="section-2">對我插波休停過程有興趣的請繼續往下閱讀</h1>
+<p>(我記得之前在 Windows 8 的時代，Windows Store App 版的 OneDrive 裡面有一個同步的按鈕可以按，可是現在 Windows 10 的 App 裡好像找不到那個按鈕了，哭哭~~)</p>
 
-<ol>
-  <li>
-    <p>通常，遇到中文沒辦法正常顯示的情況都會先檢查 Non-Unicode Language 的設定。很好，我的確有選繁中，台灣。
-  <a href="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/setting-for-non-unicode-language.png"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/setting-for-non-unicode-language.png" alt="Non-Unicode 語言設定" title="Non-Unicode 語言設定" /></a></p>
-  </li>
-  <li>
-    <p>設了沒效的話，再到語言設定裡面加入中文(台灣)看看囉。
-  <a href="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/chinese-taiwan-is-already-added.png"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/chinese-taiwan-is-already-added.png" alt="確認已經在語言選單中加入中文(台灣)" title="確認已經在語言選單中加入中文(台灣)" /></a></p>
-  </li>
-  <li>
-    <p><a href="http://answers.microsoft.com/en-us/windows/forum/windows_10-start/some-fonts-are-missing-after-upgrade/95839dfa-0df2-4bc0-875a-fd6b57e61fe4" title="Some fonts are missing after upgrade">Microsoft Community 上有一篇文章</a>說 Windows 10 的部份字型被挪到選用功能去了。那…透過新增選用功能的方式來看看有沒有救好了…很好!!因為 Group Policy 的關係不能用!!
-  <a href="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/not-able-to-add-optional-features.png"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/not-able-to-add-optional-features.png" alt="選用功能完全空白" title="選用功能完全空白" /></a></p>
-  </li>
-  <li>
-    <p>還是不行!? 那我下載繁體中文語言包來安裝，總該行了吧!!? 蝦毀!? 一樣 GG 啊!!!!~~~ (崩潰中…)
-  <a href="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/install-language-pack.png"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/install-language-pack.png" alt="安裝語言包" title="安裝語言包" /></a></p>
-  </li>
-  <li>
-    <p>好吧…看看是不是有缺什麼字型才沒辦法正常顯示…
- 咦!? <strong><code>沒有新細明體和標楷體! 沒有新細明體和標楷體!! 沒有新細明體和標楷體!!!</code></strong>
-  <a href="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/pre-installed-fonts-in-10586.png"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/pre-installed-fonts-in-10586.png" alt="Windows 10 10586 英文版預設安裝的字型" title="Windows 10 10586 英文版預設安裝的字型" /></a></p>
-  </li>
-  <li>
-    <p>死馬當活馬醫看看，從別台電腦複製這兩個字型過來裝吧。
-  <a href="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/install-mingliu-and-kaiu.png"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/install-mingliu-and-kaiu.png" alt="手動安裝新細明體和標楷體字型" title="手動安裝新細明體和標楷體字型" /></a></p>
-  </li>
-  <li>
-    <p>喔耶!! 中文回來了~~大家都回來了!!
-  <a href="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/get-chinese-back.png"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/get-chinese-back.png" alt="可以正常顯示中文啦" title="可以正常顯示中文啦" /></a></p>
-  </li>
-</ol>
+<p>不過，<a href="http://andreklein.net/how-to-force-microsoft-onedrive-to-sync/" title="How To Force Microsoft OneDrive To Sync More Often">這篇文章</a>裡面有個不錯的方法，我還蠻喜歡的：</p>
 
-<h1 id="section-3">後記</h1>
-<p>這真的是一件很神奇的事…</p>
+<blockquote class="filename">
+  <p>sync.bat</p>
+</blockquote>
 
-<ol>
-  <li>
-    <p>乾淨安裝 10240 再升上 10586(1511) -&gt; 不會有這個問題。</p>
-  </li>
-  <li>
-    <p>乾淨安裝年度更新版(1607) -&gt; 不會有這個問題。</p>
-  </li>
-  <li>
-    <p>乾淨安裝 10586(1511) -&gt; <strong><code>中標</code></strong>。</p>
-  </li>
-  <li>
-    <p>乾淨安裝 10586(1511) 再升上年度更新版(1607) -&gt; <strong><code>中標</code></strong>。</p>
-  </li>
-</ol>
+<figure class="highlight"><pre><code class="language-bat" data-lang="bat"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3</pre></td><td class="code"><pre>@echo off
+taskkill /f /im onedrive.exe
+start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background<span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
 
-<p>我只能說，我真的是搞不懂你啊~~</p>
+<p>將上面幾行儲存成為 sync.bat 檔，然後在 OneDrive 不乖的時候點個兩下，就可以叫他乖乖的醒來繼續工作啦~</p>
+
+<p>(雖然它時不時還是會很任性的罷工啊~~ XD)</p>
+
+<p>另外，該文章的作者也提到，可以在 OneDrive 的根目錄放一個文字檔，在它偵測不到檔案變更的時候把該文字檔打開來編輯再儲存，也可以有效的讓 OneDrive 回神喔!!</p>
+
+<p>以上。</p>
 
             </div>
         </article>
@@ -182,15 +148,15 @@
         <div class="cf"></div>
         <div class="row text-center">
             <section class="notepad-post-share">
-                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;解決 Windows 10 10586 英文版無法正常顯示 Non-Unicode 中文的問題&quot;%20http://ouch1978.github.io/2016/10/18/windows-10-10158-english-version-missing-tchinese-fonts/%20via%20&#64;Ouch1978"
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;強制 OneDrive 立刻與伺服器的檔案進行同步&quot;%20http://ouch1978.github.io/2016/10/20/force-onedrive-to-sync-immediately/%20via%20&#64;Ouch1978"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
                     <i class="fa fa-twitter"></i>
                 </a>
-                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=http://ouch1978.github.io/2016/10/18/windows-10-10158-english-version-missing-tchinese-fonts/"
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=http://ouch1978.github.io/2016/10/20/force-onedrive-to-sync-immediately/"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
                     <i class="fa fa-facebook"></i>
                 </a>
-                <a class="google-icon" href="https://plus.google.com/share?url=http://ouch1978.github.io/2016/10/18/windows-10-10158-english-version-missing-tchinese-fonts/"
+                <a class="google-icon" href="https://plus.google.com/share?url=http://ouch1978.github.io/2016/10/20/force-onedrive-to-sync-immediately/"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
                     <i class="fa fa-google-plus"></i>
                 </a>
@@ -201,10 +167,8 @@
 
         <div class="PageNavigation">
           
-            <a class="prev" href="/2016/07/02/solve-xaudio2_7.dll-unloaded-error/">&laquo; 解決遊戲在 Windows 10 執行時出現 XAudio2_7.dll_unloaded 錯誤造成的閃退</a>
+            <a class="prev" href="/2016/10/18/windows-10-10158-english-version-missing-tchinese-fonts/">&laquo; 解決 Windows 10 10586 英文版無法正常顯示 Non-Unicode 中文的問題</a>
           
-          
-            <a class="next" href="/2016/10/20/force-onedrive-to-sync-immediately/">強制 OneDrive 立刻與伺服器的檔案進行同步 &raquo;</a>
           
         </div>
 
