@@ -68,6 +68,11 @@ callback([
   {
     "text": "強制 OneDrive 立刻與伺服器的檔案進行同步",
     "href": "http://ouch1978.github.io/2016/10/20/force-onedrive-to-sync-immediately/"
+  } ,
+
+  {
+    "text": "透過 Roaming Extension Manager 在不同機器上同步 Visual Studio 2015 的擴充功能",
+    "href": "http://ouch1978.github.io/2016/11/01/roaming-extension-manager/"
   } 
 
 ])

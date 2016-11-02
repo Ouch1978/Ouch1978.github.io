@@ -7,13 +7,58 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://ouch1978.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://ouch1978.github.io/" />
-<updated>2016-11-01T16:47:45+08:00</updated>
+<updated>2016-11-02T13:58:30+08:00</updated>
 <id>http://ouch1978.github.io/</id>
 <author>
   <name>Ouch Liu (劉耀群)</name>
   <uri>http://ouch1978.github.io/</uri>
   <email>ouch1978@hotmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[透過 Roaming Extension Manager 在不同機器上同步 Visual Studio 2015 的擴充功能]]></title>
+  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2016/11/01/roaming-extension-manager/"/>
+  <id>http://ouch1978.github.io/2016/11/01/roaming-extension-manager</id>
+  <published>2016-11-01T23:00:00+08:00</published>
+  <updated>2016-11-01T23:00:00+08:00</updated>
+  <author>
+    <name>Ouch Liu (劉耀群)</name>
+    <uri>http://ouch1978.github.io</uri>
+    <email>ouch1978@hotmail.com</email>
+  </author>
+  <category scheme="http://ouch1978.github.io/tags/#Visual%20Studio%202015" term="Visual Studio 2015" />
+  <content type="html">
+  
+    &lt;p&gt;常常在工作的時候找到不錯用的 Visual Studio 擴充功能，但是往往回家又得再安裝一次，有時候忙過頭隔個幾天想安裝就忘記名字叫什麼了。一直在想說怎麼沒有一個功能可以在不同的電腦之間同步安裝過的擴充功能，果不其然，還真的有耶!!&lt;/p&gt;
+
+&lt;p&gt;前一陣子重灌了工作機的作業系統，也重新安裝了 Visual Studio 2015 ，雖說 Visual Studio 會自動透過 Microsoft Account 把我的設定同步回來，但是卻不包含擴充功能的同步，所以之後又得要再手動把之前裝過的擴充功能一個一個安裝回來，真的是蠻花時間也蠻讓我頭痛的。&lt;/p&gt;
+
+&lt;p&gt;向谷歌大神求救之後，發現有不少人有相同的問題，而微軟也從善如流的就開發出了這樣的一個擴充功能，也就是我們今天的主角 – &lt;a href=&quot;https://visualstudiogallery.msdn.microsoft.com/7b421a95-c32c-4433-a2be-a41b276013ab&quot; title=&quot;Roaming Extension Manager&quot;&gt;Roaming Extension Manager&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;安裝了這個擴充功能之後，在 Visual Studio 2015 的擴充功能管理視窗裡面會多出現一個名為 &lt;code&gt;Roaming Extension Manager&lt;/code&gt; 的分類。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-11-01-roaming-extension-manager/roaming-extension-manager.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-11-01-roaming-extension-manager/roaming-extension-manager.png&quot; alt=&quot;Roaming Extension Manager 設定面版&quot; title=&quot;Roaming Extension Manager 設定面版&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;而所有已安裝的擴充功能上都會多出一個小圖示，以用來顯示它被同步的狀態為何，圖示與狀態共有三種，分別如下：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;img src=&quot;https://visualstudiogallery.msdn.microsoft.com/site/view/file/172147/1/cloud.png&quot; alt=&quot;Roamed&quot; /&gt;：此擴充功能已同步到你的雲端設定中，但是尚未在目前的機器上安裝該擴充功能。可以透過右邊的 &lt;code&gt;Download&lt;/code&gt; 按鈕進行下載安裝。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;img src=&quot;https://visualstudiogallery.msdn.microsoft.com/site/view/file/172148/1/Cloud%20n%20Checkbox.png&quot; alt=&quot;Roamed &amp;amp; Installed&quot; /&gt;：此擴充功能已經同步到雲端設定，並且也已經安裝到本機。可以透過右方的 &lt;code&gt;Stop Roaming&lt;/code&gt; 按鈕停止同步。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;img src=&quot;https://visualstudiogallery.msdn.microsoft.com/site/view/file/172150/1/Checkbox.png&quot; alt=&quot;Installed&quot; /&gt;：此擴充功能已經安裝到本機，但是並未同步到雲端設定。可以透過右方的 &lt;code&gt;Start Roaming&lt;/code&gt; 按鈕進行同步。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;以上。希望能幫到有需要的朋友喔!!~&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/11/01/roaming-extension-manager/&quot;&gt;透過 Roaming Extension Manager 在不同機器上同步 Visual Studio 2015 的擴充功能&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on November 01, 2016.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
