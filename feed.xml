@@ -5,29 +5,124 @@
 
 <title type="text">Ouch1978 @ Github</title>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="http://ouch1978.github.io/feed.xml" />
-<link rel="alternate" type="text/html" href="http://ouch1978.github.io/" />
-<updated>2016-11-02T13:58:30+08:00</updated>
-<id>http://ouch1978.github.io/</id>
+<link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
+<link rel="alternate" type="text/html" href="http://localhost:4000/" />
+<updated>2016-12-14T13:48:35+08:00</updated>
+<id>http://localhost:4000/</id>
 <author>
   <name>Ouch Liu (劉耀群)</name>
-  <uri>http://ouch1978.github.io/</uri>
+  <uri>http://localhost:4000/</uri>
   <email>ouch1978@hotmail.com</email>
 </author>
 
 
 <entry>
+  <title type="html"><![CDATA[使用 Dev Center 提供的 PowerPoint 設計範本製作 UWP 的 UI 雛型]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2016/12/14/using-powerpoint-template-for-designing-uwp-app/"/>
+  <id>http://localhost:4000/2016/12/14/using-powerpoint-template-for-designing-uwp-app</id>
+  <published>2016-12-14T21:30:00+08:00</published>
+  <updated>2016-14-14T13:30:00.000ZT00:00:00-00:00</updated>
+  
+  <author>
+    <name>Ouch Liu (劉耀群)</name>
+    <uri>http://localhost:4000</uri>
+    <email>ouch1978@hotmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#UWP" term="UWP" /><category scheme="http://localhost:4000/tags/#%E8%A8%AD%E8%A8%88" term="設計" />
+  <content type="html">
+  
+    &lt;p&gt;設計和點子這種東西往往都是靈光一閃，在那一閃的瞬間往往只能透過紙筆來勾勒出心中的想法，但是對於像我這種懶人來說，如果能有一個方便製作/記錄雛型的工具，應該會是很有幫助的一件事。&lt;/p&gt;
+
+&lt;p&gt;最好是裡面包含了所有 UWP 裡能使用的控制項，讓我只要透過簡單的拖拉就可以把我的想法清楚的描述出來。&lt;/p&gt;
+
+&lt;p&gt;而在 Dev Center 裡就有這麼一個神奇的東西，可以讓我們透過再也熟悉不過的工具 - PowerPoint 來刻出 UI 的雛型。&lt;/p&gt;
+
+&lt;p&gt;其實這個樣版已經存在蠻久的了，只是可能大部份的人可能不是找不到它，就是會忽略它，或是不知道該怎麼使用它。&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;下載&lt;/h2&gt;
+
+&lt;p&gt;在 Windows 開發人員中心裡的 &lt;a href=&quot;https://msdn.microsoft.com/windows/uwp/design-downloads/index&quot; title=&quot;UWP app 的設計下載&quot;&gt;UWP app 的設計下載&lt;/a&gt; 一區裡面其實有不少設計相關的資源。&lt;/p&gt;
+
+&lt;p&gt;例如給 PhotoShop 和 Illustrator 使用的設計範本、磚與圖示產生器，以及 UWP App 的範例等等。&lt;/p&gt;
+
+&lt;p&gt;而今天的主角呢，就是我個人覺得很方便的 &lt;a href=&quot;https://go.microsoft.com/fwlink/p/?LinkId=534632&quot; title=&quot;點此直接下載&quot;&gt;PowerPoint 設計範本&lt;/a&gt; 啦。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;使用說明&lt;/h2&gt;
+
+&lt;p&gt;該檔案下載下來是一個壓縮檔，解壓縮之後會看到裡面有&lt;code&gt;兩個說明檔&lt;/code&gt;，&lt;code&gt;三個給不同平台使用的 PowerPoint pptx 檔&lt;/code&gt;，以及一個名為 &lt;code&gt;Storyboard shapes&lt;/code&gt; 的資料夾。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/files-in-zip.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/files-in-zip.png&quot; alt=&quot;壓縮檔中包含的檔案&quot; title=&quot;壓縮檔中包含的檔案&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;打開任何一個 PowerPoint 檔 (接下來，以設計 PC 版的 App 為例，打開 UWP app templates for PCs.pptx ) 之後，應該會看到裡面包含了四張投影片。&lt;/p&gt;
+
+&lt;p&gt;蝦毀，內容都是英文!!? 沒關係，先喝杯茶壓壓驚，基本上裡面也是在講解該怎麼使用這份投影片。&lt;/p&gt;
+
+&lt;p&gt;簡單翻譯如下：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;將投影片&lt;code&gt;另存新檔&lt;/code&gt;，注意別蓋到原來的檔案。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;確認你已經安裝了 &lt;code&gt;Visual Studio 2013 Premium 或以上&lt;/code&gt;的版本。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;切換到 &lt;code&gt;Storyboarding&lt;/code&gt; 頁籤，並且打開 &lt;code&gt;Storyboard Shapes&lt;/code&gt; 面板。
+&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/oepn-the-storyboard-shapes-panel.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/oepn-the-storyboard-shapes-panel.png&quot; alt=&quot;開啟 Storyboard Shapes 面版&quot; title=&quot;開啟 Storyboard Shapes 面版&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;按下 &lt;code&gt;Import Shapes&lt;/code&gt; 並且選取 Storyboard shapes 中的 &lt;code&gt;Windows Controls Shapes.sbsx&lt;/code&gt; 檔進行控制項圖庫的匯入。
+&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/the-import-shapes-button.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/the-import-shapes-button.png&quot; alt=&quot;按下 Import Shapes 按鈕進行匯入&quot; title=&quot;按下 Import Shapes 按鈕進行匯入&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Storyboard Shapes 面板中應該會多出一個名為 &lt;code&gt;TOOLKIT Windows Control Shapes_vX.x.x.x&lt;/code&gt; 的分類。
+&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/control-shapes-category-added.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/control-shapes-category-added.png&quot; alt=&quot;匯入成功後出現的分類&quot; title=&quot;匯入成功後出現的分類&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;使用名為 &lt;code&gt;Device Frames&lt;/code&gt; 的頁面來設計你的 UI。
+&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/the-device-frames-page.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/the-device-frames-page.png&quot; alt=&quot;Device Frames 頁&quot; title=&quot;Device Frames 頁&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;在&lt;code&gt;檢視&lt;/code&gt;頁籤中開啟&lt;code&gt;輔助線&lt;/code&gt;功能，並確保你設計的 UI 不要超出輔助線的邊界。
+&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/turn-on-the-guides.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/turn-on-the-guides.png&quot; alt=&quot;開啟輔助線&quot; title=&quot;開啟輔助線&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;從 Storyboard Shapes 面板中透過拖拉的方式把控制項放到 Device Frames 頁面中。
+&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/drag-control-into-the-device-frames-page.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/drag-control-into-the-device-frames-page.png&quot; alt=&quot;以拖拉的方式新增控制項到頁面中&quot; title=&quot;以拖拉的方式新增控制項到頁面中&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;透過&lt;code&gt;常用&lt;/code&gt; -&amp;gt; &lt;code&gt;選取&lt;/code&gt; -&amp;gt; &lt;code&gt;選取窗格&lt;/code&gt; 面板確認你的 Device Frame 圖層為置頂圖層。
+&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/make-sure-the-device-frame-on-top-level.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/make-sure-the-device-frame-on-top-level.png&quot; alt=&quot;透過選取窗格確認 Device Frame 為置頂圖層&quot; title=&quot;透過選取窗格確認 Device Frame 為置頂圖層&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;當你完成設計之後，可以透過另存新檔的功能，將設計好的畫面另存為 PNG 檔 (匯出投影片時選擇&lt;code&gt;僅此投影片&lt;/code&gt;)。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;另外，你也可以透過投影片裡面的 Type styles 和 Color swatches ，來作為字體大小和配色的參考喔!!&lt;/p&gt;
+
+&lt;p&gt;大功告成啦!!~
+&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/a-simple-sample-of-ui-design.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/a-simple-sample-of-ui-design.png&quot; alt=&quot;大功告成&quot; title=&quot;大功告成&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;是不是很方便呢!?&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2016/12/14/using-powerpoint-template-for-designing-uwp-app/&quot;&gt;使用 Dev Center 提供的 PowerPoint 設計範本製作 UWP 的 UI 雛型&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on December 14, 2016.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
   <title type="html"><![CDATA[透過 Roaming Extension Manager 在不同機器上同步 Visual Studio 2015 的擴充功能]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2016/11/01/roaming-extension-manager/"/>
-  <id>http://ouch1978.github.io/2016/11/01/roaming-extension-manager</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2016/11/01/roaming-extension-manager/"/>
+  <id>http://localhost:4000/2016/11/01/roaming-extension-manager</id>
   <published>2016-11-01T23:00:00+08:00</published>
   <updated>2016-11-01T23:00:00+08:00</updated>
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#Visual%20Studio%202015" term="Visual Studio 2015" />
+  <category scheme="http://localhost:4000/tags/#Visual%20Studio%202015" term="Visual Studio 2015" />
   <content type="html">
   
     &lt;p&gt;常常在工作的時候找到不錯用的 Visual Studio 擴充功能，但是往往回家又得再安裝一次，有時候忙過頭隔個幾天想安裝就忘記名字叫什麼了。一直在想說怎麼沒有一個功能可以在不同的電腦之間同步安裝過的擴充功能，果不其然，還真的有耶!!&lt;/p&gt;
@@ -57,22 +152,22 @@
 &lt;p&gt;以上。希望能幫到有需要的朋友喔!!~&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/11/01/roaming-extension-manager/&quot;&gt;透過 Roaming Extension Manager 在不同機器上同步 Visual Studio 2015 的擴充功能&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on November 01, 2016.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2016/11/01/roaming-extension-manager/&quot;&gt;透過 Roaming Extension Manager 在不同機器上同步 Visual Studio 2015 的擴充功能&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on November 01, 2016.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[強制 OneDrive 立刻與伺服器的檔案進行同步]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2016/10/20/force-onedrive-to-sync-immediately/"/>
-  <id>http://ouch1978.github.io/2016/10/20/force-onedrive-to-sync-immediately</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2016/10/20/force-onedrive-to-sync-immediately/"/>
+  <id>http://localhost:4000/2016/10/20/force-onedrive-to-sync-immediately</id>
   <published>2016-10-20T23:00:00+08:00</published>
   <updated>2016-10-20T23:00:00+08:00</updated>
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#Windows%2010" term="Windows 10" /><category scheme="http://ouch1978.github.io/tags/#OneDrive" term="OneDrive" />
+  <category scheme="http://localhost:4000/tags/#Windows%2010" term="Windows 10" /><category scheme="http://localhost:4000/tags/#OneDrive" term="OneDrive" />
   <content type="html">
   
     &lt;p&gt;把 OneDrive 當作主要雲端備份方案的我，常常遇到它不聽話的狀況，得要重新啟動它才能讓它乖乖同步，這邊就來記錄一下透過命令列讓它醒來的方法。&lt;/p&gt;
@@ -106,22 +201,22 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 &lt;p&gt;以上。&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/10/20/force-onedrive-to-sync-immediately/&quot;&gt;強制 OneDrive 立刻與伺服器的檔案進行同步&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 20, 2016.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2016/10/20/force-onedrive-to-sync-immediately/&quot;&gt;強制 OneDrive 立刻與伺服器的檔案進行同步&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 20, 2016.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[解決 Windows 10 10586 英文版無法正常顯示 Non-Unicode 中文的問題]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2016/10/18/windows-10-10158-english-version-missing-tchinese-fonts/"/>
-  <id>http://ouch1978.github.io/2016/10/18/windows-10-10158-english-version-missing-tchinese-fonts</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2016/10/18/windows-10-10158-english-version-missing-tchinese-fonts/"/>
+  <id>http://localhost:4000/2016/10/18/windows-10-10158-english-version-missing-tchinese-fonts</id>
   <published>2016-10-18T22:00:00+08:00</published>
   <updated>2016-10-18T22:00:00+08:00</updated>
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#Windows%2010" term="Windows 10" />
+  <category scheme="http://localhost:4000/tags/#Windows%2010" term="Windows 10" />
   <content type="html">
   
     &lt;p&gt;話說，之前重灌工作機的時候，試了不同的 Windows 10 版本，一開始安裝的是 10586(1511) 英文版，但是發現非 Unicode 的中文無法正常顯示。&lt;/p&gt;
@@ -189,22 +284,22 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 &lt;p&gt;我只能說，我真的是搞不懂你啊~~&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/10/18/windows-10-10158-english-version-missing-tchinese-fonts/&quot;&gt;解決 Windows 10 10586 英文版無法正常顯示 Non-Unicode 中文的問題&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 18, 2016.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2016/10/18/windows-10-10158-english-version-missing-tchinese-fonts/&quot;&gt;解決 Windows 10 10586 英文版無法正常顯示 Non-Unicode 中文的問題&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 18, 2016.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[解決遊戲在 Windows 10 執行時出現 XAudio2_7.dll_unloaded 錯誤造成的閃退]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2016/07/02/solve-xaudio2_7.dll-unloaded-error/"/>
-  <id>http://ouch1978.github.io/2016/07/02/solve-xaudio2_7.dll-unloaded-error</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2016/07/02/solve-xaudio2_7.dll-unloaded-error/"/>
+  <id>http://localhost:4000/2016/07/02/solve-xaudio2_7.dll-unloaded-error</id>
   <published>2016-07-02T17:00:00+08:00</published>
   <updated>2016-07-02T17:00:00+08:00</updated>
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#Windows%2010" term="Windows 10" />
+  <category scheme="http://localhost:4000/tags/#Windows%2010" term="Windows 10" />
   <content type="html">
   
     &lt;p&gt;放假的時候想要玩個遊戲放鬆一下，但是遊戲卻動不動就自己閃退，在事件檢視器中看到失敗的模組名稱為 XAudio2_7.dll_unloaded ，這邊就來分享解決之道。&lt;/p&gt;
@@ -231,22 +326,22 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 &lt;p&gt;不要問，很可怕。我們還是乖乖打電動吧~&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/07/02/solve-xaudio2_7.dll-unloaded-error/&quot;&gt;解決遊戲在 Windows 10 執行時出現 XAudio2_7.dll_unloaded 錯誤造成的閃退&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on July 02, 2016.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2016/07/02/solve-xaudio2_7.dll-unloaded-error/&quot;&gt;解決遊戲在 Windows 10 執行時出現 XAudio2_7.dll_unloaded 錯誤造成的閃退&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on July 02, 2016.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[透過Visual Studio對Xamarin Android專案進行除錯]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2016/07/01/debugging-xamarin-android-app-with-vs/"/>
-  <id>http://ouch1978.github.io/2016/07/01/debugging-xamarin-android-app-with-vs</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2016/07/01/debugging-xamarin-android-app-with-vs/"/>
+  <id>http://localhost:4000/2016/07/01/debugging-xamarin-android-app-with-vs</id>
   <published>2016-07-01T22:00:00+08:00</published>
   <updated>2016-07-01T22:00:00+08:00</updated>
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#Xamarin" term="Xamarin" /><category scheme="http://ouch1978.github.io/tags/#Visual%20Studio" term="Visual Studio" />
+  <category scheme="http://localhost:4000/tags/#Xamarin" term="Xamarin" /><category scheme="http://localhost:4000/tags/#Visual%20Studio" term="Visual Studio" />
   <content type="html">
   
     &lt;p&gt;很開心的可以成功建置出Android應用程式之後…咦!? 怎麼不能Debug!!??Visual Studio把應用程式佈署到模擬器之後就不管了??哪招啊!?&lt;/p&gt;
@@ -270,22 +365,22 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 &lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-debugging-xamarin-android-app-in-vs/BreakPoint-Is-Back.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-debugging-xamarin-android-app-in-vs/BreakPoint-Is-Back.png&quot; alt=&quot;Break Point Is Back&quot; title=&quot;Break Point Is Back&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/07/01/debugging-xamarin-android-app-with-vs/&quot;&gt;透過Visual Studio對Xamarin Android專案進行除錯&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on July 01, 2016.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2016/07/01/debugging-xamarin-android-app-with-vs/&quot;&gt;透過Visual Studio對Xamarin Android專案進行除錯&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on July 01, 2016.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Hello Xamarin]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2016/07/01/hello-xamarin/"/>
-  <id>http://ouch1978.github.io/2016/07/01/hello-xamarin</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2016/07/01/hello-xamarin/"/>
+  <id>http://localhost:4000/2016/07/01/hello-xamarin</id>
   <published>2016-07-01T21:00:00+08:00</published>
   <updated>2016-07-01T21:00:00+08:00</updated>
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#Xamarin" term="Xamarin" /><category scheme="http://ouch1978.github.io/tags/#Visual%20Studio" term="Visual Studio" />
+  <category scheme="http://localhost:4000/tags/#Xamarin" term="Xamarin" /><category scheme="http://localhost:4000/tags/#Visual%20Studio" term="Visual Studio" />
   <content type="html">
   
     &lt;p&gt;日前微軟公開了收購Xamarin的消息，也很佛心的把它提供給Visual Studio的使用者們使用，這麼佛心的東西，怎麼可以不玩看看呢?&lt;/p&gt;
@@ -325,22 +420,22 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 &lt;p&gt;以上。&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/07/01/hello-xamarin/&quot;&gt;Hello Xamarin&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on July 01, 2016.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2016/07/01/hello-xamarin/&quot;&gt;Hello Xamarin&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on July 01, 2016.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Line原創貼圖-尼古這一家系列]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2016/06/14/line-stickers-nicolas-family/"/>
-  <id>http://ouch1978.github.io/2016/06/14/line-stickers-nicolas-family</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2016/06/14/line-stickers-nicolas-family/"/>
+  <id>http://localhost:4000/2016/06/14/line-stickers-nicolas-family</id>
   <published>2016-06-14T15:49:00+08:00</published>
   <updated>2016-06-14T15:49:00+08:00</updated>
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#Line" term="Line" /><category scheme="http://ouch1978.github.io/tags/#%E8%B2%BC%E5%9C%96" term="貼圖" />
+  <category scheme="http://localhost:4000/tags/#Line" term="Line" /><category scheme="http://localhost:4000/tags/#%E8%B2%BC%E5%9C%96" term="貼圖" />
   <content type="html">
   
     &lt;p&gt;其實我早在兩年前就一直想要畫以我家的喵星人們為主題的Line貼圖了，但是夢想總是美好的，現實是殘酷的。一直拖到了今年，才有空真的動筆下去生出四十張一組的貼圖。&lt;/p&gt;
@@ -370,23 +465,23 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 &lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/06.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/06.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/12.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/12.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/12-02.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/12-02.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/16.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/16.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/19.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/19.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/20.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/20.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/22.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/22.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/25.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/25.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/26.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/26.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/06/14/line-stickers-nicolas-family/&quot;&gt;Line原創貼圖-尼古這一家系列&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on June 14, 2016.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2016/06/14/line-stickers-nicolas-family/&quot;&gt;Line原創貼圖-尼古這一家系列&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on June 14, 2016.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[徹底移除Skype廣告]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2016/06/08/remove-skype-ads/"/>
-  <id>http://ouch1978.github.io/2016/06/08/remove-skype-ads</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2016/06/08/remove-skype-ads/"/>
+  <id>http://localhost:4000/2016/06/08/remove-skype-ads</id>
   <published>2016-06-08T00:00:00+08:00</published>
   <updated>2016-06-08 08:00:00 +0800T00:00:00-00:00</updated>
   
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#Skype" term="Skype" /><category scheme="http://ouch1978.github.io/tags/#Windows" term="Windows" />
+  <category scheme="http://localhost:4000/tags/#Skype" term="Skype" /><category scheme="http://localhost:4000/tags/#Windows" term="Windows" />
   <content type="html">
   
     &lt;p&gt;最近新版的Skype預設都會開啟對話視窗和主視窗的廣告功能，佔掉不小的版面，實在是有點惱人。這邊就跟大家分享怎麼把討人厭的廣告移乾淨吧。&lt;/p&gt;
@@ -424,23 +519,23 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 &lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-08-Remove-Skype-Ads/04.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-08-Remove-Skype-Ads/04.png&quot; alt=&quot;沒有廣告區的對話視窗&quot; title=&quot;沒有廣告區的對話視&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/06/08/remove-skype-ads/&quot;&gt;徹底移除Skype廣告&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on June 08, 2016.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2016/06/08/remove-skype-ads/&quot;&gt;徹底移除Skype廣告&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on June 08, 2016.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[跟著Ouch寫程式 - 前言 ]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2010/10/30/learning-c-sharp-intro/"/>
-  <id>http://ouch1978.github.io/2010/10/30/learning-c-sharp-intro</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2010/10/30/learning-c-sharp-intro/"/>
+  <id>http://localhost:4000/2010/10/30/learning-c-sharp-intro</id>
   <published>2010-10-30T00:00:00+08:00</published>
   <updated>2010-10-30 08:00:00 +0800T00:00:00-00:00</updated>
   
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#C%23" term="C#" />
+  <category scheme="http://localhost:4000/tags/#C%23" term="C#" />
   <content type="html">
   
     &lt;p&gt;最近身邊有些朋友正在學習寫程式，算是新手中的新手，想想我也曾是過來人，就在這邊順便一下分享我小小的經驗，希望能對剛起步的朋友們有所幫助。
@@ -721,23 +816,23 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 &lt;p&gt;以上就是C#語言很基本很基本的結構，既然是前言，我想就到這邊為止，我們下次見!!&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2010/10/30/learning-c-sharp-intro/&quot;&gt;跟著Ouch寫程式 - 前言 &lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 30, 2010.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2010/10/30/learning-c-sharp-intro/&quot;&gt;跟著Ouch寫程式 - 前言 &lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 30, 2010.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[C#命名方針]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2010/10/30/c-sharp-naming-convention/"/>
-  <id>http://ouch1978.github.io/2010/10/30/c-sharp-naming-convention</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2010/10/30/c-sharp-naming-convention/"/>
+  <id>http://localhost:4000/2010/10/30/c-sharp-naming-convention</id>
   <published>2010-10-30T00:00:00+08:00</published>
   <updated>2010-10-30 08:00:00 +0800T00:00:00-00:00</updated>
   
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#C%23" term="C#" />
+  <category scheme="http://localhost:4000/tags/#C%23" term="C#" />
   <content type="html">
   
     &lt;p&gt;寫程式其實也是有規矩在的，尤其是要團體協同開發的時候，如果每個人使用的規則都不一樣，那要求每個人看得懂別人的程式碼，真的是會要了人的命。&lt;br /&gt;
@@ -907,23 +1002,23 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 &lt;/ul&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2010/10/30/c-sharp-naming-convention/&quot;&gt;C#命名方針&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 30, 2010.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2010/10/30/c-sharp-naming-convention/&quot;&gt;C#命名方針&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 30, 2010.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[輕鬆製作獨一無二的投影片-加強版]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2010/10/29/ppt-make-your-own-ptt-template-advanced/"/>
-  <id>http://ouch1978.github.io/2010/10/29/ppt-make-your-own-ptt-template-advanced</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2010/10/29/ppt-make-your-own-ptt-template-advanced/"/>
+  <id>http://localhost:4000/2010/10/29/ppt-make-your-own-ptt-template-advanced</id>
   <published>2010-10-29T00:00:00+08:00</published>
   <updated>2010-10-29 08:00:00 +0800T00:00:00-00:00</updated>
   
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#Power%20Point" term="Power Point" />
+  <category scheme="http://localhost:4000/tags/#Power%20Point" term="Power Point" />
   <content type="html">
   
     &lt;p&gt;上次跟各位介紹了母片的應用，這次再來介紹兩個小撇步，一樣只利用PowerPoint原生的功能，&lt;code&gt;不借助任何外部圖片&lt;/code&gt;，做出類似璃鏡面的效果，以及可以放在標題頁的自我介紹小卡片。&lt;/p&gt;
@@ -1007,23 +1102,23 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 &lt;/ul&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2010/10/29/ppt-make-your-own-ptt-template-advanced/&quot;&gt;輕鬆製作獨一無二的投影片-加強版&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 29, 2010.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2010/10/29/ppt-make-your-own-ptt-template-advanced/&quot;&gt;輕鬆製作獨一無二的投影片-加強版&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 29, 2010.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[輕鬆製作獨一無二的投影片]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2010/10/27/ppt-make-your-own-ptt-template/"/>
-  <id>http://ouch1978.github.io/2010/10/27/ppt-make-your-own-ptt-template</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2010/10/27/ppt-make-your-own-ptt-template/"/>
+  <id>http://localhost:4000/2010/10/27/ppt-make-your-own-ptt-template</id>
   <published>2010-10-27T00:00:00+08:00</published>
   <updated>2010-10-27 08:00:00 +0800T00:00:00-00:00</updated>
   
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#Power%20Point" term="Power Point" />
+  <category scheme="http://localhost:4000/tags/#Power%20Point" term="Power Point" />
   <content type="html">
   
     &lt;p&gt;相信Power Point大家都會用，但是真的要自己從無到有，&lt;code&gt;不使用任何別人做好的樣板或是美工圖片&lt;/code&gt;，快速的製作出一份「看起來」有一定的專業程度的簡報，應該就會難倒某些人吧!?&lt;/p&gt;
@@ -1098,23 +1193,23 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2010/10/27/ppt-make-your-own-ptt-template/&quot;&gt;輕鬆製作獨一無二的投影片&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 27, 2010.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2010/10/27/ppt-make-your-own-ptt-template/&quot;&gt;輕鬆製作獨一無二的投影片&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 27, 2010.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[自製 Modal 元件]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2010/10/26/silverlight-fake-modal-dialog/"/>
-  <id>http://ouch1978.github.io/2010/10/26/silverlight-fake-modal-dialog</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2010/10/26/silverlight-fake-modal-dialog/"/>
+  <id>http://localhost:4000/2010/10/26/silverlight-fake-modal-dialog</id>
   <published>2010-10-26T00:00:00+08:00</published>
   <updated>2010-10-26 08:00:00 +0800T00:00:00-00:00</updated>
   
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#Silverlight" term="Silverlight" />
+  <category scheme="http://localhost:4000/tags/#Silverlight" term="Silverlight" />
   <content type="html">
   
     &lt;p&gt;有使用過 Silverlight/WPF 的朋友們不知道有沒有遇過一個問題：有時候想要跳出一個元件跟使用者互動，而且要鎖住原來的主畫面，等使用者操作完才能繼續操作主畫面，可是用 MessageBox 的話功能不夠，用 ChildWindow 的話功能又太多或是太複雜之類的問題…&lt;/p&gt;
@@ -1438,23 +1533,23 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 &lt;/a&gt;&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2010/10/26/silverlight-fake-modal-dialog/&quot;&gt;自製 Modal 元件&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 26, 2010.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2010/10/26/silverlight-fake-modal-dialog/&quot;&gt;自製 Modal 元件&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 26, 2010.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[使用 Visual Studio 進行 Source Code 自動格式化 - 加強版]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2010/10/25/vs2010-format-sour-cecode-automatically-advanced/"/>
-  <id>http://ouch1978.github.io/2010/10/25/vs2010-format-sour-cecode-automatically-advanced</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2010/10/25/vs2010-format-sour-cecode-automatically-advanced/"/>
+  <id>http://localhost:4000/2010/10/25/vs2010-format-sour-cecode-automatically-advanced</id>
   <published>2010-10-25T08:30:00+08:00</published>
   <updated>2010-10-25 08:00:00 +0800T00:00:00-00:00</updated>
   
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#Visual%20Studio" term="Visual Studio" />
+  <category scheme="http://localhost:4000/tags/#Visual%20Studio" term="Visual Studio" />
   <content type="html">
   
     &lt;p&gt;上篇講到了怎麼做 Source Code 的自動格式化，但是用內建的功能，其實有個不太方便的地方 – 一次只能格式化一個檔案，這個問題對於我來說就頭很大了，通常一個專案不太可能只有兩三個檔，動不動就要每個檔案都開來自動格式化一下也是很累人而且浪費時間的一件事，這時候，整個專案裡面的檔案都可以自動格式化的功能就變成是必備的了!!&lt;/p&gt;
@@ -1507,23 +1602,23 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_12.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Vistual-StudioSource-Code---_F4C0/image_thumb_5.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2010/10/25/vs2010-format-sour-cecode-automatically-advanced/&quot;&gt;使用 Visual Studio 進行 Source Code 自動格式化 - 加強版&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 25, 2010.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2010/10/25/vs2010-format-sour-cecode-automatically-advanced/&quot;&gt;使用 Visual Studio 進行 Source Code 自動格式化 - 加強版&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 25, 2010.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[使用 Visual Studio 進行 Source Code 自動格式化]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2010/10/25/vs2010-format-sour-cecode-automatically/"/>
-  <id>http://ouch1978.github.io/2010/10/25/vs2010-format-sour-cecode-automatically</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2010/10/25/vs2010-format-sour-cecode-automatically/"/>
+  <id>http://localhost:4000/2010/10/25/vs2010-format-sour-cecode-automatically</id>
   <published>2010-10-25T08:00:00+08:00</published>
   <updated>2010-10-25 08:00:00 +0800T00:00:00-00:00</updated>
   
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#Visual%20Studio" term="Visual Studio" />
+  <category scheme="http://localhost:4000/tags/#Visual%20Studio" term="Visual Studio" />
   <content type="html">
   
     &lt;p&gt;通常自己一個人在寫 Code 的時候，想怎麼編排就怎麼排，自己看得懂、看得開心就好；但是遇到多人協力開發的專案，程式碼可能會來自不同的人手上，如果沒有事先規範好程式碼的編排規則的話，那讀別人的 Code 就會很吃力了，更別說要接手下去改，這個時候， Visual Studio 內建的格式化工具就很管用了。&lt;/p&gt;
@@ -1581,7 +1676,7 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 &lt;p&gt;匯入/匯出設定檔的功能其實在很多地方是很好用的，例如說，你工作的小組希望有一致的 Coding Style ，那只要把設定檔提供給大家匯入，就可以不費吹灰之力做到囉!!&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2010/10/25/vs2010-format-sour-cecode-automatically/&quot;&gt;使用 Visual Studio 進行 Source Code 自動格式化&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 25, 2010.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2010/10/25/vs2010-format-sour-cecode-automatically/&quot;&gt;使用 Visual Studio 進行 Source Code 自動格式化&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 25, 2010.&lt;/p&gt;</content>
 </entry>
 
 </feed>
