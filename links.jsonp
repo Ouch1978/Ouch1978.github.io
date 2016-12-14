@@ -2,82 +2,82 @@ callback([
 
   {
     "text": "使用 Visual Studio 進行 Source Code 自動格式化",
-    "href": "http://localhost:4000/2010/10/25/vs2010-format-sour-cecode-automatically/"
+    "href": "http://ouch1978.github.io/2010/10/25/vs2010-format-sour-cecode-automatically/"
   } ,
 
   {
     "text": "使用 Visual Studio 進行 Source Code 自動格式化 - 加強版",
-    "href": "http://localhost:4000/2010/10/25/vs2010-format-sour-cecode-automatically-advanced/"
+    "href": "http://ouch1978.github.io/2010/10/25/vs2010-format-sour-cecode-automatically-advanced/"
   } ,
 
   {
     "text": "自製 Modal 元件",
-    "href": "http://localhost:4000/2010/10/26/silverlight-fake-modal-dialog/"
+    "href": "http://ouch1978.github.io/2010/10/26/silverlight-fake-modal-dialog/"
   } ,
 
   {
     "text": "輕鬆製作獨一無二的投影片",
-    "href": "http://localhost:4000/2010/10/27/ppt-make-your-own-ptt-template/"
+    "href": "http://ouch1978.github.io/2010/10/27/ppt-make-your-own-ptt-template/"
   } ,
 
   {
     "text": "輕鬆製作獨一無二的投影片-加強版",
-    "href": "http://localhost:4000/2010/10/29/ppt-make-your-own-ptt-template-advanced/"
+    "href": "http://ouch1978.github.io/2010/10/29/ppt-make-your-own-ptt-template-advanced/"
   } ,
 
   {
     "text": "C#命名方針",
-    "href": "http://localhost:4000/2010/10/30/c-sharp-naming-convention/"
+    "href": "http://ouch1978.github.io/2010/10/30/c-sharp-naming-convention/"
   } ,
 
   {
     "text": "跟著Ouch寫程式 - 前言 ",
-    "href": "http://localhost:4000/2010/10/30/learning-c-sharp-intro/"
+    "href": "http://ouch1978.github.io/2010/10/30/learning-c-sharp-intro/"
   } ,
 
   {
     "text": "徹底移除Skype廣告",
-    "href": "http://localhost:4000/2016/06/08/remove-skype-ads/"
+    "href": "http://ouch1978.github.io/2016/06/08/remove-skype-ads/"
   } ,
 
   {
     "text": "Line原創貼圖-尼古這一家系列",
-    "href": "http://localhost:4000/2016/06/14/line-stickers-nicolas-family/"
+    "href": "http://ouch1978.github.io/2016/06/14/line-stickers-nicolas-family/"
   } ,
 
   {
     "text": "Hello Xamarin",
-    "href": "http://localhost:4000/2016/07/01/hello-xamarin/"
+    "href": "http://ouch1978.github.io/2016/07/01/hello-xamarin/"
   } ,
 
   {
     "text": "透過Visual Studio對Xamarin Android專案進行除錯",
-    "href": "http://localhost:4000/2016/07/01/debugging-xamarin-android-app-with-vs/"
+    "href": "http://ouch1978.github.io/2016/07/01/debugging-xamarin-android-app-with-vs/"
   } ,
 
   {
     "text": "解決遊戲在 Windows 10 執行時出現 XAudio2_7.dll_unloaded 錯誤造成的閃退",
-    "href": "http://localhost:4000/2016/07/02/solve-xaudio2_7.dll-unloaded-error/"
+    "href": "http://ouch1978.github.io/2016/07/02/solve-xaudio2_7.dll-unloaded-error/"
   } ,
 
   {
     "text": "解決 Windows 10 10586 英文版無法正常顯示 Non-Unicode 中文的問題",
-    "href": "http://localhost:4000/2016/10/18/windows-10-10158-english-version-missing-tchinese-fonts/"
+    "href": "http://ouch1978.github.io/2016/10/18/windows-10-10158-english-version-missing-tchinese-fonts/"
   } ,
 
   {
     "text": "強制 OneDrive 立刻與伺服器的檔案進行同步",
-    "href": "http://localhost:4000/2016/10/20/force-onedrive-to-sync-immediately/"
+    "href": "http://ouch1978.github.io/2016/10/20/force-onedrive-to-sync-immediately/"
   } ,
 
   {
     "text": "透過 Roaming Extension Manager 在不同機器上同步 Visual Studio 2015 的擴充功能",
-    "href": "http://localhost:4000/2016/11/01/roaming-extension-manager/"
+    "href": "http://ouch1978.github.io/2016/11/01/roaming-extension-manager/"
   } ,
 
   {
     "text": "使用 Dev Center 提供的 PowerPoint 設計範本製作 UWP 的 UI 雛型",
-    "href": "http://localhost:4000/2016/12/14/using-powerpoint-template-for-designing-uwp-app/"
+    "href": "http://ouch1978.github.io/2016/12/14/using-powerpoint-template-for-designing-uwp-app/"
   } 
 
 ])
