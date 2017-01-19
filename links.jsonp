@@ -78,6 +78,11 @@ callback([
   {
     "text": "使用 Dev Center 提供的 PowerPoint 設計範本製作 UWP 的 UI 雛型",
     "href": "http://ouch1978.github.io/2016/12/14/using-powerpoint-template-for-designing-uwp-app/"
+  } ,
+
+  {
+    "text": "更改 UWP PowerPoint 設計範本中內建的 AppBar 圖示顏色",
+    "href": "http://ouch1978.github.io/2016/12/29/change-built-in-icon-color-in-uwp-ppt-template/"
   } 
 
 ])
