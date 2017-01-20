@@ -83,6 +83,11 @@ callback([
   {
     "text": "更改 UWP PowerPoint 設計範本中內建的 AppBar 圖示顏色",
     "href": "http://ouch1978.github.io/2016/12/29/change-built-in-icon-color-in-uwp-ppt-template/"
+  } ,
+
+  {
+    "text": "初探 Visual Studio 2017 RC - 安裝篇",
+    "href": "http://ouch1978.github.io/2017/01/20/first-look-on-vs2017-rc-installation/"
   } 
 
 ])
