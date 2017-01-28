@@ -88,6 +88,11 @@ callback([
   {
     "text": "初探 Visual Studio 2017 RC - 安裝篇",
     "href": "http://ouch1978.github.io/2017/01/20/first-look-on-vs2017-rc-installation/"
+  } ,
+
+  {
+    "text": "初探 Visual Studio 2017 RC - IDE 使用者體驗篇",
+    "href": "http://ouch1978.github.io/2017/01/29/first-look-on-vs2017-rc-ide-ux-enhancement/"
   } 
 
 ])
