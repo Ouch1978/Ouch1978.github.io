@@ -7,13 +7,171 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://ouch1978.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://ouch1978.github.io/" />
-<updated>2017-01-28T22:34:02+08:00</updated>
+<updated>2017-01-30T20:08:50+08:00</updated>
 <id>http://ouch1978.github.io/</id>
 <author>
   <name>Ouch Liu (劉耀群)</name>
   <uri>http://ouch1978.github.io/</uri>
   <email>ouch1978@hotmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[初探 Visual Studio 2017 RC - 程式撰寫體驗篇]]></title>
+  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2017/01/31/first-look-on-vs2017-rc-general-coding-enhancement/"/>
+  <id>http://ouch1978.github.io/2017/01/31/first-look-on-vs2017-rc-general-coding-enhancement</id>
+  <published>2017-01-31T06:30:00+08:00</published>
+  <updated>2017-01-31 06:30:00 +0800T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Ouch Liu (劉耀群)</name>
+    <uri>http://ouch1978.github.io</uri>
+    <email>ouch1978@hotmail.com</email>
+  </author>
+  <category scheme="http://ouch1978.github.io/tags/#Visual%20Studio" term="Visual Studio" />
+  <content type="html">
+  
+    &lt;p&gt;繼兩篇分別討論安裝與使用者體驗增強的文章之後，接下來要和大家分享的是 Visual Studio 2017 RC 在程式碼撰寫體驗增強的部份。&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;強化的程式碼巡覽功能&lt;/h2&gt;
+
+&lt;p&gt;Visual Studio 2017 RC 在程式碼巡覽的功能方面有不少的加強，之前有些得要安裝 Resharper 才能達到的功能現在都內建了。不過要特別注意的是，若您已經有安裝 Resharper 的話，部份熱鍵會被 Resharper 的功能取代，在使用上得特別注意一下。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Go To (熱鍵為 &lt;code&gt;Ctrl + T&lt;/code&gt; 或 &lt;code&gt;Ctrl + ,&lt;/code&gt;) ：可以針對不同種類的範圍進行查找並且前往，可以透過點選圖示切換目標種類或是直接在文字框中輸入前置字元切換搜尋範圍。&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;Go to All ：針對所有支援的範圍進行查找並前往。
+&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/01-code-navigation-go-to-all.png&quot; title=&quot;Go to All&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/01-code-navigation-go-to-all.png&quot; alt=&quot;Go to All&quot; title=&quot;Go to All&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Go to Line (熱鍵為 &lt;code&gt;Ctrl + G&lt;/code&gt; ，前置字元為 &lt;code&gt;:&lt;/code&gt; )：直接前往指定的行數。
+&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/02-code-navigation-go-to-line.png&quot; title=&quot;Go to Line&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/02-code-navigation-go-to-line.png&quot; alt=&quot;Go to Line&quot; title=&quot;Go to Line&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Go to File (熱鍵為 &lt;code&gt;Ctrl + 1 -&amp;gt; Ctrl + F&lt;/code&gt; ，前置字元為 &lt;code&gt;f&lt;/code&gt; )：前往指定的檔案。
+&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/03-code-navigation-go-to-file.png&quot; title=&quot;Go to File&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/03-code-navigation-go-to-file.png&quot; alt=&quot;Go to File&quot; title=&quot;Go to File&quot; /&gt;&lt;/a&gt;  &lt;/p&gt;
+
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Go to Type (熱鍵為 &lt;code&gt;Ctrl + 1 -&amp;gt; Ctrl + T&lt;/code&gt; ，前置字元為 &lt;code&gt;t&lt;/code&gt; )：前往指定的型別。
+&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/04-code-navigation-go-to-type.png&quot; title=&quot;Go to Type&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/04-code-navigation-go-to-type.png&quot; alt=&quot;Go to Type&quot; title=&quot;Go to Type&quot; /&gt;&lt;/a&gt;  &lt;/p&gt;
+
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Go to Member (熱鍵為 &lt;code&gt;Ctrl + 1 -&amp;gt; Ctrl + M&lt;/code&gt; ，前置字元為 &lt;code&gt;m&lt;/code&gt; )：前往指定的成員。
+&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/05-code-navigation-go-to-member.png&quot; title=&quot;Go to Member&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/05-code-navigation-go-to-member.png&quot; alt=&quot;Go to Member&quot; title=&quot;Go to Member&quot; /&gt;&lt;/a&gt;  &lt;/p&gt;
+
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Go to Symbol (熱鍵為 &lt;code&gt;Ctrl + 1 -&amp;gt; Ctrl + S&lt;/code&gt; ，前置字元為 &lt;code&gt;#&lt;/code&gt; )：前往指定的符號。
+&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/06-code-navigation-go-to-symbol.png&quot; title=&quot;Go to Symbol&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/06-code-navigation-go-to-symbol.png&quot; alt=&quot;Go to Symbol&quot; title=&quot;Go to Symbol&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;另外，Go To 的功能也可以在功能表中的的 Edit 項目下面找到喔!!
+&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/07-code-navigation-go-to-from-edit-menu.png&quot; title=&quot;透過功能表使用 Go to&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/07-code-navigation-go-to-from-edit-menu.png&quot; alt=&quot;透過功能表使用 Go to&quot; title=&quot;透過功能表使用 Go to&quot; /&gt;&lt;/a&gt;  &lt;/p&gt;
+
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Find All References (熱鍵為 &lt;code&gt;Shift + F12&lt;/code&gt;，目前支援 C# 、 VB 和 C++ 三種語言) ： Find All References 經過這次改版的翻修之後，除了針對 C# 和 VB 兩種語言提供搜尋結果上色功能的支援之外，還有下列實用的功能：&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;提供了更進一步的群組、篩選、排序相關的功能。
+&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/08-overhauled-find-all-references-group-by-options.png&quot; title=&quot;Find All References - Group By 提供的選項&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/08-overhauled-find-all-references-group-by-options.png&quot; alt=&quot;Find All References - Group By 提供的選項&quot; title=&quot;Find All References - Group By 提供的選項&quot; /&gt;&lt;/a&gt;  &lt;/p&gt;
+
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;針對結果進行再度的搜尋功能。
+&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/09-overhauled-find-all-references-search-in-results.gif&quot; title=&quot;Find All References - 於結果中搜尋&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/09-overhauled-find-all-references-search-in-results.gif&quot; alt=&quot;Find All References - 於結果中搜尋&quot; title=&quot;Find All References - 於結果中搜尋&quot; /&gt;&lt;/a&gt;  &lt;/p&gt;
+
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;可以透過 &lt;code&gt;Keep Results&lt;/code&gt; 按鈕來保留目前搜尋的結果。
+&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/10-overhauled-find-all-references-keep-results.png&quot; title=&quot;按下 Keep Results 後，結果會在下面的頁籤中保留&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/10-overhauled-find-all-references-keep-results.png&quot; alt=&quot;Find All References - 按下 Keep Results 後，結果會在下面的頁籤中保留&quot; title=&quot;按下 Keep Results 後，結果會在下面的頁籤中保留&quot; /&gt;&lt;/a&gt;  &lt;/p&gt;
+
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;當滑鼠游標移到搜尋結果的項目上時，會出現參考到該部份的程式碼內容。
+&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/11-overhauled-find-all-references-tooltip-for-context.png&quot; title=&quot;Find All References - 滑鼠移到項目上會出現使用到該功能的程式碼內容&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/11-overhauled-find-all-references-tooltip-for-context.png&quot; alt=&quot;Find All References - 滑鼠移到項目上會出現使用到該功能的程式碼內容&quot; title=&quot;Find All References - 滑鼠移到項目上會出現使用到該功能的程式碼內容&quot; /&gt;&lt;/a&gt;  &lt;/p&gt;
+
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;內建的程式碼對齊線功能：以往透過類似像 Indent Guides 之類的擴充功能才能擁有的對齊線功能，現在在 Visual Studio 2017 RC 中也內建囉!!目前這個功能支援 C# 、 VB 和 XAML 以及透過 TextMate 語法支援的檔案也可以使用喔!!&lt;/p&gt;
+
+    &lt;p&gt;這個功能若被關閉的話，可以透過功能選單中的 &lt;code&gt;Tools&lt;/code&gt; -&amp;gt; &lt;code&gt;Options&lt;/code&gt; -&amp;gt;&lt;code&gt; Text Editor&lt;/code&gt; &amp;gt; &lt;code&gt;General&lt;/code&gt; -&amp;gt; 勾選 &lt;code&gt;Show structure guide lines&lt;/code&gt; 核選方塊即可。&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/12-built-in-structure-guide-lines.png&quot; title=&quot;內建的程式對齊線功能&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/12-built-in-structure-guide-lines.png&quot; alt=&quot;內建的程式對齊線功能&quot; title=&quot;內建的程式對齊線功能&quot; /&gt;&lt;/a&gt;  &lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/13-show-structure-guide-lines-option.png&quot; title=&quot;Show structure guide lines 選項&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/13-show-structure-guide-lines-option.png&quot; alt=&quot;Show structure guide lines 選項&quot; title=&quot;Show structure guide lines 選項&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;editor-config&quot;&gt;支援 Editor Config&lt;/h2&gt;
+
+&lt;p&gt;Visual Studio 2017 從 RC1 起就內建對 .editorconfig 檔的支援了。若您有在多種不同 IDE 撰寫程式的習慣，而且希望能在各不同工具裡保持一致的程式碼風格的話，不妨參考使用 Editor Config 來達到這個目的。而且好消息是， Resharper 也有計劃在未來支援 .editorconfig 檔喔!!&lt;/p&gt;
+
+&lt;p&gt;不過，目前還有一些還沒解決的 bug 存在，使用上可能得要稍微注意喔!! 如果對於在 Visual Studio 中使用 Editor Config 有興趣的話，也可以參考
+&lt;a href=&quot;https://github.com/editorconfig/editorconfig-visualstudio#readme&quot; title=&quot;Github - Editor Config for Visual Studio&quot;&gt;Github - Editor Config for Visual Studio&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;開啟資料夾功能&lt;/h2&gt;
+
+&lt;p&gt;Visual Studio 2017 RC 提供了直接開啟資料夾的功能，而且更棒的是，針對 C++ 、 Node.js (JavaScript/TypeScript) 、 C# 與 VB 這幾種語言編寫的檔案都提供語言高亮的支援。甚至，若您有安裝該語言相關的功能的話，還可以直接進行編譯或是除錯喔!!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/14-open-folder.png&quot; title=&quot;開啟資料夾功能&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/14-open-folder.png&quot; alt=&quot;開啟資料夾功能&quot; title=&quot;開啟資料夾功能&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;另外，直接開啟資料夾之後還提供下列幾種功能：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;透過前面介紹的 GoTo 功能在資料夾中進行巡覽。
+&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/15-go-to-support-in-open-folder.png&quot; title=&quot;透過 GoTo 進行巡覽&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/15-go-to-support-in-open-folder.png&quot; alt=&quot;透過 GoTo 進行巡覽&quot; title=&quot;透過 GoTo 進行巡覽&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;透過 Solution Explorer 瀏覽子資料夾。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;在 Solution Explorer 中的資料夾名稱上按下滑鼠右鍵會出現&lt;code&gt;以檔案總管開啟資料夾&lt;/code&gt;或是&lt;code&gt;開啟開發者命令提示字元&lt;/code&gt;選項。
+&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/16-open-developer-command-prompt-support-in-open-folder.png&quot; title=&quot;開啟資料夾或是開啟開發者命令提示字元&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/16-open-developer-command-prompt-support-in-open-folder.png&quot; alt=&quot;開啟資料夾或是開啟開發者命令提示字元&quot; title=&quot;開啟資料夾或是開啟開發者命令提示字元&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;可以輕鬆的透過方案與資料夾下拉清單在不同的方案或是資料夾之間切換。
+&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/17-solution-switch-through-solution-selector-dropdown.png&quot; title=&quot;透過方案與資料夾下拉清單在不同的方案或是資料夾之間切換&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/17-solution-switch-through-solution-selector-dropdown.png&quot; alt=&quot;透過方案與資料夾下拉清單在不同的方案或是資料夾之間切換&quot; title=&quot;透過方案與資料夾下拉清單在不同的方案或是資料夾之間切換&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;透過 launch.vs.json 檔設定除錯與啟動的設定；這個動作可以透過在可進行除錯的檔案上按下滑鼠右鍵並選取 &lt;code&gt;&quot;Debug and Launch Settings&quot;&lt;/code&gt; 來完成。
+&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/18-debug-and-launch-settings.png&quot; title=&quot;Debug and Launch Settings&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/18-debug-and-launch-settings.png&quot; alt=&quot;Debug and Launch Settings&quot; title=&quot;Debug and Launch Settings&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;透過 tasks.vs.json 檔設定任務與自訂編譯相關設定；這個動作可以透過在任意檔案上按下滑鼠右鍵並選取 &lt;code&gt;&quot;Configure Tasks&quot;&lt;/code&gt; 來完成。
+&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/19-configure-tasks.png&quot; title=&quot;Configure Tasks&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/19-configure-tasks.png&quot; alt=&quot;Configure Tasks&quot; title=&quot;Configure Tasks&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;上述兩個檔案在 JSON 編輯器中都會享有 IntelliSense 的支援。
+&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/20-intellisense-support.png&quot; title=&quot;上述兩個檔案在 JSON 編輯器中都會享有 IntelliSense 的支援&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/20-intellisense-support.png&quot; alt=&quot;上述兩個檔案在 JSON 編輯器中都會享有 IntelliSense 的支援&quot; title=&quot;上述兩個檔案在 JSON 編輯器中都會享有 IntelliSense 的支援&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;以上就是這次和各位分享關於 Visual Studio 2017 RC 中，關於一般程式碼撰寫體驗的部份，心動了嗎? 快點一起安裝體驗一下吧!!~&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2017/01/31/first-look-on-vs2017-rc-general-coding-enhancement/&quot;&gt;初探 Visual Studio 2017 RC - 程式撰寫體驗篇&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on January 31, 2017.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
