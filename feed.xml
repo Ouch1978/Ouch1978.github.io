@@ -7,13 +7,96 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://ouch1978.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://ouch1978.github.io/" />
-<updated>2017-01-30T20:08:50+08:00</updated>
+<updated>2017-02-04T00:09:57+08:00</updated>
 <id>http://ouch1978.github.io/</id>
 <author>
   <name>Ouch Liu (劉耀群)</name>
   <uri>http://ouch1978.github.io/</uri>
   <email>ouch1978@hotmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[部落格備份/搬家小工具 - Html to MD Exporter]]></title>
+  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2017/02/03/html-to-md-exporter/"/>
+  <id>http://ouch1978.github.io/2017/02/03/html-to-md-exporter</id>
+  <published>2017-02-03T22:30:00+08:00</published>
+  <updated>2017-02-03 22:30:00 +0800T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Ouch Liu (劉耀群)</name>
+    <uri>http://ouch1978.github.io</uri>
+    <email>ouch1978@hotmail.com</email>
+  </author>
+  <category scheme="http://ouch1978.github.io/tags/#C%23" term="C#" />
+  <content type="html">
+  
+    &lt;h2 id=&quot;section&quot;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;忘記是去年的哪個時候，看到了強者我同事 &lt;a href=&quot;https://github.com/blackie1019&quot; title=&quot;Blackie - 強者我同事&quot;&gt;小黑&lt;/a&gt; 用著 Markdown 語法寫他的部落格文章，然後透過一連串幾近自動化的流程上傳到 GitHub 上…
+當時的我，默默的看著我許久沒打開的 Windows Live Writer，再默默的看了一下我許久沒新文章的部落格…&lt;/p&gt;
+
+&lt;p&gt;「嗯，絕對不能再這樣下去!!」當時的我心裡默默的想著。「該是動手學點新東西的時候了!!」
+「嗯!! 我也要用 Markdown 寫文章，然後把我的文章也搬到 GitHub.io 上去!!」&lt;/p&gt;
+
+&lt;p&gt;但是，現實是很殘酷的，我之前習慣使用的 Windows Live Writer 大改版，改版過後的點部落也不再支援 Windows Live Writer ，再加上我之前本來就沒有備份文章的習慣，現在更沒辦法透過 Windows Live Writer 把文章同步回來…&lt;/p&gt;
+
+&lt;p&gt;「那就自己寫吧!!」當我問強者小黑可以怎麼辦的時候，他這樣回答。&lt;/p&gt;
+
+&lt;p&gt;「對啊~那就自己寫吧!!」&lt;/p&gt;
+
+&lt;p&gt;(以上廢文)
+  —&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;正文&lt;/h2&gt;
+
+&lt;p&gt;因為我原來使用的部落格平台是點部落，所以這個小工具目前使用的參數都是針對點部落而設計的，但是理論上只要稍作修改，也可以支援其他平台才對。&lt;/p&gt;
+
+&lt;p&gt;這個小工具基本上運作的流程如下：
+&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-02-03-html-to-md-exporter/01-flow-of-htm-to-md-exporter.png&quot; title=&quot;HtmlToMdExporter 運作流程&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-02-03-html-to-md-exporter/01-flow-of-htm-to-md-exporter.png&quot; alt=&quot;HtmlToMdExporter 運作流程&quot; title=&quot;HtmlToMdExporter 運作流程&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;解析 HTML 的部份使用的是 &lt;a href=&quot;https://www.nuget.org/packages/HtmlAgilityPack/&quot; title=&quot;HtmlAgilityPack&quot;&gt;HtmlAgilityPack&lt;/a&gt; ，將 HTML 轉換成 Markdown 語法的部份則是使用 &lt;a href=&quot;https://www.nuget.org/packages/Html2Markdown/&quot; title=&quot;Html2Markdown&quot;&gt;Html2Markdown&lt;/a&gt; 。&lt;/p&gt;
+
+&lt;p&gt;基於 Markdown 語法本身支援的限制，有部份的 HTML 標籤 (例如文字顏色、 iFrame 、 表格等等) 將不會被轉換，不過在顯示上應該還是沒問題的。&lt;/p&gt;
+
+&lt;p&gt;程式的主畫面如下圖：
+&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-02-03-html-to-md-exporter/02-main-window-of-html-to-md-exporter.png&quot; title=&quot;HtmlToMdExporter 主畫面&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-02-03-html-to-md-exporter/02-main-window-of-html-to-md-exporter.png&quot; alt=&quot;HtmlToMdExporter 主畫面&quot; title=&quot;HtmlToMdExporter 主畫面&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;基本上，如果你也是要從點部落把文章轉出來的話，只需要填入帳號應該就可以按下 Go 按鈕進行轉換了。如果你使用的是其他的平台，則可能需要自行替換掉畫面上顯示欄位的 XPath 值。&lt;/p&gt;
+
+&lt;p&gt;附上程式的原始碼連結，歡迎有興趣的朋友們自行取用。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/Ouch1978/HtmlToMdExporter&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/source-code-link.png&quot; alt=&quot;HtmlToMdExporter&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;後記&lt;/h2&gt;
+
+&lt;p&gt;要從已經用了五年以上的平台轉移到另一個全新的平台，的確是讓人很掙扎的一件事。&lt;/p&gt;
+
+&lt;p&gt;歷經了不同時期的各種阻礙(點部落的WebService被封鎖、Windows Live Writer改版、我的硬碟掛掉、點部落改版…)，我想，會讓我決定轉換平台的三大原因，主要是下面三項：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;我個人習慣使用離線工具撰寫文章。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;我想要使用有自我風格的主題和樣版，以及更多能自訂功能的部份。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;我喜歡 Markdown 語法的簡潔，也想藉這個機會接觸 GitHub 和 GitHub.io。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;經過一番比較之後，使用 Atom 作為我的寫作工具、搭配 Jekyll 和 GitHub.io 剛好能滿足我的需求，研究了幾天之後，也順利的成功上架第一篇文章。&lt;/p&gt;
+
+&lt;p&gt;不過，在這邊，還是得特別感謝一直以來默默提供免費平台的點部落，以及背後辛苦付出的歷代管理者群們，特別是開國元老的大鈞和 Jon 哥，還有現在接手的 Demo 大大。&lt;/p&gt;
+
+&lt;p&gt;因為有你們的付出，讓台灣的開發者們得以有一個空間可以記錄、分享自己的知識，也造就了今天的我。&lt;/p&gt;
+
+&lt;p&gt;如果，你也在尋找一個以開發者為主要客群的部落格平台，而且你已經習慣使用 Web 上的編輯工具作為你主要的寫作工具的話，依據我個人的經驗，點部落絕對是你的首選。&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2017/02/03/html-to-md-exporter/&quot;&gt;部落格備份/搬家小工具 - Html to MD Exporter&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on February 03, 2017.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -2021,80 +2104,6 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 
   
   &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2010/10/25/vs2010-format-sour-cecode-automatically-advanced/&quot;&gt;使用 Visual Studio 進行 Source Code 自動格式化 - 加強版&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 25, 2010.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[使用 Visual Studio 進行 Source Code 自動格式化]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2010/10/25/vs2010-format-sour-cecode-automatically/"/>
-  <id>http://ouch1978.github.io/2010/10/25/vs2010-format-sour-cecode-automatically</id>
-  <published>2010-10-25T08:00:00+08:00</published>
-  <updated>2010-10-25 08:00:00 +0800T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
-    <email>ouch1978@hotmail.com</email>
-  </author>
-  <category scheme="http://ouch1978.github.io/tags/#Visual%20Studio" term="Visual Studio" />
-  <content type="html">
-  
-    &lt;p&gt;通常自己一個人在寫 Code 的時候，想怎麼編排就怎麼排，自己看得懂、看得開心就好；但是遇到多人協力開發的專案，程式碼可能會來自不同的人手上，如果沒有事先規範好程式碼的編排規則的話，那讀別人的 Code 就會很吃力了，更別說要接手下去改，這個時候， Visual Studio 內建的格式化工具就很管用了。&lt;/p&gt;
-
-&lt;p&gt;而使用內建的格式化工具的方式非常的簡單，只要點選 &lt;strong&gt;&lt;code&gt;Edit&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Advanced&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Format Document&lt;/code&gt;&lt;/strong&gt; (快捷鍵為 &lt;strong&gt;&lt;code&gt;Ctrl+K&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Ctrl+D&lt;/code&gt;&lt;/strong&gt; )就可以啦。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_2.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_thumb.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;有圖有真相，讓大家看看整容前和整容後的程式碼。&lt;/p&gt;
-
-&lt;p&gt;整容前：&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_4.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_thumb_1.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;整容後：&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_6.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_thumb_2.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;是不是完全不費吹灰之力呢?&lt;/p&gt;
-
-&lt;p&gt;不過!!!!&lt;/p&gt;
-
-&lt;p&gt;戲還沒唱完，只介紹這樣的功能就真的太虛了，你可能會說，可是他自動排版出來的樣子跟原來習慣的排版格式和我們組規定的格式差太多了啊!!&lt;/p&gt;
-
-&lt;p&gt;沒關係，自動排版的格式是可以設定的，只要選取 &lt;strong&gt;&lt;code&gt;Tools&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Options...&lt;/code&gt;&lt;/strong&gt; -&amp;gt;在Options視窗中 &lt;strong&gt;&lt;code&gt;展開 Text Editor&lt;/code&gt;&lt;/strong&gt; 選項，你就會看到如下的畫面：&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_8.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_thumb_3.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;是什麼巫術!!?&lt;/p&gt;
-
-&lt;p&gt;沒錯，各種語言的排版格式都是可以設定的，你可以針對不同的語言，設定它的排版規則，比較基本的例如大括弧是不是要換行、變數的對齊方式、細到連 for 迴圈裡面分號和條件式之間是否要空格、變數和運算符號間是否要空格都可以設定。&lt;/p&gt;
-
-&lt;p&gt;設定好成為你要的格式規則之後，按下 OK 鈕，再來個 &lt;strong&gt;&lt;code&gt;Ctrl+K&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Ctrl+D&lt;/code&gt;&lt;/strong&gt; ，噹噹!!就變成你要的格式了吧!!&lt;/p&gt;
-
-&lt;p&gt;下圖就是我個人習慣的格式。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_10.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_thumb_4.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;有的人會說，難道我不能用自己喜歡的方式排版，等到要傳給別人或是要上傳到 Source Control 的時候再重新排嗎?&lt;/p&gt;
-
-&lt;p&gt;當然可以!!可是每次都要這樣改規則，不是很累嗎?這時候，就又可以利用設定檔的匯入/匯出功能啦!!&lt;/p&gt;
-
-&lt;p&gt;只要選取 &lt;strong&gt;&lt;code&gt;Tools&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Import and Export Settings...&lt;/code&gt;&lt;/strong&gt; 就會看到如下的視窗：&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_12.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_thumb_5.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;現在就可以依照不同的需求，進行匯入/匯出的工作，選擇匯入或匯出之後，會看到如下的畫面，可以依照自己的需求去選取要匯入/匯出的設定部份，這邊我們就只要勾選 Options 下面的 Text Editor 項目就可以把排版格式的部份匯出囉。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_14.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_thumb_6.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;按下下一步按鈕之後，輸入要存檔的檔名和路徑就大功告成啦!!&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_16.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/20c60da72dd0_E4F7/image_thumb_7.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;匯入/匯出設定檔的功能其實在很多地方是很好用的，例如說，你工作的小組希望有一致的 Coding Style ，那只要把設定檔提供給大家匯入，就可以不費吹灰之力做到囉!!&lt;/p&gt;
-
-  
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2010/10/25/vs2010-format-sour-cecode-automatically/&quot;&gt;使用 Visual Studio 進行 Source Code 自動格式化&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 25, 2010.&lt;/p&gt;</content>
 </entry>
 
 </feed>
