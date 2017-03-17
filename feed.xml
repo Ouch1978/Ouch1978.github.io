@@ -7,7 +7,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://ouch1978.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://ouch1978.github.io/" />
-<updated>2017-02-05T00:05:06+08:00</updated>
+<updated>2017-03-17T13:24:57+08:00</updated>
 <id>http://ouch1978.github.io/</id>
 <author>
   <name>Ouch Liu (劉耀群)</name>
@@ -53,11 +53,11 @@
 
 &lt;p&gt;第一步當然就開啟地表最強的開發工具 - Visual Studio 建立我們的測試專案囉。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-02-04-automation-flash-ui-test-with-sikuli4net/01-create-coded-ui-test-project.png&quot; title=&quot;建立 Coded UI Test 專案&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-02-04-automation-flash-ui-test-with-sikuli4net/01-create-coded-ui-test-project.png&quot; alt=&quot;建立 Coded UI Test 專案&quot; title=&quot;建立 Coded UI Test 專案&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-02-04-automation-flash-ui-test-with-sikuli4net/01-create-coded-ui-test-project.png&quot; title=&quot;建立 Coded UI Test 專案&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-02-04-automation-flash-ui-test-with-sikuli4net/01-create-coded-ui-test-project.png&quot; alt=&quot;建立 Coded UI Test 專案&quot; title=&quot;建立 Coded UI Test 專案&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
 
 &lt;p&gt;接著， Visual Studio 會貼心的問我們要用什麼方式建立程式碼，這邊我直接按下 Cancel 鈕。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-02-04-automation-flash-ui-test-with-sikuli4net/02-click-cancel-to-bypass-ui-recording.png&quot; title=&quot;不使用錄製的方式建立程式碼&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-02-04-automation-flash-ui-test-with-sikuli4net/02-click-cancel-to-bypass-ui-recording.png&quot; alt=&quot;不使用錄製的方式建立程式碼&quot; title=&quot;不使用錄製的方式建立程式碼&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-02-04-automation-flash-ui-test-with-sikuli4net/02-click-cancel-to-bypass-ui-recording.png&quot; title=&quot;不使用錄製的方式建立程式碼&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-02-04-automation-flash-ui-test-with-sikuli4net/02-click-cancel-to-bypass-ui-recording.png&quot; alt=&quot;不使用錄製的方式建立程式碼&quot; title=&quot;不使用錄製的方式建立程式碼&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
 
 &lt;p&gt;再來，透過 Nuget 安裝以下的元件庫吧。&lt;/p&gt;
 
@@ -88,7 +88,7 @@
 
 &lt;p&gt;這邊有很重要的一點 – &lt;code&gt;圖檔的 Copy to Output Directory 屬性記得要設為 Copy always&lt;/code&gt; ，不然在執行的時候會出錯喔。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-02-04-automation-flash-ui-test-with-sikuli4net/03-prepare-screenshot-for-components.png&quot; title=&quot;Copy to Output Directory 屬性記得要設為 Copy always&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-02-04-automation-flash-ui-test-with-sikuli4net/03-prepare-screenshot-for-components.png&quot; alt=&quot;Copy to Output Directory 屬性記得要設為 Copy always&quot; title=&quot;Copy to Output Directory 屬性記得要設為 Copy always&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-02-04-automation-flash-ui-test-with-sikuli4net/03-prepare-screenshot-for-components.png&quot; title=&quot;Copy to Output Directory 屬性記得要設為 Copy always&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-02-04-automation-flash-ui-test-with-sikuli4net/03-prepare-screenshot-for-components.png&quot; alt=&quot;Copy to Output Directory 屬性記得要設為 Copy always&quot; title=&quot;Copy to Output Directory 屬性記得要設為 Copy always&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
 
 &lt;p&gt;這些動作都完成了之後，再來就是透過 Sikuli4Net 提供的 API 來撰寫我們的測試啦!!&lt;/p&gt;
 
@@ -301,7 +301,7 @@
 
 &lt;p&gt;專案原始檔連結在此，歡迎自行取用。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/Ouch1978/Sikuli4NetCodedUITestSample/&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/source-code-link.png&quot; alt=&quot;Sikuli4NetCodedUITestSample&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/Ouch1978/Sikuli4NetCodedUITestSample/&quot;&gt;&lt;img src=&quot;/images/blog-images/source-code-link.png&quot; alt=&quot;Sikuli4NetCodedUITestSample&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;section-2&quot;&gt;注意事項 / 小心得&lt;/h2&gt;
 
@@ -355,20 +355,20 @@
 &lt;p&gt;因為我原來使用的部落格平台是點部落，所以這個小工具目前使用的參數都是針對點部落而設計的，但是理論上只要稍作修改，也可以支援其他平台才對。&lt;/p&gt;
 
 &lt;p&gt;這個小工具基本上運作的流程如下：
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-02-03-html-to-md-exporter/01-flow-of-htm-to-md-exporter.png&quot; title=&quot;HtmlToMdExporter 運作流程&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-02-03-html-to-md-exporter/01-flow-of-htm-to-md-exporter.png&quot; alt=&quot;HtmlToMdExporter 運作流程&quot; title=&quot;HtmlToMdExporter 運作流程&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-02-03-html-to-md-exporter/01-flow-of-htm-to-md-exporter.png&quot; title=&quot;HtmlToMdExporter 運作流程&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-02-03-html-to-md-exporter/01-flow-of-htm-to-md-exporter.png&quot; alt=&quot;HtmlToMdExporter 運作流程&quot; title=&quot;HtmlToMdExporter 運作流程&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
 
 &lt;p&gt;解析 HTML 的部份使用的是 &lt;a href=&quot;https://www.nuget.org/packages/HtmlAgilityPack/&quot; title=&quot;HtmlAgilityPack&quot;&gt;HtmlAgilityPack&lt;/a&gt; ，將 HTML 轉換成 Markdown 語法的部份則是使用 &lt;a href=&quot;https://www.nuget.org/packages/Html2Markdown/&quot; title=&quot;Html2Markdown&quot;&gt;Html2Markdown&lt;/a&gt; 。&lt;/p&gt;
 
 &lt;p&gt;基於 Markdown 語法本身支援的限制，有部份的 HTML 標籤 (例如文字顏色、 iFrame 、 表格等等) 將不會被轉換，不過在顯示上應該還是沒問題的。&lt;/p&gt;
 
 &lt;p&gt;程式的主畫面如下圖：
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-02-03-html-to-md-exporter/02-main-window-of-html-to-md-exporter.png&quot; title=&quot;HtmlToMdExporter 主畫面&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-02-03-html-to-md-exporter/02-main-window-of-html-to-md-exporter.png&quot; alt=&quot;HtmlToMdExporter 主畫面&quot; title=&quot;HtmlToMdExporter 主畫面&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-02-03-html-to-md-exporter/02-main-window-of-html-to-md-exporter.png&quot; title=&quot;HtmlToMdExporter 主畫面&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-02-03-html-to-md-exporter/02-main-window-of-html-to-md-exporter.png&quot; alt=&quot;HtmlToMdExporter 主畫面&quot; title=&quot;HtmlToMdExporter 主畫面&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
 
 &lt;p&gt;基本上，如果你也是要從點部落把文章轉出來的話，只需要填入帳號應該就可以按下 Go 按鈕進行轉換了。如果你使用的是其他的平台，則可能需要自行替換掉畫面上顯示欄位的 XPath 值。&lt;/p&gt;
 
 &lt;p&gt;附上程式的原始碼連結，歡迎有興趣的朋友們自行取用。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://github.com/Ouch1978/HtmlToMdExporter&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/source-code-link.png&quot; alt=&quot;HtmlToMdExporter&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/Ouch1978/HtmlToMdExporter&quot;&gt;&lt;img src=&quot;/images/blog-images/source-code-link.png&quot; alt=&quot;HtmlToMdExporter&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;section-2&quot;&gt;後記&lt;/h2&gt;
 
@@ -429,38 +429,38 @@
     &lt;ul&gt;
       &lt;li&gt;
         &lt;p&gt;Go to All ：針對所有支援的範圍進行查找並前往。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/01-code-navigation-go-to-all.png&quot; title=&quot;Go to All&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/01-code-navigation-go-to-all.png&quot; alt=&quot;Go to All&quot; title=&quot;Go to All&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/01-code-navigation-go-to-all.png&quot; title=&quot;Go to All&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/01-code-navigation-go-to-all.png&quot; alt=&quot;Go to All&quot; title=&quot;Go to All&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
 
       &lt;/li&gt;
       &lt;li&gt;
         &lt;p&gt;Go to Line (熱鍵為 &lt;code&gt;Ctrl + G&lt;/code&gt; ，前置字元為 &lt;code&gt;:&lt;/code&gt; )：直接前往指定的行數。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/02-code-navigation-go-to-line.png&quot; title=&quot;Go to Line&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/02-code-navigation-go-to-line.png&quot; alt=&quot;Go to Line&quot; title=&quot;Go to Line&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/02-code-navigation-go-to-line.png&quot; title=&quot;Go to Line&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/02-code-navigation-go-to-line.png&quot; alt=&quot;Go to Line&quot; title=&quot;Go to Line&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
       &lt;/li&gt;
       &lt;li&gt;
         &lt;p&gt;Go to File (熱鍵為 &lt;code&gt;Ctrl + 1 -&amp;gt; Ctrl + F&lt;/code&gt; ，前置字元為 &lt;code&gt;f&lt;/code&gt; )：前往指定的檔案。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/03-code-navigation-go-to-file.png&quot; title=&quot;Go to File&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/03-code-navigation-go-to-file.png&quot; alt=&quot;Go to File&quot; title=&quot;Go to File&quot; /&gt;&lt;/a&gt;  &lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/03-code-navigation-go-to-file.png&quot; title=&quot;Go to File&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/03-code-navigation-go-to-file.png&quot; alt=&quot;Go to File&quot; title=&quot;Go to File&quot; /&gt;&lt;/a&gt;  &lt;/p&gt;
 
       &lt;/li&gt;
       &lt;li&gt;
         &lt;p&gt;Go to Type (熱鍵為 &lt;code&gt;Ctrl + 1 -&amp;gt; Ctrl + T&lt;/code&gt; ，前置字元為 &lt;code&gt;t&lt;/code&gt; )：前往指定的型別。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/04-code-navigation-go-to-type.png&quot; title=&quot;Go to Type&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/04-code-navigation-go-to-type.png&quot; alt=&quot;Go to Type&quot; title=&quot;Go to Type&quot; /&gt;&lt;/a&gt;  &lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/04-code-navigation-go-to-type.png&quot; title=&quot;Go to Type&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/04-code-navigation-go-to-type.png&quot; alt=&quot;Go to Type&quot; title=&quot;Go to Type&quot; /&gt;&lt;/a&gt;  &lt;/p&gt;
 
       &lt;/li&gt;
       &lt;li&gt;
         &lt;p&gt;Go to Member (熱鍵為 &lt;code&gt;Ctrl + 1 -&amp;gt; Ctrl + M&lt;/code&gt; ，前置字元為 &lt;code&gt;m&lt;/code&gt; )：前往指定的成員。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/05-code-navigation-go-to-member.png&quot; title=&quot;Go to Member&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/05-code-navigation-go-to-member.png&quot; alt=&quot;Go to Member&quot; title=&quot;Go to Member&quot; /&gt;&lt;/a&gt;  &lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/05-code-navigation-go-to-member.png&quot; title=&quot;Go to Member&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/05-code-navigation-go-to-member.png&quot; alt=&quot;Go to Member&quot; title=&quot;Go to Member&quot; /&gt;&lt;/a&gt;  &lt;/p&gt;
 
       &lt;/li&gt;
       &lt;li&gt;
         &lt;p&gt;Go to Symbol (熱鍵為 &lt;code&gt;Ctrl + 1 -&amp;gt; Ctrl + S&lt;/code&gt; ，前置字元為 &lt;code&gt;#&lt;/code&gt; )：前往指定的符號。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/06-code-navigation-go-to-symbol.png&quot; title=&quot;Go to Symbol&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/06-code-navigation-go-to-symbol.png&quot; alt=&quot;Go to Symbol&quot; title=&quot;Go to Symbol&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/06-code-navigation-go-to-symbol.png&quot; title=&quot;Go to Symbol&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/06-code-navigation-go-to-symbol.png&quot; alt=&quot;Go to Symbol&quot; title=&quot;Go to Symbol&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
       &lt;/li&gt;
     &lt;/ul&gt;
 
     &lt;p&gt;另外，Go To 的功能也可以在功能表中的的 Edit 項目下面找到喔!!
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/07-code-navigation-go-to-from-edit-menu.png&quot; title=&quot;透過功能表使用 Go to&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/07-code-navigation-go-to-from-edit-menu.png&quot; alt=&quot;透過功能表使用 Go to&quot; title=&quot;透過功能表使用 Go to&quot; /&gt;&lt;/a&gt;  &lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/07-code-navigation-go-to-from-edit-menu.png&quot; title=&quot;透過功能表使用 Go to&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/07-code-navigation-go-to-from-edit-menu.png&quot; alt=&quot;透過功能表使用 Go to&quot; title=&quot;透過功能表使用 Go to&quot; /&gt;&lt;/a&gt;  &lt;/p&gt;
 
   &lt;/li&gt;
   &lt;li&gt;
@@ -469,22 +469,22 @@
     &lt;ul&gt;
       &lt;li&gt;
         &lt;p&gt;提供了更進一步的群組、篩選、排序相關的功能。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/08-overhauled-find-all-references-group-by-options.png&quot; title=&quot;Find All References - Group By 提供的選項&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/08-overhauled-find-all-references-group-by-options.png&quot; alt=&quot;Find All References - Group By 提供的選項&quot; title=&quot;Find All References - Group By 提供的選項&quot; /&gt;&lt;/a&gt;  &lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/08-overhauled-find-all-references-group-by-options.png&quot; title=&quot;Find All References - Group By 提供的選項&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/08-overhauled-find-all-references-group-by-options.png&quot; alt=&quot;Find All References - Group By 提供的選項&quot; title=&quot;Find All References - Group By 提供的選項&quot; /&gt;&lt;/a&gt;  &lt;/p&gt;
 
       &lt;/li&gt;
       &lt;li&gt;
         &lt;p&gt;針對結果進行再度的搜尋功能。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/09-overhauled-find-all-references-search-in-results.gif&quot; title=&quot;Find All References - 於結果中搜尋&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/09-overhauled-find-all-references-search-in-results.gif&quot; alt=&quot;Find All References - 於結果中搜尋&quot; title=&quot;Find All References - 於結果中搜尋&quot; /&gt;&lt;/a&gt;  &lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/09-overhauled-find-all-references-search-in-results.gif&quot; title=&quot;Find All References - 於結果中搜尋&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/09-overhauled-find-all-references-search-in-results.gif&quot; alt=&quot;Find All References - 於結果中搜尋&quot; title=&quot;Find All References - 於結果中搜尋&quot; /&gt;&lt;/a&gt;  &lt;/p&gt;
 
       &lt;/li&gt;
       &lt;li&gt;
         &lt;p&gt;可以透過 &lt;code&gt;Keep Results&lt;/code&gt; 按鈕來保留目前搜尋的結果。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/10-overhauled-find-all-references-keep-results.png&quot; title=&quot;按下 Keep Results 後，結果會在下面的頁籤中保留&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/10-overhauled-find-all-references-keep-results.png&quot; alt=&quot;Find All References - 按下 Keep Results 後，結果會在下面的頁籤中保留&quot; title=&quot;按下 Keep Results 後，結果會在下面的頁籤中保留&quot; /&gt;&lt;/a&gt;  &lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/10-overhauled-find-all-references-keep-results.png&quot; title=&quot;按下 Keep Results 後，結果會在下面的頁籤中保留&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/10-overhauled-find-all-references-keep-results.png&quot; alt=&quot;Find All References - 按下 Keep Results 後，結果會在下面的頁籤中保留&quot; title=&quot;按下 Keep Results 後，結果會在下面的頁籤中保留&quot; /&gt;&lt;/a&gt;  &lt;/p&gt;
 
       &lt;/li&gt;
       &lt;li&gt;
         &lt;p&gt;當滑鼠游標移到搜尋結果的項目上時，會出現參考到該部份的程式碼內容。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/11-overhauled-find-all-references-tooltip-for-context.png&quot; title=&quot;Find All References - 滑鼠移到項目上會出現使用到該功能的程式碼內容&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/11-overhauled-find-all-references-tooltip-for-context.png&quot; alt=&quot;Find All References - 滑鼠移到項目上會出現使用到該功能的程式碼內容&quot; title=&quot;Find All References - 滑鼠移到項目上會出現使用到該功能的程式碼內容&quot; /&gt;&lt;/a&gt;  &lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/11-overhauled-find-all-references-tooltip-for-context.png&quot; title=&quot;Find All References - 滑鼠移到項目上會出現使用到該功能的程式碼內容&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/11-overhauled-find-all-references-tooltip-for-context.png&quot; alt=&quot;Find All References - 滑鼠移到項目上會出現使用到該功能的程式碼內容&quot; title=&quot;Find All References - 滑鼠移到項目上會出現使用到該功能的程式碼內容&quot; /&gt;&lt;/a&gt;  &lt;/p&gt;
 
       &lt;/li&gt;
     &lt;/ul&gt;
@@ -494,9 +494,9 @@
 
     &lt;p&gt;這個功能若被關閉的話，可以透過功能選單中的 &lt;code&gt;Tools&lt;/code&gt; -&amp;gt; &lt;code&gt;Options&lt;/code&gt; -&amp;gt;&lt;code&gt; Text Editor&lt;/code&gt; &amp;gt; &lt;code&gt;General&lt;/code&gt; -&amp;gt; 勾選 &lt;code&gt;Show structure guide lines&lt;/code&gt; 核選方塊即可。&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/12-built-in-structure-guide-lines.png&quot; title=&quot;內建的程式對齊線功能&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/12-built-in-structure-guide-lines.png&quot; alt=&quot;內建的程式對齊線功能&quot; title=&quot;內建的程式對齊線功能&quot; /&gt;&lt;/a&gt;  &lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/12-built-in-structure-guide-lines.png&quot; title=&quot;內建的程式對齊線功能&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/12-built-in-structure-guide-lines.png&quot; alt=&quot;內建的程式對齊線功能&quot; title=&quot;內建的程式對齊線功能&quot; /&gt;&lt;/a&gt;  &lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/13-show-structure-guide-lines-option.png&quot; title=&quot;Show structure guide lines 選項&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/13-show-structure-guide-lines-option.png&quot; alt=&quot;Show structure guide lines 選項&quot; title=&quot;Show structure guide lines 選項&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/13-show-structure-guide-lines-option.png&quot; title=&quot;Show structure guide lines 選項&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/13-show-structure-guide-lines-option.png&quot; alt=&quot;Show structure guide lines 選項&quot; title=&quot;Show structure guide lines 選項&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -512,14 +512,14 @@
 
 &lt;p&gt;Visual Studio 2017 RC 提供了直接開啟資料夾的功能，而且更棒的是，針對 C++ 、 Node.js (JavaScript/TypeScript) 、 C# 與 VB 這幾種語言編寫的檔案都提供語言高亮的支援。甚至，若您有安裝該語言相關的功能的話，還可以直接進行編譯或是除錯喔!!&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/14-open-folder.png&quot; title=&quot;開啟資料夾功能&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/14-open-folder.png&quot; alt=&quot;開啟資料夾功能&quot; title=&quot;開啟資料夾功能&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/14-open-folder.png&quot; title=&quot;開啟資料夾功能&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/14-open-folder.png&quot; alt=&quot;開啟資料夾功能&quot; title=&quot;開啟資料夾功能&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;另外，直接開啟資料夾之後還提供下列幾種功能：&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;透過前面介紹的 GoTo 功能在資料夾中進行巡覽。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/15-go-to-support-in-open-folder.png&quot; title=&quot;透過 GoTo 進行巡覽&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/15-go-to-support-in-open-folder.png&quot; alt=&quot;透過 GoTo 進行巡覽&quot; title=&quot;透過 GoTo 進行巡覽&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/15-go-to-support-in-open-folder.png&quot; title=&quot;透過 GoTo 進行巡覽&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/15-go-to-support-in-open-folder.png&quot; alt=&quot;透過 GoTo 進行巡覽&quot; title=&quot;透過 GoTo 進行巡覽&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
   &lt;/li&gt;
   &lt;li&gt;
@@ -527,27 +527,27 @@
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;在 Solution Explorer 中的資料夾名稱上按下滑鼠右鍵會出現&lt;code&gt;以檔案總管開啟資料夾&lt;/code&gt;或是&lt;code&gt;開啟開發者命令提示字元&lt;/code&gt;選項。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/16-open-developer-command-prompt-support-in-open-folder.png&quot; title=&quot;開啟資料夾或是開啟開發者命令提示字元&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/16-open-developer-command-prompt-support-in-open-folder.png&quot; alt=&quot;開啟資料夾或是開啟開發者命令提示字元&quot; title=&quot;開啟資料夾或是開啟開發者命令提示字元&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/16-open-developer-command-prompt-support-in-open-folder.png&quot; title=&quot;開啟資料夾或是開啟開發者命令提示字元&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/16-open-developer-command-prompt-support-in-open-folder.png&quot; alt=&quot;開啟資料夾或是開啟開發者命令提示字元&quot; title=&quot;開啟資料夾或是開啟開發者命令提示字元&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;可以輕鬆的透過方案與資料夾下拉清單在不同的方案或是資料夾之間切換。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/17-solution-switch-through-solution-selector-dropdown.png&quot; title=&quot;透過方案與資料夾下拉清單在不同的方案或是資料夾之間切換&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/17-solution-switch-through-solution-selector-dropdown.png&quot; alt=&quot;透過方案與資料夾下拉清單在不同的方案或是資料夾之間切換&quot; title=&quot;透過方案與資料夾下拉清單在不同的方案或是資料夾之間切換&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/17-solution-switch-through-solution-selector-dropdown.png&quot; title=&quot;透過方案與資料夾下拉清單在不同的方案或是資料夾之間切換&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/17-solution-switch-through-solution-selector-dropdown.png&quot; alt=&quot;透過方案與資料夾下拉清單在不同的方案或是資料夾之間切換&quot; title=&quot;透過方案與資料夾下拉清單在不同的方案或是資料夾之間切換&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;透過 launch.vs.json 檔設定除錯與啟動的設定；這個動作可以透過在可進行除錯的檔案上按下滑鼠右鍵並選取 &lt;code&gt;&quot;Debug and Launch Settings&quot;&lt;/code&gt; 來完成。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/18-debug-and-launch-settings.png&quot; title=&quot;Debug and Launch Settings&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/18-debug-and-launch-settings.png&quot; alt=&quot;Debug and Launch Settings&quot; title=&quot;Debug and Launch Settings&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/18-debug-and-launch-settings.png&quot; title=&quot;Debug and Launch Settings&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/18-debug-and-launch-settings.png&quot; alt=&quot;Debug and Launch Settings&quot; title=&quot;Debug and Launch Settings&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;透過 tasks.vs.json 檔設定任務與自訂編譯相關設定；這個動作可以透過在任意檔案上按下滑鼠右鍵並選取 &lt;code&gt;&quot;Configure Tasks&quot;&lt;/code&gt; 來完成。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/19-configure-tasks.png&quot; title=&quot;Configure Tasks&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/19-configure-tasks.png&quot; alt=&quot;Configure Tasks&quot; title=&quot;Configure Tasks&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/19-configure-tasks.png&quot; title=&quot;Configure Tasks&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/19-configure-tasks.png&quot; alt=&quot;Configure Tasks&quot; title=&quot;Configure Tasks&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;上述兩個檔案在 JSON 編輯器中都會享有 IntelliSense 的支援。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/20-intellisense-support.png&quot; title=&quot;上述兩個檔案在 JSON 編輯器中都會享有 IntelliSense 的支援&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/20-intellisense-support.png&quot; alt=&quot;上述兩個檔案在 JSON 編輯器中都會享有 IntelliSense 的支援&quot; title=&quot;上述兩個檔案在 JSON 編輯器中都會享有 IntelliSense 的支援&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/20-intellisense-support.png&quot; title=&quot;上述兩個檔案在 JSON 編輯器中都會享有 IntelliSense 的支援&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-30-first-look-on-vs2017-rc-general-coding-enhancement/20-intellisense-support.png&quot; alt=&quot;上述兩個檔案在 JSON 編輯器中都會享有 IntelliSense 的支援&quot; title=&quot;上述兩個檔案在 JSON 編輯器中都會享有 IntelliSense 的支援&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -582,10 +582,10 @@
 分別用 Visual Studio 2015 和 Visual Studio 2017 RC 開啟同一個包含八個專案的方案，前者完全開啟得花將近 30 秒，後者只花了 10 秒左右，不需要透過其他的測量工具就可以感受到非常明顯的差異。&lt;/p&gt;
 
 &lt;p&gt;另外，在 Visual Studio 2017 RC 裡面也加入了一個類似之前在 IE 裡面檢查 Plug-in 載入時間的功能，我們可以透過功能表的 Help -&amp;gt; Manage Visual Studio Performance 來隨時監控是不是有哪個 Plug-in 會拖慢啟動速度或是執行時期的效能，以方便我們進行微調。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/01-manage-visual-studio-performance.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/01-manage-visual-studio-performance.png&quot; alt=&quot;Visual Studio Performance&quot; title=&quot;Visual Studio Performance&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/01-manage-visual-studio-performance.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/01-manage-visual-studio-performance.png&quot; alt=&quot;Visual Studio Performance&quot; title=&quot;Visual Studio Performance&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;如果偵測到任何會拖累執行效能的兇手，也會出現提示喔!!
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/02-alert-for-time-consuming-extension.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/02-alert-for-time-consuming-extension.png&quot; alt=&quot;偵測到影響啟動速度的擴充功能時出現的提示&quot; title=&quot;偵測到影響啟動速度的擴充功能時出現的提示&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/02-alert-for-time-consuming-extension.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/02-alert-for-time-consuming-extension.png&quot; alt=&quot;偵測到影響啟動速度的擴充功能時出現的提示&quot; title=&quot;偵測到影響啟動速度的擴充功能時出現的提示&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;section-1&quot;&gt;開始畫面的優化&lt;/h2&gt;
 
@@ -593,14 +593,14 @@
 - 可以透過 VSTM 或是強化的最近開啟的檔案工具(MRU) 更輕鬆的開啟本地的專案或是解決方案。
 - 新版的開始畫面的最近開啟的檔案工具會顯示你最近從別的裝置上複製(Clone) 的檔案庫，讓你能更輕易的將它們也複製到本機上來。
 - 可以透過可搜尋的專案樣版來建立新專案，並且最近使用過的專案樣版會透過您的個人帳號進行同步。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/03-the-searchable-project-templates.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/03-the-searchable-project-templates.png&quot; alt=&quot;可搜尋的專案樣版&quot; title=&quot;可搜尋的專案樣版&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/03-the-searchable-project-templates.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/03-the-searchable-project-templates.png&quot; alt=&quot;可搜尋的專案樣版&quot; title=&quot;可搜尋的專案樣版&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;可以透過開始畫面上的 “Check out from VSTS” 選項快速啟動由 VSTS 上複製的專案。&lt;/li&gt;
   &lt;li&gt;可以將 Get Started 區域隱藏起來&lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;新聞(News) 區現在可以收合了
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/04-the-dismissable-get-started.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/04-the-dismissable-get-started.png&quot; alt=&quot;可隱藏的 Get Started 與收合的新聞區&quot; title=&quot;可隱藏的 Get Started 與收合的新聞區&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/04-the-dismissable-get-started.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/04-the-dismissable-get-started.png&quot; alt=&quot;可隱藏的 Get Started 與收合的新聞區&quot; title=&quot;可隱藏的 Get Started 與收合的新聞區&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
     &lt;ul&gt;
       &lt;li&gt;新聞中的項目若有更新時將有小圖示提示&lt;/li&gt;
@@ -612,21 +612,21 @@
 &lt;h2 id=&quot;section-2&quot;&gt;可批次修改多個擴充功能的設定&lt;/h2&gt;
 
 &lt;p&gt;我們可以在 Visual Studio 2017 的 Extensions and Updates 對話視窗的右下角，為那些需要重新啟動 Visual Studio 才能進行安裝、更新或是解除安裝的擴充功能設定排程；若要解除排程的話，只需要按下旁邊的 X 按鈕就可以囉!!
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/05-now-it%27s-schedule-for-uninstall.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/05-now-it%27s-schedule-for-uninstall.png&quot; alt=&quot;可排程反安裝擴充功能&quot; title=&quot;可排程反安裝擴充功能&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/05-now-it%27s-schedule-for-uninstall.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/05-now-it%27s-schedule-for-uninstall.png&quot; alt=&quot;可排程反安裝擴充功能&quot; title=&quot;可排程反安裝擴充功能&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/06-scheduling-for-uninstall.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/06-scheduling-for-uninstall.png&quot; alt=&quot;將反安裝列入排程&quot; title=&quot;將反安裝列入排程&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/06-scheduling-for-uninstall.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/06-scheduling-for-uninstall.png&quot; alt=&quot;將反安裝列入排程&quot; title=&quot;將反安裝列入排程&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;當 VSIX 安裝包偵測到 Visual Studio 關閉之後，就會自動完成排程中設定的工作或修改喔!!&lt;/p&gt;
 
 &lt;h2 id=&quot;roaming-extension-manager&quot;&gt;內建 Roaming Extension Manager&lt;/h2&gt;
 
 &lt;p&gt;Visual Studio 2017 這次直接內建了方便的擴充功能同步元件 - Roaming Extension Manager 啦!!~ 之後只要使用同一個開發者帳號，就可以在多部不同的機器上面使用相同的擴充元件進行開發囉!! (關於 Roaming Extension Manager 的介紹，可以參考 &lt;a href=&quot;http://ouch1978.github.io/2016/11/01/roaming-extension-manager/&quot; title=&quot;透過 ROAMING EXTENSION MANAGER 在不同機器上同步 VISUAL STUDIO 2015 的擴充功能&quot;&gt;透過 ROAMING EXTENSION MANAGER 在不同機器上同步 VISUAL STUDIO 2015 的擴充功能&lt;/a&gt; 一文)
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/07-roaming-extension-manager.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/07-roaming-extension-manager.png&quot; alt=&quot;Roaming Extension Manager&quot; title=&quot;Roaming Extension Manager&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/07-roaming-extension-manager.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/07-roaming-extension-manager.png&quot; alt=&quot;Roaming Extension Manager&quot; title=&quot;Roaming Extension Manager&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;lightweight-solution-load&quot;&gt;輕量化解決方案載入(Lightweight Solution Load)&lt;/h2&gt;
 
 &lt;p&gt;為了解決龐大解決方案載入費時的問題，微軟這次研發出了”輕量化解決方案載入”功能。在載入龐大解決方案的時候，可以透過這個功能大幅的縮短載入時間以及記憶體的使用量。不過這個功能預設是關閉的，可以透過功能選單裡面的來開啟這個功能。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/08-lightweight-solution-load.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/08-lightweight-solution-load.png&quot; alt=&quot;Lightweight Solution Load&quot; title=&quot;Lightweight Solution Load&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/08-lightweight-solution-load.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/08-lightweight-solution-load.png&quot; alt=&quot;Lightweight Solution Load&quot; title=&quot;Lightweight Solution Load&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;輕量化解決方案載入功能特別適合於使用 C# 或是混合 C# 與 C++ 開發的專案。當偵測到您正嘗試開啟符合條件的解決方案時，Visual Studio 也會很貼心的提示您開啟這個功能，以增進整體的使用者體驗喔!!&lt;/p&gt;
 
@@ -634,13 +634,13 @@
 
 &lt;p&gt;Visual Studio 2017 的狀態列也特別針對版本控管的部份加入了幾項訊息的提示，以及整合，是我個人覺得非常貼心的設計。而且不單純是只有文字的提示而已，點擊每個項目的話都會出現相關的功能可以作更進一步的動作。
 例如點擊向上箭頭就可以開啟Push功能面板，是不是非常方便啊!?
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/09-status-bar-integrated-with-source-control.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/09-status-bar-integrated-with-source-control.png&quot; alt=&quot;工具列針對版本控管的強化&quot; title=&quot;工具列針對版本控管的強化&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/09-status-bar-integrated-with-source-control.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/09-status-bar-integrated-with-source-control.png&quot; alt=&quot;工具列針對版本控管的強化&quot; title=&quot;工具列針對版本控管的強化&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;section-4&quot;&gt;後記&lt;/h2&gt;
 
 &lt;p&gt;就在寫這篇文章的過程中(要利用零碎的時間來孵文章的關係，這篇文章的生產週期跨了快一個星期，淚…)，微軟很開心的在 2017 年 1 月 26 日(換算成台灣時間的話應該是 1 月 27 日)推送了 Build 26127.00 版的更新(是要給我們當除夕禮物的嗎?)，我也藉此體驗到了新版 Visual Studio 更新的使用者經驗。
 和以往相同的，在功能選單的 Tools -&amp;gt; Extensions and Updates 下會看到 Visual Studio 有更新，點選了更新之後，會提示我們得要更新安裝工具，更新了安裝工具之後就會看到如下的更新畫面啦~
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/10-visual-studio-2017-rc-update.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/10-visual-studio-2017-rc-update.png&quot; alt=&quot;Visual Studio 2017 RC 更新畫面&quot; title=&quot;Visual Studio 2017 RC 更新畫面&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/10-visual-studio-2017-rc-update.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-28-first-look-on-vs2017-rc-ide-ux-enhancement/10-visual-studio-2017-rc-update.png&quot; alt=&quot;Visual Studio 2017 RC 更新畫面&quot; title=&quot;Visual Studio 2017 RC 更新畫面&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;除了本文介紹的相關改進之外，其實 Visual Studio 2017 還有很多其它的加強，有興趣的朋友們不妨直接參閱 &lt;a href=&quot;https://www.visualstudio.com/en-us/news/releasenotes/vs2017-relnotes&quot; title=&quot;Release Notes of Visual Studio 2017&quot;&gt;Visual Studio 2017 的官方產品介紹頁面&lt;/a&gt;。&lt;/p&gt;
 
@@ -704,10 +704,10 @@
 &lt;p&gt;接下來，就安裝 Enterprise 版來體驗一下吧!!&lt;/p&gt;
 
 &lt;p&gt;打開安裝檔之後，出現的是和以往截然不同設計的版權聲明畫面。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-19-first-look-on-vs2017-rc-installation/01-license-terms.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-19-first-look-on-vs2017-rc-installation/01-license-terms.png&quot; alt=&quot;版權聲明畫面&quot; title=&quot;版權聲明畫面&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/01-license-terms.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/01-license-terms.png&quot; alt=&quot;版權聲明畫面&quot; title=&quot;版權聲明畫面&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;按下同意按鈕的話，就會出現如下的畫面。(注意：&lt;code&gt;安裝之前請先關閉其它版本的 Visual Studio&lt;/code&gt; ，否則可能會因為衝突而無法繼續安裝。)
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-19-first-look-on-vs2017-rc-installation/02-workloads.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-19-first-look-on-vs2017-rc-installation/02-workloads.png&quot; alt=&quot;安裝模組選項&quot; title=&quot;安裝模組選項&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/02-workloads.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/02-workloads.png&quot; alt=&quot;安裝模組選項&quot; title=&quot;安裝模組選項&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;和之前的版本有很大差異的地方是，這次的版本所有的功能都是以模組化的方式在 Workloads 頁籤中選擇是否要進行安裝。
 如果所有項目都不勾選，只安裝核心的編輯功能的話，大約會佔用 740 MB 的磁碟空間。&lt;/p&gt;
@@ -717,18 +717,18 @@
 &lt;/blockquote&gt;
 
 &lt;p&gt;在 Individual components 頁籤中可以針對細項進行微調。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-19-first-look-on-vs2017-rc-installation/03-individual-components.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-19-first-look-on-vs2017-rc-installation/03-individual-components.png&quot; alt=&quot;各別元件微調&quot; title=&quot;各別元件微調&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/03-individual-components.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/03-individual-components.png&quot; alt=&quot;各別元件微調&quot; title=&quot;各別元件微調&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;也可以在 Language packs 頁籤中選取想安裝的語言包。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-19-first-look-on-vs2017-rc-installation/04-language-packs.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-19-first-look-on-vs2017-rc-installation/04-language-packs.png&quot; alt=&quot;語言包選單&quot; title=&quot;語言包選單&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/04-language-packs.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/04-language-packs.png&quot; alt=&quot;語言包選單&quot; title=&quot;語言包選單&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;若選取 Universal Windows Platform development、.NET desktop development 、Web development 和 Mobile development with .NET (Preview) 這幾個項目的話，則會佔用 19.76 GB 的磁碟空間。&lt;/p&gt;
 
 &lt;p&gt;另外發現一個好玩的點，如果按下 Esc 鈕的話，還可以選擇不同的版本來安裝(所以不同版本的安裝檔只是預先幫我們選好該版本的意思?)。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-19-first-look-on-vs2017-rc-installation/05-versions-selection.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-19-first-look-on-vs2017-rc-installation/05-versions-selection.png&quot; alt=&quot;版本選擇&quot; title=&quot;版本選擇&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/05-versions-selection.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/05-versions-selection.png&quot; alt=&quot;版本選擇&quot; title=&quot;版本選擇&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;為了省硬碟，我就以上述的項目直接進行安裝啦。安裝畫面如下(看到下面還有兩個 Install 鈕可以按，讓我很好奇，難道可以同時安裝不同的版本嗎!?答案是不行…)：
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-19-first-look-on-vs2017-rc-installation/06-installation.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-19-first-look-on-vs2017-rc-installation/06-installation.png&quot; alt=&quot;安裝畫面&quot; title=&quot;安裝畫面&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/06-installation.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/06-installation.png&quot; alt=&quot;安裝畫面&quot; title=&quot;安裝畫面&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;若想以其它語系進行安裝的話，可以透過命令提示視窗執行安裝檔，在後方加入 –locale 參數並且指定語系。
@@ -738,27 +738,27 @@
 &lt;/blockquote&gt;
 
 &lt;p&gt;安裝完成之後，會需要重新開機。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-19-first-look-on-vs2017-rc-installation/07-reboot-required.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-19-first-look-on-vs2017-rc-installation/07-reboot-required.png&quot; alt=&quot;安裝完成之後需要重新開機&quot; title=&quot;安裝完成之後需要重新開機&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/07-reboot-required.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/07-reboot-required.png&quot; alt=&quot;安裝完成之後需要重新開機&quot; title=&quot;安裝完成之後需要重新開機&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;section-2&quot;&gt;心得&lt;/h2&gt;
 
 &lt;p&gt;依照我選擇的功能，整個安裝的過程大約花了一個小時出頭，還包含各功能模組的下載時間，整個安裝的體驗比之前的版本要來得流暢許多。&lt;/p&gt;
 
 &lt;p&gt;首先，吸引到我眼球的是 Visual Studio 2017 的 Logo。新版 Logo 的莫比烏斯環看起來很明顯的比 Visual Studio 2015 的來得瘦了不少，不知道是不是有想要隱喻安裝所需要的硬碟空間變小的意味?變瘦的莫比烏斯環看起來也有比較敏捷的感覺。
-&lt;br /&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-19-first-look-on-vs2017-rc-installation/08-the-logo-is-changed-for-vs2017.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-19-first-look-on-vs2017-rc-installation/08-the-logo-is-changed-for-vs2017.png&quot; alt=&quot;Visual Studio 2017 的 Logo 與 Visual Studio 2015 的差異&quot; title=&quot;Visual Studio 2017 的 Logo 與 Visual Studio 2015 的差異&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;br /&gt;&lt;a href=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/08-the-logo-is-changed-for-vs2017.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/08-the-logo-is-changed-for-vs2017.png&quot; alt=&quot;Visual Studio 2017 的 Logo 與 Visual Studio 2015 的差異&quot; title=&quot;Visual Studio 2017 的 Logo 與 Visual Studio 2015 的差異&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;再來，Visual Studio 2017 RC 開啟的速度也很明顯的比 Visual Studio 2015 快了許多(不知道是不是因為還沒裝什麼擴充功能的關係?)，大概差了有十秒以上。&lt;/p&gt;
 
 &lt;p&gt;而且整個開始畫面也和 Visual Studio 2015 有蠻明顯的差異，資訊和每個項目之間的間距拉大了，看起來比較沒有壓迫感。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-19-first-look-on-vs2017-rc-installation/09-start-page-of-visual-studio-2017-rc.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-19-first-look-on-vs2017-rc-installation/09-start-page-of-visual-studio-2017-rc.png&quot; alt=&quot;Visual Studio 2017 RC 的開始畫面&quot; title=&quot;[Visual Studio 2017 RC 的開始畫面&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/09-start-page-of-visual-studio-2017-rc.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/09-start-page-of-visual-studio-2017-rc.png&quot; alt=&quot;Visual Studio 2017 RC 的開始畫面&quot; title=&quot;[Visual Studio 2017 RC 的開始畫面&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;建立新專案時對話視窗的專案分類也和 Visual Studio 2015 有蠻大的差異，因為支援的專案類型變少了的關係，所以分類看起來也更加的簡潔了不少。
 不過我一直很期待看到的 UWP 懶人專案樣版還是沒有出現…
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-19-first-look-on-vs2017-rc-installation/10-new-project-dialog.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-19-first-look-on-vs2017-rc-installation/10-new-project-dialog.png&quot; alt=&quot;建立新專案的對話視窗&quot; title=&quot;[建立新專案的對話視窗&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/10-new-project-dialog.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/10-new-project-dialog.png&quot; alt=&quot;建立新專案的對話視窗&quot; title=&quot;[建立新專案的對話視窗&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;關於 Blend for Visual Studio 2017 RC 呢… 連開始畫面裡面的內容和連結都還是連到 2015 版的網頁(不過畫面上的確是寫著 2017 啦)…
 嗯~就之後再觀查看看囉!!
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-19-first-look-on-vs2017-rc-installation/11-start-page-of-blend-for-vs2017-rc.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-01-19-first-look-on-vs2017-rc-installation/11-start-page-of-blend-for-vs2017-rc.png&quot; alt=&quot;Blend for Visual Studio 2017 RC 的開始畫面&quot; title=&quot;[Blend for Visual Studio 2017 RC 的開始畫面&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/11-start-page-of-blend-for-vs2017-rc.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/11-start-page-of-blend-for-vs2017-rc.png&quot; alt=&quot;Blend for Visual Studio 2017 RC 的開始畫面&quot; title=&quot;[Blend for Visual Studio 2017 RC 的開始畫面&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;以上是我簡短的安裝心得，有興趣的朋友也不妨安裝玩玩吧。&lt;/p&gt;
 
@@ -793,22 +793,22 @@
 &lt;p&gt;這邊就透過下面的例子來作示範，看看怎麼把一個黑色的圖示改成白的：&lt;/p&gt;
 
 &lt;p&gt;先從 Storyboad 內建的 Windows App Icon 圖示中拉出訊息和刪除這兩個圖示。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/01-two-icons-with-different-types.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/01-two-icons-with-different-types.png&quot; alt=&quot;左邊的圖示是圖形元件，右邊則是圖片&quot; title=&quot;左邊的圖示是圖形元件，右邊則是圖片&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/01-two-icons-with-different-types.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/01-two-icons-with-different-types.png&quot; alt=&quot;左邊的圖示是圖形元件，右邊則是圖片&quot; title=&quot;左邊的圖示是圖形元件，右邊則是圖片&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;左邊的訊息圖示是圖形元件，可以直接透過圖案填滿的功能來修改它的顏色。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/02-the-left-one-could-edit-the-color-directly.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/02-the-left-one-could-edit-the-color-directly.png&quot; alt=&quot;左邊的圖示是圖形元件，可以直接修改顏色&quot; title=&quot;左邊的圖示是圖形元件，可以直接修改顏色&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/02-the-left-one-could-edit-the-color-directly.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/02-the-left-one-could-edit-the-color-directly.png&quot; alt=&quot;左邊的圖示是圖形元件，可以直接修改顏色&quot; title=&quot;左邊的圖示是圖形元件，可以直接修改顏色&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;右邊的是圖片，直接使用圖案填滿的功能的話只會改到背景色。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/03-the-right-one-could-not-edit-the-color-directly.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/03-the-right-one-could-not-edit-the-color-directly.png&quot; alt=&quot;右邊的圖示是圖片，無法直接修改顏色&quot; title=&quot;右邊的圖示是圖片，無法直接修改顏色&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/03-the-right-one-could-not-edit-the-color-directly.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/03-the-right-one-could-not-edit-the-color-directly.png&quot; alt=&quot;右邊的圖示是圖片，無法直接修改顏色&quot; title=&quot;右邊的圖示是圖片，無法直接修改顏色&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;這時候，我們就可以開啟工具列的 &lt;code&gt;格式&lt;/code&gt; -&amp;gt; &lt;code&gt;色彩&lt;/code&gt; 選單來進行初步的顏色調整，點選下面的&lt;code&gt;圖片色彩選項&lt;/code&gt;。(也可以透過重新著色的功能改變成其它顏色喔!!)
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/04-the-recolor-options.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/04-the-recolor-options.png&quot; alt=&quot;顏色選單&quot; title=&quot;顏色選單&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/04-the-recolor-options.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/04-the-recolor-options.png&quot; alt=&quot;顏色選單&quot; title=&quot;顏色選單&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;接著在設定圖片格式面板中調整圖片的&lt;code&gt;亮度&lt;/code&gt;，把亮度調整為&lt;code&gt;100&lt;/code&gt;就是白色啦!!
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/05-the-picture-color-options-panel.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/05-the-picture-color-options-panel.png&quot; alt=&quot;調整圖片的亮度&quot; title=&quot;調整圖片的亮度&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/05-the-picture-color-options-panel.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/05-the-picture-color-options-panel.png&quot; alt=&quot;調整圖片的亮度&quot; title=&quot;調整圖片的亮度&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;噹噹，大功告成!!
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/06-here-we-are.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/06-here-we-are.png&quot; alt=&quot;大功告成&quot; title=&quot;大功告成&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/06-here-we-are.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/06-here-we-are.png&quot; alt=&quot;大功告成&quot; title=&quot;大功告成&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;是不是很簡單啊!?&lt;/p&gt;
 
@@ -854,7 +854,7 @@
 
 &lt;p&gt;該檔案下載下來是一個壓縮檔，解壓縮之後會看到裡面有&lt;code&gt;兩個說明檔&lt;/code&gt;，&lt;code&gt;三個給不同平台使用的 PowerPoint pptx 檔&lt;/code&gt;，以及一個名為 &lt;code&gt;Storyboard shapes&lt;/code&gt; 的資料夾。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/files-in-zip.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/files-in-zip.png&quot; alt=&quot;壓縮檔中包含的檔案&quot; title=&quot;壓縮檔中包含的檔案&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/files-in-zip.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/files-in-zip.png&quot; alt=&quot;壓縮檔中包含的檔案&quot; title=&quot;壓縮檔中包含的檔案&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;打開任何一個 PowerPoint 檔 (接下來，以設計 PC 版的 App 為例，打開 UWP app templates for PCs.pptx ) 之後，應該會看到裡面包含了四張投影片。&lt;/p&gt;
 
@@ -871,31 +871,31 @@
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;切換到 &lt;code&gt;Storyboarding&lt;/code&gt; 頁籤，並且打開 &lt;code&gt;Storyboard Shapes&lt;/code&gt; 面板。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/oepn-the-storyboard-shapes-panel.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/oepn-the-storyboard-shapes-panel.png&quot; alt=&quot;開啟 Storyboard Shapes 面版&quot; title=&quot;開啟 Storyboard Shapes 面版&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/oepn-the-storyboard-shapes-panel.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/oepn-the-storyboard-shapes-panel.png&quot; alt=&quot;開啟 Storyboard Shapes 面版&quot; title=&quot;開啟 Storyboard Shapes 面版&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;按下 &lt;code&gt;Import Shapes&lt;/code&gt; 並且選取 Storyboard shapes 中的 &lt;code&gt;Windows Controls Shapes.sbsx&lt;/code&gt; 檔進行控制項圖庫的匯入。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/the-import-shapes-button.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/the-import-shapes-button.png&quot; alt=&quot;按下 Import Shapes 按鈕進行匯入&quot; title=&quot;按下 Import Shapes 按鈕進行匯入&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/the-import-shapes-button.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/the-import-shapes-button.png&quot; alt=&quot;按下 Import Shapes 按鈕進行匯入&quot; title=&quot;按下 Import Shapes 按鈕進行匯入&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Storyboard Shapes 面板中應該會多出一個名為 &lt;code&gt;TOOLKIT Windows Control Shapes_vX.x.x.x&lt;/code&gt; 的分類。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/control-shapes-category-added.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/control-shapes-category-added.png&quot; alt=&quot;匯入成功後出現的分類&quot; title=&quot;匯入成功後出現的分類&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/control-shapes-category-added.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/control-shapes-category-added.png&quot; alt=&quot;匯入成功後出現的分類&quot; title=&quot;匯入成功後出現的分類&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;使用名為 &lt;code&gt;Device Frames&lt;/code&gt; 的頁面來設計你的 UI。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/the-device-frames-page.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/the-device-frames-page.png&quot; alt=&quot;Device Frames 頁&quot; title=&quot;Device Frames 頁&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/the-device-frames-page.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/the-device-frames-page.png&quot; alt=&quot;Device Frames 頁&quot; title=&quot;Device Frames 頁&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;在&lt;code&gt;檢視&lt;/code&gt;頁籤中開啟&lt;code&gt;輔助線&lt;/code&gt;功能，並確保你設計的 UI 不要超出輔助線的邊界。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/turn-on-the-guides.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/turn-on-the-guides.png&quot; alt=&quot;開啟輔助線&quot; title=&quot;開啟輔助線&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/turn-on-the-guides.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/turn-on-the-guides.png&quot; alt=&quot;開啟輔助線&quot; title=&quot;開啟輔助線&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;從 Storyboard Shapes 面板中透過拖拉的方式把控制項放到 Device Frames 頁面中。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/drag-control-into-the-device-frames-page.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/drag-control-into-the-device-frames-page.png&quot; alt=&quot;以拖拉的方式新增控制項到頁面中&quot; title=&quot;以拖拉的方式新增控制項到頁面中&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/drag-control-into-the-device-frames-page.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/drag-control-into-the-device-frames-page.png&quot; alt=&quot;以拖拉的方式新增控制項到頁面中&quot; title=&quot;以拖拉的方式新增控制項到頁面中&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;透過&lt;code&gt;常用&lt;/code&gt; -&amp;gt; &lt;code&gt;選取&lt;/code&gt; -&amp;gt; &lt;code&gt;選取窗格&lt;/code&gt; 面板確認你的 Device Frame 圖層為置頂圖層。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/make-sure-the-device-frame-on-top-level.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/make-sure-the-device-frame-on-top-level.png&quot; alt=&quot;透過選取窗格確認 Device Frame 為置頂圖層&quot; title=&quot;透過選取窗格確認 Device Frame 為置頂圖層&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/make-sure-the-device-frame-on-top-level.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/make-sure-the-device-frame-on-top-level.png&quot; alt=&quot;透過選取窗格確認 Device Frame 為置頂圖層&quot; title=&quot;透過選取窗格確認 Device Frame 為置頂圖層&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;當你完成設計之後，可以透過另存新檔的功能，將設計好的畫面另存為 PNG 檔 (匯出投影片時選擇&lt;code&gt;僅此投影片&lt;/code&gt;)。&lt;/p&gt;
@@ -905,7 +905,7 @@
 &lt;p&gt;另外，你也可以透過投影片裡面的 Type styles 和 Color swatches ，來作為字體大小和配色的參考喔!!&lt;/p&gt;
 
 &lt;p&gt;大功告成啦!!~
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/a-simple-sample-of-ui-design.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/a-simple-sample-of-ui-design.png&quot; alt=&quot;大功告成&quot; title=&quot;大功告成&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/a-simple-sample-of-ui-design.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/a-simple-sample-of-ui-design.png&quot; alt=&quot;大功告成&quot; title=&quot;大功告成&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;是不是很方便呢!?&lt;/p&gt;
 
@@ -936,7 +936,7 @@
 
 &lt;p&gt;安裝了這個擴充功能之後，在 Visual Studio 2015 的擴充功能管理視窗裡面會多出現一個名為 &lt;code&gt;Roaming Extension Manager&lt;/code&gt; 的分類。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-11-01-roaming-extension-manager/roaming-extension-manager.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-11-01-roaming-extension-manager/roaming-extension-manager.png&quot; alt=&quot;Roaming Extension Manager 設定面版&quot; title=&quot;Roaming Extension Manager 設定面版&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2016-11-01-roaming-extension-manager/roaming-extension-manager.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-11-01-roaming-extension-manager/roaming-extension-manager.png&quot; alt=&quot;Roaming Extension Manager 設定面版&quot; title=&quot;Roaming Extension Manager 設定面版&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;而所有已安裝的擴充功能上都會多出一個小圖示，以用來顯示它被同步的狀態為何，圖示與狀態共有三種，分別如下：&lt;/p&gt;
 
@@ -976,7 +976,7 @@
     &lt;p&gt;把 OneDrive 當作主要雲端備份方案的我，常常遇到它不聽話的狀況，得要重新啟動它才能讓它乖乖同步，這邊就來記錄一下透過命令列讓它醒來的方法。&lt;/p&gt;
 
 &lt;p&gt;有的時候 OneDrive 同步到一半就會突然卡住不動，像是下圖的狀況，但是檢查網路明明沒有任何問題。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-20-force-onedrive-to-sync-immediately/onedrive-stops-transfer.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-20-force-onedrive-to-sync-immediately/onedrive-stops-transfer.png&quot; alt=&quot;OneDrive的傳輸速度卡在0.0KB&quot; title=&quot;Non-Unicode 語言設定&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2016-10-20-force-onedrive-to-sync-immediately/onedrive-stops-transfer.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-10-20-force-onedrive-to-sync-immediately/onedrive-stops-transfer.png&quot; alt=&quot;OneDrive的傳輸速度卡在0.0KB&quot; title=&quot;Non-Unicode 語言設定&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;之前遇到這種狀況的時候，我都會在 OneDrive 圖示上按下滑鼠右鍵把它關閉，再透過檔案總管瀏覽本機 OneDrive 繫結的資料夾來喚醒它。&lt;/p&gt;
 
@@ -1026,7 +1026,7 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 
 &lt;h1 id=&quot;section&quot;&gt;症狀&lt;/h1&gt;
 &lt;p&gt;只要是Non-Unicde的中文部份，全部都變成了一個一個的方塊。
-&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/non-unicode-chinese-not-displayed-correctly.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/non-unicode-chinese-not-displayed-correctly.png&quot; alt=&quot;無法正確顯示非Unicode中文內容&quot; title=&quot;無法正確顯示非Unicode中文內容&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&quot;/images/blog-images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/non-unicode-chinese-not-displayed-correctly.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/non-unicode-chinese-not-displayed-correctly.png&quot; alt=&quot;無法正確顯示非Unicode中文內容&quot; title=&quot;無法正確顯示非Unicode中文內容&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;section-1&quot;&gt;直接講結論&lt;/h1&gt;
 &lt;p&gt;其實解法非常簡單，只要 &lt;strong&gt;&lt;code&gt;手動安裝新細明體和標楷體字型&lt;/code&gt;&lt;/strong&gt; 就可以解決這個問題了。
@@ -1037,32 +1037,32 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 &lt;ol&gt;
   &lt;li&gt;
     &lt;p&gt;通常，遇到中文沒辦法正常顯示的情況都會先檢查 Non-Unicode Language 的設定。很好，我的確有選繁中，台灣。
-  &lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/setting-for-non-unicode-language.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/setting-for-non-unicode-language.png&quot; alt=&quot;Non-Unicode 語言設定&quot; title=&quot;Non-Unicode 語言設定&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;a href=&quot;/images/blog-images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/setting-for-non-unicode-language.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/setting-for-non-unicode-language.png&quot; alt=&quot;Non-Unicode 語言設定&quot; title=&quot;Non-Unicode 語言設定&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;設了沒效的話，再到語言設定裡面加入中文(台灣)看看囉。
-  &lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/chinese-taiwan-is-already-added.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/chinese-taiwan-is-already-added.png&quot; alt=&quot;確認已經在語言選單中加入中文(台灣)&quot; title=&quot;確認已經在語言選單中加入中文(台灣)&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;a href=&quot;/images/blog-images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/chinese-taiwan-is-already-added.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/chinese-taiwan-is-already-added.png&quot; alt=&quot;確認已經在語言選單中加入中文(台灣)&quot; title=&quot;確認已經在語言選單中加入中文(台灣)&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;a href=&quot;http://answers.microsoft.com/en-us/windows/forum/windows_10-start/some-fonts-are-missing-after-upgrade/95839dfa-0df2-4bc0-875a-fd6b57e61fe4&quot; title=&quot;Some fonts are missing after upgrade&quot;&gt;Microsoft Community 上有一篇文章&lt;/a&gt;說 Windows 10 的部份字型被挪到選用功能去了。那…透過新增選用功能的方式來看看有沒有救好了…很好!!因為 Group Policy 的關係不能用!!
-  &lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/not-able-to-add-optional-features.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/not-able-to-add-optional-features.png&quot; alt=&quot;選用功能完全空白&quot; title=&quot;選用功能完全空白&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;a href=&quot;/images/blog-images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/not-able-to-add-optional-features.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/not-able-to-add-optional-features.png&quot; alt=&quot;選用功能完全空白&quot; title=&quot;選用功能完全空白&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;還是不行!? 那我下載繁體中文語言包來安裝，總該行了吧!!? 蝦毀!? 一樣 GG 啊!!!!~~~ (崩潰中…)
-  &lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/install-language-pack.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/install-language-pack.png&quot; alt=&quot;安裝語言包&quot; title=&quot;安裝語言包&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;a href=&quot;/images/blog-images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/install-language-pack.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/install-language-pack.png&quot; alt=&quot;安裝語言包&quot; title=&quot;安裝語言包&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;好吧…看看是不是有缺什麼字型才沒辦法正常顯示…
  咦!? &lt;strong&gt;&lt;code&gt;沒有新細明體和標楷體! 沒有新細明體和標楷體!! 沒有新細明體和標楷體!!!&lt;/code&gt;&lt;/strong&gt;
-  &lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/pre-installed-fonts-in-10586.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/pre-installed-fonts-in-10586.png&quot; alt=&quot;Windows 10 10586 英文版預設安裝的字型&quot; title=&quot;Windows 10 10586 英文版預設安裝的字型&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;a href=&quot;/images/blog-images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/pre-installed-fonts-in-10586.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/pre-installed-fonts-in-10586.png&quot; alt=&quot;Windows 10 10586 英文版預設安裝的字型&quot; title=&quot;Windows 10 10586 英文版預設安裝的字型&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;死馬當活馬醫看看，從別台電腦複製這兩個字型過來裝吧。
-  &lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/install-mingliu-and-kaiu.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/install-mingliu-and-kaiu.png&quot; alt=&quot;手動安裝新細明體和標楷體字型&quot; title=&quot;手動安裝新細明體和標楷體字型&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;a href=&quot;/images/blog-images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/install-mingliu-and-kaiu.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/install-mingliu-and-kaiu.png&quot; alt=&quot;手動安裝新細明體和標楷體字型&quot; title=&quot;手動安裝新細明體和標楷體字型&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;喔耶!! 中文回來了~~大家都回來了!!
-  &lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/get-chinese-back.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/get-chinese-back.png&quot; alt=&quot;可以正常顯示中文啦&quot; title=&quot;可以正常顯示中文啦&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;a href=&quot;/images/blog-images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/get-chinese-back.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/get-chinese-back.png&quot; alt=&quot;可以正常顯示中文啦&quot; title=&quot;可以正常顯示中文啦&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 
@@ -1114,13 +1114,13 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 
 &lt;p&gt;如果你也在事件檢視器中看到如下的資訊：&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-07-02-solve-xaudio2_7.dll-unloaded-error/Error-In-Event-Viewer.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-07-02-solve-xaudio2_7.dll-unloaded-error/Error-In-Event-Viewer.png&quot; alt=&quot;事件檢視器中顯示的錯誤資訊&quot; title=&quot;事件檢視器中顯示的錯誤資訊&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2016-07-02-solve-xaudio2_7.dll-unloaded-error/Error-In-Event-Viewer.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-07-02-solve-xaudio2_7.dll-unloaded-error/Error-In-Event-Viewer.png&quot; alt=&quot;事件檢視器中顯示的錯誤資訊&quot; title=&quot;事件檢視器中顯示的錯誤資訊&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;那就不妨也試看看這樣作能不能解決這個問題吧~(至少我個人這樣作是成功的啦…)&lt;/p&gt;
 
 &lt;p&gt;首先開啟工作管理員，並且找到 TabletInputService 這個服務，確認它的狀態是否為執行中，如果是的話，直接在它上面按下滑鼠右鍵，透過彈出式選單將它停止即可。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-07-02-solve-xaudio2_7.dll-unloaded-error/Turn-Off-Tablet-Input-Service.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-07-02-solve-xaudio2_7.dll-unloaded-error/Turn-Off-Tablet-Input-Service.png&quot; alt=&quot;關閉 TabletInputService&quot; title=&quot;關閉 TabletInputService&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2016-07-02-solve-xaudio2_7.dll-unloaded-error/Turn-Off-Tablet-Input-Service.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-07-02-solve-xaudio2_7.dll-unloaded-error/Turn-Off-Tablet-Input-Service.png&quot; alt=&quot;關閉 TabletInputService&quot; title=&quot;關閉 TabletInputService&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;是的，就是這麼簡單。&lt;/p&gt;
 
@@ -1153,7 +1153,7 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 
 &lt;p&gt;我們也可以透過Visual Studio選單裡的 -&amp;gt; &lt;strong&gt;&lt;code&gt;Tools&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Android&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Android Emulator Manager&lt;/code&gt;&lt;/strong&gt; 來建立虛擬的Android裝置以便於進行除錯。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-debugging-xamarin-android-app-in-vs/Android-Emulator-Manager.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-debugging-xamarin-android-app-in-vs/Android-Emulator-Manager.png&quot; alt=&quot;Android Emulator Manager&quot; title=&quot;Android Emulator Manager&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2016-06-30-debugging-xamarin-android-app-in-vs/Android-Emulator-Manager.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-30-debugging-xamarin-android-app-in-vs/Android-Emulator-Manager.png&quot; alt=&quot;Android Emulator Manager&quot; title=&quot;Android Emulator Manager&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;正常的情況下，應用程式被佈署到模擬器之後，Visual Studio應該還是會處於在除錯的模式下，但是我遇到的神奇狀況是這樣：應用程式的確有被佈署到模擬器中，但是Visual Studio就自動結束了除錯模式了，而且模擬器裡的應用程式也會自動被送到背景去。&lt;/p&gt;
 
@@ -1161,11 +1161,11 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 
 &lt;p&gt;只需要開啟 &lt;strong&gt;&lt;code&gt;Hyper-V Manager&lt;/code&gt;&lt;/strong&gt; ，在Android虛擬機上按下滑鼠右鍵，點選 &lt;strong&gt;&lt;code&gt;Settings...&lt;/code&gt;&lt;/strong&gt;，然後進入 &lt;strong&gt;&lt;code&gt;Processor&lt;/code&gt;&lt;/strong&gt; 的 &lt;strong&gt;&lt;code&gt;Compatibility&lt;/code&gt;&lt;/strong&gt; 設定項目中，把 &lt;strong&gt;&lt;code&gt;Migrate to a physical computer with a different processor version&lt;/code&gt;&lt;/strong&gt; 勾選起來就行啦。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-debugging-xamarin-android-app-in-vs/Compatibility-Setting.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-debugging-xamarin-android-app-in-vs/Compatibility-Setting.png&quot; alt=&quot;Compatibility Setting&quot; title=&quot;Compatibility Setting&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2016-06-30-debugging-xamarin-android-app-in-vs/Compatibility-Setting.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-30-debugging-xamarin-android-app-in-vs/Compatibility-Setting.png&quot; alt=&quot;Compatibility Setting&quot; title=&quot;Compatibility Setting&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;喔耶，除錯模式回來了，設好的中斷點也不會再被無視了，Happy Coding~&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-debugging-xamarin-android-app-in-vs/BreakPoint-Is-Back.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-debugging-xamarin-android-app-in-vs/BreakPoint-Is-Back.png&quot; alt=&quot;Break Point Is Back&quot; title=&quot;Break Point Is Back&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2016-06-30-debugging-xamarin-android-app-in-vs/BreakPoint-Is-Back.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-30-debugging-xamarin-android-app-in-vs/BreakPoint-Is-Back.png&quot; alt=&quot;Break Point Is Back&quot; title=&quot;Break Point Is Back&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
   
   &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/07/01/debugging-xamarin-android-app-with-vs/&quot;&gt;透過Visual Studio對Xamarin Android專案進行除錯&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on July 01, 2016.&lt;/p&gt;</content>
@@ -1194,7 +1194,7 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 
 &lt;p&gt;專案成功建立了，但是Android專案建置失敗!!! &lt;strong&gt;&lt;code&gt;Build Failed! Build Failed!! Build Failed!!!&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-hello-xamarin/Build-Failed.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-hello-xamarin/Build-Failed.png&quot; alt=&quot;Build Fail&quot; title=&quot;Build Fail&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2016-06-30-hello-xamarin/Build-Failed.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-30-hello-xamarin/Build-Failed.png&quot; alt=&quot;Build Fail&quot; title=&quot;Build Fail&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;誠心的求助Google大神之後，循著幾個方向去嘗試，最後總算是成功了，以下是我親嘗百草的各種偏方：&lt;/p&gt;
 
@@ -1202,23 +1202,23 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 
 &lt;p&gt;其實我也試過了解除安裝Xamarin之後重新安裝，但是一樣無解。後來發現就算從Xamarin官網上下載的安裝檔也不見得會是最新的，要更新的話還是得透過Visual Studio比較保險。 檢查 Xamarin 更新的方式為：點選Visual Studio的選單中點選 &lt;strong&gt;&lt;code&gt;Tools&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Options&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Xamarin&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Other&lt;/code&gt;&lt;/strong&gt; -&amp;gt; 再點選 &lt;strong&gt;&lt;code&gt;Check Now&lt;/code&gt;&lt;/strong&gt; 即可。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-hello-xamarin/Check-Xamarin-Update.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-hello-xamarin/Check-Xamarin-Update.png&quot; alt=&quot;檢查Xamarin更新&quot; title=&quot;檢查Xamarin更新&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2016-06-30-hello-xamarin/Check-Xamarin-Update.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-30-hello-xamarin/Check-Xamarin-Update.png&quot; alt=&quot;檢查Xamarin更新&quot; title=&quot;檢查Xamarin更新&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;xamarinandroidsupport&quot;&gt;刪除Xamarin.Android.Support相關檔案&lt;/h1&gt;
 
 &lt;p&gt;還有很多次在建置專案的時候出現了找不到 &lt;strong&gt;&lt;code&gt;&quot;Xamarin.Android.Support.Design&quot;&lt;/code&gt;&lt;/strong&gt; 相關檔案的錯誤訊息，而經過Google大神的指示，只要把 &lt;strong&gt;&lt;code&gt;%UserProfile%\AppData\Local\Xamarin&lt;/code&gt;&lt;/strong&gt; 下的資料夾砍掉，再重新進行建置，就會自動下載完相關的檔案了。(這也是為什麼第一次進行建置都會花特別久的原因，所以千萬別以為它掛掉了就按下停止建置的按鈕。)&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-hello-xamarin/Delete-Xamarin-Android-Related-Files.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-hello-xamarin/Delete-Xamarin-Android-Related-Files.png&quot; alt=&quot;建置專案時所需要的相關檔案&quot; title=&quot;建置專案時所需要的相關檔案&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2016-06-30-hello-xamarin/Delete-Xamarin-Android-Related-Files.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-30-hello-xamarin/Delete-Xamarin-Android-Related-Files.png&quot; alt=&quot;建置專案時所需要的相關檔案&quot; title=&quot;建置專案時所需要的相關檔案&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;android-sdk&quot;&gt;檢查Android SDK&lt;/h1&gt;
 
 &lt;p&gt;在Visual Studio的選單中點選 &lt;strong&gt;&lt;code&gt;Tools&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Android&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Android SDK Manager&lt;/code&gt;&lt;/strong&gt; 就可以看到已經安裝了哪些SDK或是建置工具。 而我遇到的問題呢，是因為我很開心的安裝了 &lt;strong&gt;&lt;code&gt;Android SDK Build-tools Rev 24&lt;/code&gt;&lt;/strong&gt; 的關係。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-hello-xamarin/Remove-Build-Tools-Rev24.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-hello-xamarin/Remove-Build-Tools-Rev24.png&quot; alt=&quot;兇手就是它&quot; title=&quot;兇手就是它&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2016-06-30-hello-xamarin/Remove-Build-Tools-Rev24.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-30-hello-xamarin/Remove-Build-Tools-Rev24.png&quot; alt=&quot;兇手就是它&quot; title=&quot;兇手就是它&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;把它移除之後，就可以順利的建置Android專案囉!!&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-hello-xamarin/Build-Successed.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-hello-xamarin/Build-Successed.png&quot; alt=&quot;總算成功建置了&quot; title=&quot;總算成功建置了&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2016-06-30-hello-xamarin/Build-Successed.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-30-hello-xamarin/Build-Successed.png&quot; alt=&quot;總算成功建置了&quot; title=&quot;總算成功建置了&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;以上。&lt;/p&gt;
 
@@ -1251,11 +1251,11 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 
 &lt;h1 id=&quot;httpsstorelinemestickershopproduct1265613-&quot;&gt;&lt;a href=&quot;https://store.line.me/stickershop/product/1265613&quot; title=&quot;尼古這一家&quot;&gt;尼古這一家&lt;/a&gt;&lt;/h1&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://store.line.me/stickershop/product/1265613&quot; title=&quot;尼古這一家&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/1265613.png&quot; alt=&quot;尼古這一家&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://store.line.me/stickershop/product/1265613&quot; title=&quot;尼古這一家&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/1265613.png&quot; alt=&quot;尼古這一家&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;httpsstorelinemestickershopproduct1279302---&quot;&gt;&lt;a href=&quot;https://store.line.me/stickershop/product/1279302&quot; title=&quot;尼古這一家 之 鄉民來了&quot;&gt;尼古這一家 之 鄉民來了&lt;/a&gt;&lt;/h1&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://store.line.me/stickershop/product/1279302&quot; title=&quot;尼古這一家 之 鄉民來了&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/1279302.png&quot; alt=&quot;尼古這一家 之 鄉民來了&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://store.line.me/stickershop/product/1279302&quot; title=&quot;尼古這一家 之 鄉民來了&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/1279302.png&quot; alt=&quot;尼古這一家 之 鄉民來了&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;連結已經給你了，還不快買！？&lt;/p&gt;
@@ -1265,7 +1265,7 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 
 &lt;p&gt;以下是很心酸被退的圖，無緣上架，只好放在這邊曬一曬…&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/06.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/06.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/12.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/12.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/12-02.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/12-02.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/16.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/16.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/19.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/19.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/20.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/20.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/22.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/22.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/25.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/25.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/26.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-14-line-stickers-nicolas-family/26.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/06.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/06.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/12.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/12.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/12-02.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/12-02.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/16.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/16.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/19.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/19.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/20.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/20.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/22.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/22.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/25.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/25.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/26.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/26.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
   
   &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/06/14/line-stickers-nicolas-family/&quot;&gt;Line原創貼圖-尼古這一家系列&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on June 14, 2016.&lt;/p&gt;</content>
@@ -1299,11 +1299,11 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 
 &lt;p&gt;方法很簡單，只要到 &lt;strong&gt;&lt;code&gt;控制台&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;網際網路選項&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;安全性&lt;/code&gt;&lt;/strong&gt; -&amp;gt; 點選 &lt;strong&gt;&lt;code&gt;限制的網站&lt;/code&gt;&lt;/strong&gt; 之後 -&amp;gt; 按下下方的 &lt;strong&gt;&lt;code&gt;網站&lt;/code&gt;&lt;/strong&gt; 按鈕之後，在出現的視窗中加入 &lt;strong&gt;&lt;code&gt;https://apps.skype.com&lt;/code&gt;&lt;/strong&gt; 就行囉。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-08-Remove-Skype-Ads/01.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-08-Remove-Skype-Ads/01.png&quot; alt=&quot;設定限制的網站&quot; title=&quot;設定限制的網站&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2016-06-08-Remove-Skype-Ads/01.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-08-Remove-Skype-Ads/01.png&quot; alt=&quot;設定限制的網站&quot; title=&quot;設定限制的網站&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;如此一來，廣告區就不會再出現廣告，只會有空空一片了。&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-08-Remove-Skype-Ads/02.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-08-Remove-Skype-Ads/02.png&quot; alt=&quot;惱人的廣告區&quot; title=&quot;惱人的廣告區&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2016-06-08-Remove-Skype-Ads/02.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-08-Remove-Skype-Ads/02.png&quot; alt=&quot;惱人的廣告區&quot; title=&quot;惱人的廣告區&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;不過，上面這個方法應該還是滿足不了看到空白的廣告區也會抓狂的人吧？如果你連空白的廣告區也不想看到的話，請跟著這樣作：&lt;/p&gt;
 
@@ -1315,11 +1315,11 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 
 &lt;p&gt;尋找 &lt;strong&gt;&lt;code&gt;AdvertPlaceholder&lt;/code&gt;&lt;/strong&gt; 關鍵字，將該行刪除之後存檔。(如果怕Skype更新之後又被改回來的話，可以直接把該檔案設定成唯讀。)&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-08-Remove-Skype-Ads/03.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-08-Remove-Skype-Ads/03.png&quot; alt=&quot;刪除AdvertPlaceholder標籤&quot; title=&quot;刪除AdvertPlaceholder標籤&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2016-06-08-Remove-Skype-Ads/03.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-08-Remove-Skype-Ads/03.png&quot; alt=&quot;刪除AdvertPlaceholder標籤&quot; title=&quot;刪除AdvertPlaceholder標籤&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;再開啟Skype的對話視窗看看，是不是舒服多了呢??&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-08-Remove-Skype-Ads/04.png&quot;&gt;&lt;img src=&quot;https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-08-Remove-Skype-Ads/04.png&quot; alt=&quot;沒有廣告區的對話視窗&quot; title=&quot;沒有廣告區的對話視&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2016-06-08-Remove-Skype-Ads/04.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-08-Remove-Skype-Ads/04.png&quot; alt=&quot;沒有廣告區的對話視窗&quot; title=&quot;沒有廣告區的對話視&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
   
   &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/06/08/remove-skype-ads/&quot;&gt;徹底移除Skype廣告&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on June 08, 2016.&lt;/p&gt;</content>

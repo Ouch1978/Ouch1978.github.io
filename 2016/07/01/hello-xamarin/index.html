@@ -120,7 +120,7 @@
 
 <p>專案成功建立了，但是Android專案建置失敗!!! <strong><code>Build Failed! Build Failed!! Build Failed!!!</code></strong></p>
 
-<p><a href="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-hello-xamarin/Build-Failed.png"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-hello-xamarin/Build-Failed.png" alt="Build Fail" title="Build Fail" /></a></p>
+<p><a href="/images/blog-images/2016-06-30-hello-xamarin/Build-Failed.png"><img src="/images/blog-images/2016-06-30-hello-xamarin/Build-Failed.png" alt="Build Fail" title="Build Fail" /></a></p>
 
 <p>誠心的求助Google大神之後，循著幾個方向去嘗試，最後總算是成功了，以下是我親嘗百草的各種偏方：</p>
 
@@ -128,23 +128,23 @@
 
 <p>其實我也試過了解除安裝Xamarin之後重新安裝，但是一樣無解。後來發現就算從Xamarin官網上下載的安裝檔也不見得會是最新的，要更新的話還是得透過Visual Studio比較保險。 檢查 Xamarin 更新的方式為：點選Visual Studio的選單中點選 <strong><code>Tools</code></strong> -&gt; <strong><code>Options</code></strong> -&gt; <strong><code>Xamarin</code></strong> -&gt; <strong><code>Other</code></strong> -&gt; 再點選 <strong><code>Check Now</code></strong> 即可。</p>
 
-<p><a href="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-hello-xamarin/Check-Xamarin-Update.png"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-hello-xamarin/Check-Xamarin-Update.png" alt="檢查Xamarin更新" title="檢查Xamarin更新" /></a></p>
+<p><a href="/images/blog-images/2016-06-30-hello-xamarin/Check-Xamarin-Update.png"><img src="/images/blog-images/2016-06-30-hello-xamarin/Check-Xamarin-Update.png" alt="檢查Xamarin更新" title="檢查Xamarin更新" /></a></p>
 
 <h1 id="xamarinandroidsupport">刪除Xamarin.Android.Support相關檔案</h1>
 
 <p>還有很多次在建置專案的時候出現了找不到 <strong><code>"Xamarin.Android.Support.Design"</code></strong> 相關檔案的錯誤訊息，而經過Google大神的指示，只要把 <strong><code>%UserProfile%\AppData\Local\Xamarin</code></strong> 下的資料夾砍掉，再重新進行建置，就會自動下載完相關的檔案了。(這也是為什麼第一次進行建置都會花特別久的原因，所以千萬別以為它掛掉了就按下停止建置的按鈕。)</p>
 
-<p><a href="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-hello-xamarin/Delete-Xamarin-Android-Related-Files.png"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-hello-xamarin/Delete-Xamarin-Android-Related-Files.png" alt="建置專案時所需要的相關檔案" title="建置專案時所需要的相關檔案" /></a></p>
+<p><a href="/images/blog-images/2016-06-30-hello-xamarin/Delete-Xamarin-Android-Related-Files.png"><img src="/images/blog-images/2016-06-30-hello-xamarin/Delete-Xamarin-Android-Related-Files.png" alt="建置專案時所需要的相關檔案" title="建置專案時所需要的相關檔案" /></a></p>
 
 <h1 id="android-sdk">檢查Android SDK</h1>
 
 <p>在Visual Studio的選單中點選 <strong><code>Tools</code></strong> -&gt; <strong><code>Android</code></strong> -&gt; <strong><code>Android SDK Manager</code></strong> 就可以看到已經安裝了哪些SDK或是建置工具。 而我遇到的問題呢，是因為我很開心的安裝了 <strong><code>Android SDK Build-tools Rev 24</code></strong> 的關係。</p>
 
-<p><a href="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-hello-xamarin/Remove-Build-Tools-Rev24.png"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-hello-xamarin/Remove-Build-Tools-Rev24.png" alt="兇手就是它" title="兇手就是它" /></a></p>
+<p><a href="/images/blog-images/2016-06-30-hello-xamarin/Remove-Build-Tools-Rev24.png"><img src="/images/blog-images/2016-06-30-hello-xamarin/Remove-Build-Tools-Rev24.png" alt="兇手就是它" title="兇手就是它" /></a></p>
 
 <p>把它移除之後，就可以順利的建置Android專案囉!!</p>
 
-<p><a href="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-hello-xamarin/Build-Successed.png"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2016-06-30-hello-xamarin/Build-Successed.png" alt="總算成功建置了" title="總算成功建置了" /></a></p>
+<p><a href="/images/blog-images/2016-06-30-hello-xamarin/Build-Successed.png"><img src="/images/blog-images/2016-06-30-hello-xamarin/Build-Successed.png" alt="總算成功建置了" title="總算成功建置了" /></a></p>
 
 <p>以上。</p>
 

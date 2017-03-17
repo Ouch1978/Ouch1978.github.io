@@ -136,20 +136,20 @@
 <p>因為我原來使用的部落格平台是點部落，所以這個小工具目前使用的參數都是針對點部落而設計的，但是理論上只要稍作修改，也可以支援其他平台才對。</p>
 
 <p>這個小工具基本上運作的流程如下：
-<a href="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-02-03-html-to-md-exporter/01-flow-of-htm-to-md-exporter.png" title="HtmlToMdExporter 運作流程"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-02-03-html-to-md-exporter/01-flow-of-htm-to-md-exporter.png" alt="HtmlToMdExporter 運作流程" title="HtmlToMdExporter 運作流程" /></a>    </p>
+<a href="/images/blog-images/2017-02-03-html-to-md-exporter/01-flow-of-htm-to-md-exporter.png" title="HtmlToMdExporter 運作流程"><img src="/images/blog-images/2017-02-03-html-to-md-exporter/01-flow-of-htm-to-md-exporter.png" alt="HtmlToMdExporter 運作流程" title="HtmlToMdExporter 運作流程" /></a>    </p>
 
 <p>解析 HTML 的部份使用的是 <a href="https://www.nuget.org/packages/HtmlAgilityPack/" title="HtmlAgilityPack">HtmlAgilityPack</a> ，將 HTML 轉換成 Markdown 語法的部份則是使用 <a href="https://www.nuget.org/packages/Html2Markdown/" title="Html2Markdown">Html2Markdown</a> 。</p>
 
 <p>基於 Markdown 語法本身支援的限制，有部份的 HTML 標籤 (例如文字顏色、 iFrame 、 表格等等) 將不會被轉換，不過在顯示上應該還是沒問題的。</p>
 
 <p>程式的主畫面如下圖：
-<a href="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-02-03-html-to-md-exporter/02-main-window-of-html-to-md-exporter.png" title="HtmlToMdExporter 主畫面"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/2017-02-03-html-to-md-exporter/02-main-window-of-html-to-md-exporter.png" alt="HtmlToMdExporter 主畫面" title="HtmlToMdExporter 主畫面" /></a>    </p>
+<a href="/images/blog-images/2017-02-03-html-to-md-exporter/02-main-window-of-html-to-md-exporter.png" title="HtmlToMdExporter 主畫面"><img src="/images/blog-images/2017-02-03-html-to-md-exporter/02-main-window-of-html-to-md-exporter.png" alt="HtmlToMdExporter 主畫面" title="HtmlToMdExporter 主畫面" /></a>    </p>
 
 <p>基本上，如果你也是要從點部落把文章轉出來的話，只需要填入帳號應該就可以按下 Go 按鈕進行轉換了。如果你使用的是其他的平台，則可能需要自行替換掉畫面上顯示欄位的 XPath 值。</p>
 
 <p>附上程式的原始碼連結，歡迎有興趣的朋友們自行取用。</p>
 
-<p><a href="https://github.com/Ouch1978/HtmlToMdExporter"><img src="https://dl.dropboxusercontent.com/u/38923417/Blog%20Images/source-code-link.png" alt="HtmlToMdExporter" /></a></p>
+<p><a href="https://github.com/Ouch1978/HtmlToMdExporter"><img src="/images/blog-images/source-code-link.png" alt="HtmlToMdExporter" /></a></p>
 
 <h2 id="section-2">後記</h2>
 
