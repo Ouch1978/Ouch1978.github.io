@@ -7,13 +7,326 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://ouch1978.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://ouch1978.github.io/" />
-<updated>2017-03-17T13:24:57+08:00</updated>
+<updated>2017-03-25T02:40:49+08:00</updated>
 <id>http://ouch1978.github.io/</id>
 <author>
   <name>Ouch Liu (劉耀群)</name>
   <uri>http://ouch1978.github.io/</uri>
   <email>ouch1978@hotmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[透過 MaterialDesignXamlToolkit 讓你的 WPF 應用程式潮又有料]]></title>
+  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2017/03/25/material-design-xaml-toolkit/"/>
+  <id>http://ouch1978.github.io/2017/03/25/material-design-xaml-toolkit</id>
+  <published>2017-03-25T23:50:00+08:00</published>
+  <updated>2017-03-25 23:50:00 +0800T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Ouch Liu (劉耀群)</name>
+    <uri>http://ouch1978.github.io</uri>
+    <email>ouch1978@hotmail.com</email>
+  </author>
+  <category scheme="http://ouch1978.github.io/tags/#C%23" term="C#" /><category scheme="http://ouch1978.github.io/tags/#WPF" term="WPF" /><category scheme="http://ouch1978.github.io/tags/#Visual%20Studio" term="Visual Studio" /><category scheme="http://ouch1978.github.io/tags/#Material%20Design%20Xaml%20Toolkit" term="Material Design Xaml Toolkit" /><category scheme="http://ouch1978.github.io/tags/#%E8%A8%AD%E8%A8%88" term="設計" />
+  <content type="html">
+  
+    &lt;h2 id=&quot;section&quot;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;在開發應用程式的時候， UI 和 UX 往往都是最讓工程師們最頭痛的地方。特別是以 XAML 設計應用程式外觀的時候，彈性更大，可以客製化的程度高；要設計出一個華麗又實用的系統，就得花更多時間在設計上。
+雖然我們還是可以偷 Windows Presentation Framework 裡面內建的主題來使用，或是參考我古早以前的 &lt;a href=&quot;https://dotblogs.com.tw/ouch1978/2011/03/10/wpf-introducing-wpf-themes&quot;&gt;快速為WPF換裝 - 使用WPF Themes&lt;/a&gt; 一文裡所提到的 &lt;a href=&quot;http://wpfthemes.codeplex.com/&quot;&gt;WPF Themes&lt;/a&gt; 來快速幫 WPF 應用程式換上新衣。
+不過，那些主題和目前流行的 Material Desing 風格還是有極大差異的。
+現在，就有人開發出了符合 Google 的 Material Design 原則的 WPF 主題，只要輕鬆幾個步驟，就能讓 WPF 應用程式變得美美的喔!!&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;安裝與基本使用&lt;/h2&gt;
+
+&lt;p&gt;廢話不多說，馬上透過 VS 好朋友 - Blend for Visual Studio 2017 來為大家示範怎麼使用。&lt;/p&gt;
+
+&lt;p&gt;首先我們透過 Blend 來建立一個 WPF 專案，接著透過 Manage NuGet Packages… 功能以 &lt;code&gt;MaterialDesignThemes&lt;/code&gt; 為關鍵字搜尋並且安裝該套件，如下圖：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-03-25-material-design-xaml-toolkit/01-install-through-nuget.png&quot; title=&quot;搜尋並安裝 MaterialDesignThemes 套件&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-03-25-material-design-xaml-toolkit/01-install-through-nuget.png&quot; alt=&quot;搜尋並安裝 MaterialDesignThemes 套件&quot; title=&quot;搜尋並安裝 MaterialDesignThemes 套件&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;安裝完畢之後，就可以開啟專案中的 &lt;code&gt;App.xaml&lt;/code&gt; 檔來進行初步主題的套用囉。&lt;/p&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;App.xaml&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;Application&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Wpf_MaterialDesignXamlToolkitSample.App&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;xmlns=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;xmlns:x=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;xmlns:local=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;clr-namespace:Wpf_MaterialDesignXamlToolkitSample&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;StartupUri=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;MainWindow.xaml&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;Application.Resources&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;ResourceDictionary&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;ResourceDictionary.MergedDictionaries&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;c&quot;&gt;&amp;lt;!--設定主題背景色--&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;ResourceDictionary&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Source=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;c&quot;&gt;&amp;lt;!--套用基本控制項樣式--&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;ResourceDictionary&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Source=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;c&quot;&gt;&amp;lt;!--設定主色--&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;ResourceDictionary&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Source=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Red.xaml&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;c&quot;&gt;&amp;lt;!--設定輔色--&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;ResourceDictionary&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Source=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Red.xaml&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ResourceDictionary.MergedDictionaries&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ResourceDictionary&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Application.Resources&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/Application&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;關於主色和輔色選用的部份，請參考 &lt;a href=&quot;https://material.io/guidelines/style/color.html#color-color-palette&quot; title=&quot;Color palette&quot;&gt;Material Design 官網的介紹文&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;接下來，在我們編輯 &lt;code&gt;MainPage.xaml&lt;/code&gt; 的內容之前，我們得先透過 &lt;code&gt;TextElement.Foreground&lt;/code&gt; 和 &lt;code&gt;Background&lt;/code&gt; 屬性來設定視窗的文字顏色以及背景色。&lt;/p&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;MainPage.xaml&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;Window&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Wpf_MaterialDesignXamlToolkitSample.MainWindow&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;xmlns=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;xmlns:x=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;xmlns:d=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/expression/blend/2008&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;xmlns:mc=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;xmlns:local=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;clr-namespace:Wpf_MaterialDesignXamlToolkitSample&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;TextElement.Foreground=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{DynamicResource MaterialDesignBody}&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;Background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{DynamicResource MaterialDesignPaper}&quot;&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;mc:Ignorable=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;d&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;MainWindow&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;350&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;525&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;Grid&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Grid&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/Window&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;完成之後，就可以在裡面擺放控制項啦!!~&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;使用內建圖示&lt;/h2&gt;
+
+&lt;p&gt;Material Design 的精神之一，就是使用圖示來替代文字，透過簡單明瞭的圖示來傳達訊息給使用者。
+關於這點，作者也替我們”傳便便”。 MaterialDesignXamlToolkit 裡內建了數百個圖示給我們使用，使用方法也很簡單，只要在頁面上參考 &lt;code&gt;http://materialdesigninxaml.net/winfx/xaml/themes&lt;/code&gt; 這個命名空間，使用裡面的 PackIcon 控制項，再透過 Kind 屬性來選取要使用的圖示即可。(是不是超級方便的啊!!!?)&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;關於可使用的圖示資訊，請參考 &lt;a href=&quot;https://materialdesignicons.com/&quot; title=&quot;Material Design Icons&quot;&gt;Material Design Icons&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;特殊控制項與特效&lt;/h2&gt;
+
+&lt;p&gt;能改變原來控制項的樣貌已經夠威猛了對吧?! 不過這還不夠， MaterialDesignXamlToolkit 裡面還要給你滿滿的原創控制項和特效!!&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Card - 類似小卡片的容器控制項。&lt;/li&gt;
+  &lt;li&gt;Chip - 楕圓型外框的控制項，可以另外在前面加上圖示或是文字。(嗯…其實我不知道該怎麼更精確的形容它…)&lt;/li&gt;
+  &lt;li&gt;ColourZone - 顏色區塊，適合放在頁面的上方搭配不同的控制項(例如漢堡選單)作為選單或是查詢功能使用。&lt;/li&gt;
+  &lt;li&gt;Dialog - 看名字就知道了，是對話視窗。&lt;/li&gt;
+  &lt;li&gt;Drawer - 抽屜，就是可以放置於視窗上、下、左、右的可收合面板。&lt;/li&gt;
+  &lt;li&gt;Flipper - 類似於 Card 控制項，但是可以讓我們分別針對正面及反面設置不同的呈現內容。&lt;/li&gt;
+  &lt;li&gt;PopupBox - 彈出式的容器，適合用來實作簡易型選單的功能。&lt;/li&gt;
+  &lt;li&gt;SnackBar - 會自動收合的訊息列。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;套用視窗外觀&lt;/h2&gt;
+
+&lt;p&gt;除了視窗裡面的控制項符合 Material Desing 的風格之外，視窗本身會不會也想換個顏色來個裡應外合呢?
+沒問題，作者都幫我們準備好了!!&lt;/p&gt;
+
+&lt;p&gt;要連視窗都一起套用顏色的話，只需要透過 Nuget 安裝 &lt;code&gt;MaterialDesignThemes.MahApps&lt;/code&gt; 套件。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-03-25-material-design-xaml-toolkit/02-install-materialdesignthemes-mahapps-package.png&quot; title=&quot;透過 Nuget 安裝 MaterialDesignThemes.MahApps 套件&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-03-25-material-design-xaml-toolkit/02-install-materialdesignthemes-mahapps-package.png&quot; alt=&quot;透過 Nuget 安裝 MaterialDesignThemes.MahApps 套件&quot; title=&quot;透過 Nuget 安裝 MaterialDesignThemes.MahApps 套件&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;接著進一步的修改 App.xaml 檔的內容：&lt;/p&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;App.xaml&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;Application&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Wpf_MaterialDesignXamlToolkitSample.App&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;xmlns=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;xmlns:x=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;xmlns:local=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;clr-namespace:Wpf_MaterialDesignXamlToolkitSample&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;StartupUri=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;MainWindow.xaml&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;Application.Resources&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;ResourceDictionary&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;ResourceDictionary.MergedDictionaries&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 加入 MahApps 相關資源 --&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;ResourceDictionary&lt;/span&gt;
+                        &lt;span class=&quot;na&quot;&gt;Source=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;ResourceDictionary&lt;/span&gt;
+                        &lt;span class=&quot;na&quot;&gt;Source=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;ResourceDictionary&lt;/span&gt;
+                        &lt;span class=&quot;na&quot;&gt;Source=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;ResourceDictionary&lt;/span&gt;
+                        &lt;span class=&quot;na&quot;&gt;Source=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseDark.xaml&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+
+                &lt;span class=&quot;c&quot;&gt;&amp;lt;!--設定主題背景色--&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;ResourceDictionary&lt;/span&gt;
+                        &lt;span class=&quot;na&quot;&gt;Source=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;c&quot;&gt;&amp;lt;!--套用基本控制項樣式--&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;ResourceDictionary&lt;/span&gt;
+                        &lt;span class=&quot;na&quot;&gt;Source=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;c&quot;&gt;&amp;lt;!--設定主色--&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;ResourceDictionary&lt;/span&gt;
+                        &lt;span class=&quot;na&quot;&gt;Source=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Red.xaml&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;c&quot;&gt;&amp;lt;!--設定輔色--&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;ResourceDictionary&lt;/span&gt;
+                        &lt;span class=&quot;na&quot;&gt;Source=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Red.xaml&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+
+                &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 加入與 MahApps 相容的相關資源 --&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;ResourceDictionary&lt;/span&gt;
+                        &lt;span class=&quot;na&quot;&gt;Source=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;pack://application:,,,/MaterialDesignThemes.MahApps;component/Themes/MaterialDesignTheme.MahApps.Fonts.xaml&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;ResourceDictionary&lt;/span&gt;
+                        &lt;span class=&quot;na&quot;&gt;Source=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;pack://application:,,,/MaterialDesignThemes.MahApps;component/Themes/MaterialDesignTheme.MahApps.Flyout.xaml&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ResourceDictionary.MergedDictionaries&amp;gt;&lt;/span&gt;
+
+            &lt;span class=&quot;c&quot;&gt;&amp;lt;!-- 加入筆刷資源 --&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;SolidColorBrush&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;HighlightBrush&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;Color=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{DynamicResource Primary700}&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;SolidColorBrush&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;AccentColorBrush&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;Color=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{DynamicResource Primary500}&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;SolidColorBrush&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;AccentColorBrush2&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;Color=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{DynamicResource Primary400}&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;SolidColorBrush&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;AccentColorBrush3&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;Color=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{DynamicResource Primary300}&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;SolidColorBrush&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;AccentColorBrush4&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;Color=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{DynamicResource Primary200}&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;SolidColorBrush&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;WindowTitleColorBrush&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;Color=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{DynamicResource Primary700}&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;SolidColorBrush&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;AccentSelectedColorBrush&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;Color=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{DynamicResource Primary500Foreground}&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;LinearGradientBrush&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ProgressBrush&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;EndPoint=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0.001,0.5&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;StartPoint=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1.002,0.5&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;GradientStop&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Color=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{DynamicResource Primary700}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Offset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;GradientStop&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Color=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{DynamicResource Primary300}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Offset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/LinearGradientBrush&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;SolidColorBrush&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;CheckmarkFill&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;Color=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{DynamicResource Primary500}&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;SolidColorBrush&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;RightArrowFill&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;Color=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{DynamicResource Primary500}&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;SolidColorBrush&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;IdealForegroundColorBrush&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;Color=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{DynamicResource Primary500Foreground}&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;SolidColorBrush&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;IdealForegroundDisabledBrush&quot;&lt;/span&gt;
+                    &lt;span class=&quot;na&quot;&gt;Color=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{DynamicResource Primary500}&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Opacity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0.4&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ResourceDictionary&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Application.Resources&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/Application&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;再來只需要把原來視窗的 Window 型別改成 &lt;code&gt;http://metro.mahapps.com/winfx/xaml/controls&lt;/code&gt; 命名空間中的 &lt;code&gt;MetroWindow&lt;/code&gt; 型別就搞定啦!!&lt;/p&gt;
+
+&lt;p&gt;執行起來就會像下圖這樣喔!! 是不是很酷炫啊!?&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-03-25-material-design-xaml-toolkit/03-apply-material-design-themes-mahapps.png&quot; title=&quot;套用 MaterialDesignThemes.MahApps 後的視窗樣貌&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-03-25-material-design-xaml-toolkit/03-apply-material-design-themes-mahapps.png&quot; alt=&quot;套用 MaterialDesignThemes.MahApps 後的視窗樣貌&quot; title=&quot;套用 MaterialDesignThemes.MahApps 後的視窗樣貌&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;h2 id=&quot;section-5&quot;&gt;總結&lt;/h2&gt;
+
+&lt;p&gt;MaterialDesignXamlToolkit 真的是非常強大，我只能介紹部份的功能給大家。
+官方 GitHub 上的範例遠比我介紹的部份來得詳盡許多，而且也和它的 Wiki 作了不錯的整合。
+雖然作者也有意推出 UWP 版，不過目前還在開發當中，有興趣的朋友們不妨也一起參與開發，或是直接打賞作者，讓他有繼續開發的動力喔!!&lt;/p&gt;
+
+&lt;p&gt;最後，我在這篇文章裡所撰寫的範例程式碼連結如下，歡迎任意取用：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/Ouch1978/Wpf_MaterialDesignXamlToolkitSample/&quot;&gt;&lt;img src=&quot;/images/blog-images/source-code-link.png&quot; alt=&quot;Wpf_MaterialDesignXamlToolkitSample&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2017/03/25/material-design-xaml-toolkit/&quot;&gt;透過 MaterialDesignXamlToolkit 讓你的 WPF 應用程式潮又有料&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on March 25, 2017.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -1997,346 +2310,6 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 
   
   &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2010/10/27/ppt-make-your-own-ptt-template/&quot;&gt;輕鬆製作獨一無二的投影片&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 27, 2010.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[自製 Modal 元件]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2010/10/26/silverlight-fake-modal-dialog/"/>
-  <id>http://ouch1978.github.io/2010/10/26/silverlight-fake-modal-dialog</id>
-  <published>2010-10-26T00:00:00+08:00</published>
-  <updated>2010-10-26 08:00:00 +0800T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
-    <email>ouch1978@hotmail.com</email>
-  </author>
-  <category scheme="http://ouch1978.github.io/tags/#Silverlight" term="Silverlight" />
-  <content type="html">
-  
-    &lt;p&gt;有使用過 Silverlight/WPF 的朋友們不知道有沒有遇過一個問題：有時候想要跳出一個元件跟使用者互動，而且要鎖住原來的主畫面，等使用者操作完才能繼續操作主畫面，可是用 MessageBox 的話功能不夠，用 ChildWindow 的話功能又太多或是太複雜之類的問題…&lt;/p&gt;
-
-&lt;p&gt;難道就不能自訂一個元件，當它顯示的時候，會自動讓主畫面被鎖住，而且該元件的外觀和操作方式都可以自訂嗎?其實只要善用 Grid 容器，就可以簡單的做到這個功能喔!!&lt;/p&gt;
-
-&lt;p&gt;方法如下：&lt;/p&gt;
-
-&lt;h1 id=&quot;section&quot;&gt;&lt;code&gt;步驟一&lt;/code&gt;&lt;/h1&gt;
-
-&lt;p&gt;首先我們打開一個標準的 Silverlight+Web 專案( WPF 也可以喔)，接著增加一個 UserControl (範例中取名為 MyModalControl )。&lt;/p&gt;
-
-&lt;p&gt;接著修改 MyModalControl.xaml 的內容，將 &lt;code&gt;控制項本身&lt;/code&gt; 與 LayoutRoot 這個 Grid 的 &lt;code&gt;寬和高都設為 Auto&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_2.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_thumb.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;section-1&quot;&gt;&lt;code&gt;步驟二&lt;/code&gt;&lt;/h1&gt;
-
-&lt;p&gt;修改 &lt;code&gt;LayoutRoot&lt;/code&gt; 的 &lt;code&gt;背景色為 #4C4969CC&lt;/code&gt;(透明度為 30%)&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_4.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_thumb_1.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;section-2&quot;&gt;&lt;code&gt;步驟三&lt;/code&gt;&lt;/h1&gt;
-
-&lt;p&gt;放置要和使用者互動的元件，為了精簡教學過程，怎麼做的這邊就不詳述，完成後如下圖。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_6.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_thumb_2.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;section-3&quot;&gt;&lt;code&gt;步驟四&lt;/code&gt;&lt;/h1&gt;
-
-&lt;p&gt;加入按鈕的 Click 事件，並加入移除這個控制項的程式碼，完成後的 xaml 與 cs 檔如下：&lt;/p&gt;
-
-&lt;blockquote class=&quot;filename&quot;&gt;
-  &lt;p&gt;MyModalControl.xaml&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;UserControl&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;FakeModal.MyModalControl&quot;&lt;/span&gt;
-             &lt;span class=&quot;na&quot;&gt;xmlns=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;&lt;/span&gt;
-             &lt;span class=&quot;na&quot;&gt;xmlns:x=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;&lt;/span&gt;
-             &lt;span class=&quot;na&quot;&gt;xmlns:d=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/expression/blend/2008&quot;&lt;/span&gt;
-             &lt;span class=&quot;na&quot;&gt;xmlns:ei=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/expression/2010/interactions&quot;&lt;/span&gt;
-             &lt;span class=&quot;na&quot;&gt;xmlns:i=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/expression/2010/interactivity&quot;&lt;/span&gt;
-             &lt;span class=&quot;na&quot;&gt;xmlns:mc=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;&lt;/span&gt;
-             &lt;span class=&quot;na&quot;&gt;d:DesignHeight=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;480&quot;&lt;/span&gt;
-             &lt;span class=&quot;na&quot;&gt;d:DesignWidth=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;640&quot;&lt;/span&gt;
-             &lt;span class=&quot;na&quot;&gt;mc:Ignorable=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;d&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;Grid&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;LayoutRoot&quot;&lt;/span&gt;
-          &lt;span class=&quot;na&quot;&gt;Background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#4C4969CC&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;StackPanel&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;HorizontalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt;
-                    &lt;span class=&quot;na&quot;&gt;VerticalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;StackPanel.Effect&amp;gt;&lt;/span&gt;
-                &lt;span class=&quot;nt&quot;&gt;&amp;lt;DropShadowEffect&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Opacity=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0.5&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/StackPanel.Effect&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;i:Interaction.Behaviors&amp;gt;&lt;/span&gt;
-                &lt;span class=&quot;nt&quot;&gt;&amp;lt;ei:MouseDragElementBehavior&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ConstrainToParentBounds=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;True&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/i:Interaction.Behaviors&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;Border&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;200&quot;&lt;/span&gt;
-                    &lt;span class=&quot;na&quot;&gt;Height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;32&quot;&lt;/span&gt;
-                    &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10,0,0,0&quot;&lt;/span&gt;
-                    &lt;span class=&quot;na&quot;&gt;HorizontalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Left&quot;&lt;/span&gt;
-                    &lt;span class=&quot;na&quot;&gt;Background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;White&quot;&lt;/span&gt;
-                    &lt;span class=&quot;na&quot;&gt;BorderBrush=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Black&quot;&lt;/span&gt;
-                    &lt;span class=&quot;na&quot;&gt;BorderThickness=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;2,2,2,0&quot;&lt;/span&gt;
-                    &lt;span class=&quot;na&quot;&gt;CornerRadius=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10,10,0,0&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-                &lt;span class=&quot;nt&quot;&gt;&amp;lt;TextBlock&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;HorizontalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt;
-                           &lt;span class=&quot;na&quot;&gt;VerticalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt;
-                           &lt;span class=&quot;na&quot;&gt;FontSize=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;18.667&quot;&lt;/span&gt;
-                           &lt;span class=&quot;na&quot;&gt;Text=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;FakeModal&quot;&lt;/span&gt;
-                           &lt;span class=&quot;na&quot;&gt;TextWrapping=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Wrap&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Border&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;Border&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;400&quot;&lt;/span&gt;
-                    &lt;span class=&quot;na&quot;&gt;Height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;150&quot;&lt;/span&gt;
-                    &lt;span class=&quot;na&quot;&gt;Background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;White&quot;&lt;/span&gt;
-                    &lt;span class=&quot;na&quot;&gt;BorderBrush=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Black&quot;&lt;/span&gt;
-                    &lt;span class=&quot;na&quot;&gt;BorderThickness=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;2&quot;&lt;/span&gt;
-                    &lt;span class=&quot;na&quot;&gt;CornerRadius=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-                &lt;span class=&quot;nt&quot;&gt;&amp;lt;StackPanel&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;HorizontalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt;
-                            &lt;span class=&quot;na&quot;&gt;VerticalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;TextBlock&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0&quot;&lt;/span&gt;
-                               &lt;span class=&quot;na&quot;&gt;FontSize=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;18.667&quot;&lt;/span&gt;
-                               &lt;span class=&quot;na&quot;&gt;Text=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Is to make a fake modal that simple?&quot;&lt;/span&gt;
-                               &lt;span class=&quot;na&quot;&gt;TextWrapping=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Wrap&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;StackPanel&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0,30,0,0&quot;&lt;/span&gt;
-                                &lt;span class=&quot;na&quot;&gt;HorizontalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt;
-                                &lt;span class=&quot;na&quot;&gt;VerticalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt;
-                                &lt;span class=&quot;na&quot;&gt;Orientation=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Horizontal&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;Button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btnYes&quot;&lt;/span&gt;
-                                &lt;span class=&quot;na&quot;&gt;Width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;80&quot;&lt;/span&gt;
-                                &lt;span class=&quot;na&quot;&gt;Height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;32&quot;&lt;/span&gt;
-                                &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10,0&quot;&lt;/span&gt;
-                                &lt;span class=&quot;na&quot;&gt;Click=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btnYes_Click&quot;&lt;/span&gt;
-                                &lt;span class=&quot;na&quot;&gt;Content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Yes&quot;&lt;/span&gt;
-                                &lt;span class=&quot;na&quot;&gt;FontSize=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;16&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;Button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btnNo&quot;&lt;/span&gt;
-                                &lt;span class=&quot;na&quot;&gt;Width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;80&quot;&lt;/span&gt;
-                                &lt;span class=&quot;na&quot;&gt;Height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;32&quot;&lt;/span&gt;
-                                &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;10,0&quot;&lt;/span&gt;
-                                &lt;span class=&quot;na&quot;&gt;Click=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btnNo_Click&quot;&lt;/span&gt;
-                                &lt;span class=&quot;na&quot;&gt;Content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;No&quot;&lt;/span&gt;
-                                &lt;span class=&quot;na&quot;&gt;FontSize=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;16&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/StackPanel&amp;gt;&lt;/span&gt;
-                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/StackPanel&amp;gt;&lt;/span&gt;
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Border&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/StackPanel&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Grid&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/UserControl&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;blockquote class=&quot;filename&quot;&gt;
-  &lt;p&gt;MyModalControl.xaml.cs&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c#&quot; data-lang=&quot;c#&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;System.Windows.Controls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;FakeModal&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;partial&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyModalControl&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UserControl&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MyModalControl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-		&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-			&lt;span class=&quot;nf&quot;&gt;InitializeComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-		&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-		&lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;btnYes_Click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Windows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RoutedEventArgs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-		&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-			&lt;span class=&quot;c1&quot;&gt;//you can do something here.
-&lt;/span&gt;			&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Parent&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Panel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Remove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-		&lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;btnNo_Click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Windows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RoutedEventArgs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-		&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-			&lt;span class=&quot;c1&quot;&gt;//you can do something here.
-&lt;/span&gt;			&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Parent&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Panel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Remove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-		&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h1 id=&quot;section-4&quot;&gt;&lt;code&gt;步驟五&lt;/code&gt;&lt;/h1&gt;
-&lt;p&gt;到這邊就算是完成啦，再來就是讓它上場表演的時候了，在 MainPage.xaml 放一個 Button 叫它出來吧!!&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_8.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/Modal_E8CF/image_thumb_3.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;blockquote class=&quot;filename&quot;&gt;
-  &lt;p&gt;MainPage.xaml&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;UserControl&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;FakeModal.MainPage&quot;&lt;/span&gt;
-             &lt;span class=&quot;na&quot;&gt;xmlns=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;&lt;/span&gt;
-             &lt;span class=&quot;na&quot;&gt;xmlns:x=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;&lt;/span&gt;
-             &lt;span class=&quot;na&quot;&gt;Width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Auto&quot;&lt;/span&gt;
-             &lt;span class=&quot;na&quot;&gt;Height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Auto&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;Grid&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;LayoutRoot&quot;&lt;/span&gt;
-          &lt;span class=&quot;na&quot;&gt;Background=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;White&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nt&quot;&gt;&amp;lt;Button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btnShowModal&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;HorizontalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;VerticalAlignment=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Center&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;Click=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btnShowModal_Click&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;Content=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Show Fake Modal&quot;&lt;/span&gt;
-                &lt;span class=&quot;na&quot;&gt;FontSize=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;18.667&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/Grid&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/UserControl&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;blockquote class=&quot;filename&quot;&gt;
-  &lt;p&gt;MainPage.xaml.cs&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c#&quot; data-lang=&quot;c#&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;System.Windows.Controls&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;FakeModal&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;partial&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MainPage&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;UserControl&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-		&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MainPage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-		&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-			&lt;span class=&quot;nf&quot;&gt;InitializeComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-		&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-		&lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;btnShowModal_Click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sender&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Windows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RoutedEventArgs&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-		&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;			
-			&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LayoutRoot&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;MyModalControl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
-		&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;大功告成!!&lt;/p&gt;
-
-&lt;p&gt;執行結果如下：&lt;/p&gt;
-
-&lt;iframe allowtransparency=&quot;allowtransparency&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;http://ouch1978.azurewebsites.net/demo/silverlight/SL-FakeModal/FakeModalDemo.html&quot; style=&quot;width: 510px; height: 510px; overflow: hidden; display:block; margin:auto;&quot;&gt;
-&lt;/iframe&gt;
-
-&lt;p&gt;&lt;strong&gt;專案下載：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1307/20137132234085.rar&quot;&gt;&lt;img src=&quot;http://ouch1978.azurewebsites.net/Images/SampleDownload.png&quot; alt=&quot;&quot; /&gt;
-&lt;/a&gt;&lt;/p&gt;
-
-  
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2010/10/26/silverlight-fake-modal-dialog/&quot;&gt;自製 Modal 元件&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 26, 2010.&lt;/p&gt;</content>
 </entry>
 
 </feed>

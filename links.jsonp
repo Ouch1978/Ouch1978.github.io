@@ -108,6 +108,11 @@ callback([
   {
     "text": "透過 Sikuli4Net 對 Flash UI 進行自動化測試",
     "href": "http://ouch1978.github.io/2017/02/04/automation-flash-ui-test-with-sikuli4net/"
+  } ,
+
+  {
+    "text": "透過 MaterialDesignXamlToolkit 讓你的 WPF 應用程式潮又有料",
+    "href": "http://ouch1978.github.io/2017/03/25/material-design-xaml-toolkit/"
   } 
 
 ])
