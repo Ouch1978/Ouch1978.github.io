@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>XAML 的過去、現在與未來 &vert; OUCH1978 @ GITHUB</title>
+<meta name="description" content="從 .Net Framework 3.0 中的 WPF ，一直到現在的 UWP ， XAML 始終扮演著 UI 設計語言的重要角色。 這篇文章就要來跟大家分享我所知道的 XAML ，以及 XAML 未來的發展。">
+<meta name="keywords" content="XAML, Visual Studio, 設計">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://ouch1978.github.io/images/feature-01.jpg">
+
+<meta name="twitter:title" content="XAML 的過去、現在與未來">
+<meta name="twitter:description" content="從 .Net Framework 3.0 中的 WPF ，一直到現在的 UWP ， XAML 始終扮演著 UI 設計語言的重要角色。 這篇文章就要來跟大家分享我所知道的 XAML ，以及 XAML 未來的發展。">
+<meta name="twitter:creator" content="@Ouch1978">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="XAML 的過去、現在與未來">
+<meta property="og:description" content="從 .Net Framework 3.0 中的 WPF ，一直到現在的 UWP ， XAML 始終扮演著 UI 設計語言的重要角色。 這篇文章就要來跟大家分享我所知道的 XAML ，以及 XAML 未來的發展。">
+<meta property="og:url" content="http://ouch1978.github.io/2017/03/28/the-future-of-xaml/">
+<meta property="og:site_name" content="Ouch1978 @ Github">
+<meta property="og:image" content="http://ouch1978.github.io/images/feature-01.jpg">
+
+
+
+
+
+<link rel="canonical" href="http://ouch1978.github.io/2017/03/28/the-future-of-xaml/">
+<link href="http://ouch1978.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Ouch1978 @ Github Feed">
+<link rel="author" href="https://plus.google.com/u/0/110363696453312268733?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <link href='http://fonts.googleapis.com/earlyaccess/notosanstc.css' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600,300,800,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://ouch1978.github.io/assets/css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="http://ouch1978.github.io/assets/css/vendor/normalize.css">
+    <link rel="stylesheet" href="http://ouch1978.github.io/assets/css/vendor/nprogress.css">
+    <link rel="stylesheet" href="http://ouch1978.github.io/assets/css/vendor/foundation.min.css">
+    <link rel="stylesheet" href="http://ouch1978.github.io/assets/css/style.css">
+    <link rel="stylesheet" href="http://ouch1978.github.io/assets/css/post.css">
+    <link rel="stylesheet" href="http://ouch1978.github.io/assets/css/syntax.css">
+
+
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://ouch1978.github.io/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://ouch1978.github.io/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://ouch1978.github.io/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://ouch1978.github.io/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://ouch1978.github.io/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://ouch1978.github.io/images/apple-touch-icon-144x144-precomposed.png">
+
+<style type="text/css">@media only screen and (min-width:43.75em){.notepad-post-content div>p:first-child:first-letter{float:left;font-size:4.688rem;line-height:4.375rem;padding-top:.25rem;padding-right:.5rem;padding-left:.188rem;font-weight:bold;color: #e51843;}}</style>
+</head>
+<body class="post-template" itemscope itemtype="http://schema.org/WebPage">
+
+        <main id="notepad-post-container" class="notepad-post-container intro-effect-sliced" role="main">
+            <header class="notepad-post-header">
+                <div class="bg-img"></div>
+
+                <div class="notepad-post-menu-header">
+
+                    <a class="notepad-blog-logo" href="http://ouch1978.github.io">
+                        <img src="http://ouch1978.github.io/images/logo.png" alt="Blog Logo" />
+                    </a>
+
+                <div class="notepad-blog-menu">
+    <div class="notepad-mobile-menu show-for-small">
+        <a href="#"><i class="fa fa-bars"></i></a>
+    </div>
+    <ul class="notepad-menu">
+        <li class="notepad-mobile-close-btn show-for-small text-right">
+            <a href="#"><i class="fa fa-times"></i></a>
+        </li>
+
+            <li>
+                    <a href="http://ouch1978.github.io/">首頁</a>
+                 </li>
+
+            <li>
+                    <a href="http://ouch1978.github.io/featured">精選文章</a>
+                 </li>
+
+            <li>
+                    <a href="http://ouch1978.github.io/categories">文章分類</a>
+                 </li>
+
+           <li><a href="http://ouch1978.github.io/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i>RSS</a></li>
+    </ul>
+
+</div>
+            </div>
+
+            <div class="notepad-post-title bg-check">
+                <h1>XAML 的過去、現在與未來</h1>
+                <p>by <strong>Ouch Liu (劉耀群)</strong> &#8212; on <a href="http://ouch1978.github.io/tags/index.html#XAML" data-toggle="tooltip" title="Posts tagged with XAML" rel="tag">XAML</a>&nbsp;&comma;&nbsp;<a href="http://ouch1978.github.io/tags/index.html#Visual Studio" data-toggle="tooltip" title="Posts tagged with Visual Studio" rel="tag">Visual Studio</a>&nbsp;&comma;&nbsp;<a href="http://ouch1978.github.io/tags/index.html#設計" data-toggle="tooltip" title="Posts tagged with 設計" rel="tag">設計</a> <strong><time datetime="2017-03-28T23:50:00+08:00">28 Mar 2017</time></strong></p>
+            </div>
+            <div class="bg-img"></div>
+        </header>
+        <button class="trigger bg-check" data-info="Read more"><span>Trigger</span></button>
+        <img src="http://ouch1978.github.io/images/feature-01.jpg" alt="cover-image" />
+
+        <article class="notepad-post-content post">
+            <div><h2 id="section">前言</h2>
+
+<p>自從 WPF 在 .Net Framework 3.0 中首度現身以來， XAML 就扮演了它的 UI 設計語言的角色。 時至今日，微軟在更多 UI/UX 的領域相繼投入了更多的關注在它身上。 透過這篇文章，我想用簡單快速的方式讓大家了解 XAML 的發展，也藉此跟大家介紹一個在 Visual Studio 2017 裡很方便，但不是新功能的功能。(好饒舌??)</p>
+
+<h2 id="xaml-">XAML 的過去</h2>
+
+<p>XAML 的全名為 E<code>x</code>tensible <code>A</code>pplication <code>M</code>arkup <code>L</code>anguage ，我們可以把它看作是結合了 XML 與 HTML 特性的使用者介面描述語言。 有了它的存在，讓 Windows 平台上的桌面應用程式有了全新的風貌和想像。
+以往，由於平台本身限制的關係，藉由 Windows Form 撰寫的應用程式介面大多比較死板，相對的難以作到控制項隨著視窗縮放，也相對的難去實作出動畫和轉場效果。
+甚至，如果沒有一定的底子和功力，想要在下拉式選單裡面塞圖片或是按鈕，就可以讓工程師為了這樣的需求刻上一整天的 UI。
+而隨著 WPF 和 XAML 的出現，工程師們不用再攪盡腦汁去突破平台本身的限制，就可以輕鬆的透過 XAML 實作出上述的客製化控制項與動畫。</p>
+
+<p>在 WPF 之後， 微軟也推出了 Silverlight ，一個微軟想用來和 Adobe 的 Flash 抗衡的框架，其使用者介面描述語言也是 XAML。
+之後， XAML 也相繼在 Windows Phone 7 、 Windows Phone 8 、 Windows 8/8.1 以及現在的 Windows 10、 Windows Mobile 10 、 XBox One 、 Hololens 這幾個平台中出現，作為 App 和作業系統中佔有重要地位的使用者介面描述語言。</p>
+
+<blockquote>
+  <p>關於 XAML 的發展史，有人使用 TimelineJS 刻出了一個網頁： <a href="http://japf.github.io/xaml-history/" title="An history of 11 years of XAML stacks">An history of 11 years of XAML stacks</a></p>
+</blockquote>
+
+<p>儘管 Silverlight 已經成為歷史的一部份了，但是 XAML 在 UWP 的生態環境裡仍然佔有舉足輕重的地位。</p>
+
+<h2 id="xaml--visual-studio-2017">XAML 的現在與 Visual Studio 2017</h2>
+
+<p>有持續在關心 Windows 10 發展的朋友們應該知道， Windows 10 的開始功能表就是透過 XAML 實作出來的。
+微軟也在不同的會議及活動中承諾會持續針對 XAML 投入更多的心力，例如提供了開發 UWP 時可以使用的 <a href="https://github.com/Microsoft/UWPCommunityToolkit" title="UWP Community Toolkit">UWP Community Toolkit</a> ，內建更多的控制項和特效以及其它方便的功能。</p>
+
+<p>除此之外，微軟在 Visual Studio 上也為 XAML 開發者們提供了實用的 <code>XAML Edit &amp; Continue</code> 功能。</p>
+
+<p>平常有在以 C# 撰寫程式的朋友們應該對 Edit &amp; Continue 的功能不陌生，也應該因為它的存在，在進行除錯的的時候得到了不少的幫助。
+而自從 Visual Studio 2015 Update 2 推出之後， XAML 開發者們也能享受到相同的好處，透過 XAML Edit &amp; Continue 的功能在進行除錯的同時，也可以透過所視即所得的方式同時以 XAML 語法編輯你的 UI。</p>
+
+<p><a href="/images/blog-images/2017-03-28-the-future-of-xaml/01-xaml-edit-and-continue.gif" title="透過 XAML Edit &amp; Continue 功能在除錯時編輯 UI"><img src="/images/blog-images/2017-03-28-the-future-of-xaml/01-xaml-edit-and-continue.gif" alt="透過 XAML Edit &amp; Continue 功能在除錯時編輯 UI" title="透過 XAML Edit &amp; Continue 功能在除錯時編輯 UI" /></a>    </p>
+
+<p>我們也可以透過 Live Visual Tree 面板來觀查我們所設計出來的 UI 的視覺樹是什麼樣的構造，這個在我們想自已刻控制項或是效能校調的時候是非常有幫助的一個功能。</p>
+
+<p><a href="/images/blog-images/2017-03-28-the-future-of-xaml/02-live-visual-tree.gif" title="透過 Live Visual Tree 面板觀查視覺樹結構"><img src="/images/blog-images/2017-03-28-the-future-of-xaml/02-live-visual-tree.gif" alt="透過 Live Visual Tree 面板觀查視覺樹結構" title="透過 Live Visual Tree 面板觀查視覺樹結構" /></a>    </p>
+
+<p>同時，也可以透過 Live Property Explorer 來即時的對視覺樹中的控制項進行屬性的編輯並且即時看到效果，而不影響 XAML Code。</p>
+
+<p><a href="/images/blog-images/2017-03-28-the-future-of-xaml/03-live-property-explorer.gif" title="透過 Live Property Explorer 修改控制項屬性"><img src="/images/blog-images/2017-03-28-the-future-of-xaml/03-live-property-explorer.gif" alt="透過 Live Property Explorer 面板修改控制項屬性" title="透過 Live Property Explorer 修改控制項屬性" /></a>    </p>
+
+<p>是不是很方便啊!?</p>
+
+<p>當然，這些方便的功能也都一併被內建在 Visual Studio 2017 裡面囉!!</p>
+
+<h2 id="xaml--1">XAML 的未來以及相關資源</h2>
+
+<p>有陸續在關心 Windows 10 發展的朋友們應該也都跟我一樣很期待 Creator Update 正式版的發佈日期。</p>
+
+<p>除了 Creator Update 之外，微軟也宣佈了 Neon 專案，據說會重新定義 Microsoft Design Language 及部份控制項，並且在 Windows Vista 和 Windows 7 時代的毛玻璃效果也會隨之回歸。</p>
+
+<p>如果你也對 XAML 及 UI/UX 設計有興趣，這裡還有一些不錯的資源可以參考：</p>
+
+<ul>
+  <li>
+    <p><a href="https://channel9.msdn.com/Events/Build/2016/The-Future-of-XAML" title="The Future of XAML">The Future of XAML</a></p>
+
+  </li>
+  <li>
+    <p><a href="https://aka.ms/winuidevlabs" title="Windows UI Samples">Windows UI Samples</a></p>
+
+  </li>
+  <li>
+    <p><a href="https://aka.ms/windowsuwpsamples" title="Other UWP Samples">Other UWP Samples</a></p>
+
+  </li>
+</ul>
+
+            </div>
+        </article>
+
+        <div class="cf"></div>
+        <div class="row text-center">
+            <section class="notepad-post-share">
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;XAML 的過去、現在與未來&quot;%20http://ouch1978.github.io/2017/03/28/the-future-of-xaml/%20via%20&#64;Ouch1978"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=http://ouch1978.github.io/2017/03/28/the-future-of-xaml/"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a class="google-icon" href="https://plus.google.com/share?url=http://ouch1978.github.io/2017/03/28/the-future-of-xaml/"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </section>
+        </div>
+
+        <div class="cf"></div>
+
+        <div class="PageNavigation">
+          
+            <a class="prev" href="/2017/03/25/material-design-xaml-toolkit/">&laquo; 透過 Material Design Xaml Toolkit 讓你的 WPF 應用程式潮又有料</a>
+          
+          
+        </div>
+
+            <div class="notepad-author-info">
+                <div class="row">
+                    <section class="notepad-post-author small-12 columns">
+
+                            <img src="http://ouch1978.github.io/images/Ouch.jpg" class="notepad-post-author-avatar" alt="Ouch Liu (劉耀群)'s photo">
+
+                            <span class="author-label">作者</span>
+                            <h1>Ouch Liu (劉耀群)</h1>
+
+                            <p>略懂設計的軟體工程師 / 略懂程式的設計師</p>
+
+                    </section>
+                </div>
+            </div>
+
+
+        <div class="cf"></div>
+        
+        <section class="notepad-disqus row">
+    <div class="small-12 columns">
+        <h1 class="notepad-comments-header">Comments</h1>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'Ouch1978'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+</section>
+
+        <div class="cf"></div>
+
+    <footer class="notepad-site-footer">
+    <div class="copyright">
+         <section>All content copyright <a href="http://ouch1978.github.io/about">Ouch Liu (劉耀群)</a> &copy; 2017 &bull; All rights reserved.</section>
+         <section>Proudly published with <a class="icon-ghost" href="https://jekyllrb.com/">Jekyll</a></section>
+    </div>
+    <div class="social-icons">
+        
+			<a href="https://linkedin.com/in/Ouch1978">
+				  <span class="fa-stack fa-lg">
+					<i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+					<i class="fa fa-linkedin fa-stack-1x"></i>
+				</span>
+			</a>
+		
+		
+        <a href="http://facebook.com/Ouch1978">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-facebook fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="http://twitter.com/Ouch1978">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="https://plus.google.com/u/0/110363696453312268733">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-google-plus fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="http://github.com/Ouch1978">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-github fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+		</div>
+    
+    <div class="cf"></div>
+</footer>
+</main>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="http://ouch1978.github.io/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+    <script src="http://ouch1978.github.io/assets/js/vendor/modernizr.js"></script>
+    <script src="http://ouch1978.github.io/assets/js/foundation.min.js"></script>
+    <script src="http://ouch1978.github.io/assets/js/vendor/background-check.js"></script>
+    <script src="http://ouch1978.github.io/assets/js/vendor/post-header-animations.js"></script>
+    <script src="http://ouch1978.github.io/assets/js/notepad.js"></script>
+    <script src="http://ouch1978.github.io/assets/js/scripts.min.js"></script>
+    <script src="http://ouch1978.github.io/assets/js/vendor/nprogress.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/3.0.0/pangu.js"></script>
+
+    <script>
+      $(document).foundation();
+      pangu.spacingPage();
+    </script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-20523508-2', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+
+</script>
+
+<script>NProgress.start();var interval=setInterval(function(){NProgress.inc()},1000);jQuery(window).load(function(){clearInterval(interval);NProgress.done()});jQuery(window).unload(function(){NProgress.start()});</script>
+
+</body>
+</html>
