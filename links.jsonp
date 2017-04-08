@@ -118,6 +118,11 @@ callback([
   {
     "text": "XAML 的過去、現在與未來",
     "href": "http://ouch1978.github.io/2017/03/28/the-future-of-xaml/"
+  } ,
+
+  {
+    "text": "回來吧!! Creator Update 開始按鈕右鍵選單裡的控制台選項!!",
+    "href": "http://ouch1978.github.io/2017/04/07/add-control-panel-back-after-creator-update/"
   } 
 
 ])

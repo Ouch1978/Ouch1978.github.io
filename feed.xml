@@ -7,13 +7,104 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://ouch1978.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://ouch1978.github.io/" />
-<updated>2017-03-28T21:38:14+08:00</updated>
+<updated>2017-04-09T01:26:45+08:00</updated>
 <id>http://ouch1978.github.io/</id>
 <author>
   <name>Ouch Liu (劉耀群)</name>
   <uri>http://ouch1978.github.io/</uri>
   <email>ouch1978@hotmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[回來吧!! Creator Update 開始按鈕右鍵選單裡的控制台選項!!]]></title>
+  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2017/04/07/add-control-panel-back-after-creator-update/"/>
+  <id>http://ouch1978.github.io/2017/04/07/add-control-panel-back-after-creator-update</id>
+  <published>2017-04-07T23:50:00+08:00</published>
+  <updated>2017-04-07 23:50:00 +0800T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Ouch Liu (劉耀群)</name>
+    <uri>http://ouch1978.github.io</uri>
+    <email>ouch1978@hotmail.com</email>
+  </author>
+  <category scheme="http://ouch1978.github.io/tags/#Windows%2010" term="Windows 10" />
+  <content type="html">
+  
+    &lt;h2 id=&quot;section&quot;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;自從 Windows 10 更新到 Creator Update 之後，原來在開始按鈕右鍵選單裡面的控制台選項不見了，取而代之的是新的設定選單。但是對於已經習慣使用控制台的我來說，這個改變真的是讓我很不習慣啊~~&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-04-07-add-control-panel-back-after-creator-update/01-control-panel-link-is-gone-after-creator-update.png&quot; title=&quot;控制台選項在 Creator Update 之後消失了&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-04-07-add-control-panel-back-after-creator-update/01-control-panel-link-is-gone-after-creator-update.png&quot; alt=&quot;控制台選項在 Creator Update 之後消失了&quot; title=&quot;控制台選項在 Creator Update 之後消失了&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;為了讓這個習慣得以延續下去，路不轉，人轉囉!! 以下就簡單的分享一下怎麼把控制台這個選項加回來的方法：&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;方法一：透過手動的方式加回來&lt;/h2&gt;
+
+&lt;p&gt;基本上，Windows 10 開始按鈕右鍵選單的內容會存放在 &lt;code&gt;%USERPROFILE%\AppData\Local\Microsoft\Windows\WinX&lt;/code&gt; 資料夾裡。所以我們可以這樣作：&lt;/p&gt;
+
+&lt;p&gt;首先，透過檔案總管瀏覽 &lt;code&gt;%USERPROFILE%\AppData\Local\Microsoft\Windows\WinX&lt;/code&gt; 資料夾，應該會看到裡面應該有三個分別名為 Group1 ~ 3 的資料夾。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-04-07-add-control-panel-back-after-creator-update/02-group-folders.png&quot; title=&quot;Group1 ~ Group3 資料夾&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-04-07-add-control-panel-back-after-creator-update/02-group-folders.png&quot; alt=&quot;Group1 ~ Group3 資料夾&quot; title=&quot;Group1 ~ Group3 資料夾&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;而屬於控制台的群組應該會位於 Group2 裡(我們會看到一個叫作控制台的連結，但是它其實是設定的捷徑)。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-04-07-add-control-panel-back-after-creator-update/03-links-in-group2.png&quot; title=&quot;Group2 裡的連結&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-04-07-add-control-panel-back-after-creator-update/03-links-in-group2.png&quot; alt=&quot;Group2 裡的連結&quot; title=&quot;Group2 裡的連結&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;接著我們就可以手動來為控制台建立一個捷徑囉。(若是使用 64 位元的 Windows 10 的話，路徑為 &lt;code&gt;C:\Windows\System32\control.exe&lt;/code&gt;)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-04-07-add-control-panel-back-after-creator-update/04-create-link-for-control-panel.png&quot; title=&quot;為控制台建立捷徑&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-04-07-add-control-panel-back-after-creator-update/04-create-link-for-control-panel.png&quot; alt=&quot;為控制台建立捷徑&quot; title=&quot;為控制台建立捷徑&quot; /&gt;&lt;/a&gt;  &lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-04-07-add-control-panel-back-after-creator-update/05-name-the-link-with-control-panel.png&quot; title=&quot;將捷徑的名稱取為控制台&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-04-07-add-control-panel-back-after-creator-update/05-name-the-link-with-control-panel.png&quot; alt=&quot;將捷徑的名稱取為控制台&quot; title=&quot;將捷徑的名稱取為控制台&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;建立完捷徑之後得透過 &lt;code&gt;hashlnk.exe&lt;/code&gt;，來為我們的捷徑加上雜湊編碼，這樣 Windows 10 才會認得它。
+加上雜湊編碼的方式很簡單，只要透過檔案總管將我們建立好的控制台連結拖拉進 hashlnk.exe 圖示上即可。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;hashlnk.exe 的下載連結在此： &lt;a href=&quot;https://github.com/riverar/hashlnk/raw/master/bin/hashlnk_0.2.0.0.zip&quot; title=&quot;下載 hashlnk.exe 檔&quot;&gt;下載 hashlnk.exe 檔&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-04-07-add-control-panel-back-after-creator-update/06-drag-link-into-hashlnk.png&quot; title=&quot;將控制台捷徑拖拉到 hashlnk.exe 的圖示上&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-04-07-add-control-panel-back-after-creator-update/06-drag-link-into-hashlnk.png&quot; alt=&quot;將控制台捷徑拖拉到 hashlnk.exe 的圖示上&quot; title=&quot;將控制台捷徑拖拉到 hashlnk.exe 的圖示上&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;接下來這個步驟非常的重要 - &lt;code&gt;開啟工作管理員，將檔案總管重新啟動&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-04-07-add-control-panel-back-after-creator-update/07-restart-explorer.png&quot; title=&quot;重新啟動檔案總管&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-04-07-add-control-panel-back-after-creator-update/07-restart-explorer.png&quot; alt=&quot;重新啟動檔案總管&quot; title=&quot;重新啟動檔案總管&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;完成上述動作就大功告成啦!!要驗證是否成功，只需要按下鍵盤的 Windows + X 鈕 (或是直接在開始按鈕上按下滑鼠右鍵)，噠噠!! ~~大師兄~~ 控制台回來了!!!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-04-07-add-control-panel-back-after-creator-update/08-get-control-panel-link-back.png&quot; title=&quot;控制台回來了&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-04-07-add-control-panel-back-after-creator-update/08-get-control-panel-link-back.png&quot; alt=&quot;控制台回來了&quot; title=&quot;控制台回來了&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;h2 id=&quot;winxmenueditor-&quot;&gt;方法二：透過 WinXMenuEditor 加回來&lt;/h2&gt;
+
+&lt;p&gt;覺得上述方式太麻煩的朋友們也不用擔心，因為有現成的工具可以使用。&lt;/p&gt;
+
+&lt;p&gt;只要透過 WinXMenuEditor ，就可以輕鬆的以視覺化的方式把控制台的選項加回來囉!!&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;WinXMenuEditor 的下載連結在此： &lt;a href=&quot;http://winaero.com/request.php?21&quot; title=&quot;下載 WinXMenuEditor 檔&quot;&gt;下載 WinXMenuEditor 檔&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;方法如下：&lt;/p&gt;
+
+&lt;p&gt;在您想編輯的群組名稱上按下滑鼠右鍵，選取 &lt;code&gt;Add&lt;/code&gt; -&amp;gt; &lt;code&gt;Add a Control Panel item...&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-04-07-add-control-panel-back-after-creator-update/09-add-control-panel-item.png&quot; title=&quot;選取 Add a Control Panel item&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-04-07-add-control-panel-back-after-creator-update/09-add-control-panel-item.png&quot; alt=&quot;選取 Add a Control Panel item&quot; title=&quot;選取 Add a Control Panel item&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;接著在出現的對話視窗中選取控制台，並且按下 Select 按鈕。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-04-07-add-control-panel-back-after-creator-update/10-select-control-panel.png&quot; title=&quot;選取 Add a Control Panel item&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-04-07-add-control-panel-back-after-creator-update/10-select-control-panel.png&quot; alt=&quot;選取 Add a Control Panel item&quot; title=&quot;選取 Add a Control Panel item&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;最後按下 Restart Explorer 按鈕以重新啟動檔案總管。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-04-07-add-control-panel-back-after-creator-update/11-click-restart-explorer-button.png&quot; title=&quot;按下 Restart Explorer 按鈕以重新啟動檔案總管&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-04-07-add-control-panel-back-after-creator-update/11-click-restart-explorer-button.png&quot; alt=&quot;按下 Restart Explorer 按鈕以重新啟動檔案總管&quot; title=&quot;按下 Restart Explorer 按鈕以重新啟動檔案總管&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;搞定!!~ 是不是也很方便呢?&lt;/p&gt;
+
+&lt;p&gt;以上，希望對跟我一樣習慣能從開始按鈕開啟控制台的你有幫助喔!!~&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2017/04/07/add-control-panel-back-after-creator-update/&quot;&gt;回來吧!! Creator Update 開始按鈕右鍵選單裡的控制台選項!!&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on April 07, 2017.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -2210,106 +2301,6 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 
   
   &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2010/10/30/c-sharp-naming-convention/&quot;&gt;C#命名方針&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 30, 2010.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[輕鬆製作獨一無二的投影片-加強版]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2010/10/29/ppt-make-your-own-ptt-template-advanced/"/>
-  <id>http://ouch1978.github.io/2010/10/29/ppt-make-your-own-ptt-template-advanced</id>
-  <published>2010-10-29T00:00:00+08:00</published>
-  <updated>2010-10-29 08:00:00 +0800T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
-    <email>ouch1978@hotmail.com</email>
-  </author>
-  <category scheme="http://ouch1978.github.io/tags/#Power%20Point" term="Power Point" />
-  <content type="html">
-  
-    &lt;p&gt;上次跟各位介紹了母片的應用，這次再來介紹兩個小撇步，一樣只利用PowerPoint原生的功能，&lt;code&gt;不借助任何外部圖片&lt;/code&gt;，做出類似璃鏡面的效果，以及可以放在標題頁的自我介紹小卡片。&lt;/p&gt;
-
-&lt;p&gt;我們沿用上次範例的pptx檔，來針對純黑的色塊動手腳，加入類似玻璃的反光效果，讓它看起來不再那麼單調。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;code&gt;「一切都從母片開始」!!!&lt;/code&gt;&lt;/strong&gt;所以我們先進入母片編輯模式，選取位於母片上面的黑色矩形，選取工作列的&lt;strong&gt;&lt;code&gt;格式&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;圖案填滿&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;漸層&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;其他漸層&lt;/code&gt;&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_2.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_thumb.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;在跳出來的&lt;strong&gt;&lt;code&gt;格式化圖案&lt;/code&gt;&lt;/strong&gt;視窗中選取&lt;strong&gt;&lt;code&gt;漸層填滿&lt;/code&gt;&lt;/strong&gt;，並且依以下設定漸層停駐點：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code&gt;位置0%，黑色，亮度0%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code&gt;位置20%，黑色，亮度15%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code&gt;位置40%，黑色，亮度25%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code&gt;位置74%，黑色，亮度35%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;&lt;code&gt;位置75%，黑色，亮度25%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;&lt;code&gt;位置90%，黑色，亮度5%&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
-
-    &lt;p&gt;完成後的長相會如下圖，是不是更有質感了呢?&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_4.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_thumb_1.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;當然上面的改了，下面也要來一下：&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code&gt;位置0%，黑色，亮度0%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code&gt;位置20%，黑色，亮度15%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code&gt;位置35%，黑色，亮度25%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code&gt;位置50%，黑色，亮度25&lt;/code&gt;%&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;&lt;code&gt;位置51%，黑色，亮度5%&lt;/code&gt;&lt;/strong&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_6.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_thumb_2.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;這邊有一個重點，就是亮部和暗部要靠得很近，而且亮度要有足夠的反差，才能做出反光的感覺，亮部和暗部位置和顏色的拿捏，是影響整個質感最大的關鍵，為了讓各位練習，標題頁就交給各位自行發揮了。&lt;/p&gt;
-
-    &lt;p&gt;接著來做說好的自我介紹小卡片。切換到標題投影片的母片編輯模式，切換到&lt;strong&gt;&lt;code&gt;插入&lt;/code&gt;&lt;/strong&gt;頁籤，插入一個「&lt;strong&gt;&lt;code&gt;剪去單一角落矩形&lt;/code&gt;&lt;/strong&gt;」於右下角。&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_8.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_thumb_3.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;把該矩形的外框拿掉，並且重新填色與加入陰影，完成後如下圖。&lt;/p&gt;
-
-    &lt;p&gt;漸層填滿的設定值為：&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;角度180度`&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;位置0%，橄欖綠，亮度-25%`&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;位置7%，橄欖綠，亮度60%`&lt;/strong&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;位置15%，白色，亮度0%`&lt;/strong&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_10.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_thumb_4.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;再來&lt;strong&gt;&lt;code&gt;把最重要的部門單位、姓名、聯絡方式打上去&lt;/code&gt;&lt;/strong&gt;，然後把名片稍稍&lt;strong&gt;&lt;code&gt;旋轉&lt;/code&gt;&lt;/strong&gt;並且&lt;strong&gt;&lt;code&gt;調整一下位置&lt;/code&gt;&lt;/strong&gt;，變成如下圖的樣子。&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_12.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_thumb_5.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;斜斜的好像有點怪怪的，加個圖釘讓它看起來自然一點好了，&lt;strong&gt;&lt;code&gt;插入一個圓形&lt;/code&gt;&lt;/strong&gt;，並且將它調出&lt;strong&gt;&lt;code&gt;浮凸&lt;/code&gt;&lt;/strong&gt;的立體感，再調整一下&lt;strong&gt;&lt;code&gt;陰影&lt;/code&gt;&lt;/strong&gt;，讓它看起來自然一點。&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_14.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_thumb_6.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;嗯~~大功告….還沒完!!怎麼可以草草結束呢!?再來要加入動畫，讓名片出場有魄力一點(這個步驟是異常的有意義的，它可以讓名片可以比較吸引觀眾的目光)。&lt;/p&gt;
-
-    &lt;p&gt;切換到動畫頁籤，對我們的名片加入&lt;strong&gt;&lt;code&gt;彈跳&lt;/code&gt;&lt;/strong&gt;動畫，並設置開始條件為「&lt;strong&gt;&lt;code&gt;接續前動畫&lt;/code&gt;&lt;/strong&gt;」。&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_16.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_thumb_7.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;繼續對名片物件使用「&lt;strong&gt;&lt;code&gt;新增動畫&lt;/code&gt;&lt;/strong&gt;」選項，這次使用「&lt;strong&gt;&lt;code&gt;翹翹板&lt;/code&gt;&lt;/strong&gt;」效果，開始條件一樣設定為「&lt;strong&gt;&lt;code&gt;接續前動畫&lt;/code&gt;&lt;/strong&gt;」。&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_18.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_thumb_8.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;最後，真的是最後一步了，幫圖釘加上「&lt;strong&gt;&lt;code&gt;弧形向上&lt;/code&gt;&lt;/strong&gt;」動畫效果(&lt;strong&gt;&lt;code&gt;新增動畫&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;其他進入效果&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;弧形向上&lt;/code&gt;&lt;/strong&gt;)，並設定其開始條件為「&lt;strong&gt;&lt;code&gt;與前動畫同時&lt;/code&gt;&lt;/strong&gt;」。&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_20.png&quot;&gt;&lt;img src=&quot;https://az787680.vo.msecnd.net/user/ouch1978/1010/71f8f65c9779_14C78/image_thumb_9.png&quot; alt=&quot;image&quot; title=&quot;image&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;傳說中的加強版誕生了，請服用!!&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-  
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2010/10/29/ppt-make-your-own-ptt-template-advanced/&quot;&gt;輕鬆製作獨一無二的投影片-加強版&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 29, 2010.&lt;/p&gt;</content>
 </entry>
 
 </feed>
