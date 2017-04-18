@@ -123,6 +123,11 @@ callback([
   {
     "text": "回來吧!! Creator Update 開始按鈕右鍵選單裡的控制台選項!!",
     "href": "http://ouch1978.github.io/2017/04/07/add-control-panel-back-after-creator-update/"
+  } ,
+
+  {
+    "text": "透過 Visual Studio 2017 與 Appium 測試安卓手機上的行動版網頁",
+    "href": "http://ouch1978.github.io/2017/04/17/mobile-web-automation-testing-with-vs2017-and-appium/"
   } 
 
 ])
