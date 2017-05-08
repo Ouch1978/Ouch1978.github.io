@@ -7,13 +7,171 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://ouch1978.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://ouch1978.github.io/" />
-<updated>2017-04-18T15:10:11+08:00</updated>
+<updated>2017-05-08T18:24:59+08:00</updated>
 <id>http://ouch1978.github.io/</id>
 <author>
   <name>Ouch Liu (劉耀群)</name>
   <uri>http://ouch1978.github.io/</uri>
   <email>ouch1978@hotmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[透過 Gorilla Player 在裝置上即時預覽 Xamarin Forms 介面]]></title>
+  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2017/05/08/design-xamarin-forms-with-gorilla-player/"/>
+  <id>http://ouch1978.github.io/2017/05/08/design-xamarin-forms-with-gorilla-player</id>
+  <published>2017-05-08T23:30:00+08:00</published>
+  <updated>2017-05-08 23:30:00 +0800T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Ouch Liu (劉耀群)</name>
+    <uri>http://ouch1978.github.io</uri>
+    <email>ouch1978@hotmail.com</email>
+  </author>
+  <category scheme="http://ouch1978.github.io/tags/#Visual%20Studio%202017" term="Visual Studio 2017" /><category scheme="http://ouch1978.github.io/tags/#Xamarin" term="Xamarin" /><category scheme="http://ouch1978.github.io/tags/#XAML" term="XAML" /><category scheme="http://ouch1978.github.io/tags/#Gorilla%20Player" term="Gorilla Player" />
+  <content type="html">
+  
+    &lt;h2 id=&quot;section&quot;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;在使用 Visual Studio 中的 Xamarin 開發 App 的時候，雖然可以透過 Xamarin.Forms Previewer 來預覽 XAML 刻出來的畫面，不過如果能讓你直接在實機或是模擬器上直接看到畫面，是不是會更有感覺呢?&lt;/p&gt;
+
+&lt;p&gt;另外，雖然透過 Xamarin 目前也支援設計時期的範例資料，但是我們還是得要透過 ViewModelLocater 搭配手動刻出的 ViewModel 才能得到我們想要的結果。&lt;/p&gt;
+
+&lt;p&gt;最後， Xamarin.Forms Previewer 的穩定性也是很讓人垢病的一大致命傷。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-05-08-design-xamarin-forms-with-gorilla-player/01-something-went-wrong.png&quot; title=&quot;Xamarin.Forms 目前還是不太穩定&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-05-08-design-xamarin-forms-with-gorilla-player/01-something-went-wrong.png&quot; alt=&quot;Xamarin.Forms 目前還是不太穩定&quot; title=&quot;Xamarin.Forms 目前還是不太穩定&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;基於以上幾點(其實最痛的是穩定性啦)，讓我不得不尋找一個 Xamarin.Forms Previewer 的替代方案，後來，我找到了 Gorilla 。&lt;/p&gt;
+
+&lt;p&gt;它可以讓我上面的三個願望(在虛擬與實機即時預覽/支援設計時期的資料繫結與範例資料/穩定)，一次滿足。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;下載與安裝&lt;/h2&gt;
+
+&lt;p&gt;Gorilla Player 目前還在 Beta 階段，要使用之前，得先到 &lt;a href=&quot;http://gorillaplayer.com/&quot; title=&quot;Gorilla Player 官網&quot;&gt;Gorilla Player 官網&lt;/a&gt; 註冊一個帳號，之後才有辦法啟動 Gorilla Player。&lt;/p&gt;
+
+&lt;p&gt;而下載頁面 &lt;a href=&quot;http://gorillaplayer.com/download.html&quot; title=&quot;Gorilla Player 下載頁面&quot;&gt;在此&lt;/a&gt; ，目前 Windows 與 Mac 兩個平台的版本都有提供。&lt;/p&gt;
+
+&lt;p&gt;安裝的過程中，也可以選擇是否要安裝其他的功能，例如 Visual Studio 2015 或是 Xamarin Studio 的 Addin，以及 Player 應用程式的原始檔和範例。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-05-08-design-xamarin-forms-with-gorilla-player/02-install-gorilla-player-extras.png&quot; title=&quot;Gorilla Player 擴充功能安裝畫面&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-05-08-design-xamarin-forms-with-gorilla-player/02-install-gorilla-player-extras.png&quot; alt=&quot;Gorilla Player 擴充功能安裝畫面&quot; title=&quot;Gorilla Player 擴充功能安裝畫面&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;個人強烈建議至少要裝 Player 原始檔和範例。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;看到這邊，應該有人會問，啊怎麼只有 Visual Studio 2015 的 Addin? 我用的是 Visual Studio 2017 耶!!&lt;/p&gt;
+
+&lt;p&gt;免驚~ 免驚~ Visual Studio 2017 的使用者並沒有被放生，我們可以在 &lt;a href=&quot;https://marketplace.visualstudio.com/items?itemName=UXDivers.GorillaPlayerVisualStudioAddin&quot; title=&quot;Gorilla Player Visual Studio Addin&quot;&gt;Visual Studio Marketplace&lt;/a&gt; 裡面找到可供 Visual Studio 2017 使用的 Addin 。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;基本使用&lt;/h2&gt;
+
+&lt;p&gt;Gorilla Player 執行的架構如下圖：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-05-08-design-xamarin-forms-with-gorilla-player/03-architecture-of-gorilla-player.png&quot; title=&quot;Gorilla Player 執行架構&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-05-08-design-xamarin-forms-with-gorilla-player/03-architecture-of-gorilla-player.png&quot; alt=&quot;Gorilla Player 執行架構&quot; title=&quot;Gorilla Player 執行架構&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;要透過 Gorilla Player 來預覽 Xamarin.Fomrs 的畫面，首先當然是得先開啟電腦上的 Gorilla Player 應用程式，沒意外的話，Server 應該都會正常啟動。&lt;/p&gt;
+
+&lt;p&gt;如果要確認 Server 的相關資訊，可以透過在系統列的 Gorilla Player 圖示上按下滑鼠右鍵，選擇 &lt;code&gt;About Gorilla Player 0.9.1.2&lt;/code&gt;，就會看到如下圖的相關資訊。&lt;/p&gt;
+
+&lt;p&gt;Server 預設會使用的 Port 也會顯示在這邊，若有開啟防火牆的話，記得要先把這 &lt;code&gt;9014&lt;/code&gt; 和 &lt;code&gt;14578&lt;/code&gt; 兩個 Port 解除封鎖喔!!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-05-08-design-xamarin-forms-with-gorilla-player/04-about-gorilla-player.png&quot; title=&quot;About Gorilla Player 中提供的資訊&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-05-08-design-xamarin-forms-with-gorilla-player/04-about-gorilla-player.png&quot; alt=&quot;About Gorilla Player&quot; title=&quot;About Gorilla Player 中提供的資訊&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;也可以透過電腦上的瀏覽器直接瀏覽 http://localhost:9014 確認 Server 是否有正常啟動。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;確認 Server 正常啟動之後，再來是 Visual Studio 的部份，我們可以先任意開啟一個 Xamrain Form 專案來進行測試。&lt;/p&gt;
+
+&lt;p&gt;如果已經安裝好了 Visual Studio 的 Addin 的話，可以在 Visual Studio 功能表中的 &lt;code&gt;Tools&lt;/code&gt; -&amp;gt; &lt;code&gt;Gorilla Player&lt;/code&gt; 項目下看到如下圖的幾個選項。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-05-08-design-xamarin-forms-with-gorilla-player/05-gorilla-player-menu-in-visual-studio.png&quot; title=&quot;Visual Studio 中的 Gorilla Player 選單&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-05-08-design-xamarin-forms-with-gorilla-player/05-gorilla-player-menu-in-visual-studio.png&quot; alt=&quot;Visual Studio 中的 Gorilla Player 選單&quot; title=&quot;Visual Studio 中的 Gorilla Player 選單&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;也可以透過選單中出的是不是 Disconnect from Gorilla 來判斷是否已經正確的和 Server 接通。
+另外，也可以透過選單中的 Follow Me 選項讓 Gorilla Player 自動跟隨正在編輯中的 XAML 檔。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;接著就是模擬器/手機的部份，我們得在目標裝置上先安裝好 Gorilla Player App，並且確認它可以連接到電腦上的 Gorilla Player Server，這樣才有辦法正常的預覽。&lt;/p&gt;
+
+&lt;p&gt;要在模擬器或是手機上安裝 Gorilla Player App 的話，可以透過在系統列的 Gorilla Player 圖示上按下滑鼠右鍵，並且選取 &lt;code&gt;Show Player and Sample Location&lt;/code&gt; (前提是要在安裝的過程中有先安裝好範例。)，接著開啟資料夾中的 Player 專案，建置之後佈署到要用來預覽的裝置上。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-05-08-design-xamarin-forms-with-gorilla-player/06-install-gorilla-player-app.png&quot; title=&quot;將 Gorilla Player App 安裝到虛擬機上&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-05-08-design-xamarin-forms-with-gorilla-player/06-install-gorilla-player-app.png&quot; alt=&quot;將 Gorilla Player App 安裝到虛擬機上&quot; title=&quot;將 Gorilla Player App 安裝到虛擬機上&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;如果要使用實機預覽的話，您可能得先自行進行開發者解鎖的動作。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;將 Gorilla Player App 佈署到裝置上之後，首先我們得要來測看看它是否能正確的和 Server 進行連線。&lt;/p&gt;
+
+&lt;p&gt;打開 Gorilla Player App ，應該會看到有自動探索以及手動設定兩種方式可以選擇。&lt;/p&gt;
+
+&lt;p&gt;如果使用自動探索的方式無法正確的連線到 Server 的話，就可以透過手動的方式設定，只需要輸入 Server 端的 IP 與 Port 即可。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-05-08-design-xamarin-forms-with-gorilla-player/07-manual-setup.png&quot; title=&quot;手動設置 Gorilla Player&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-05-08-design-xamarin-forms-with-gorilla-player/07-manual-setup.png&quot; alt=&quot;手動設置 Gorilla Player&quot; title=&quot;手動設置 Gorilla Player&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;成功連線之後，就可以直接針對編輯中的 XAML 檔進行預覽啦!!~&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-05-08-design-xamarin-forms-with-gorilla-player/08-preview-with-gorilla-player.png&quot; title=&quot;透過 Gorilla Player 預覽編輯中的使用者介面&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-05-08-design-xamarin-forms-with-gorilla-player/08-preview-with-gorilla-player.png&quot; alt=&quot;透過 Gorilla Player 預覽編輯中的使用者介面&quot; title=&quot;透過 Gorilla Player 預覽編輯中的使用者介面&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Gorilla Player 預覽的機制和 Edit and Continue 不同，得要&lt;code&gt;存檔&lt;/code&gt;之後才能看到改變。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;進階使用 - 設計時期的資料繫結&lt;/h2&gt;
+
+&lt;p&gt;已經熟悉 WPF、 SilverLight 、 UWP 開發的朋友們應該對 Blend 強大的設計時期資料支援功能愛不釋手吧。 在 Xamarin 裡面也雖然可以繞一小段路來達到類似的效果，但畢竟還是得要寫一點點程式。&lt;/p&gt;
+
+&lt;p&gt;那透過 Gorilla Player 呢? 沒錯!! 完全無碼!! 只需要一個 JSON 檔，就可以讓我們作到設計時期的資料繫結喔!!&lt;/p&gt;
+
+&lt;p&gt;基本上，只需要在我們的 PCL 專案根目錄中加入一個名為 SampleData.json 的 JSON 檔，並且用它來描述我們設計時期的資料，就可以輕鬆的餵給 Gorilla Player 使用囉。&lt;/p&gt;
+
+&lt;p&gt;例如說，我在我的 PCL 專案中加入了一個描述書本資料的 SampleData.json 檔，如下圖：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-05-08-design-xamarin-forms-with-gorilla-player/09-sample-data-json.png&quot; title=&quot;使用 SampleData.json 描述設計時期資料&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-05-08-design-xamarin-forms-with-gorilla-player/09-sample-data-json.png&quot; alt=&quot;使用 SampleData.json 描述設計時期資料&quot; title=&quot;使用 SampleData.json 描述設計時期資料&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;接著我只要在我的 MainPage.xaml 檔中的 ListView 設定它的 &lt;code&gt;ItemsSource&lt;/code&gt; 為 &lt;code&gt;{Binding .}&lt;/code&gt;，就可以讓它吃到 SampleData.json 中的資料囉!!很簡單吧!?&lt;/p&gt;
+
+&lt;p&gt;透過模擬器中的 Gorilla Player App 預覽的畫面如下圖：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-05-08-design-xamarin-forms-with-gorilla-player/10-preview-with-sample-data-json.png&quot; title=&quot;預覽 SampleData.json 資料繫結的結果&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-05-08-design-xamarin-forms-with-gorilla-player/10-preview-with-sample-data-json.png&quot; alt=&quot;預覽 SampleData.json 資料繫結的結果&quot; title=&quot;預覽 SampleData.json 資料繫結的結果&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;SampleData.json 中設計時期資料會以 XAML 檔的檔名來進行對應。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;若同檔名但位於不同資料夾下的 XAML 檔想要使用不同的設計時期資料，則可以在定義的時候加上資料夾名稱。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;除了 SampleData.json 之外，我們也可以透過 NuGet 在 PCL 專案中加入 &lt;code&gt;UXDivers.GorillaPlayer.Common&lt;/code&gt; 的參考，使用它的 JsonData 類別直接在 XAML 檔裡面定義設計時期資料，如下圖：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-05-08-design-xamarin-forms-with-gorilla-player/12-preview-with-jsondata-class.png&quot; title=&quot;預覽透過 JsonData 類別資料繫結的結果&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-05-08-design-xamarin-forms-with-gorilla-player/12-preview-with-jsondata-class.png&quot; alt=&quot;使用 JsonData 類別定義設計時期資料&quot; title=&quot;預覽透過 JsonData 類別資料繫結的結果&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;透過模擬器預覽的畫面如下圖：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-05-08-design-xamarin-forms-with-gorilla-player/12-preview-with-jsondata-class.png&quot; title=&quot;預覽透過 JsonData 類別資料繫結的結果&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-05-08-design-xamarin-forms-with-gorilla-player/12-preview-with-jsondata-class.png&quot; alt=&quot;預覽透過 JsonData 類別資料繫結的結果&quot; title=&quot;預覽透過 JsonData 類別資料繫結的結果&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;關於更進一步設計時期的資料繫結相關資訊，也可以參考 Gorilla Player 範例中的 &lt;code&gt;Samples\HowTo\SampleData&lt;/code&gt; 專案。
+除此之外，&lt;a href=&quot;https://github.com/UXDivers/Gorilla-Player-Support/wiki/Working-with-sample-data&quot; title=&quot;Working with sample data&quot;&gt;Gorilly Player 官方的 GitHub&lt;/a&gt; 上也有相關的介紹。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;結語&lt;/h2&gt;
+
+&lt;p&gt;雖然得要多安裝另一個程式，而且無法享受原生的 Edit and Continue 功能，但是 Gorilla Player 在 Xamarin.Forms Previewer 穩定下來之前，應該都還是很方便的一套工具。&lt;/p&gt;
+
+&lt;p&gt;而且能直接在實機上預覽，真的是很有 Fu 啊!!&lt;/p&gt;
+
+&lt;p&gt;有興趣的朋友們不妨也安裝試用看看喔!!~&lt;/p&gt;
+
+&lt;p&gt;最後，附上本文的範例程式原始碼，請自行取用：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/Ouch1978/PlayXamarinFormsWithGorilla/&quot;&gt;&lt;img src=&quot;/images/blog-images/source-code-link.png&quot; alt=&quot;Sample&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2017/05/08/design-xamarin-forms-with-gorilla-player/&quot;&gt;透過 Gorilla Player 在裝置上即時預覽 Xamarin Forms 介面&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on May 08, 2017.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -2113,303 +2271,6 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 
   
   &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/06/08/remove-skype-ads/&quot;&gt;徹底移除Skype廣告&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on June 08, 2016.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[跟著Ouch寫程式 - 前言 ]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2010/10/30/learning-c-sharp-intro/"/>
-  <id>http://ouch1978.github.io/2010/10/30/learning-c-sharp-intro</id>
-  <published>2010-10-30T00:00:00+08:00</published>
-  <updated>2010-10-30 08:00:00 +0800T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
-    <email>ouch1978@hotmail.com</email>
-  </author>
-  <category scheme="http://ouch1978.github.io/tags/#C%23" term="C#" />
-  <content type="html">
-  
-    &lt;p&gt;最近身邊有些朋友正在學習寫程式，算是新手中的新手，想想我也曾是過來人，就在這邊順便一下分享我小小的經驗，希望能對剛起步的朋友們有所幫助。
-其實寫程式真的沒那麼難，真的!!&lt;/p&gt;
-
-&lt;p&gt;尤其是近年來比較熱門的語言，像是 C#、VB.Net、JAVA、Action Script 3.0之類，比較偏向是物件導向的程式語言，只要先學會一種，再學別的就相對的快了。&lt;/p&gt;
-
-&lt;p&gt;在接下來的章節裡，我會以C#當主要的使用語言，用儘量簡單的方式，來幫助大家進入程式設計的世界。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;俗話說：工欲善其事，必先利其器。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;要寫C#，首推的工具當然是Visual Studio，目前最新版的Visual Studio是2010版，因為現在是學習階段，所以先下載免費的版本來用就行了。&lt;/p&gt;
-
-&lt;p&gt;微軟有免費的精簡版可以下載使用: &lt;a href=&quot;http://www.microsoft.com/express/Downloads/#2010-Visual-Web-Developer&quot; title=&quot;http://www.microsoft.com/express/Downloads/#2010-Visual-Web-Developer&quot;&gt;網址在此&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;可以選擇下載&lt;a href=&quot;http://www.microsoft.com/express/Downloads/#2010-Visual-CS&quot;&gt;Visual C# 2010 Express&lt;/a&gt;(可撰寫C#應用程式)，或是&lt;a href=&quot;http://www.microsoft.com/express/Downloads/#2010-Visual-Web-Developer&quot;&gt;Visual Web Developer 2010 Express&lt;/a&gt;(可以開發網站)&lt;/p&gt;
-
-&lt;p&gt;注意：無論如何，請下載英文版，因為以後的教學都會使用英文版，而且英文版的更新與支援速度，通常都比中文快，加上寫程式用的語言也是英文，所以，無論如何，請逼自己習慣看英文。&lt;/p&gt;
-
-&lt;p&gt;利用下載和安裝的空檔，這邊先跟各位講解一下一般物件導向程式的基本小常識。&lt;/p&gt;
-
-&lt;p&gt;通常在物件導向程式設計裡面，最常見，也最基本的元素，叫做 &lt;strong&gt;&lt;code&gt;class&lt;/code&gt;&lt;/strong&gt; (類別)
-我們通常會用class來定義一件事物，就以我們常見的RPG線上遊戲的角色為例，我們要怎麼用類別來描述一個角色呢?&lt;/p&gt;
-
-&lt;p&gt;通常，一個角色，會有他基本的「屬性」，例如角色的名稱、等級、血量、攻擊力等等。還有他可以執行的「動作」，例如移動、攻擊、坐下、跳舞。&lt;/p&gt;
-
-&lt;p&gt;而在程式的世界裡面呢，屬性就會被區分成「&lt;strong&gt;&lt;code&gt;Property&lt;/code&gt;&lt;/strong&gt;」(屬性)和「&lt;strong&gt;&lt;code&gt;Field&lt;/code&gt;&lt;/strong&gt;」(欄位)，欄位通常和屬性會做為搭配，需要透過屬性來存取欄位，而動作就會以「&lt;strong&gt;&lt;code&gt;Method&lt;/code&gt;&lt;/strong&gt;」(方法)來實現。&lt;/p&gt;
-
-&lt;p&gt;將上述的角色寫成程式的話，會寫成這樣：&lt;/p&gt;
-
-&lt;blockquote class=&quot;filename&quot;&gt;
-  &lt;p&gt;Character.cs&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c#&quot; data-lang=&quot;c#&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85
-86
-87
-88
-89
-90
-91
-92
-93
-94
-95
-96
-97
-98&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Character&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;//建構子
-&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Character&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;//角色編號
-&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Id&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;_id&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;//角色名稱
-&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Name&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;_name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;//等級
-&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_level&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Level&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_level&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;set&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;_level&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;//血量
-&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;//只允許外部讀取，不允許寫入
-&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_healthPoint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HealthPoint&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_healthPoint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;//攻擊力 只允許外部讀取，不允許寫入
-&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_attackPower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;AttactkPower&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_attackPower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;//防禦力 只允許外部讀取，不允許寫入
-&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_defensePower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;double&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;DefensePower&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;get&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_defensePower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;//跳舞
-&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Dance&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//Do dance
-&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;//坐下
-&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Sit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//Do sit
-&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-    &lt;span class=&quot;c1&quot;&gt;//攻擊
-&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Attack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;//Do attack
-&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;嗯，看起來有點複雜對吧?其實有比較簡單一點的寫法，不過這個是比較傳統的寫法，為了幫助大家進入狀況，也為了方便講解，所以先用這種寫法。&lt;/p&gt;
-
-&lt;p&gt;首先要先有幾個小觀念：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;在程式語言中，去做出「定義一個值」這個動作，我們稱為「&lt;strong&gt;&lt;code&gt;宣告&lt;/code&gt;&lt;/strong&gt;」；而在C#中，一般宣告的寫法會是「&lt;strong&gt;&lt;code&gt;修飾詞&lt;/code&gt;&lt;/strong&gt;」 「&lt;strong&gt;&lt;code&gt;型別&lt;/code&gt;&lt;/strong&gt;」 「&lt;strong&gt;&lt;code&gt;名稱&lt;/code&gt;&lt;/strong&gt;」，中間以空白隔開。(關於C#的型別可以參考&lt;a href=&quot;http://msdn.microsoft.com/zh-tw/library/ya5y69ds.aspx&quot;&gt;內建型別列表&lt;/a&gt;和&lt;a href=&quot;http://msdn.microsoft.com/zh-tw/library/ms173104.aspx&quot;&gt;型別、變數和值&lt;/a&gt;)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;在程式裡面常常會看到 &lt;code&gt;public&lt;/code&gt; 和 &lt;code&gt;private&lt;/code&gt; 這兩個修飾詞，這兩個字可以直接從字面上來看，就可以猜出他的差別：
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code&gt;public&lt;/code&gt;指的是允許公開給外部看得到，而且用得到的東西。&lt;/li&gt;
-      &lt;li&gt;&lt;code&gt;private&lt;/code&gt;指的則是只有在定義該物件的裡才看得到、能使用的東西，例如我們在上面的例子裡有不少地方都加了 &lt;code&gt;private&lt;/code&gt; 關鍵字，那就只有在這個 class 裡面才看得到、能存取這些東西。
-&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;程式裡面的段落和範圍的定義，通常會使用大括弧 &lt;strong&gt;&lt;code&gt;{&lt;/code&gt;&lt;/strong&gt; 和 &lt;strong&gt;&lt;code&gt;}&lt;/code&gt;&lt;/strong&gt; 來界定。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;在程式裡面要寫註解的話有兩種寫法，一種是在註解前面加上 &lt;strong&gt;&lt;code&gt;//&lt;/code&gt;&lt;/strong&gt; (兩個斜線)，或是以 &lt;strong&gt;&lt;code&gt;/*&lt;/code&gt;&lt;/strong&gt; (斜線加星號)和 &lt;strong&gt;&lt;code&gt;*/&lt;/code&gt;&lt;/strong&gt; (星號加斜線)把註解的範圍標示出來，兩者的差別為，若註解的內容為多行，則每行的前面都要加上 &lt;code&gt;//&lt;/code&gt; ，若使用 &lt;code&gt;/*&lt;/code&gt; 和 &lt;code&gt;*/&lt;/code&gt; ，則只需放在頭和尾，內容有幾行都可以。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;在許多程式語言裡，大小寫是有區隔的，例如name和Name會被視為是不一樣的東西。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;每種程式語言有它不同的關鍵字，要做命名的時候要避免使用到關鍵字(關於C#的關鍵字可以參考&lt;a href=&quot;http://msdn.microsoft.com/zh-tw/library/x53a06bb.aspx&quot;&gt;C#關鍵字列表&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Ok,有了上面的小觀念之後，上面的程式碼看起來應該就不再那麼複雜了，以下來做個簡單的講解：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;前面有講過，我們通常會用class來定義一件事物，所以，程式的第一行，就是我們利用class這個關鍵字去定義出一個叫做Character(角色)的class，並且把它設為是公開的，而第二行的大括弧和第98行的大括弧是成對的，裡面的內容都會被視為Character這個class的成員。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;第4行的建構子，是用來提供被部創建該class實體的入口，我們可以想像成說，class被定義出來之後，只是一個軀殼，必需透過呼叫它的建構子，幫它注入靈魂，創造它的實體；通常每個class至少會有一個建構子，如果你沒寫的話，會使用預設的建構子，而建構子的名稱，必需和class名稱相同。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;第9到79行就是我們提到的「&lt;strong&gt;&lt;code&gt;Property&lt;/code&gt;&lt;/strong&gt;」和「&lt;strong&gt;&lt;code&gt;Field&lt;/code&gt;&lt;/strong&gt;」的組合，我們拿角色名稱來做說明，你會看到，有個private string _name，這個就是所謂的屬性，通常屬性會被定義為private，必需透過下面的public string Name來存取它，而在Property裡面則定義了該Property是否可以供存取，有get的表示可以供讀取，set則表示可以提供寫入，所以，如果該屬性是唯讀的，我們就可以透過Property的定義來達成，例如「血量」這個屬性。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;最後，第82到97行，則是定義了Character這個類別所提供的「方法」，通常凡是要和使用者進行互動，或是比較大量運算的動作，我們都會透過定義「方法」來被外部呼叫，為了不要搞得太複雜，範例的三個方法中都沒做任何的事。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;以上就是C#語言很基本很基本的結構，既然是前言，我想就到這邊為止，我們下次見!!&lt;/p&gt;
-
-  
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2010/10/30/learning-c-sharp-intro/&quot;&gt;跟著Ouch寫程式 - 前言 &lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 30, 2010.&lt;/p&gt;</content>
 </entry>
 
 </feed>

@@ -649,8 +649,9 @@ iframe {
 }
 
 blockquote, blockquote p {
-    line-height: 2.4;
     color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 blockquote {
@@ -683,7 +684,6 @@ blockquote.filename {
 blockquote.filename p {
     font-size: 0.8em;
     color: white;
-    line-height: 2.4;
 }
 
 li p img {
