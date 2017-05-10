@@ -133,6 +133,11 @@ callback([
   {
     "text": "透過 Gorilla Player 在裝置上即時預覽 Xamarin Forms 介面",
     "href": "http://ouch1978.github.io/2017/05/08/design-xamarin-forms-with-gorilla-player/"
+  } ,
+
+  {
+    "text": "透過 Visual Studio 2017 與 Appium 測試安卓手機上的 App",
+    "href": "http://ouch1978.github.io/2017/05/10/mobile-app-automation-testing-with-vs2017-and-appium/"
   } 
 
 ])

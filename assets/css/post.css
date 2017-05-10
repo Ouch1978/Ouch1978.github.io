@@ -660,7 +660,6 @@ blockquote {
     padding: 0px 10px;
     margin: 0 0 20px;
     position: relative;
-    text-align: justify;
     border-left: 24px solid #E51843;
     border-right: 2px solid #E51843;
 }
