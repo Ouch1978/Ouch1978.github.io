@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>解決透過 APPIUM 測試安卓裝置上的行動網站發生 CHROMEDRIVER 版本不相容的問題 &vert; OUCH1978 @ GITHUB</title>
+<meta name="description" content="之前在使用 Appium 測試安卓裝置上的行動網站的時候，一切都很開心愉快。沒想到，只是換了安卓模擬器的版本，原本能跑的測試就開始死光光了....">
+<meta name="keywords" content="Visual Studio 2017, Appium, Automation Testing">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://ouch1978.github.io/images/feature-01.jpg">
+
+<meta name="twitter:title" content="解決透過 Appium 測試安卓裝置上的行動網站發生 ChromeDriver 版本不相容的問題">
+<meta name="twitter:description" content="之前在使用 Appium 測試安卓裝置上的行動網站的時候，一切都很開心愉快。沒想到，只是換了安卓模擬器的版本，原本能跑的測試就開始死光光了....">
+<meta name="twitter:creator" content="@Ouch1978">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="解決透過 Appium 測試安卓裝置上的行動網站發生 ChromeDriver 版本不相容的問題">
+<meta property="og:description" content="之前在使用 Appium 測試安卓裝置上的行動網站的時候，一切都很開心愉快。沒想到，只是換了安卓模擬器的版本，原本能跑的測試就開始死光光了....">
+<meta property="og:url" content="http://ouch1978.github.io/2017/05/11/fix-appium-chrome-driver-error/">
+<meta property="og:site_name" content="Ouch1978 @ Github">
+<meta property="og:image" content="http://ouch1978.github.io/images/feature-01.jpg">
+
+
+
+
+
+<link rel="canonical" href="http://ouch1978.github.io/2017/05/11/fix-appium-chrome-driver-error/">
+<link href="http://ouch1978.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Ouch1978 @ Github Feed">
+<link rel="author" href="https://plus.google.com/u/0/110363696453312268733?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <link href='http://fonts.googleapis.com/earlyaccess/notosanstc.css' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600,300,800,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://ouch1978.github.io/assets/css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="http://ouch1978.github.io/assets/css/vendor/normalize.css">
+    <link rel="stylesheet" href="http://ouch1978.github.io/assets/css/vendor/nprogress.css">
+    <link rel="stylesheet" href="http://ouch1978.github.io/assets/css/vendor/foundation.min.css">
+    <link rel="stylesheet" href="http://ouch1978.github.io/assets/css/style.css">
+    <link rel="stylesheet" href="http://ouch1978.github.io/assets/css/post.css">
+    <link rel="stylesheet" href="http://ouch1978.github.io/assets/css/syntax.css">
+
+
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://ouch1978.github.io/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://ouch1978.github.io/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://ouch1978.github.io/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://ouch1978.github.io/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://ouch1978.github.io/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://ouch1978.github.io/images/apple-touch-icon-144x144-precomposed.png">
+
+<style type="text/css">@media only screen and (min-width:43.75em){.notepad-post-content div>p:first-child:first-letter{float:left;font-size:4.688rem;line-height:4.375rem;padding-top:.25rem;padding-right:.5rem;padding-left:.188rem;font-weight:bold;color: #e51843;}}</style>
+</head>
+<body class="post-template" itemscope itemtype="http://schema.org/WebPage">
+
+        <main id="notepad-post-container" class="notepad-post-container intro-effect-sliced" role="main">
+            <header class="notepad-post-header">
+                <div class="bg-img"></div>
+
+                <div class="notepad-post-menu-header">
+
+                    <a class="notepad-blog-logo" href="http://ouch1978.github.io">
+                        <img src="http://ouch1978.github.io/images/logo.png" alt="Blog Logo" />
+                    </a>
+
+                <div class="notepad-blog-menu">
+    <div class="notepad-mobile-menu show-for-small">
+        <a href="#"><i class="fa fa-bars"></i></a>
+    </div>
+    <ul class="notepad-menu">
+        <li class="notepad-mobile-close-btn show-for-small text-right">
+            <a href="#"><i class="fa fa-times"></i></a>
+        </li>
+
+            <li>
+                    <a href="http://ouch1978.github.io/">首頁</a>
+                 </li>
+
+            <li>
+                    <a href="http://ouch1978.github.io/featured">精選文章</a>
+                 </li>
+
+            <li>
+                    <a href="http://ouch1978.github.io/categories">文章分類</a>
+                 </li>
+
+           <li><a href="http://ouch1978.github.io/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i>RSS</a></li>
+    </ul>
+
+</div>
+            </div>
+
+            <div class="notepad-post-title bg-check">
+                <h1>解決透過 Appium 測試安卓裝置上的行動網站發生 ChromeDriver 版本不相容的問題</h1>
+                <p>by <strong>Ouch Liu (劉耀群)</strong> &#8212; on <a href="http://ouch1978.github.io/tags/index.html#Visual Studio 2017" data-toggle="tooltip" title="Posts tagged with Visual Studio 2017" rel="tag">Visual Studio 2017</a>&nbsp;&comma;&nbsp;<a href="http://ouch1978.github.io/tags/index.html#Appium" data-toggle="tooltip" title="Posts tagged with Appium" rel="tag">Appium</a>&nbsp;&comma;&nbsp;<a href="http://ouch1978.github.io/tags/index.html#Automation Testing" data-toggle="tooltip" title="Posts tagged with Automation Testing" rel="tag">Automation Testing</a> <strong><time datetime="2017-05-11T23:30:00+08:00">11 May 2017</time></strong></p>
+            </div>
+            <div class="bg-img"></div>
+        </header>
+        <button class="trigger bg-check" data-info="Read more"><span>Trigger</span></button>
+        <img src="http://ouch1978.github.io/images/feature-01.jpg" alt="cover-image" />
+
+        <article class="notepad-post-content post">
+            <div><p>之前在使用 Appium 測試安卓裝置上的行動網站的時候，一切都很開心愉快。</p>
+
+<p>但是，安卓裝置的版本眾多，總不可能只測單一版本；為了確保網站在不同的裝置上都能正常運作，使用不同版本的安卓作業系統來進行測試也是免不了得要作的。</p>
+
+<p>原本以為，只要把相同的測試放到不同版本的模擬器裡面跑，應該什麼都不用多作，就可以一一通過測試才對。</p>
+
+<p>但是「<code>代誌嘸親像憨人所想的架擬簡單</code>」，我光是把模擬器的作業系統從 4.4.2 換到 6.0 而已，然後他就死掉了…</p>
+
+<p>基本上會看到的現象就是瀏覽器無法被正常啟動，而從 Appium 的 Console 裡則會看到如下圖的錯誤訊息：</p>
+
+<p><a href="/images/blog-images/2017-05-11-fix-appium-chrome-driver-error/01-chrome-version-must-be-greator-than-error.png" title="Chrome version must be =&gt; xxx"><img src="/images/blog-images/2017-05-11-fix-appium-chrome-driver-error/01-chrome-version-must-be-greator-than-error.png" alt="Chrome version must be =&gt; xxx" title="Chrome version must be =&gt; xxx" /></a>    </p>
+
+<blockquote>
+  <p>Encountered internal error running command: Error: unknown error: Chrome version must be &gt;= 55.0.2883.0
+(Driver info: chromedriver=2.28.455520 (cc17746adff54984afff480136733114c6b3704b),platform=Windows NT 10.0.15063 x86_64)</p>
+</blockquote>
+
+<p>蝦毀!? 難道我只是想測試不同的安卓版本，也得要一一為每台模擬器更新 Chrome 嗎!? (要更新 Chrome 還得要綁帳號什麼的，超麻煩的啊!!~)</p>
+
+<p>好吧，山不轉路轉。我不更新 Chrome ，我改 ChromeDriver 的版本總可以了吧!?</p>
+
+<p>不過，話說回來，Appium 的 ChromeDriver 怎麼改? 在執行檔後面加參數嗎? 好像行不通…</p>
+
+<p>經過一番亂試之後，總算讓我找到了!!(明明就很容易找到啊~~)</p>
+
+<p>原來就在 Appium Desktop 的 <code>Advanced</code> 頁籤下的 <code>Chromedriver Binary Path</code> 。</p>
+
+<p><a href="/images/blog-images/2017-05-11-fix-appium-chrome-driver-error/02-chromedriver-binary-path.png" title="Chromedriver Binary Path"><img src="/images/blog-images/2017-05-11-fix-appium-chrome-driver-error/02-chromedriver-binary-path.png" alt="Chromedriver Binary Path" title="Chromedriver Binary Path" /></a>    </p>
+
+<p>遇到類似問題的話，只要到 <a href="https://chromedriver.storage.googleapis.com/index.html" title="Chromedriver官方下載網站">ChromeDriver 官方下載網站</a>下載舊版的 ChromeDriver ，並且把完整的路徑(包含檔名)填入 Chromedriver Binary Path 欄位裡就行啦!!</p>
+
+<p>設定完畢之後，按下 Start Server v1.6.4，應該會看到 Appium Console 裡面出現我們自訂的 ChromeDriver 路徑。</p>
+
+<p><a href="/images/blog-images/2017-05-11-fix-appium-chrome-driver-error/03-customized-version-of-chromedriver-applied.png" title="套用自訂版本的 Chromedriver"><img src="/images/blog-images/2017-05-11-fix-appium-chrome-driver-error/03-customized-version-of-chromedriver-applied.png" alt="套用自訂版本的 Chromedriver" title="套用自訂版本的 Chromedriver" /></a>    </p>
+
+<p>只要使用有支援作業系統中內建瀏覽器版本的 ChromeDriver ，測試應該就又可以順利的跑完囉!!~</p>
+
+<p>舉例來說，我在使用 Android 6.0 進行測試的時候，只要搭配 ChromeDriver 2.1.6 就沒問題了。</p>
+
+<blockquote>
+  <p>根據我的測試，ChromeDriver 2.1.6 搭配 Android 4.4.2 、6.0 和 7.1.1 這三個版本都不會有問題。</p>
+</blockquote>
+
+<p>以上，希望可以幫助到有需要的朋友們。</p>
+
+            </div>
+        </article>
+
+        <div class="cf"></div>
+        <div class="row text-center">
+            <section class="notepad-post-share">
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;解決透過 Appium 測試安卓裝置上的行動網站發生 ChromeDriver 版本不相容的問題&quot;%20http://ouch1978.github.io/2017/05/11/fix-appium-chrome-driver-error/%20via%20&#64;Ouch1978"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=http://ouch1978.github.io/2017/05/11/fix-appium-chrome-driver-error/"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a class="google-icon" href="https://plus.google.com/share?url=http://ouch1978.github.io/2017/05/11/fix-appium-chrome-driver-error/"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </section>
+        </div>
+
+        <div class="cf"></div>
+
+        <div class="PageNavigation">
+          
+            <a class="prev" href="/2017/05/10/mobile-app-automation-testing-with-vs2017-and-appium/">&laquo; 透過 Visual Studio 2017 與 Appium 測試安卓手機上的 App</a>
+          
+          
+        </div>
+
+            <div class="notepad-author-info">
+                <div class="row">
+                    <section class="notepad-post-author small-12 columns">
+
+                            <img src="http://ouch1978.github.io/images/Ouch.jpg" class="notepad-post-author-avatar" alt="Ouch Liu (劉耀群)'s photo">
+
+                            <span class="author-label">作者</span>
+                            <h1>Ouch Liu (劉耀群)</h1>
+
+                            <p>略懂設計的軟體工程師 / 略懂程式的設計師</p>
+
+                    </section>
+                </div>
+            </div>
+
+
+        <div class="cf"></div>
+        
+        <section class="notepad-disqus row">
+    <div class="small-12 columns">
+        <h1 class="notepad-comments-header">Comments</h1>
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'Ouch1978'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+</section>
+
+        <div class="cf"></div>
+
+    <footer class="notepad-site-footer">
+    <div class="copyright">
+         <section>All content copyright <a href="http://ouch1978.github.io/about">Ouch Liu (劉耀群)</a> &copy; 2017 &bull; All rights reserved.</section>
+         <section>Proudly published with <a class="icon-ghost" href="https://jekyllrb.com/">Jekyll</a></section>
+    </div>
+    <div class="social-icons">
+        
+			<a href="https://linkedin.com/in/Ouch1978">
+				  <span class="fa-stack fa-lg">
+					<i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+					<i class="fa fa-linkedin fa-stack-1x"></i>
+				</span>
+			</a>
+		
+		
+        <a href="http://facebook.com/Ouch1978">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-facebook fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="http://twitter.com/Ouch1978">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="https://plus.google.com/u/0/110363696453312268733">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-google-plus fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="http://github.com/Ouch1978">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-github fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+		</div>
+    
+    <div class="cf"></div>
+</footer>
+</main>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="http://ouch1978.github.io/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+    <script src="http://ouch1978.github.io/assets/js/vendor/modernizr.js"></script>
+    <script src="http://ouch1978.github.io/assets/js/foundation.min.js"></script>
+    <script src="http://ouch1978.github.io/assets/js/vendor/background-check.js"></script>
+    <script src="http://ouch1978.github.io/assets/js/vendor/post-header-animations.js"></script>
+    <script src="http://ouch1978.github.io/assets/js/notepad.js"></script>
+    <script src="http://ouch1978.github.io/assets/js/scripts.min.js"></script>
+    <script src="http://ouch1978.github.io/assets/js/vendor/nprogress.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/3.0.0/pangu.js"></script>
+
+    <script>
+      $(document).foundation();
+      pangu.spacingPage();
+    </script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-20523508-2', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+
+</script>
+
+<script>NProgress.start();var interval=setInterval(function(){NProgress.inc()},1000);jQuery(window).load(function(){clearInterval(interval);NProgress.done()});jQuery(window).unload(function(){NProgress.start()});</script>
+
+</body>
+</html>

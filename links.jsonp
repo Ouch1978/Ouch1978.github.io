@@ -138,6 +138,11 @@ callback([
   {
     "text": "透過 Visual Studio 2017 與 Appium 測試安卓手機上的 App",
     "href": "http://ouch1978.github.io/2017/05/10/mobile-app-automation-testing-with-vs2017-and-appium/"
+  } ,
+
+  {
+    "text": "解決透過 Appium 測試安卓裝置上的行動網站發生 ChromeDriver 版本不相容的問題",
+    "href": "http://ouch1978.github.io/2017/05/11/fix-appium-chrome-driver-error/"
   } 
 
 ])

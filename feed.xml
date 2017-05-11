@@ -7,13 +7,78 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://ouch1978.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://ouch1978.github.io/" />
-<updated>2017-05-10T19:19:10+08:00</updated>
+<updated>2017-05-11T18:46:55+08:00</updated>
 <id>http://ouch1978.github.io/</id>
 <author>
   <name>Ouch Liu (劉耀群)</name>
   <uri>http://ouch1978.github.io/</uri>
   <email>ouch1978@hotmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[解決透過 Appium 測試安卓裝置上的行動網站發生 ChromeDriver 版本不相容的問題]]></title>
+  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2017/05/11/fix-appium-chrome-driver-error/"/>
+  <id>http://ouch1978.github.io/2017/05/11/fix-appium-chrome-driver-error</id>
+  <published>2017-05-11T23:30:00+08:00</published>
+  <updated>2017-05-11 23:30:00 +0800T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Ouch Liu (劉耀群)</name>
+    <uri>http://ouch1978.github.io</uri>
+    <email>ouch1978@hotmail.com</email>
+  </author>
+  <category scheme="http://ouch1978.github.io/tags/#Visual%20Studio%202017" term="Visual Studio 2017" /><category scheme="http://ouch1978.github.io/tags/#Appium" term="Appium" /><category scheme="http://ouch1978.github.io/tags/#Automation%20Testing" term="Automation Testing" />
+  <content type="html">
+  
+    &lt;p&gt;之前在使用 Appium 測試安卓裝置上的行動網站的時候，一切都很開心愉快。&lt;/p&gt;
+
+&lt;p&gt;但是，安卓裝置的版本眾多，總不可能只測單一版本；為了確保網站在不同的裝置上都能正常運作，使用不同版本的安卓作業系統來進行測試也是免不了得要作的。&lt;/p&gt;
+
+&lt;p&gt;原本以為，只要把相同的測試放到不同版本的模擬器裡面跑，應該什麼都不用多作，就可以一一通過測試才對。&lt;/p&gt;
+
+&lt;p&gt;但是「&lt;code&gt;代誌嘸親像憨人所想的架擬簡單&lt;/code&gt;」，我光是把模擬器的作業系統從 4.4.2 換到 6.0 而已，然後他就死掉了…&lt;/p&gt;
+
+&lt;p&gt;基本上會看到的現象就是瀏覽器無法被正常啟動，而從 Appium 的 Console 裡則會看到如下圖的錯誤訊息：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-05-11-fix-appium-chrome-driver-error/01-chrome-version-must-be-greator-than-error.png&quot; title=&quot;Chrome version must be =&amp;gt; xxx&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-05-11-fix-appium-chrome-driver-error/01-chrome-version-must-be-greator-than-error.png&quot; alt=&quot;Chrome version must be =&amp;gt; xxx&quot; title=&quot;Chrome version must be =&amp;gt; xxx&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Encountered internal error running command: Error: unknown error: Chrome version must be &amp;gt;= 55.0.2883.0
+(Driver info: chromedriver=2.28.455520 (cc17746adff54984afff480136733114c6b3704b),platform=Windows NT 10.0.15063 x86_64)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;蝦毀!? 難道我只是想測試不同的安卓版本，也得要一一為每台模擬器更新 Chrome 嗎!? (要更新 Chrome 還得要綁帳號什麼的，超麻煩的啊!!~)&lt;/p&gt;
+
+&lt;p&gt;好吧，山不轉路轉。我不更新 Chrome ，我改 ChromeDriver 的版本總可以了吧!?&lt;/p&gt;
+
+&lt;p&gt;不過，話說回來，Appium 的 ChromeDriver 怎麼改? 在執行檔後面加參數嗎? 好像行不通…&lt;/p&gt;
+
+&lt;p&gt;經過一番亂試之後，總算讓我找到了!!(明明就很容易找到啊~~)&lt;/p&gt;
+
+&lt;p&gt;原來就在 Appium Desktop 的 &lt;code&gt;Advanced&lt;/code&gt; 頁籤下的 &lt;code&gt;Chromedriver Binary Path&lt;/code&gt; 。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-05-11-fix-appium-chrome-driver-error/02-chromedriver-binary-path.png&quot; title=&quot;Chromedriver Binary Path&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-05-11-fix-appium-chrome-driver-error/02-chromedriver-binary-path.png&quot; alt=&quot;Chromedriver Binary Path&quot; title=&quot;Chromedriver Binary Path&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;遇到類似問題的話，只要到 &lt;a href=&quot;https://chromedriver.storage.googleapis.com/index.html&quot; title=&quot;Chromedriver官方下載網站&quot;&gt;ChromeDriver 官方下載網站&lt;/a&gt;下載舊版的 ChromeDriver ，並且把完整的路徑(包含檔名)填入 Chromedriver Binary Path 欄位裡就行啦!!&lt;/p&gt;
+
+&lt;p&gt;設定完畢之後，按下 Start Server v1.6.4，應該會看到 Appium Console 裡面出現我們自訂的 ChromeDriver 路徑。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-05-11-fix-appium-chrome-driver-error/03-customized-version-of-chromedriver-applied.png&quot; title=&quot;套用自訂版本的 Chromedriver&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-05-11-fix-appium-chrome-driver-error/03-customized-version-of-chromedriver-applied.png&quot; alt=&quot;套用自訂版本的 Chromedriver&quot; title=&quot;套用自訂版本的 Chromedriver&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;只要使用有支援作業系統中內建瀏覽器版本的 ChromeDriver ，測試應該就又可以順利的跑完囉!!~&lt;/p&gt;
+
+&lt;p&gt;舉例來說，我在使用 Android 6.0 進行測試的時候，只要搭配 ChromeDriver 2.1.6 就沒問題了。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;根據我的測試，ChromeDriver 2.1.6 搭配 Android 4.4.2 、6.0 和 7.1.1 這三個版本都不會有問題。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;以上，希望可以幫助到有需要的朋友們。&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2017/05/11/fix-appium-chrome-driver-error/&quot;&gt;解決透過 Appium 測試安卓裝置上的行動網站發生 ChromeDriver 版本不相容的問題&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on May 11, 2017.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -2556,51 +2621,6 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 
   
   &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/07/01/hello-xamarin/&quot;&gt;Hello Xamarin&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on July 01, 2016.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Line原創貼圖-尼古這一家系列]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2016/06/14/line-stickers-nicolas-family/"/>
-  <id>http://ouch1978.github.io/2016/06/14/line-stickers-nicolas-family</id>
-  <published>2016-06-14T15:49:00+08:00</published>
-  <updated>2016-06-14T15:49:00+08:00</updated>
-  <author>
-    <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
-    <email>ouch1978@hotmail.com</email>
-  </author>
-  <category scheme="http://ouch1978.github.io/tags/#Line" term="Line" /><category scheme="http://ouch1978.github.io/tags/#%E8%B2%BC%E5%9C%96" term="貼圖" />
-  <content type="html">
-  
-    &lt;p&gt;其實我早在兩年前就一直想要畫以我家的喵星人們為主題的Line貼圖了，但是夢想總是美好的，現實是殘酷的。一直拖到了今年，才有空真的動筆下去生出四十張一組的貼圖。&lt;/p&gt;
-
-&lt;p&gt;更殘酷的是，就算很開心的衝完了四十張，上架的過程也不如想像中順利，兩組貼圖來來回回被退了三次。(我不禁想大喊：&lt;strong&gt;Line的審查人員們，我真的搞不懂你們的標準和邏輯啊！！！！&lt;/strong&gt;)&lt;/p&gt;
-
-&lt;p&gt;不過，看到辛苦畫出來的圖片出現在對話裡，還是很有成就感的啊～&lt;/p&gt;
-
-&lt;p&gt;目前上架的貼圖有兩組，還請大家多多支持和捧場～&lt;/p&gt;
-
-&lt;h1 id=&quot;httpsstorelinemestickershopproduct1265613-&quot;&gt;&lt;a href=&quot;https://store.line.me/stickershop/product/1265613&quot; title=&quot;尼古這一家&quot;&gt;尼古這一家&lt;/a&gt;&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://store.line.me/stickershop/product/1265613&quot; title=&quot;尼古這一家&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/1265613.png&quot; alt=&quot;尼古這一家&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;httpsstorelinemestickershopproduct1279302---&quot;&gt;&lt;a href=&quot;https://store.line.me/stickershop/product/1279302&quot; title=&quot;尼古這一家 之 鄉民來了&quot;&gt;尼古這一家 之 鄉民來了&lt;/a&gt;&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://store.line.me/stickershop/product/1279302&quot; title=&quot;尼古這一家 之 鄉民來了&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/1279302.png&quot; alt=&quot;尼古這一家 之 鄉民來了&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;連結已經給你了，還不快買！？&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;以下是很心酸被退的圖，無緣上架，只好放在這邊曬一曬…&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/06.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/06.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/12.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/12.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/12-02.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/12-02.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/16.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/16.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/19.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/19.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/20.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/20.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/22.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/22.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/25.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/25.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/26.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-14-line-stickers-nicolas-family/26.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-  
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/06/14/line-stickers-nicolas-family/&quot;&gt;Line原創貼圖-尼古這一家系列&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on June 14, 2016.&lt;/p&gt;</content>
 </entry>
 
 </feed>
