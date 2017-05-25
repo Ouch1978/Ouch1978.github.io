@@ -7,13 +7,220 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://ouch1978.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://ouch1978.github.io/" />
-<updated>2017-05-11T18:46:55+08:00</updated>
+<updated>2017-05-25T16:22:40+08:00</updated>
 <id>http://ouch1978.github.io/</id>
 <author>
   <name>Ouch Liu (劉耀群)</name>
   <uri>http://ouch1978.github.io/</uri>
   <email>ouch1978@hotmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[使用 Visual Studio 2017 搭配 Xamarin.UITest 進行安卓應用程式的自動化測試]]></title>
+  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2017/05/25/mobile-ui-automation-with-xamarin-uitest/"/>
+  <id>http://ouch1978.github.io/2017/05/25/mobile-ui-automation-with-xamarin-uitest</id>
+  <published>2017-05-25T23:30:00+08:00</published>
+  <updated>2017-05-25 23:30:00 +0800T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Ouch Liu (劉耀群)</name>
+    <uri>http://ouch1978.github.io</uri>
+    <email>ouch1978@hotmail.com</email>
+  </author>
+  <category scheme="http://ouch1978.github.io/tags/#Visual%20Studio%202017" term="Visual Studio 2017" /><category scheme="http://ouch1978.github.io/tags/#Xamarin.UITest" term="Xamarin.UITest" /><category scheme="http://ouch1978.github.io/tags/#Automation%20Testing" term="Automation Testing" />
+  <content type="html">
+  
+    &lt;h2 id=&quot;section&quot;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;介紹完了使用 Appium 來針對安卓應用程式進行自動化測試的方式之後。這回要跟大家分享的是更輕鬆愉快的方式–只要透過錄製的方式就能自動產生程式碼的 Xamarin.UITest。&lt;/p&gt;
+
+&lt;p&gt;如果要簡單的介紹一下 Xamarin.UITest ，它其實就是一個以 Calabash 為基礎，可以讓我們透過 NUnit 和 C# 來撰寫針對安卓和 iOS 原生 App 自動化測試的一個框架。&lt;/p&gt;
+
+&lt;p&gt;雖然它的名字前面掛了個 Xamarin ，但是它可不只能測 Xamarin 開發出來的 App 而已喔!! 原生的安卓和 iOS 應用程式也都是可以透過它來作到自動化測試的喔!!&lt;/p&gt;
+
+&lt;p&gt;而 Xamarin.UITest 原生支援 NUnit 2，所以建立出來的專案預設就會加入 NUnit 的參考，整個測試框架也是基於 NUnit 2 所建構的。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;需要特別注意的是，目前 UITest 尚未支援 NUnit 3 喔!!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;好了，有了簡單的介紹之後，再來我們就直接進入重點啦~&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;懶人/麻瓜福音 - 透過錄製的方式產生程式碼&lt;/h2&gt;
+
+&lt;p&gt;Xamarin.UITest 最吸引人的地方就是可以直接透過 Visual Studio 來錄製測試的步驟，並且自動轉化為測試程式碼。&lt;/p&gt;
+
+&lt;p&gt;廢話不多說，馬上開啟 Visual Studio 2017 來建立一個 Xamarin.UITest 測試專案。
+專案類型使用 &lt;code&gt;Cross-Platform&lt;/code&gt; -&amp;gt; &lt;code&gt;UI Test App (Xamarin.UITest|Cross-Platform)&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-05-25-mobile-ui-automation-with-xamarin-uitest/01-create-uitest-project.png&quot; title=&quot;建立 Xamarin.UITest 測試專案&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-05-25-mobile-ui-automation-with-xamarin-uitest/01-create-uitest-project.png&quot; alt=&quot;建立 Xamarin.UITest 測試專案&quot; title=&quot;建立 Xamarin.UITest 測試專案&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;專案建立完成之後，透過方案總管打開內建的 Tests.cs 檔，應該可以看到如下圖的畫面：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-05-25-mobile-ui-automation-with-xamarin-uitest/02-default-test-cs.png&quot; title=&quot;預設的 Test.cs 內容&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-05-25-mobile-ui-automation-with-xamarin-uitest/02-default-test-cs.png&quot; alt=&quot;預設的 Test.cs 內容&quot; title=&quot;預設的 Test.cs 內容&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;在開始錄製測試的步驟之前，建議先將電腦中的安卓模擬器開起來準備；如果要使用實機進行錄製的話，也請先把機器接上電腦。&lt;/p&gt;
+
+&lt;p&gt;只要點選那個錄製符號加閃電的圖示，並且選取 &lt;code&gt;Record New Test&lt;/code&gt; -&amp;gt; &lt;code&gt;Select APK&lt;/code&gt;，接著選取要進行測試的 APK 之後，接下來，Visual Studio 就會幫我們把 APK 安裝到模擬器上，並且自動打開它，錄製我們接下來的所有行為。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-05-25-mobile-ui-automation-with-xamarin-uitest/03-select-apk-file.png&quot; title=&quot;選取 APK 檔&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-05-25-mobile-ui-automation-with-xamarin-uitest/03-select-apk-file.png&quot; alt=&quot;選取 APK 檔&quot; title=&quot;選取 APK 檔&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;這邊我就一樣使用之前用來示範 Appium 自動化測試的同一個 APK 檔來進行測試。&lt;/p&gt;
+
+&lt;p&gt;如果光是用文字加圖片來描述錄製的過程的話可能會有點複雜，所以我直接錄給大家看囉~&lt;/p&gt;
+
+&lt;p&gt;請看 VCR !!&lt;/p&gt;
+
+&lt;div style=&quot;position:relative;height:0;padding-bottom:43.25%;max-width:56.25rem;margin:0 auto;&quot;&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/embed/-F111OKB2bg?rel=0&amp;amp;showinfo=0?ecver=2&quot; width=&quot;640&quot; height=&quot;360&quot; frameborder=&quot;0&quot; style=&quot;position:absolute;width:100%;height:100%;left:0&quot; allowfullscreen=&quot;&quot;&gt;
+  &lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;影片中有幾個重點，在這邊再透過文字來提醒大家：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;錄製的過程中，如果有需要驗證物件是否出現或是值是否正確的時候，可以按下左邊的板手小圖示，選取 &lt;code&gt;Start Assertion Mode&lt;/code&gt;，再點選要驗證的控制項，就能自動產生驗證相關的程式碼。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;若要結束錄製，則需要按下左邊的板手小圖示，選取 &lt;code&gt;Stop Recording&lt;/code&gt; 即可。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;錄製完畢之後，千萬要記得要在 AppInitializer.cs 的 StartApp 方法中為 Android 手動加上 APK 檔的路徑，這樣才能順利執行測試喔!!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;錄好了，然後呢?&lt;/h2&gt;
+
+&lt;p&gt;大家可以看到，錄製出來的程式碼就是很標準的 C# 語法，只要有基本的 C# 功力，應該都有能力去編輯它的內容才對。&lt;/p&gt;
+
+&lt;p&gt;然而，畢竟不是我們自己手動刻出來的，透過錄製產生出來的程式碼，也可能會有部份不如我們的預期。&lt;/p&gt;
+
+&lt;p&gt;舉例來說，像是驗證的部份，自動產生的程式碼就不會幫我們加上 NUnit 的 Assert 方法來進行驗證。&lt;/p&gt;
+
+&lt;p&gt;另外，針對某些控制項的搜尋方式，有些會使用控制項 Id ，有些則是使用值來查找。&lt;/p&gt;
+
+&lt;p&gt;雖然這些並不會影響到自動化測試的結果，不過對於講究紀率的開發團隊來說，可能還是得手動進行一些調整，來讓這組程式碼可以符合團隊開發的規範。&lt;/p&gt;
+
+&lt;p&gt;所以，舉例來說，我們可以將錄製好的程式碼改成這樣：&lt;/p&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;Test.cs&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c#&quot; data-lang=&quot;c#&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;na&quot;&gt;[Test]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;NewTest&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Tap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Marked&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;The Hunger Games&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Tap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Harry Potter and the Order of the Phoenix&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Tap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;To Kill a Mockingbird&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Tap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Pride and Prejudice&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Marked&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;txtName&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;Assert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;IsTrue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;Assert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;AreEqual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Pride and Prejudice&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;FirstOrDefault&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Text&lt;/span&gt;  &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Marked&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;txtPrice&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;Assert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;IsTrue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;Assert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;AreEqual&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;4.8&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;FirstOrDefault&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Text&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;這樣一來應該比原來產生的程式碼來得一致多了吧?&lt;/p&gt;
+
+&lt;p&gt;除了用錄製的方式產生程式碼之外，當然您也可以選擇使用完全手寫的方式來寫出自動化測試的所有流程喔!!&lt;/p&gt;
+
+&lt;h2 id=&quot;repl-read-eval-print-loop-&quot;&gt;小密技 - 使用 REPL (Read-Eval-Print-Loop) 工具輔助開發測試程式&lt;/h2&gt;
+
+&lt;p&gt;如果想要使用純手動的方式自己刻出測試程式的話，那麼，要怎麼準確的抓取到要測試的目標控制項應該就是最重要的一件事了。&lt;/p&gt;
+
+&lt;p&gt;Xamarin.UITest 裡面提供了一個名為 REPL 的工具，可以讓我們在命令提示字元模式下與 UI 進行互動。&lt;/p&gt;
+
+&lt;p&gt;使用方式很簡單，只要在測試方法中加上一行：&lt;/p&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;Test.cs&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c#&quot; data-lang=&quot;c#&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;    &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Repl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;當測試程式執行到這一行的時候，就會把 REPL 叫出來，同時將測試暫停在這一行。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-05-25-mobile-ui-automation-with-xamarin-uitest/04-launch-repl.png&quot; title=&quot;REPL 視窗&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-05-25-mobile-ui-automation-with-xamarin-uitest/04-launch-repl.png&quot; alt=&quot;REPL 視窗&quot; title=&quot;REPL 視窗&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;REPL 裡面也提供了類似 IntelliSense 的功能，只要輸入 app. ，下面就會出現可供使用的方法。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-05-25-mobile-ui-automation-with-xamarin-uitest/05-repl-intelli-sense.png&quot; title=&quot;REPL 中也支援類似 IntelliSense 的功能&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-05-25-mobile-ui-automation-with-xamarin-uitest/05-repl-intelli-sense.png&quot; alt=&quot;REPL 中也支援類似 IntelliSense 的功能&quot; title=&quot;REPL 中也支援類似 IntelliSense 的功能&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;例如說，我想輸入 app.Query ，我只需要先輸入 app.q , REPL 就會幫我們過濾能使用的方法，再來只要透過 Tab 鍵，就能幫我們完成指令的輸入。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-05-25-mobile-ui-automation-with-xamarin-uitest/06-repl-command-hint.png&quot; title=&quot;REPL 的指令提示功能&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-05-25-mobile-ui-automation-with-xamarin-uitest/06-repl-command-hint.png&quot; alt=&quot;REPL 的指令提示功能&quot; title=&quot;REPL 的指令提示功能&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;所以我們就可以透過 REPL 來拆解 App 的結構，或是先行一步驗證指令的結果。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-05-25-mobile-ui-automation-with-xamarin-uitest/07-repl-command-auto-complete.png&quot; title=&quot;REPL 的自動完成功能&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-05-25-mobile-ui-automation-with-xamarin-uitest/07-repl-command-auto-complete.png&quot; alt=&quot;REPL 的自動完成功能&quot; title=&quot;REPL 的自動完成功能&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;也可以在 REPL 裡面直接輸入 tree 指令，列出整個 App UI 的樹狀結構。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-05-25-mobile-ui-automation-with-xamarin-uitest/08-repl-tree-command.png&quot; title=&quot;透過 REPL 的 Tree 指令列出 UI 結構&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-05-25-mobile-ui-automation-with-xamarin-uitest/08-repl-tree-command.png&quot; alt=&quot;透過 REPL 的 Tree 指令列出 UI 結構&quot; title=&quot;透過 REPL 的 Tree 指令列出 UI 結構&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;有了 REPL 的協助，開發的過程應該就會輕鬆很多囉!!~&lt;/p&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;結語&lt;/h2&gt;
+
+&lt;p&gt;雖然 Xamarin.UITest API 的使用邏輯和 Selenium/Appium 不太相同，但是基於有強大的錄製能力以及簡潔的語法以及支援雲端測試這三大優勢的加持下，也是很值得參考的行動裝置自動化測試解決方案喔!!&lt;/p&gt;
+
+&lt;p&gt;當然，不只是安卓的應用程式可以這樣測，iOS 上的應用程式也可以比照辦理喔!! (不過前提是得要先有一個 iOS 開發環境….)&lt;/p&gt;
+
+&lt;p&gt;因為我手邊還沒有的 iOS 開發環境的關係，iOS 的部份就等哪天我在門口踢到一個裝著 MacBook 的箱子之後再來跟各位分享了。&lt;/p&gt;
+
+&lt;p&gt;以上，希望哪天我也可以在門口踢到一個裝著 MacBook 的箱子。&lt;/p&gt;
+
+&lt;p&gt;最後的最後，Xamarin.UITest 的強大之處並不只是這樣而已，另一個強大的點就是可以透過 Xamarin Test Cloud 上的裝置來進行測試。&lt;/p&gt;
+
+&lt;p&gt;這個部份就待之後再另開文章來分享給大家囉!!~&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2017/05/25/mobile-ui-automation-with-xamarin-uitest/&quot;&gt;使用 Visual Studio 2017 搭配 Xamarin.UITest 進行安卓應用程式的自動化測試&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on May 25, 2017.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -2566,61 +2773,6 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 
   
   &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/07/01/debugging-xamarin-android-app-with-vs/&quot;&gt;透過Visual Studio對Xamarin Android專案進行除錯&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on July 01, 2016.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Hello Xamarin]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2016/07/01/hello-xamarin/"/>
-  <id>http://ouch1978.github.io/2016/07/01/hello-xamarin</id>
-  <published>2016-07-01T21:00:00+08:00</published>
-  <updated>2016-07-01T21:00:00+08:00</updated>
-  <author>
-    <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
-    <email>ouch1978@hotmail.com</email>
-  </author>
-  <category scheme="http://ouch1978.github.io/tags/#Xamarin" term="Xamarin" /><category scheme="http://ouch1978.github.io/tags/#Visual%20Studio" term="Visual Studio" />
-  <content type="html">
-  
-    &lt;p&gt;日前微軟公開了收購Xamarin的消息，也很佛心的把它提供給Visual Studio的使用者們使用，這麼佛心的東西，怎麼可以不玩看看呢?&lt;/p&gt;
-
-&lt;p&gt;這樣想的我，很開心的在安裝完Visual Studio 2015 Update 3之後，就隨手建了一個Xamarin Form的專案想來玩看看。&lt;/p&gt;
-
-&lt;p&gt;但是，故事的發展永遠沒有想像得那麼簡單…&lt;/p&gt;
-
-&lt;p&gt;專案成功建立了，但是Android專案建置失敗!!! &lt;strong&gt;&lt;code&gt;Build Failed! Build Failed!! Build Failed!!!&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/images/blog-images/2016-06-30-hello-xamarin/Build-Failed.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-30-hello-xamarin/Build-Failed.png&quot; alt=&quot;Build Fail&quot; title=&quot;Build Fail&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;誠心的求助Google大神之後，循著幾個方向去嘗試，最後總算是成功了，以下是我親嘗百草的各種偏方：&lt;/p&gt;
-
-&lt;h1 id=&quot;xamarin&quot;&gt;檢查Xamarin更新&lt;/h1&gt;
-
-&lt;p&gt;其實我也試過了解除安裝Xamarin之後重新安裝，但是一樣無解。後來發現就算從Xamarin官網上下載的安裝檔也不見得會是最新的，要更新的話還是得透過Visual Studio比較保險。 檢查 Xamarin 更新的方式為：點選Visual Studio的選單中點選 &lt;strong&gt;&lt;code&gt;Tools&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Options&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Xamarin&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Other&lt;/code&gt;&lt;/strong&gt; -&amp;gt; 再點選 &lt;strong&gt;&lt;code&gt;Check Now&lt;/code&gt;&lt;/strong&gt; 即可。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/images/blog-images/2016-06-30-hello-xamarin/Check-Xamarin-Update.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-30-hello-xamarin/Check-Xamarin-Update.png&quot; alt=&quot;檢查Xamarin更新&quot; title=&quot;檢查Xamarin更新&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;xamarinandroidsupport&quot;&gt;刪除Xamarin.Android.Support相關檔案&lt;/h1&gt;
-
-&lt;p&gt;還有很多次在建置專案的時候出現了找不到 &lt;strong&gt;&lt;code&gt;&quot;Xamarin.Android.Support.Design&quot;&lt;/code&gt;&lt;/strong&gt; 相關檔案的錯誤訊息，而經過Google大神的指示，只要把 &lt;strong&gt;&lt;code&gt;%UserProfile%\AppData\Local\Xamarin&lt;/code&gt;&lt;/strong&gt; 下的資料夾砍掉，再重新進行建置，就會自動下載完相關的檔案了。(這也是為什麼第一次進行建置都會花特別久的原因，所以千萬別以為它掛掉了就按下停止建置的按鈕。)&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/images/blog-images/2016-06-30-hello-xamarin/Delete-Xamarin-Android-Related-Files.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-30-hello-xamarin/Delete-Xamarin-Android-Related-Files.png&quot; alt=&quot;建置專案時所需要的相關檔案&quot; title=&quot;建置專案時所需要的相關檔案&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;android-sdk&quot;&gt;檢查Android SDK&lt;/h1&gt;
-
-&lt;p&gt;在Visual Studio的選單中點選 &lt;strong&gt;&lt;code&gt;Tools&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Android&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Android SDK Manager&lt;/code&gt;&lt;/strong&gt; 就可以看到已經安裝了哪些SDK或是建置工具。 而我遇到的問題呢，是因為我很開心的安裝了 &lt;strong&gt;&lt;code&gt;Android SDK Build-tools Rev 24&lt;/code&gt;&lt;/strong&gt; 的關係。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/images/blog-images/2016-06-30-hello-xamarin/Remove-Build-Tools-Rev24.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-30-hello-xamarin/Remove-Build-Tools-Rev24.png&quot; alt=&quot;兇手就是它&quot; title=&quot;兇手就是它&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;把它移除之後，就可以順利的建置Android專案囉!!&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/images/blog-images/2016-06-30-hello-xamarin/Build-Successed.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-30-hello-xamarin/Build-Successed.png&quot; alt=&quot;總算成功建置了&quot; title=&quot;總算成功建置了&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;以上。&lt;/p&gt;
-
-  
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/07/01/hello-xamarin/&quot;&gt;Hello Xamarin&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on July 01, 2016.&lt;/p&gt;</content>
 </entry>
 
 </feed>

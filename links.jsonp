@@ -143,6 +143,11 @@ callback([
   {
     "text": "解決透過 Appium 測試安卓裝置上的行動網站發生 ChromeDriver 版本不相容的問題",
     "href": "http://ouch1978.github.io/2017/05/11/fix-appium-chrome-driver-error/"
+  } ,
+
+  {
+    "text": "使用 Visual Studio 2017 搭配 Xamarin.UITest 進行安卓應用程式的自動化測試",
+    "href": "http://ouch1978.github.io/2017/05/25/mobile-ui-automation-with-xamarin-uitest/"
   } 
 
 ])
