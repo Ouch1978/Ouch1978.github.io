@@ -7,13 +7,65 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://ouch1978.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://ouch1978.github.io/" />
-<updated>2017-05-26T10:51:50+08:00</updated>
+<updated>2017-08-14T17:35:30+08:00</updated>
 <id>http://ouch1978.github.io/</id>
 <author>
   <name>Ouch Liu (劉耀群)</name>
   <uri>http://ouch1978.github.io/</uri>
   <email>ouch1978@hotmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[直衝 Redstone 4!? Windows 測試人員計畫選項更新]]></title>
+  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2017/08/14/windows-insider-options-updated/"/>
+  <id>http://ouch1978.github.io/2017/08/14/windows-insider-options-updated</id>
+  <published>2017-08-14T17:30:00+08:00</published>
+  <updated>2017-08-14 17:30:00 +0800T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Ouch Liu (劉耀群)</name>
+    <uri>http://ouch1978.github.io</uri>
+    <email>ouch1978@hotmail.com</email>
+  </author>
+  <category scheme="http://ouch1978.github.io/tags/#Windows%2010" term="Windows 10" /><category scheme="http://ouch1978.github.io/tags/#Creators%20Update" term="Creators Update" /><category scheme="http://ouch1978.github.io/tags/#Insider%20Program" term="Insider Program" />
+  <content type="html">
+  
+    &lt;h2 id=&quot;section&quot;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;這幾天在試玩 Windows Insider Preview 版 Windows 的時候，赫然發現在 Windows Indider Program 裡面的更新選項變得跟之前不太一樣了 – 除了之前可以選取從 Fast Ring 和 Slow Ring 進行更新之外，現在在 Fast Ring 中的使用者們還會得到另一個 “&lt;code&gt;您想要接收哪一類的內容?&lt;/code&gt;” 選項，而裡面的項目則包含了 “&lt;code&gt;Active development of Windows&lt;/code&gt;” 和 “&lt;code&gt;Skip ahead to the next Windows release&lt;/code&gt;” 這兩種。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-08-14-windows-insider-options-updated/01-new-options-in-fast-ring.png&quot; title=&quot;Windows 測試人員計畫的新選項&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-08-14-windows-insider-options-updated/01-new-options-in-fast-ring.png&quot; alt=&quot;Windows 測試人員計畫的新選項&quot; title=&quot;Windows 測試人員計畫的新選項&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;而且手機版和桌機版都有這個選項。(但是我的手機還來不及截圖，很開心的升級到 15237 版之後，那個選項就不見了)&lt;/p&gt;
+
+&lt;h2 id=&quot;skip-ahead-to-the-next-windows-release-&quot;&gt;Skip ahead to the next Windows release 是幹嘛用的?&lt;/h2&gt;
+
+&lt;p&gt;根據&lt;a href=&quot;https://blogs.windows.com/windowsexperience/2017/07/26/announcing-windows-10-insider-preview-build-16251-pc-build-15235-mobile/&quot; title=&quot;Announcing Windows 10 Insider Preview Build 16251 for PC &amp;amp; Build 15235 for Mobile&quot;&gt;微軟在七月二十六號發佈的消息&lt;/a&gt;，他們想讓在 Fast Ring 裡面的測試者們可以提前體驗到還在開發中的 Redstone 4 的功能。&lt;/p&gt;
+
+&lt;p&gt;簡單的說，目前的 Windows 10 原始碼可以分成幾個分支，分別是開發中版本、Windows 測試人員預覽分支和當前版本分支(雖然還有企業版分支和長期支援分支，不過我們就先略過不看…)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-08-14-windows-insider-options-updated/02-windows-branches.png&quot; title=&quot;Windows 版本分支與測試人員計畫關係簡圖&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-08-14-windows-insider-options-updated/02-windows-branches.png&quot; alt=&quot;Windows 版本分支與測試人員計畫關係簡圖&quot; title=&quot;Windows 版本分支與測試人員計畫關係簡圖&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;目前的當前版本分支當然就是一般使用者正在使用中的 RS2 正式版的內容啦。&lt;/p&gt;
+
+&lt;p&gt;開發中版本分支經過微軟內部測試之後，則會被推送到 Windows 測試人員預覽分支，供選擇 Slow Ring 或 Fast Ring 的 Windows 測試人員們進行預覽，一直到正式版產出之前，參與 Windows 開發人員計畫的朋友們都可以搶先一般使用者早一步進行體驗。&lt;/p&gt;
+
+&lt;p&gt;隨著秋季創意者更新(開發代號為 Redstone 3 ，簡稱 RS3) 開發版越來越穩定的同時，微軟也早已開始了下一個 Windows 版本(Redstone 4)的開發，並且想藉由 Windows 測試人員，早一步的讓有興趣的朋友們進行測試。所以才加入了這兩個新的選項。&lt;/p&gt;
+
+&lt;p&gt;之後，選擇 &lt;code&gt;Active development of Windows&lt;/code&gt; 的朋友們將會可以提早測試到 RS3 發行版的功能，但是因為是穩定版的關係，所以並不會接收到開發中內建應用程式的更新。&lt;/p&gt;
+
+&lt;p&gt;而選擇 &lt;code&gt;Skip ahead to the next Windows release&lt;/code&gt; 的使用者們則是可以跳過 RS3 的穩定版，更提早一步的直接體驗到 RS4 以及開發中的內建應用者式。(但是選了這個選項之後除了重灌之外，是沒辦法反悔倒回去測試 RS3 的喔!! 服用前請三思~)&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;後記&lt;/h2&gt;
+
+&lt;p&gt;正當我很開心的想說可以早一步體驗到 RS4 並且選擇了 Skip ahead to the next Windows release 之後沒多久， Windows 就跳出一個訊息跟我說目前不支援這個選項組合了，貌似微軟已經把這個選項關掉了。(不知道是參與測試的人數已經足夠了還是其它原因?)&lt;/p&gt;
+
+&lt;p&gt;希望在不久的將來可以看到這個選項再次被打開，讓我看得到也吃得到啊~~&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2017/08/14/windows-insider-options-updated/&quot;&gt;直衝 Redstone 4!? Windows 測試人員計畫選項更新&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on August 14, 2017.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -2734,45 +2786,6 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 
   
   &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/07/02/solve-xaudio2_7.dll-unloaded-error/&quot;&gt;解決遊戲在 Windows 10 執行時出現 XAudio2_7.dll_unloaded 錯誤造成的閃退&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on July 02, 2016.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[透過Visual Studio對Xamarin Android專案進行除錯]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2016/07/01/debugging-xamarin-android-app-with-vs/"/>
-  <id>http://ouch1978.github.io/2016/07/01/debugging-xamarin-android-app-with-vs</id>
-  <published>2016-07-01T22:00:00+08:00</published>
-  <updated>2016-07-01T22:00:00+08:00</updated>
-  <author>
-    <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
-    <email>ouch1978@hotmail.com</email>
-  </author>
-  <category scheme="http://ouch1978.github.io/tags/#Xamarin" term="Xamarin" /><category scheme="http://ouch1978.github.io/tags/#Visual%20Studio" term="Visual Studio" />
-  <content type="html">
-  
-    &lt;p&gt;很開心的可以成功建置出Android應用程式之後…咦!? 怎麼不能Debug!!??Visual Studio把應用程式佈署到模擬器之後就不管了??哪招啊!?&lt;/p&gt;
-
-&lt;p&gt;相信大家應該都知道Visual Studio 2015裡面很佛心的包含了多種Android裝置的模擬器，讓我們在開發Android應用程式的時候也可以透過它來進行除錯。&lt;/p&gt;
-
-&lt;p&gt;我們也可以透過Visual Studio選單裡的 -&amp;gt; &lt;strong&gt;&lt;code&gt;Tools&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Android&lt;/code&gt;&lt;/strong&gt; -&amp;gt; &lt;strong&gt;&lt;code&gt;Android Emulator Manager&lt;/code&gt;&lt;/strong&gt; 來建立虛擬的Android裝置以便於進行除錯。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/images/blog-images/2016-06-30-debugging-xamarin-android-app-in-vs/Android-Emulator-Manager.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-30-debugging-xamarin-android-app-in-vs/Android-Emulator-Manager.png&quot; alt=&quot;Android Emulator Manager&quot; title=&quot;Android Emulator Manager&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;正常的情況下，應用程式被佈署到模擬器之後，Visual Studio應該還是會處於在除錯的模式下，但是我遇到的神奇狀況是這樣：應用程式的確有被佈署到模擬器中，但是Visual Studio就自動結束了除錯模式了，而且模擬器裡的應用程式也會自動被送到背景去。&lt;/p&gt;
-
-&lt;p&gt;經過Google大神的協助，原來這個問題是出在Hyper-V裡虛擬機器的設定上。&lt;/p&gt;
-
-&lt;p&gt;只需要開啟 &lt;strong&gt;&lt;code&gt;Hyper-V Manager&lt;/code&gt;&lt;/strong&gt; ，在Android虛擬機上按下滑鼠右鍵，點選 &lt;strong&gt;&lt;code&gt;Settings...&lt;/code&gt;&lt;/strong&gt;，然後進入 &lt;strong&gt;&lt;code&gt;Processor&lt;/code&gt;&lt;/strong&gt; 的 &lt;strong&gt;&lt;code&gt;Compatibility&lt;/code&gt;&lt;/strong&gt; 設定項目中，把 &lt;strong&gt;&lt;code&gt;Migrate to a physical computer with a different processor version&lt;/code&gt;&lt;/strong&gt; 勾選起來就行啦。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/images/blog-images/2016-06-30-debugging-xamarin-android-app-in-vs/Compatibility-Setting.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-30-debugging-xamarin-android-app-in-vs/Compatibility-Setting.png&quot; alt=&quot;Compatibility Setting&quot; title=&quot;Compatibility Setting&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;喔耶，除錯模式回來了，設好的中斷點也不會再被無視了，Happy Coding~&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/images/blog-images/2016-06-30-debugging-xamarin-android-app-in-vs/BreakPoint-Is-Back.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-06-30-debugging-xamarin-android-app-in-vs/BreakPoint-Is-Back.png&quot; alt=&quot;Break Point Is Back&quot; title=&quot;Break Point Is Back&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-  
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/07/01/debugging-xamarin-android-app-with-vs/&quot;&gt;透過Visual Studio對Xamarin Android專案進行除錯&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on July 01, 2016.&lt;/p&gt;</content>
 </entry>
 
 </feed>

@@ -701,3 +701,7 @@ li p.with-image {
     text-align: left;
     padding: 0px;
 }
+
+article.notepad-post-content.post a {
+    text-decoration: underline;
+}

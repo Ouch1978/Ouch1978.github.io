@@ -148,6 +148,11 @@ callback([
   {
     "text": "使用 Visual Studio 2017 搭配 Xamarin.UITest 進行安卓應用程式的自動化測試",
     "href": "http://ouch1978.github.io/2017/05/25/mobile-ui-automation-with-xamarin-uitest/"
+  } ,
+
+  {
+    "text": "直衝 Redstone 4!? Windows 測試人員計畫選項更新",
+    "href": "http://ouch1978.github.io/2017/08/14/windows-insider-options-updated/"
   } 
 
 ])
