@@ -2,23 +2,23 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>直衝 REDSTONE 4!? WINDOWS 測試人員計畫選項更新 &vert; OUCH1978 @ GITHUB</title>
-<meta name="description" content="隨著 Windows 10 秋季創作者更新正式版發佈的時間慢慢的接近，微軟在修補 Bug 的同時，也已經開始著手 Redstone 4 的開發了。對於有參與 Insider 計畫的朋友們，也就多了另一個管道可以搶先體驗將來 RS4 更新中的新功能的選項喔!!">
-<meta name="keywords" content="Windows 10, Creators Update, Insider Program">
+<title>解決 VISUAL STUDIO 2017 首次執行時卡在 WE ARE GETTING THINGS READY 的問題 &vert; OUCH1978 @ GITHUB</title>
+<meta name="description" content="最近重灌電腦，安裝完 VS2017 ，正要準備寫 Code 的時候，之前都沒遇到過的狀況發生了 -- 畫面就卡在登入前的畫面，無止盡的 We are getting things ready...">
+<meta name="keywords" content="Visual Studio">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://ouch1978.github.io/images/logo.png">
-<meta name="twitter:title" content="直衝 Redstone 4!? Windows 測試人員計畫選項更新">
-<meta name="twitter:description" content="隨著 Windows 10 秋季創作者更新正式版發佈的時間慢慢的接近，微軟在修補 Bug 的同時，也已經開始著手 Redstone 4 的開發了。對於有參與 Insider 計畫的朋友們，也就多了另一個管道可以搶先體驗將來 RS4 更新中的新功能的選項喔!!">
+<meta name="twitter:title" content="解決 Visual Studio 2017 首次執行時卡在 We are getting things ready 的問題">
+<meta name="twitter:description" content="最近重灌電腦，安裝完 VS2017 ，正要準備寫 Code 的時候，之前都沒遇到過的狀況發生了 -- 畫面就卡在登入前的畫面，無止盡的 We are getting things ready...">
 <meta name="twitter:creator" content="@Ouch1978">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="直衝 Redstone 4!? Windows 測試人員計畫選項更新">
-<meta property="og:description" content="隨著 Windows 10 秋季創作者更新正式版發佈的時間慢慢的接近，微軟在修補 Bug 的同時，也已經開始著手 Redstone 4 的開發了。對於有參與 Insider 計畫的朋友們，也就多了另一個管道可以搶先體驗將來 RS4 更新中的新功能的選項喔!!">
-<meta property="og:url" content="http://ouch1978.github.io/2017/08/14/windows-insider-options-updated/">
+<meta property="og:title" content="解決 Visual Studio 2017 首次執行時卡在 We are getting things ready 的問題">
+<meta property="og:description" content="最近重灌電腦，安裝完 VS2017 ，正要準備寫 Code 的時候，之前都沒遇到過的狀況發生了 -- 畫面就卡在登入前的畫面，無止盡的 We are getting things ready...">
+<meta property="og:url" content="http://ouch1978.github.io/2017/08/15/fix-visual-studio-2017-first-launch-stucking/">
 <meta property="og:site_name" content="Ouch1978 @ Github">
 <meta property="og:image" content="http://ouch1978.github.io/images/cover3.jpg">
 
@@ -26,7 +26,7 @@
 
 
 
-<link rel="canonical" href="http://ouch1978.github.io/2017/08/14/windows-insider-options-updated/">
+<link rel="canonical" href="http://ouch1978.github.io/2017/08/15/fix-visual-studio-2017-first-launch-stucking/">
 <link href="http://ouch1978.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Ouch1978 @ Github Feed">
 <link rel="author" href="https://plus.google.com/u/0/110363696453312268733?rel=author">
 
@@ -104,8 +104,8 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h1>直衝 Redstone 4!? Windows 測試人員計畫選項更新</h1>
-                            <p>by <strong>Ouch Liu (劉耀群)</strong> &#8212; on <a href="http://ouch1978.github.io/tags/index.html#Windows 10" data-toggle="tooltip" title="Posts tagged with Windows 10" rel="tag">Windows 10</a>&nbsp;&comma;&nbsp;<a href="http://ouch1978.github.io/tags/index.html#Creators Update" data-toggle="tooltip" title="Posts tagged with Creators Update" rel="tag">Creators Update</a>&nbsp;&comma;&nbsp;<a href="http://ouch1978.github.io/tags/index.html#Insider Program" data-toggle="tooltip" title="Posts tagged with Insider Program" rel="tag">Insider Program</a> <strong><time datetime="2017-08-14T17:30:00+08:00">14 Aug 2017</time></strong></p>
+                            <h1>解決 Visual Studio 2017 首次執行時卡在 We are getting things ready 的問題</h1>
+                            <p>by <strong>Ouch Liu (劉耀群)</strong> &#8212; on <a href="http://ouch1978.github.io/tags/index.html#Visual Studio" data-toggle="tooltip" title="Posts tagged with Visual Studio" rel="tag">Visual Studio</a> <strong><time datetime="2017-08-15T23:30:00+08:00">15 Aug 2017</time></strong></p>
                         </div>
                     </div>
                 </div>
@@ -114,47 +114,37 @@
         <article class="notepad-post-content post tag-simple">
             <div><h2 id="section">前言</h2>
 
-<p>這幾天在試玩 Windows Insider Preview 版 Windows 的時候，赫然發現在 Windows Indider Program 裡面的更新選項變得跟之前不太一樣了 – 除了之前可以選取從 Fast Ring 和 Slow Ring 進行更新之外，現在在 Fast Ring 中的使用者們還會得到另一個 “<code>您想要接收哪一類的內容?</code>” 選項，而裡面的項目則包含了 “<code>Active development of Windows</code>” 和 “<code>Skip ahead to the next Windows release</code>” 這兩種。</p>
+<p>上星期筆電不知道是什麼原因，突然就沒辦法正常開機了，而且試過使用修復功能也沒救，只好整個重灌了。</p>
 
-<p><a href="/images/blog-images/2017-08-14-windows-insider-options-updated/01-new-options-in-fast-ring.png" title="Windows 測試人員計畫的新選項"><img src="/images/blog-images/2017-08-14-windows-insider-options-updated/01-new-options-in-fast-ring.png" alt="Windows 測試人員計畫的新選項" title="Windows 測試人員計畫的新選項" /></a>    </p>
+<p>就當安裝完 Visual Studio 2017 之後，準備首次啟動的時候，輸入完帳號按下下一步按鈕之後，畫面上就出現了 <code>We are getting things ready</code> 的訊息，不過因為當時已屆下班時間，我就索性放著讓它跑。</p>
 
-<p>而且手機版和桌機版都有這個選項。(但是我的手機還來不及截圖，很開心的升級到 15237 版之後，那個選項就不見了)</p>
+<p><a href="/images/blog-images/2017-08-15-fix-visual-studio-2017-first-launch-stucking\01-we're-getting-things-ready.png" title="We are getting thins ready"><img src="/images/blog-images/2017-08-15-fix-visual-studio-2017-first-launch-stucking\01-we're-getting-things-ready.png" alt="We are getting thins ready" title="We are getting thins ready" /></a>    </p>
 
-<h2 id="skip-ahead-to-the-next-windows-release-">Skip ahead to the next Windows release 是幹嘛用的?</h2>
+<p>沒想到… 隔天回到公司，一看電腦，它居然還是停留在一樣的畫面!!…</p>
 
-<p>根據<a href="https://blogs.windows.com/windowsexperience/2017/07/26/announcing-windows-10-insider-preview-build-16251-pc-build-15235-mobile/" title="Announcing Windows 10 Insider Preview Build 16251 for PC &amp; Build 15235 for Mobile">微軟在七月二十六號發佈的消息</a>，他們想讓在 Fast Ring 裡面的測試者們可以提前體驗到還在開發中的 Redstone 4 的功能。</p>
+<h2 id="section-1">解法</h2>
 
-<p>簡單的說，目前的 Windows 10 原始碼可以分成幾個分支，分別是開發中版本、Windows 測試人員預覽分支和當前版本分支(雖然還有企業版分支和長期支援分支，不過我們就先略過不看…)</p>
+<p>根據經驗，首次啟動 Visual Studio 2017 的時候，應該會跑出一個登入的畫面讓我們進行登入的才對。</p>
 
-<p><a href="/images/blog-images/2017-08-14-windows-insider-options-updated/02-windows-branches.png" title="Windows 版本分支與測試人員計畫關係簡圖"><img src="/images/blog-images/2017-08-14-windows-insider-options-updated/02-windows-branches.png" alt="Windows 版本分支與測試人員計畫關係簡圖" title="Windows 版本分支與測試人員計畫關係簡圖" /></a>    </p>
+<p>而這個登入的步驟呢，如果使用的是 Microsoft Account 的話，在輸入完帳號之後，會另外跳轉到另一個視窗讓我們輸入密碼。</p>
 
-<p>目前的當前版本分支當然就是一般使用者正在使用中的 RS2 正式版的內容啦。</p>
+<p>神奇的是，這個應該要出現讓我輸入密碼的視窗並沒有出現…</p>
 
-<p>開發中版本分支經過微軟內部測試之後，則會被推送到 Windows 測試人員預覽分支，供選擇 Slow Ring 或 Fast Ring 的 Windows 測試人員們進行預覽，一直到正式版產出之前，參與 Windows 開發人員計畫的朋友們都可以搶先一般使用者早一步進行體驗。</p>
+<p>當時也不知道是哪來的靈感，想說會不會是視窗被擋住了或是被藏起來了，所以就索性的按了 <code>Alt + Tab</code> 鈕…</p>
 
-<p>隨著秋季創意者更新(開發代號為 Redstone 3 ，簡稱 RS3) 開發版越來越穩定的同時，微軟也早已開始了下一個 Windows 版本(Redstone 4)的開發，並且想藉由 Windows 測試人員，早一步的讓有興趣的朋友們進行測試。所以才加入了這兩個新的選項。</p>
+<p><a href="/images/blog-images/2017-08-15-fix-visual-studio-2017-first-launch-stucking\02-find-the-missing-window-by-task-switch.png" title="透過 Alt + Tab 鈕找到被藏起來的視窗"><img src="/images/blog-images/2017-08-15-fix-visual-studio-2017-first-launch-stucking\02-find-the-missing-window-by-task-switch.png" alt="透過 Alt + Tab 鈕找到被藏起來的視窗" title="透過 Alt + Tab 鈕找到被藏起來的視窗" /></a>    </p>
 
-<p>之後，選擇 <code>Active development of Windows</code> 的朋友們將會可以提早測試到 RS3 發行版的功能，但是因為是穩定版的關係，所以並不會接收到開發中內建應用程式的更新。</p>
+<p>沒想到，還真的是被藏起來了!! 只要手動切換到那個視窗，就可以繼續完成登入的動作了。</p>
 
-<p>而選擇 <code>Skip ahead to the next Windows release</code> 的使用者們則是可以跳過 RS3 的穩定版，更提早一步的直接體驗到 RS4 以及開發中的內建應用者式。(但是選了這個選項之後除了重灌之外，是沒辦法反悔倒回去測試 RS3 的喔!! 服用前請三思~)</p>
+<h2 id="section-2">後記</h2>
 
-<h2 id="section-1">後記</h2>
+<p>後來上網一查才<a href="https://developercommunity.visualstudio.com/content/problem/44750/were-getting-things-ready-stays-forever-1.html" title="We're getting things ready stays forever">發現</a>，原來這個已經不是新問題了，理應早在四月底之前的某個版本更新就應該已經被修好了。</p>
 
-<p>正當我很開心的想說可以早一步體驗到 RS4 並且選擇了 Skip ahead to the next Windows release 之後沒多久， Windows 就跳出一個訊息跟我說目前不支援這個選項組合了，貌似微軟已經把這個選項關掉了。(不知道是參與測試的人數已經足夠了還是其它原因?)</p>
+<p>無論如何，我就還是遇到了。</p>
 
-<p>希望在不久的將來可以看到這個選項再次被打開，讓我看得到也吃得到啊~~</p>
+<p>而且神奇的是，剛剛試著在另一台 VM 安裝 VS2017，就完全沒遇到這個問題…</p>
 
-<h2 id="section-2">2017/08/15 更新</h2>
-
-<p>很神奇的，這幾天重新下載了 Insider Preview 16251 版重新安裝之後，Skip ahead to the next Windows release 這個選項又被打開了，而且還可以直接透過 Windwos Update 更新到 Build 16257.re_prerelease.170728-1630 版。(雖然說這個應該和 Skip ahead to the next Windows release 應該沒有什麼直接的關係啦…)</p>
-
-<p><a href="/images/blog-images/2017-08-14-windows-insider-options-updated/03-update-to-16257.rs_prerelease.png" title="已經可以透過 Windwos Update 更新到 Build 16257.re_prerelease.170728-1630 版"><img src="/images/blog-images/2017-08-14-windows-insider-options-updated/03-update-to-16257.rs_prerelease.png" alt="已經可以透過 Windwos Update 更新到 Build 16257.re_prerelease.170728-1630 版" title="已經可以透過 Windwos Update 更新到 Build 16257.re_prerelease.170728-1630 版" /></a>    </p>
-
-<p>但是至少 Skip ahead to the next Windows release 現在是可以選的囉!!</p>
-
-<p><a href="/images/blog-images/2017-08-14-windows-insider-options-updated/04-skip-ahead-to-the-next-Windows-release-enabled-again.png" title="Skip ahead to the next Windows release 選項又復活了"><img src="/images/blog-images/2017-08-14-windows-insider-options-updated/04-skip-ahead-to-the-next-Windows-release-enabled-again.png" alt="Skip ahead to the next Windows release 選項又復活了" title="Skip ahead to the next Windows release 選項又復活了" /></a>    </p>
-
-<p>至於之後什麼時候才能得到 RS4 相關功能的更新呢?? 讓我們繼續看下去~~</p>
+<p>這篇文章就當做個紀念，順便看看能不能幫到和我遇到同樣問題的朋友囉~</p>
 
             </div>
         </article>
@@ -162,15 +152,15 @@
         <div class="cf"></div>
         <div class="row text-center">
             <section class="notepad-post-share">
-                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;直衝 Redstone 4!? Windows 測試人員計畫選項更新&quot;%20http://ouch1978.github.io/2017/08/14/windows-insider-options-updated/%20via%20&#64;Ouch1978"
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;解決 Visual Studio 2017 首次執行時卡在 We are getting things ready 的問題&quot;%20http://ouch1978.github.io/2017/08/15/fix-visual-studio-2017-first-launch-stucking/%20via%20&#64;Ouch1978"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
                     <i class="fa fa-twitter"></i>
                 </a>
-                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=http://ouch1978.github.io/2017/08/14/windows-insider-options-updated/"
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=http://ouch1978.github.io/2017/08/15/fix-visual-studio-2017-first-launch-stucking/"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
                     <i class="fa fa-facebook"></i>
                 </a>
-                <a class="google-icon" href="https://plus.google.com/share?url=http://ouch1978.github.io/2017/08/14/windows-insider-options-updated/"
+                <a class="google-icon" href="https://plus.google.com/share?url=http://ouch1978.github.io/2017/08/15/fix-visual-studio-2017-first-launch-stucking/"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
                     <i class="fa fa-google-plus"></i>
                 </a>
@@ -181,10 +171,8 @@
 
         <div class="PageNavigation">
           
-            <a class="prev" href="/2017/05/25/mobile-ui-automation-with-xamarin-uitest/">&laquo; 使用 Visual Studio 2017 搭配 Xamarin.UITest 進行安卓應用程式的自動化測試</a>
+            <a class="prev" href="/2017/08/14/windows-insider-options-updated/">&laquo; 直衝 Redstone 4!? Windows 測試人員計畫選項更新</a>
           
-          
-            <a class="next" href="/2017/08/15/fix-visual-studio-2017-first-launch-stucking/">解決 Visual Studio 2017 首次執行時卡在 We are getting things ready 的問題 &raquo;</a>
           
         </div>
 

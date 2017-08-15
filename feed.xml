@@ -7,7 +7,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://ouch1978.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://ouch1978.github.io/" />
-<updated>2017-08-14T17:35:30+08:00</updated>
+<updated>2017-08-15T17:13:47+08:00</updated>
 <id>http://ouch1978.github.io/</id>
 <author>
   <name>Ouch Liu (劉耀群)</name>
@@ -17,11 +17,65 @@
 
 
 <entry>
+  <title type="html"><![CDATA[解決 Visual Studio 2017 首次執行時卡在 We are getting things ready 的問題]]></title>
+  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2017/08/15/fix-visual-studio-2017-first-launch-stucking/"/>
+  <id>http://ouch1978.github.io/2017/08/15/fix-visual-studio-2017-first-launch-stucking</id>
+  <published>2017-08-15T23:30:00+08:00</published>
+  <updated>2017-08-15 23:30:00 +0800T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Ouch Liu (劉耀群)</name>
+    <uri>http://ouch1978.github.io</uri>
+    <email>ouch1978@hotmail.com</email>
+  </author>
+  <category scheme="http://ouch1978.github.io/tags/#Visual%20Studio" term="Visual Studio" />
+  <content type="html">
+  
+    &lt;h2 id=&quot;section&quot;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;上星期筆電不知道是什麼原因，突然就沒辦法正常開機了，而且試過使用修復功能也沒救，只好整個重灌了。&lt;/p&gt;
+
+&lt;p&gt;就當安裝完 Visual Studio 2017 之後，準備首次啟動的時候，輸入完帳號按下下一步按鈕之後，畫面上就出現了 &lt;code&gt;We are getting things ready&lt;/code&gt; 的訊息，不過因為當時已屆下班時間，我就索性放著讓它跑。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-08-15-fix-visual-studio-2017-first-launch-stucking\01-we're-getting-things-ready.png&quot; title=&quot;We are getting thins ready&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-08-15-fix-visual-studio-2017-first-launch-stucking\01-we're-getting-things-ready.png&quot; alt=&quot;We are getting thins ready&quot; title=&quot;We are getting thins ready&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;沒想到… 隔天回到公司，一看電腦，它居然還是停留在一樣的畫面!!…&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;解法&lt;/h2&gt;
+
+&lt;p&gt;根據經驗，首次啟動 Visual Studio 2017 的時候，應該會跑出一個登入的畫面讓我們進行登入的才對。&lt;/p&gt;
+
+&lt;p&gt;而這個登入的步驟呢，如果使用的是 Microsoft Account 的話，在輸入完帳號之後，會另外跳轉到另一個視窗讓我們輸入密碼。&lt;/p&gt;
+
+&lt;p&gt;神奇的是，這個應該要出現讓我輸入密碼的視窗並沒有出現…&lt;/p&gt;
+
+&lt;p&gt;當時也不知道是哪來的靈感，想說會不會是視窗被擋住了或是被藏起來了，所以就索性的按了 &lt;code&gt;Alt + Tab&lt;/code&gt; 鈕…&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-08-15-fix-visual-studio-2017-first-launch-stucking\02-find-the-missing-window-by-task-switch.png&quot; title=&quot;透過 Alt + Tab 鈕找到被藏起來的視窗&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-08-15-fix-visual-studio-2017-first-launch-stucking\02-find-the-missing-window-by-task-switch.png&quot; alt=&quot;透過 Alt + Tab 鈕找到被藏起來的視窗&quot; title=&quot;透過 Alt + Tab 鈕找到被藏起來的視窗&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;沒想到，還真的是被藏起來了!! 只要手動切換到那個視窗，就可以繼續完成登入的動作了。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;後記&lt;/h2&gt;
+
+&lt;p&gt;後來上網一查才&lt;a href=&quot;https://developercommunity.visualstudio.com/content/problem/44750/were-getting-things-ready-stays-forever-1.html&quot; title=&quot;We're getting things ready stays forever&quot;&gt;發現&lt;/a&gt;，原來這個已經不是新問題了，理應早在四月底之前的某個版本更新就應該已經被修好了。&lt;/p&gt;
+
+&lt;p&gt;無論如何，我就還是遇到了。&lt;/p&gt;
+
+&lt;p&gt;而且神奇的是，剛剛試著在另一台 VM 安裝 VS2017，就完全沒遇到這個問題…&lt;/p&gt;
+
+&lt;p&gt;這篇文章就當做個紀念，順便看看能不能幫到和我遇到同樣問題的朋友囉~&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2017/08/15/fix-visual-studio-2017-first-launch-stucking/&quot;&gt;解決 Visual Studio 2017 首次執行時卡在 We are getting things ready 的問題&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on August 15, 2017.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
   <title type="html"><![CDATA[直衝 Redstone 4!? Windows 測試人員計畫選項更新]]></title>
   <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2017/08/14/windows-insider-options-updated/"/>
   <id>http://ouch1978.github.io/2017/08/14/windows-insider-options-updated</id>
   <published>2017-08-14T17:30:00+08:00</published>
-  <updated>2017-08-14 17:30:00 +0800T00:00:00-00:00</updated>
+  <updated>2017-08-15 17:30:00 +0800T00:00:00-00:00</updated>
   
   <author>
     <name>Ouch Liu (劉耀群)</name>
@@ -62,6 +116,18 @@
 &lt;p&gt;正當我很開心的想說可以早一步體驗到 RS4 並且選擇了 Skip ahead to the next Windows release 之後沒多久， Windows 就跳出一個訊息跟我說目前不支援這個選項組合了，貌似微軟已經把這個選項關掉了。(不知道是參與測試的人數已經足夠了還是其它原因?)&lt;/p&gt;
 
 &lt;p&gt;希望在不久的將來可以看到這個選項再次被打開，讓我看得到也吃得到啊~~&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;2017/08/15 更新&lt;/h2&gt;
+
+&lt;p&gt;很神奇的，這幾天重新下載了 Insider Preview 16251 版重新安裝之後，Skip ahead to the next Windows release 這個選項又被打開了，而且還可以直接透過 Windwos Update 更新到 Build 16257.re_prerelease.170728-1630 版。(雖然說這個應該和 Skip ahead to the next Windows release 應該沒有什麼直接的關係啦…)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-08-14-windows-insider-options-updated/03-update-to-16257.rs_prerelease.png&quot; title=&quot;已經可以透過 Windwos Update 更新到 Build 16257.re_prerelease.170728-1630 版&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-08-14-windows-insider-options-updated/03-update-to-16257.rs_prerelease.png&quot; alt=&quot;已經可以透過 Windwos Update 更新到 Build 16257.re_prerelease.170728-1630 版&quot; title=&quot;已經可以透過 Windwos Update 更新到 Build 16257.re_prerelease.170728-1630 版&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;但是至少 Skip ahead to the next Windows release 現在是可以選的囉!!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-08-14-windows-insider-options-updated/04-skip-ahead-to-the-next-Windows-release-enabled-again.png&quot; title=&quot;Skip ahead to the next Windows release 選項又復活了&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-08-14-windows-insider-options-updated/04-skip-ahead-to-the-next-Windows-release-enabled-again.png&quot; alt=&quot;Skip ahead to the next Windows release 選項又復活了&quot; title=&quot;Skip ahead to the next Windows release 選項又復活了&quot; /&gt;&lt;/a&gt;    &lt;/p&gt;
+
+&lt;p&gt;至於之後什麼時候才能得到 RS4 相關功能的更新呢?? 讓我們繼續看下去~~&lt;/p&gt;
 
   
   &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2017/08/14/windows-insider-options-updated/&quot;&gt;直衝 Redstone 4!? Windows 測試人員計畫選項更新&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on August 14, 2017.&lt;/p&gt;</content>
@@ -2744,48 +2810,6 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 
   
   &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/10/18/windows-10-10158-english-version-missing-tchinese-fonts/&quot;&gt;解決 Windows 10 10586 英文版無法正常顯示 Non-Unicode 中文的問題&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 18, 2016.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[解決遊戲在 Windows 10 執行時出現 XAudio2_7.dll_unloaded 錯誤造成的閃退]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2016/07/02/solve-xaudio2_7.dll-unloaded-error/"/>
-  <id>http://ouch1978.github.io/2016/07/02/solve-xaudio2_7.dll-unloaded-error</id>
-  <published>2016-07-02T17:00:00+08:00</published>
-  <updated>2016-07-02T17:00:00+08:00</updated>
-  <author>
-    <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
-    <email>ouch1978@hotmail.com</email>
-  </author>
-  <category scheme="http://ouch1978.github.io/tags/#Windows%2010" term="Windows 10" />
-  <content type="html">
-  
-    &lt;p&gt;放假的時候想要玩個遊戲放鬆一下，但是遊戲卻動不動就自己閃退，在事件檢視器中看到失敗的模組名稱為 XAudio2_7.dll_unloaded ，這邊就來分享解決之道。&lt;/p&gt;
-
-&lt;h3 id=&quot;tabletinputservice&quot;&gt;直接講結論： &lt;strong&gt;&lt;code&gt;關閉 TabletInputService&lt;/code&gt;&lt;/strong&gt;&lt;/h3&gt;
-
-&lt;p&gt;&lt;br /&gt;
-是的，你沒看錯，我也不懂為什麼平板輸入服務會影響到音效模組…&lt;/p&gt;
-
-&lt;p&gt;如果你也在事件檢視器中看到如下的資訊：&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/images/blog-images/2016-07-02-solve-xaudio2_7.dll-unloaded-error/Error-In-Event-Viewer.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-07-02-solve-xaudio2_7.dll-unloaded-error/Error-In-Event-Viewer.png&quot; alt=&quot;事件檢視器中顯示的錯誤資訊&quot; title=&quot;事件檢視器中顯示的錯誤資訊&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;那就不妨也試看看這樣作能不能解決這個問題吧~(至少我個人這樣作是成功的啦…)&lt;/p&gt;
-
-&lt;p&gt;首先開啟工作管理員，並且找到 TabletInputService 這個服務，確認它的狀態是否為執行中，如果是的話，直接在它上面按下滑鼠右鍵，透過彈出式選單將它停止即可。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/images/blog-images/2016-07-02-solve-xaudio2_7.dll-unloaded-error/Turn-Off-Tablet-Input-Service.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-07-02-solve-xaudio2_7.dll-unloaded-error/Turn-Off-Tablet-Input-Service.png&quot; alt=&quot;關閉 TabletInputService&quot; title=&quot;關閉 TabletInputService&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;是的，就是這麼簡單。&lt;/p&gt;
-
-&lt;p&gt;但是為什麼平板輸入服務會影響到音效模組呢??&lt;/p&gt;
-
-&lt;p&gt;不要問，很可怕。我們還是乖乖打電動吧~&lt;/p&gt;
-
-  
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/07/02/solve-xaudio2_7.dll-unloaded-error/&quot;&gt;解決遊戲在 Windows 10 執行時出現 XAudio2_7.dll_unloaded 錯誤造成的閃退&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on July 02, 2016.&lt;/p&gt;</content>
 </entry>
 
 </feed>
