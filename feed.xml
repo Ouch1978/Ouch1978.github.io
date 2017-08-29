@@ -7,13 +7,82 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://ouch1978.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://ouch1978.github.io/" />
-<updated>2017-08-15T17:13:47+08:00</updated>
+<updated>2017-08-29T17:51:45+08:00</updated>
 <id>http://ouch1978.github.io/</id>
 <author>
   <name>Ouch Liu (劉耀群)</name>
   <uri>http://ouch1978.github.io/</uri>
   <email>ouch1978@hotmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[解決 Visual Studio 2017 在有手寫筆的裝置上沒有回應及重啟的問題]]></title>
+  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2017/08/29/fix-visual-studio-2017-crash-on-pen-enabled-devices/"/>
+  <id>http://ouch1978.github.io/2017/08/29/fix-visual-studio-2017-crash-on-pen-enabled-devices</id>
+  <published>2017-08-29T23:30:00+08:00</published>
+  <updated>2017-08-29 23:30:00 +0800T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Ouch Liu (劉耀群)</name>
+    <uri>http://ouch1978.github.io</uri>
+    <email>ouch1978@hotmail.com</email>
+  </author>
+  <category scheme="http://ouch1978.github.io/tags/#Visual%20Studio" term="Visual Studio" /><category scheme="http://ouch1978.github.io/tags/#PenIMC_v0400.dll" term="PenIMC_v0400.dll" />
+  <content type="html">
+  
+    &lt;h2 id=&quot;section&quot;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;這次重灌完電腦，並且安裝好了 Visual Studio 2017 之後，一直沒什麼時間把它打開來動手寫程式。&lt;/p&gt;
+
+&lt;p&gt;昨天索性打開來更新到最新的版本之後，隨便開了一個之前寫好玩的專案想說來跑看看，結果一開沒多久，Visual Studio 馬上沒有回應，再過沒多久，就直接崩潰重開了。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-08-29-fix-visual-studio-2017-crash-on-pen-enabled-devices\01-visual-studio-2017-is-restarting.png&quot; title=&quot;Visual Studio 2017 重複自動重啟&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-08-29-fix-visual-studio-2017-crash-on-pen-enabled-devices\01-visual-studio-2017-is-restarting.png&quot; alt=&quot;Visual Studio 2017 重複自動重啟&quot; title=&quot;Visual Studio 2017 重複自動重啟&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;到 Windows 事件檢視器一看，發現錯誤原因如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-08-29-fix-visual-studio-2017-crash-on-pen-enabled-devices\02-error-log-in-event-viewer.png&quot; title=&quot;Windows 事件檢視器中顯示的錯誤訊息&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-08-29-fix-visual-studio-2017-crash-on-pen-enabled-devices\02-error-log-in-event-viewer.png&quot; alt=&quot;Windows 事件檢視器中顯示的錯誤訊息&quot; title=&quot;Windows 事件檢視器中顯示的錯誤訊息&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;使用關鍵字 &lt;code&gt;PenIMC_v0400.dll&lt;/code&gt; 一查，看起來好像跟手寫筆有關係，而且&lt;a href=&quot;https://developercommunity.visualstudio.com/content/problem/55303/visual-studio-may-terminate-unexpectedly-when-runn.html&quot; title=&quot;Visual Studio may freeze or crash when running on a pen-enabled machine&quot;&gt;看起來有不少人&lt;/a&gt;跟我一樣中招…&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;解法&lt;/h2&gt;
+
+&lt;p&gt;簡單的說，解法有兩種，一種是透過 Windows Update 安裝 KB4022716 (15063.447)這個更新包；但是很神奇的，我的電腦跑的明明就是 15063.502 版，卻還是一樣中招啊…&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2017-08-29-fix-visual-studio-2017-crash-on-pen-enabled-devices\03-my-pc-is-running-15063.502.png&quot; title=&quot;我的電腦已經是 15063.502版&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-08-29-fix-visual-studio-2017-crash-on-pen-enabled-devices\03-my-pc-is-running-15063.502.png&quot; alt=&quot;我的電腦已經是 15063.502版&quot; title=&quot;我的電腦已經是 15063.502版&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;所以只能試看看另一種方式，也就是自己手動修改 Visual Studio 2017 的設定檔，把 Visual Studio 2017 對觸控和手寫筆的支援相關功能關掉(這個比較像是 Workaround，而且等微軟之後釋出相關修正檔之後，得要記得把它改回來)。&lt;/p&gt;
+
+&lt;p&gt;具體的作法如下：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;找到 Visual Studio 2017 的執行檔路徑，如 C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;使用文字編輯工具開啟 &lt;code&gt;devenv.exe.config&lt;/code&gt; 檔(記得使用 Administrator 權限開，否則可能會無法存檔喔)。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;找到 &lt;code&gt;AppContextSwitchOverrides&lt;/code&gt; 相關設定，並且加入 “&lt;code&gt;Switch.System.Windows.Input.Stylus.DisableStylusAndTouchSupport=true&lt;/code&gt;“。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;依照我自己的例子，改完之後 AppContextSwitchOverrides 這一段會變成下面這樣&lt;/p&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;devenv.exe.config&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;lt;AppContextSwitchOverrides&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Switch.System.Threading.ThrowExceptionIfDisposedCancellationTokenSource=false;Switch.System.Windows.Forms.DoNotSupportSelectAllShortcutInMultilineTextBox=false;Switch.UseLegacyAccessibilityFeatures=false;Switch.System.Windows.Input.Stylus.DisableStylusAndTouchSupport=true&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;手動把觸控和手寫支援關掉之後，目前觀查了半天，還沒有出現自動重啟的問題。&lt;/p&gt;
+
+&lt;p&gt;以上，希望可以幫助到跟我遇到相同狀況的苦主。&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2017/08/29/fix-visual-studio-2017-crash-on-pen-enabled-devices/&quot;&gt;解決 Visual Studio 2017 在有手寫筆的裝置上沒有回應及重啟的問題&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on August 29, 2017.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -2727,89 +2796,6 @@ start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&
 
   
   &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/10/20/force-onedrive-to-sync-immediately/&quot;&gt;強制 OneDrive 立刻與伺服器的檔案進行同步&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 20, 2016.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[解決 Windows 10 10586 英文版無法正常顯示 Non-Unicode 中文的問題]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2016/10/18/windows-10-10158-english-version-missing-tchinese-fonts/"/>
-  <id>http://ouch1978.github.io/2016/10/18/windows-10-10158-english-version-missing-tchinese-fonts</id>
-  <published>2016-10-18T22:00:00+08:00</published>
-  <updated>2016-10-18T22:00:00+08:00</updated>
-  <author>
-    <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
-    <email>ouch1978@hotmail.com</email>
-  </author>
-  <category scheme="http://ouch1978.github.io/tags/#Windows%2010" term="Windows 10" />
-  <content type="html">
-  
-    &lt;p&gt;話說，之前重灌工作機的時候，試了不同的 Windows 10 版本，一開始安裝的是 10586(1511) 英文版，但是發現非 Unicode 的中文無法正常顯示。&lt;/p&gt;
-
-&lt;h1 id=&quot;section&quot;&gt;症狀&lt;/h1&gt;
-&lt;p&gt;只要是Non-Unicde的中文部份，全部都變成了一個一個的方塊。
-&lt;a href=&quot;/images/blog-images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/non-unicode-chinese-not-displayed-correctly.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/non-unicode-chinese-not-displayed-correctly.png&quot; alt=&quot;無法正確顯示非Unicode中文內容&quot; title=&quot;無法正確顯示非Unicode中文內容&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;section-1&quot;&gt;直接講結論&lt;/h1&gt;
-&lt;p&gt;其實解法非常簡單，只要 &lt;strong&gt;&lt;code&gt;手動安裝新細明體和標楷體字型&lt;/code&gt;&lt;/strong&gt; 就可以解決這個問題了。
-但是這一連串的插波休停 (Trouble Shooting) 的過程可是花了我好幾個小時啊!!!~&lt;/p&gt;
-
-&lt;h1 id=&quot;section-2&quot;&gt;對我插波休停過程有興趣的請繼續往下閱讀&lt;/h1&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;通常，遇到中文沒辦法正常顯示的情況都會先檢查 Non-Unicode Language 的設定。很好，我的確有選繁中，台灣。
-  &lt;a href=&quot;/images/blog-images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/setting-for-non-unicode-language.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/setting-for-non-unicode-language.png&quot; alt=&quot;Non-Unicode 語言設定&quot; title=&quot;Non-Unicode 語言設定&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;設了沒效的話，再到語言設定裡面加入中文(台灣)看看囉。
-  &lt;a href=&quot;/images/blog-images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/chinese-taiwan-is-already-added.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/chinese-taiwan-is-already-added.png&quot; alt=&quot;確認已經在語言選單中加入中文(台灣)&quot; title=&quot;確認已經在語言選單中加入中文(台灣)&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://answers.microsoft.com/en-us/windows/forum/windows_10-start/some-fonts-are-missing-after-upgrade/95839dfa-0df2-4bc0-875a-fd6b57e61fe4&quot; title=&quot;Some fonts are missing after upgrade&quot;&gt;Microsoft Community 上有一篇文章&lt;/a&gt;說 Windows 10 的部份字型被挪到選用功能去了。那…透過新增選用功能的方式來看看有沒有救好了…很好!!因為 Group Policy 的關係不能用!!
-  &lt;a href=&quot;/images/blog-images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/not-able-to-add-optional-features.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/not-able-to-add-optional-features.png&quot; alt=&quot;選用功能完全空白&quot; title=&quot;選用功能完全空白&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;還是不行!? 那我下載繁體中文語言包來安裝，總該行了吧!!? 蝦毀!? 一樣 GG 啊!!!!~~~ (崩潰中…)
-  &lt;a href=&quot;/images/blog-images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/install-language-pack.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/install-language-pack.png&quot; alt=&quot;安裝語言包&quot; title=&quot;安裝語言包&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;好吧…看看是不是有缺什麼字型才沒辦法正常顯示…
- 咦!? &lt;strong&gt;&lt;code&gt;沒有新細明體和標楷體! 沒有新細明體和標楷體!! 沒有新細明體和標楷體!!!&lt;/code&gt;&lt;/strong&gt;
-  &lt;a href=&quot;/images/blog-images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/pre-installed-fonts-in-10586.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/pre-installed-fonts-in-10586.png&quot; alt=&quot;Windows 10 10586 英文版預設安裝的字型&quot; title=&quot;Windows 10 10586 英文版預設安裝的字型&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;死馬當活馬醫看看，從別台電腦複製這兩個字型過來裝吧。
-  &lt;a href=&quot;/images/blog-images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/install-mingliu-and-kaiu.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/install-mingliu-and-kaiu.png&quot; alt=&quot;手動安裝新細明體和標楷體字型&quot; title=&quot;手動安裝新細明體和標楷體字型&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;喔耶!! 中文回來了~~大家都回來了!!
-  &lt;a href=&quot;/images/blog-images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/get-chinese-back.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-10-18-windows-10-10158-english-version-missing-tchinese-fonts/get-chinese-back.png&quot; alt=&quot;可以正常顯示中文啦&quot; title=&quot;可以正常顯示中文啦&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;section-3&quot;&gt;後記&lt;/h1&gt;
-&lt;p&gt;這真的是一件很神奇的事…&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;乾淨安裝 10240 再升上 10586(1511) -&amp;gt; 不會有這個問題。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;乾淨安裝年度更新版(1607) -&amp;gt; 不會有這個問題。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;乾淨安裝 10586(1511) -&amp;gt; &lt;strong&gt;&lt;code&gt;中標&lt;/code&gt;&lt;/strong&gt;。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;乾淨安裝 10586(1511) 再升上年度更新版(1607) -&amp;gt; &lt;strong&gt;&lt;code&gt;中標&lt;/code&gt;&lt;/strong&gt;。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;我只能說，我真的是搞不懂你啊~~&lt;/p&gt;
-
-  
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/10/18/windows-10-10158-english-version-missing-tchinese-fonts/&quot;&gt;解決 Windows 10 10586 英文版無法正常顯示 Non-Unicode 中文的問題&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 18, 2016.&lt;/p&gt;</content>
 </entry>
 
 </feed>

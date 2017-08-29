@@ -158,6 +158,11 @@ callback([
   {
     "text": "解決 Visual Studio 2017 首次執行時卡在 We are getting things ready 的問題",
     "href": "http://ouch1978.github.io/2017/08/15/fix-visual-studio-2017-first-launch-stucking/"
+  } ,
+
+  {
+    "text": "解決 Visual Studio 2017 在有手寫筆的裝置上沒有回應及重啟的問題",
+    "href": "http://ouch1978.github.io/2017/08/29/fix-visual-studio-2017-crash-on-pen-enabled-devices/"
   } 
 
 ])
