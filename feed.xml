@@ -7,13 +7,413 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://ouch1978.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://ouch1978.github.io/" />
-<updated>2017-08-29T17:51:45+08:00</updated>
+<updated>2018-01-08T14:12:45+08:00</updated>
 <id>http://ouch1978.github.io/</id>
 <author>
   <name>Ouch Liu (劉耀群)</name>
   <uri>http://ouch1978.github.io/</uri>
   <email>ouch1978@hotmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[透過 Xamarin.Forms 來玩玩傳說中的 XAML Standard (preview) 吧!!]]></title>
+  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2018/01/08/xaml-standard-preview-in-xamarin-forms/"/>
+  <id>http://ouch1978.github.io/2018/01/08/xaml-standard-preview-in-xamarin-forms</id>
+  <published>2018-01-08T23:30:00+08:00</published>
+  <updated>2018-01-08 23:30:00 +0800T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Ouch Liu (劉耀群)</name>
+    <uri>http://ouch1978.github.io</uri>
+    <email>ouch1978@hotmail.com</email>
+  </author>
+  <category scheme="http://ouch1978.github.io/tags/#Visual%20Studio" term="Visual Studio" /><category scheme="http://ouch1978.github.io/tags/#Xamarin" term="Xamarin" /><category scheme="http://ouch1978.github.io/tags/#XAML%20Standard" term="XAML Standard" />
+  <content type="html">
+  
+    &lt;h2 id=&quot;section&quot;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;除了 .NET Standard 2.0 之外，2017 年還有另一個讓我很期待的東西，據說可以讓 UWP 和 Xamarin.Forms 的 XAML 寫起來更直覺，而且可以無縫接軌，那就是我們今天要介紹的主角，XAML Standard!!&lt;/p&gt;
+
+&lt;h2 id=&quot;xaml-standard-&quot;&gt;XAML Standard 簡介&lt;/h2&gt;
+
+&lt;p&gt;如果對 XAML 發展的歷史有一定瞭解的朋友應該都知道，目前的 XAML 在不同的平台上(WPF、Silverlight、UWP、Xamarin Forms)支援的控制項和功能都不盡相同。&lt;/p&gt;
+
+&lt;p&gt;舉例來說，同樣是文字控制項，在 UWP 裡面叫做 TextBlock ，但是在 Xamarin 裡面卻叫做 Label；而文字輸入控制項在 UWP 裡面叫作 TextBox ，但是在 Xamarin 裡面卻叫做 Entry。&lt;/p&gt;
+
+&lt;p&gt;更進一步來看，連控制項的名稱都不一樣了，屬性就有更大的差別了。例如：在 UWP 裡面，ProgressBar 的數值叫做 Value，在 Xamarin 裡面則是叫作 Progress。&lt;/p&gt;
+
+&lt;p&gt;基於以上種種不一致的因素，所以即便我們使用的都是 XAML 語法，但是卻往往得要為了不同的平台去作不同的調整。&lt;/p&gt;
+
+&lt;p&gt;為了消弭這種的不便因子，所以 XAML Standard 的概念就這樣誕生了，初步的目標是讓 WPF、Windows 10 XAML 以及 Xamarin.Forms 的 XAML 可以使用一致的標準。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;XAML Standard 是在 Build 2017 提出來的概念，目前 XAML Standard 的 1.0 版還在 Preview 階段，詳細的內容可以參考官方 GitHub。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;牛刀小試&lt;/h2&gt;
+
+&lt;p&gt;好啦，說完了故事，就到了動手實作的時間了。&lt;/p&gt;
+
+&lt;p&gt;首先透過 Visual Studio 2017 建立一個 Cross Platform 的專案，並且在專案樣版設定的步驟選取使用 .Net Standard 作為程式碼共享的策略。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2018-01-08-xaml-standard-preview-in-xamarin-forms/01-create-with-dot-net-standard.png&quot; title=&quot;以 .Net Standard 作為共享策略&quot;&gt;&lt;img src=&quot;/images/blog-images/2018-01-08-xaml-standard-preview-in-xamarin-forms/01-create-with-dot-net-standard.png&quot; alt=&quot;以 .Net Standard 作為共享策略&quot; title=&quot;以 .Net Standard 作為共享策略&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;在專案建立完成之後，可以先下載 &lt;a href=&quot;https://aka.ms/xf-xamlstandard-nuget&quot; title=&quot;Xamarin.Forms.Alias.2.5.1.87875.nupkg 下載連結&quot;&gt;Xamarin.Forms.Alias.2.5.1.87875.nupkg&lt;/a&gt;，並且將它放到一個好記的資料夾裡面。&lt;/p&gt;
+
+&lt;p&gt;接著在 Visual Studio 2017 中點選 Tools -&amp;gt; NuGet Package Manager -&amp;gt; Package Manager Settings，如下圖：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2018-01-08-xaml-standard-preview-in-xamarin-forms/02-open-package-manager-settings.png&quot; title=&quot;NuGet Package Manager Settings&quot;&gt;&lt;img src=&quot;/images/blog-images/2018-01-08-xaml-standard-preview-in-xamarin-forms/02-open-package-manager-settings.png&quot; alt=&quot;NuGet Package Manager Settings&quot; title=&quot;NuGet Package Manager Settings&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;然後在 Package Sources 中加入一個自定的 Package Source，並且將 Source 的路徑指到存放 nupkg 檔的資料夾。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2018-01-08-xaml-standard-preview-in-xamarin-forms/03-add-custom-nuget-source.png&quot; title=&quot;自訂 Package Source&quot;&gt;&lt;img src=&quot;/images/blog-images/2018-01-08-xaml-standard-preview-in-xamarin-forms/03-add-custom-nuget-source.png&quot; alt=&quot;自訂 Package Source&quot; title=&quot;自訂 Package Source&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;完成之後，就依序在我們想要使用 XAML Standrd 的專案中各自加入 Xamarin.Forms.Alias 的參考。&lt;/p&gt;
+
+&lt;p&gt;比較快的作法是：點選 Tools -&amp;gt; NuGet Package Manager -&amp;gt; Manage NuGet Package for Solution…&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2018-01-08-xaml-standard-preview-in-xamarin-forms/04-open-manage-nuget-package-for-solution-window.png&quot; title=&quot;開啟 Manage Nuget Package for Solutions 功能&quot;&gt;&lt;img src=&quot;/images/blog-images/2018-01-08-xaml-standard-preview-in-xamarin-forms/04-open-manage-nuget-package-for-solution-window.png&quot; alt=&quot;開啟 Manage Nuget Package for Solutions 功能&quot; title=&quot;開啟 Manage Nuget Package for Solutions 功能&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;然後勾選 ‘Include prerelease’，在 Package source 下拉選單中選取我們在上一個步驟手動加入的 source，再勾選要安裝的專案後按下 Install 鈕，即可一次針對多個專案進行安裝。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2018-01-08-xaml-standard-preview-in-xamarin-forms/05-install-xamarin-forms-alias-to-projects.png&quot; title=&quot;透過 Manage NuGet Package for Solution 為多個專案加入 NuGet 參考&quot;&gt;&lt;img src=&quot;/images/blog-images/2018-01-08-xaml-standard-preview-in-xamarin-forms/05-install-xamarin-forms-alias-to-projects.png&quot; alt=&quot;透過 Manage NuGet Package for Solution 為多個專案加入 NuGet 參考&quot; title=&quot;透過 Manage NuGet Package for Solution 為多個專案加入 NuGet 參考&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;接下來，我們得先在兩個 .cs 檔裡面透過 Alias.Init() 方法針對 XAML Standrd 作初始化 - 分別是安卓專案中的 MainActivity.cs 檔，以及 iOS 專案中的 AppDelegate.cs 檔，修改如下：&lt;/p&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;安卓專案裡的 MainActivity.cs&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c#&quot; data-lang=&quot;c#&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Android.App&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Android.Content.PM&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Android.Runtime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Android.Views&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Android.Widget&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Android.OS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//加入 Xamarin.Forms.Alias 的參考                        
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Xamarin.Forms.Alias&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;XamlStandardPreview.Droid&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Activity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Label&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;XamlStandardPreview&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Icon&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;@drawable/icon&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Theme&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;@style/MainTheme&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MainLauncher&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;ConfigurationChanges&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ConfigChanges&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ScreenSize&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ConfigChanges&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Orientation&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MainActivity&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;global&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Xamarin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Forms&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Platform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Android&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FormsAppCompatActivity&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;OnCreate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Bundle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bundle&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;TabLayoutResource&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Resource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Layout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Tabbar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;ToolbarResource&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Resource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Layout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Toolbar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+            &lt;span class=&quot;k&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;OnCreate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bundle&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+            &lt;span class=&quot;k&quot;&gt;global&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Xamarin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Forms&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Forms&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bundle&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+            &lt;span class=&quot;c1&quot;&gt;//加入這行
+&lt;/span&gt;            &lt;span class=&quot;n&quot;&gt;Alias&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+            &lt;span class=&quot;nf&quot;&gt;LoadApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;iOS 專案裡的 AppDelegate.cs&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c#&quot; data-lang=&quot;c#&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;System.Collections.Generic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;System.Linq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Foundation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;UIKit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//加入 Xamarin.Forms.Alias 的參考
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Xamarin.Forms.Alias&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;XamlStandardPreview.iOS&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// The UIApplicationDelegate for the application. This class is responsible for launching the
+&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// User Interface of the application, as well as listening (and optionally responding) to
+&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// application events from iOS.
+&lt;/span&gt;    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Register&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;AppDelegate&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;partial&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;AppDelegate&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;global&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Xamarin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Forms&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Platform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;iOS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FormsApplicationDelegate&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//
+&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;// This method is invoked when the application has loaded and is ready to run. In this
+&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;// method you should instantiate the window, load the UI into it and then make the window
+&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;// visible.
+&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;//
+&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;// You have 17 seconds to return from this method, or iOS will terminate your application.
+&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;//
+&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;FinishedLaunching&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIApplication&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSDictionary&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;global&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Xamarin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Forms&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Forms&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+            &lt;span class=&quot;c1&quot;&gt;//加入這行
+&lt;/span&gt;            &lt;span class=&quot;n&quot;&gt;Alias&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;Init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+            &lt;span class=&quot;nf&quot;&gt;LoadApplication&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
+
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;FinishedLaunching&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;options&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;還有要在我們想使用 XAML Standard 的 XAML 檔中加入對 Xamarin.Forms.Alias 的參考。&lt;/p&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;.Net Standard 專案裡的 MainPage.xaml&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;ContentPage&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://xamarin.com/schemas/2014/forms&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;xmlns:x=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/winfx/2009/xaml&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;xmlns:alias=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;clr-namespace:Xamarin.Forms.Alias;assembly=Xamarin.Forms.Alias&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;x:Class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;XamlStandardPreview.MainPage&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ContentPage.Content&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ContentPage.Content&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ContentPage&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;作完以上的準備工作之後，就可以開始使用 XAML Standard 來設計我們的使用者介面啦!!~&lt;/p&gt;
+
+&lt;p&gt;以目前 XAML Standard  Preview 已經支援的控制項作出來的小範例如下：&lt;/p&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;.Net Standard 專案裡的 MainPage.xaml&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;ContentPage&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;x:Class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;XamlStandardPreview.MainPage&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://xamarin.com/schemas/2014/forms&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;xmlns:x=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schemas.microsoft.com/winfx/2009/xaml&quot;&lt;/span&gt;
+             &lt;span class=&quot;na&quot;&gt;xmlns:alias=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;clr-namespace:Xamarin.Forms.Alias;assembly=Xamarin.Forms.Alias&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ContentPage.Content&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;ScrollView&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;alias:StackPanel&amp;gt;&lt;/span&gt;
+
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;alias:TextBlock&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;12,4&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Text=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Border&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;alias:Border&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;12,0,12,16&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;BackgroundColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Pink&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;BorderBrush=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Red&quot;&lt;/span&gt;
+                              &lt;span class=&quot;na&quot;&gt;CornerRadius=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;5&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;alias:TextBlock&amp;gt;&lt;/span&gt;我在 Border 裡&lt;span class=&quot;nt&quot;&gt;&amp;lt;/alias:TextBlock&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/alias:Border&amp;gt;&lt;/span&gt;
+
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;alias:TextBlock&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;12,4&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Text=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Button&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;alias:Button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;12,0,12,16&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Text=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;我是按鈕&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;alias:TextBlock&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;12,4&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Text=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ComboBox&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;alias:ComboBox&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;12,0,12,16&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;alias:ComboBox.Items&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;x:String&amp;gt;&lt;/span&gt;ComboBox Item1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/x:String&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;x:String&amp;gt;&lt;/span&gt;ComboBox Item2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/x:String&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;x:String&amp;gt;&lt;/span&gt;ComboBox Item3&lt;span class=&quot;nt&quot;&gt;&amp;lt;/x:String&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/alias:ComboBox.Items&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/alias:ComboBox&amp;gt;&lt;/span&gt;
+
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;alias:TextBlock&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;12,4&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Text=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ProgressBar&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;alias:ProgressBar&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;12,0,12,16&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;20&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;alias:TextBlock&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;12,4&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Text=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ProgressRing&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;alias:ProgressRing&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;12,0,12,16&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;IsRunning=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;True&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Color=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Red&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;alias:TextBlock&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;12,4&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Text=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;TextBlock&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;alias:TextBlock&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;12,0,12,16&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;FontAttributes=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Bold&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;FontSize=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;18&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                    TextBlock
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/alias:TextBlock&amp;gt;&lt;/span&gt;
+
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;alias:TextBlock&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;12,4&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Text=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;TextBox&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;alias:TextBox&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;12,0,12,16&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;TextBox&lt;span class=&quot;nt&quot;&gt;&amp;lt;/alias:TextBox&amp;gt;&lt;/span&gt;
+
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;alias:TextBlock&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;12,4&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Text=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ToggleSwitch&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;alias:ToggleSwitch&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;12,0,12,16&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;IsOn=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;True&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Test&lt;span class=&quot;nt&quot;&gt;&amp;lt;/alias:ToggleSwitch&amp;gt;&lt;/span&gt;
+
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;alias:TextBlock&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;12,4&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Text=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;UserControl&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;alias:UserControl&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Margin=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;12,0,12,16&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;alias:Border&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;BackgroundColor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;LightGreen&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;alias:StackPanel&amp;gt;&lt;/span&gt;
+                            &lt;span class=&quot;nt&quot;&gt;&amp;lt;alias:TextBlock&amp;gt;&lt;/span&gt;Name&lt;span class=&quot;nt&quot;&gt;&amp;lt;/alias:TextBlock&amp;gt;&lt;/span&gt;
+                            &lt;span class=&quot;nt&quot;&gt;&amp;lt;alias:TextBox&amp;gt;&lt;/span&gt;Ouch Liu&lt;span class=&quot;nt&quot;&gt;&amp;lt;/alias:TextBox&amp;gt;&lt;/span&gt;
+                        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/alias:StackPanel&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/alias:Border&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;nt&quot;&gt;&amp;lt;/alias:UserControl&amp;gt;&lt;/span&gt;
+
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/alias:StackPanel&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ScrollView&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ContentPage.Content&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ContentPage&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;上面的程式碼在安卓執行的結果如下圖：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2018-01-08-xaml-standard-preview-in-xamarin-forms/06-screenshot-of-android.png&quot; title=&quot;本範例在安卓的執行結果&quot;&gt;&lt;img src=&quot;/images/blog-images/2018-01-08-xaml-standard-preview-in-xamarin-forms/06-screenshot-of-android.png&quot; alt=&quot;本範例在安卓的執行結果&quot; title=&quot;本範例在安卓的執行結果&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;本文的範例原始碼連結如下，請自行取用：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/Ouch1978/MobileWebUnitTestWithAppium/&quot;&gt;&lt;img src=&quot;/images/blog-images/source-code-link.png&quot; alt=&quot;Sample&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;試用心得&lt;/h2&gt;
+
+&lt;p&gt;光是想到能使用同一組 XAML 語言跨 WPF 、 UWP 和 Xamarin.Forms 平台進行開發，就是一件讓我非常期待的事。&lt;/p&gt;
+
+&lt;p&gt;但是可以想像的是，要完成這樣的願景所需要花費的時間和心力也一定不小。&lt;/p&gt;
+
+&lt;p&gt;目前的 XAML Standard Preview 在使用上雖然不是那麼的直覺；還是得要手動初始化，還有在 XAML 檔中加入參考…&lt;/p&gt;
+
+&lt;p&gt;撰寫出來的 XAML 和其他平台上執行的結果和長相也還是有著不小的差異，目前我有發現的一些差別如下：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Border 的外框並不會顯示出來。&lt;/li&gt;
+  &lt;li&gt;ProgressBar 的 Value 好像不會反映在 UI 上&lt;/li&gt;
+  &lt;li&gt;透過 XAML 指定 ComboBox 的 SelectedIndex 不會有效果&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;除此之外，目前的版本跟我想像中可以直接從 Silverlight 或是 UWP 的 XAML 複製貼上就直接抄到 Xamarin.Forms 中使用的美夢還是有著不小的差距。&lt;/p&gt;
+
+&lt;p&gt;而且目前 XAML Standard 的進展似乎不如 .Net Standard 2.0 和 .Net Core 2.0 的進展一樣快速。&lt;/p&gt;
+
+&lt;p&gt;不過，至少這是一個得期待的開始，希望之後可以完全無痛共用的時刻可以早一點到來~~&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2018/01/08/xaml-standard-preview-in-xamarin-forms/&quot;&gt;透過 Xamarin.Forms 來玩玩傳說中的 XAML Standard (preview) 吧!!&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on January 08, 2018.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -2747,55 +3147,6 @@
 
   
   &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/11/01/roaming-extension-manager/&quot;&gt;透過 Roaming Extension Manager 在不同機器上同步 Visual Studio 2015 的擴充功能&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on November 01, 2016.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[強制 OneDrive 立刻與伺服器的檔案進行同步]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2016/10/20/force-onedrive-to-sync-immediately/"/>
-  <id>http://ouch1978.github.io/2016/10/20/force-onedrive-to-sync-immediately</id>
-  <published>2016-10-20T23:00:00+08:00</published>
-  <updated>2016-10-20T23:00:00+08:00</updated>
-  <author>
-    <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
-    <email>ouch1978@hotmail.com</email>
-  </author>
-  <category scheme="http://ouch1978.github.io/tags/#Windows%2010" term="Windows 10" /><category scheme="http://ouch1978.github.io/tags/#OneDrive" term="OneDrive" />
-  <content type="html">
-  
-    &lt;p&gt;把 OneDrive 當作主要雲端備份方案的我，常常遇到它不聽話的狀況，得要重新啟動它才能讓它乖乖同步，這邊就來記錄一下透過命令列讓它醒來的方法。&lt;/p&gt;
-
-&lt;p&gt;有的時候 OneDrive 同步到一半就會突然卡住不動，像是下圖的狀況，但是檢查網路明明沒有任何問題。
-&lt;a href=&quot;/images/blog-images/2016-10-20-force-onedrive-to-sync-immediately/onedrive-stops-transfer.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-10-20-force-onedrive-to-sync-immediately/onedrive-stops-transfer.png&quot; alt=&quot;OneDrive的傳輸速度卡在0.0KB&quot; title=&quot;Non-Unicode 語言設定&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;之前遇到這種狀況的時候，我都會在 OneDrive 圖示上按下滑鼠右鍵把它關閉，再透過檔案總管瀏覽本機 OneDrive 繫結的資料夾來喚醒它。&lt;/p&gt;
-
-&lt;p&gt;(我記得之前在 Windows 8 的時代，Windows Store App 版的 OneDrive 裡面有一個同步的按鈕可以按，可是現在 Windows 10 的 App 裡好像找不到那個按鈕了，哭哭~~)&lt;/p&gt;
-
-&lt;p&gt;不過，&lt;a href=&quot;http://andreklein.net/how-to-force-microsoft-onedrive-to-sync/&quot; title=&quot;How To Force Microsoft OneDrive To Sync More Often&quot;&gt;這篇文章&lt;/a&gt;裡面有個不錯的方法，我還蠻喜歡的：&lt;/p&gt;
-
-&lt;blockquote class=&quot;filename&quot;&gt;
-  &lt;p&gt;sync.bat&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bat&quot; data-lang=&quot;bat&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
-2
-3&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;@echo off
-taskkill /f /im onedrive.exe
-start %localappdata%\Microsoft\OneDrive\OneDrive.exe /background&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;將上面幾行儲存成為 sync.bat 檔，然後在 OneDrive 不乖的時候點個兩下，就可以叫他乖乖的醒來繼續工作啦~&lt;/p&gt;
-
-&lt;p&gt;(雖然它時不時還是會很任性的罷工啊~~ XD)&lt;/p&gt;
-
-&lt;p&gt;另外，該文章的作者也提到，可以在 OneDrive 的根目錄放一個文字檔，在它偵測不到檔案變更的時候把該文字檔打開來編輯再儲存，也可以有效的讓 OneDrive 回神喔!!&lt;/p&gt;
-
-&lt;p&gt;以上。&lt;/p&gt;
-
-  
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/10/20/force-onedrive-to-sync-immediately/&quot;&gt;強制 OneDrive 立刻與伺服器的檔案進行同步&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on October 20, 2016.&lt;/p&gt;</content>
 </entry>
 
 </feed>
