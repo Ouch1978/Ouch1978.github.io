@@ -5,30 +5,134 @@
 
 <title type="text">Ouch1978 @ Github</title>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="http://ouch1978.github.io/feed.xml" />
-<link rel="alternate" type="text/html" href="http://ouch1978.github.io/" />
-<updated>2018-01-08T15:46:11+08:00</updated>
-<id>http://ouch1978.github.io/</id>
+<link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
+<link rel="alternate" type="text/html" href="http://localhost:4000/" />
+<updated>2018-01-23T11:35:30+08:00</updated>
+<id>http://localhost:4000/</id>
 <author>
   <name>Ouch Liu (劉耀群)</name>
-  <uri>http://ouch1978.github.io/</uri>
+  <uri>http://localhost:4000/</uri>
   <email>ouch1978@hotmail.com</email>
 </author>
 
 
 <entry>
+  <title type="html"><![CDATA[誰說魚與熊掌不可兼得? 讓你的安卓模擬器與 Hyper-V 可以和平共處]]></title>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2018/01/22/co-existing-android-emulator-and-hyper-v/"/>
+  <id>http://localhost:4000/2018/01/22/co-existing-android-emulator-and-hyper-v</id>
+  <published>2018-01-22T23:30:00+08:00</published>
+  <updated>2018-01-22 23:30:00 +0800T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Ouch Liu (劉耀群)</name>
+    <uri>http://localhost:4000</uri>
+    <email>ouch1978@hotmail.com</email>
+  </author>
+  <category scheme="http://localhost:4000/tags/#Visual%20Studio" term="Visual Studio" /><category scheme="http://localhost:4000/tags/#Xamarin" term="Xamarin" /><category scheme="http://localhost:4000/tags/#Hyper-V" term="Hyper-V" /><category scheme="http://localhost:4000/tags/#Intel%20HAXM" term="Intel HAXM" />
+  <content type="html">
+  
+    &lt;h2 id=&quot;section&quot;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;有在使用 Visual Studio 2017 和 Xamarin 進行開發的朋友們可能會跟我一樣遇過同樣的問題：如果使用 Visual Studio 2017 裡面內建的安卓模擬器，就得把 Hyper-V 給關掉，不然就無法啟用 Intel® Hardware Accelerated Execution Manager 來替安卓模擬器加速。&lt;/p&gt;
+
+&lt;p&gt;畢竟，要支援 Intel® Hardware Accelerated Execution Manager ，才能啟用 Visual Studio 2017 中內建模擬器工具裡的 Atom x86 架構安卓虛擬機，以達到媲美真機的效能(官方說法是效能會差上十倍，不信邪的朋友也可以試著開啟 ARM 架構的模擬器來比較看看，效能真的會讓人很想哭)。&lt;/p&gt;
+
+&lt;p&gt;但是身為一個工程師，透過 VM 來架設實驗環境應該是家常便飯的事。從微軟在 Windows 8 內建了 Hyper-V 之後，它就一直是我架設 VM 的首選工具。&lt;/p&gt;
+
+&lt;p&gt;所以當看到 Hyper-V 和 Intel® Hardware Accelerated Execution Manager 無法共存的訊息出現，我就一直在想：「到底有什麼其它的方式能讓我不用每次都得要為了開啟安卓模擬器就得先手動關閉 Hypervisor 功能；而在要使用虛擬機器的時候又得先手動開啟 Hypervisor?」。&lt;/p&gt;
+
+&lt;p&gt;在網路上爬了一些文章之後，歸納出了下面兩種解法。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;解法一：建立多重開機選單&lt;/h2&gt;
+
+&lt;p&gt;我們可以透過建立多重開機的方式，建立出一個預設把 Hypervisor 關閉的設定，專門用來執行安卓模擬器。&lt;/p&gt;
+
+&lt;p&gt;方法如下：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;以系統管理員的身份開啟命令提示字元，並且輸入下列指令：&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;從現有的開機設定複製出一組新的設定&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-batchfile&quot; data-lang=&quot;batchfile&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;bcdedit /copy {current} /d &quot;Microsoft Windows 10 – No Hypervisor&quot;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;執行成功之後會得到一串機碼值，如下圖。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2018-01-22-co-existing-android-emulator-and-hyper-v/01-copy-a-new-boot-setting.png&quot; title=&quot;建立一組新的開機設定&quot;&gt;&lt;img src=&quot;/images/blog-images/2018-01-22-co-existing-android-emulator-and-hyper-v/01-copy-a-new-boot-setting.png&quot; alt=&quot;建立一組新的開機設定&quot; title=&quot;建立一組新的開機設定&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;複製步驟一產生的機碼，並且接著輸入：&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;將新的開機設定檔中的 Hypervisor 功能關閉&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-batchfile&quot; data-lang=&quot;batchfile&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;bcdedit /set {步驟一產生的機碼} hypervisorlaunchtype off&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;如果出現操作順利完成的訊息，就代表完成啦!!~&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2018-01-22-co-existing-android-emulator-and-hyper-v/02-set-hypervisor-launchtype-off.png&quot; title=&quot;將新的開機設定中的 Hypervisor 啟動方式設定為 Off&quot;&gt;&lt;img src=&quot;/images/blog-images/2018-01-22-co-existing-android-emulator-and-hyper-v/02-set-hypervisor-launchtype-off.png&quot; alt=&quot;將新的開機設定中的 Hypervisor 啟動方式設定為 Off&quot; title=&quot;將新的開機設定中的 Hypervisor 啟動方式設定為 Off&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;之後只要重新開機，就會出現像下圖的選單，這時候我們就可以在要使用安卓模擬器的時候用關閉 Hypervisor 的設定來開機囉!!~&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2018-01-22-co-existing-android-emulator-and-hyper-v/03-can-choose-between-enable-hypervisor-or-not.png&quot; title=&quot;之後開機時就能選擇是否要開啟 Hypervisor 囉!!&quot;&gt;&lt;img src=&quot;/images/blog-images/2018-01-22-co-existing-android-emulator-and-hyper-v/03-can-choose-between-enable-hypervisor-or-not.png&quot; alt=&quot;之後開機時就能選擇是否要開啟 Hypervisor 囉!!&quot; title=&quot;之後開機時就能選擇是否要開啟 Hypervisor 囉!!&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;visual-studio-emulator-for-android&quot;&gt;解法二：安裝 Visual Studio Emulator for Android&lt;/h2&gt;
+
+&lt;p&gt;對於使用 AMD CPU 的朋友們來說，天生就無法透過安裝 Intel® Hardware Accelerated Execution Manager 來啟用 x86 架構的安卓模擬器。&lt;/p&gt;
+
+&lt;p&gt;不過幸好我們還是可以手動下載之前在 Visual Studio 2015 裡內建的 Visual Studio Emulator for Android。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2018-01-22-co-existing-android-emulator-and-hyper-v/04-visual-studio-emulator-for-android.png&quot; title=&quot;Visual Studio Emulator for Android 的模擬器外觀&quot;&gt;&lt;img src=&quot;/images/blog-images/2018-01-22-co-existing-android-emulator-and-hyper-v/04-visual-studio-emulator-for-android.png&quot; alt=&quot;Visual Studio Emulator for Android 的模擬器外觀&quot; title=&quot;Visual Studio Emulator for Android 的模擬器外觀&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;更讓人開心的是，它原生就支援 x86 架構的安卓模擬器，有了它，就不用再忍受 ARM 架構模擬器的龜速囉!!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2018-01-22-co-existing-android-emulator-and-hyper-v/05-x86-architecture-supported-for-visual-studio-emulator-for-android.png&quot; title=&quot;Visual Studio Emulator for Android 原生就支援 x86 架構&quot;&gt;&lt;img src=&quot;/images/blog-images/2018-01-22-co-existing-android-emulator-and-hyper-v/05-x86-architecture-supported-for-visual-studio-emulator-for-android.png&quot; alt=&quot;Visual Studio Emulator for Android 原生就支援 x86 架構&quot; title=&quot;Visual Studio Emulator for Android 原生就支援 x86 架構&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;尤於 Visual Studio Emulator for Android 也是基於 Hyper-V 技術打造出來的，所以它和 Hyper-V 完全不會互相衝突。&lt;/p&gt;
+
+&lt;p&gt;而且它也內建了加速器、GPS、電量、相機等等相關的模擬功能，用起來並不輸給 Google 原生的模擬器喔!!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2018-01-22-co-existing-android-emulator-and-hyper-v/06-built-in-accelerometer-simulator.png&quot; title=&quot;Visual Studio Emulator for Android 內建的加速器模擬功能&quot;&gt;&lt;img src=&quot;/images/blog-images/2018-01-22-co-existing-android-emulator-and-hyper-v/06-built-in-accelerometer-simulator.png&quot; alt=&quot;Visual Studio Emulator for Android 內建的加速器模擬功能&quot; title=&quot;Visual Studio Emulator for Android 內建的加速器模擬功能&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Visual Studio Emulator for Android 的下載點&lt;a href=&quot;https://aka.ms/vscomemudownload&quot; title=&quot;Visual Studio Emulator for Android 下載連結&quot;&gt;在此&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;總結&lt;/h2&gt;
+
+&lt;p&gt;上面兩種方法「基本上」都可以解決 Hyper-V 和安卓模擬器無法並存的問題。&lt;/p&gt;
+
+&lt;p&gt;但是至於哪個方式比較好用，或是哪個方式比較適合你，就得要看你的環境條件和使用習慣了。&lt;/p&gt;
+
+&lt;p&gt;如果是使用 Intel CPU 的朋友，可能建立多重開機選單會比較能壓榨出電腦的效能，而且可以享受到 Intel® Hardware Accelerated Execution Manager 帶來的快感。&lt;/p&gt;
+
+&lt;p&gt;而對於使用 AMD CPU 的朋友們，可能 Visual Studio Emulator for Android 會是一個更好的選擇，因為它原生就支援 x86 的模擬器，而且 Intel® Hardware Accelerated Execution Manager 對你來說是看得到但是卻吃不到的東西。&lt;/p&gt;
+
+&lt;p&gt;以上，希望對有跟我遇到相同煩惱的朋友們有幫助喔~&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2018/01/22/co-existing-android-emulator-and-hyper-v/&quot;&gt;誰說魚與熊掌不可兼得? 讓你的安卓模擬器與 Hyper-V 可以和平共處&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on January 22, 2018.&lt;/p&gt;</content>
+</entry>
+
+
+<entry>
   <title type="html"><![CDATA[透過 Xamarin.Forms 來玩玩傳說中的 XAML Standard (preview) 吧!!]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2018/01/08/xaml-standard-preview-in-xamarin-forms/"/>
-  <id>http://ouch1978.github.io/2018/01/08/xaml-standard-preview-in-xamarin-forms</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2018/01/08/xaml-standard-preview-in-xamarin-forms/"/>
+  <id>http://localhost:4000/2018/01/08/xaml-standard-preview-in-xamarin-forms</id>
   <published>2018-01-08T23:30:00+08:00</published>
   <updated>2018-01-08 23:30:00 +0800T00:00:00-00:00</updated>
   
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#Visual%20Studio" term="Visual Studio" /><category scheme="http://ouch1978.github.io/tags/#Xamarin" term="Xamarin" /><category scheme="http://ouch1978.github.io/tags/#XAML%20Standard" term="XAML Standard" />
+  <category scheme="http://localhost:4000/tags/#Visual%20Studio" term="Visual Studio" /><category scheme="http://localhost:4000/tags/#Xamarin" term="Xamarin" /><category scheme="http://localhost:4000/tags/#XAML%20Standard" term="XAML Standard" />
   <content type="html">
   
     &lt;h2 id=&quot;section&quot;&gt;前言&lt;/h2&gt;
@@ -412,23 +516,23 @@
 &lt;p&gt;不過，至少這是一個得期待的開始，希望之後可以完全無痛共用的時刻可以早一點到來~~&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2018/01/08/xaml-standard-preview-in-xamarin-forms/&quot;&gt;透過 Xamarin.Forms 來玩玩傳說中的 XAML Standard (preview) 吧!!&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on January 08, 2018.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2018/01/08/xaml-standard-preview-in-xamarin-forms/&quot;&gt;透過 Xamarin.Forms 來玩玩傳說中的 XAML Standard (preview) 吧!!&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on January 08, 2018.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[解決 Visual Studio 2017 在有手寫筆的裝置上沒有回應及重啟的問題]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2017/08/29/fix-visual-studio-2017-crash-on-pen-enabled-devices/"/>
-  <id>http://ouch1978.github.io/2017/08/29/fix-visual-studio-2017-crash-on-pen-enabled-devices</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2017/08/29/fix-visual-studio-2017-crash-on-pen-enabled-devices/"/>
+  <id>http://localhost:4000/2017/08/29/fix-visual-studio-2017-crash-on-pen-enabled-devices</id>
   <published>2017-08-29T23:30:00+08:00</published>
   <updated>2017-08-29 23:30:00 +0800T00:00:00-00:00</updated>
   
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#Visual%20Studio" term="Visual Studio" /><category scheme="http://ouch1978.github.io/tags/#PenIMC_v0400.dll" term="PenIMC_v0400.dll" />
+  <category scheme="http://localhost:4000/tags/#Visual%20Studio" term="Visual Studio" /><category scheme="http://localhost:4000/tags/#PenIMC_v0400.dll" term="PenIMC_v0400.dll" />
   <content type="html">
   
     &lt;h2 id=&quot;section&quot;&gt;前言&lt;/h2&gt;
@@ -481,23 +585,23 @@
 &lt;p&gt;以上，希望可以幫助到跟我遇到相同狀況的苦主。&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2017/08/29/fix-visual-studio-2017-crash-on-pen-enabled-devices/&quot;&gt;解決 Visual Studio 2017 在有手寫筆的裝置上沒有回應及重啟的問題&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on August 29, 2017.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2017/08/29/fix-visual-studio-2017-crash-on-pen-enabled-devices/&quot;&gt;解決 Visual Studio 2017 在有手寫筆的裝置上沒有回應及重啟的問題&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on August 29, 2017.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[解決 Visual Studio 2017 首次執行時卡在 We are getting things ready 的問題]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2017/08/15/fix-visual-studio-2017-first-launch-stucking/"/>
-  <id>http://ouch1978.github.io/2017/08/15/fix-visual-studio-2017-first-launch-stucking</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2017/08/15/fix-visual-studio-2017-first-launch-stucking/"/>
+  <id>http://localhost:4000/2017/08/15/fix-visual-studio-2017-first-launch-stucking</id>
   <published>2017-08-15T23:30:00+08:00</published>
   <updated>2017-08-15 23:30:00 +0800T00:00:00-00:00</updated>
   
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#Visual%20Studio" term="Visual Studio" />
+  <category scheme="http://localhost:4000/tags/#Visual%20Studio" term="Visual Studio" />
   <content type="html">
   
     &lt;h2 id=&quot;section&quot;&gt;前言&lt;/h2&gt;
@@ -535,23 +639,23 @@
 &lt;p&gt;這篇文章就當做個紀念，順便看看能不能幫到和我遇到同樣問題的朋友囉~&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2017/08/15/fix-visual-studio-2017-first-launch-stucking/&quot;&gt;解決 Visual Studio 2017 首次執行時卡在 We are getting things ready 的問題&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on August 15, 2017.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2017/08/15/fix-visual-studio-2017-first-launch-stucking/&quot;&gt;解決 Visual Studio 2017 首次執行時卡在 We are getting things ready 的問題&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on August 15, 2017.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[直衝 Redstone 4!? Windows 測試人員計畫選項更新]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2017/08/14/windows-insider-options-updated/"/>
-  <id>http://ouch1978.github.io/2017/08/14/windows-insider-options-updated</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2017/08/14/windows-insider-options-updated/"/>
+  <id>http://localhost:4000/2017/08/14/windows-insider-options-updated</id>
   <published>2017-08-14T17:30:00+08:00</published>
   <updated>2017-08-15 17:30:00 +0800T00:00:00-00:00</updated>
   
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#Windows%2010" term="Windows 10" /><category scheme="http://ouch1978.github.io/tags/#Creators%20Update" term="Creators Update" /><category scheme="http://ouch1978.github.io/tags/#Insider%20Program" term="Insider Program" />
+  <category scheme="http://localhost:4000/tags/#Windows%2010" term="Windows 10" /><category scheme="http://localhost:4000/tags/#Creators%20Update" term="Creators Update" /><category scheme="http://localhost:4000/tags/#Insider%20Program" term="Insider Program" />
   <content type="html">
   
     &lt;h2 id=&quot;section&quot;&gt;前言&lt;/h2&gt;
@@ -599,23 +703,23 @@
 &lt;p&gt;至於之後什麼時候才能得到 RS4 相關功能的更新呢?? 讓我們繼續看下去~~&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2017/08/14/windows-insider-options-updated/&quot;&gt;直衝 Redstone 4!? Windows 測試人員計畫選項更新&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on August 14, 2017.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2017/08/14/windows-insider-options-updated/&quot;&gt;直衝 Redstone 4!? Windows 測試人員計畫選項更新&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on August 14, 2017.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[使用 Visual Studio 2017 搭配 Xamarin.UITest 進行安卓應用程式的自動化測試]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2017/05/25/mobile-ui-automation-with-xamarin-uitest/"/>
-  <id>http://ouch1978.github.io/2017/05/25/mobile-ui-automation-with-xamarin-uitest</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2017/05/25/mobile-ui-automation-with-xamarin-uitest/"/>
+  <id>http://localhost:4000/2017/05/25/mobile-ui-automation-with-xamarin-uitest</id>
   <published>2017-05-25T23:30:00+08:00</published>
   <updated>2017-05-25 23:30:00 +0800T00:00:00-00:00</updated>
   
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#Visual%20Studio%202017" term="Visual Studio 2017" /><category scheme="http://ouch1978.github.io/tags/#Xamarin.UITest" term="Xamarin.UITest" /><category scheme="http://ouch1978.github.io/tags/#Automation%20Testing" term="Automation Testing" />
+  <category scheme="http://localhost:4000/tags/#Visual%20Studio%202017" term="Visual Studio 2017" /><category scheme="http://localhost:4000/tags/#Xamarin.UITest" term="Xamarin.UITest" /><category scheme="http://localhost:4000/tags/#Automation%20Testing" term="Automation Testing" />
   <content type="html">
   
     &lt;h2 id=&quot;section&quot;&gt;前言&lt;/h2&gt;
@@ -806,23 +910,23 @@
 &lt;p&gt;這個部份就待之後再另開文章來分享給大家囉!!~&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2017/05/25/mobile-ui-automation-with-xamarin-uitest/&quot;&gt;使用 Visual Studio 2017 搭配 Xamarin.UITest 進行安卓應用程式的自動化測試&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on May 25, 2017.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2017/05/25/mobile-ui-automation-with-xamarin-uitest/&quot;&gt;使用 Visual Studio 2017 搭配 Xamarin.UITest 進行安卓應用程式的自動化測試&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on May 25, 2017.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[解決透過 Appium 測試安卓裝置上的行動網站發生 ChromeDriver 版本不相容的問題]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2017/05/11/fix-appium-chrome-driver-error/"/>
-  <id>http://ouch1978.github.io/2017/05/11/fix-appium-chrome-driver-error</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2017/05/11/fix-appium-chrome-driver-error/"/>
+  <id>http://localhost:4000/2017/05/11/fix-appium-chrome-driver-error</id>
   <published>2017-05-11T23:30:00+08:00</published>
   <updated>2017-05-11 23:30:00 +0800T00:00:00-00:00</updated>
   
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#Visual%20Studio%202017" term="Visual Studio 2017" /><category scheme="http://ouch1978.github.io/tags/#Appium" term="Appium" /><category scheme="http://ouch1978.github.io/tags/#Automation%20Testing" term="Automation Testing" />
+  <category scheme="http://localhost:4000/tags/#Visual%20Studio%202017" term="Visual Studio 2017" /><category scheme="http://localhost:4000/tags/#Appium" term="Appium" /><category scheme="http://localhost:4000/tags/#Automation%20Testing" term="Automation Testing" />
   <content type="html">
   
     &lt;p&gt;之前在使用 Appium 測試安卓裝置上的行動網站的時候，一切都很開心愉快。&lt;/p&gt;
@@ -871,23 +975,23 @@
 &lt;p&gt;以上，希望可以幫助到有需要的朋友們。&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2017/05/11/fix-appium-chrome-driver-error/&quot;&gt;解決透過 Appium 測試安卓裝置上的行動網站發生 ChromeDriver 版本不相容的問題&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on May 11, 2017.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2017/05/11/fix-appium-chrome-driver-error/&quot;&gt;解決透過 Appium 測試安卓裝置上的行動網站發生 ChromeDriver 版本不相容的問題&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on May 11, 2017.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[透過 Visual Studio 2017 與 Appium 測試安卓手機上的 App]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2017/05/10/mobile-app-automation-testing-with-vs2017-and-appium/"/>
-  <id>http://ouch1978.github.io/2017/05/10/mobile-app-automation-testing-with-vs2017-and-appium</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2017/05/10/mobile-app-automation-testing-with-vs2017-and-appium/"/>
+  <id>http://localhost:4000/2017/05/10/mobile-app-automation-testing-with-vs2017-and-appium</id>
   <published>2017-05-10T23:30:00+08:00</published>
   <updated>2017-05-10 23:30:00 +0800T00:00:00-00:00</updated>
   
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#Visual%20Studio%202017" term="Visual Studio 2017" /><category scheme="http://ouch1978.github.io/tags/#Appium" term="Appium" /><category scheme="http://ouch1978.github.io/tags/#Automation%20Testing" term="Automation Testing" />
+  <category scheme="http://localhost:4000/tags/#Visual%20Studio%202017" term="Visual Studio 2017" /><category scheme="http://localhost:4000/tags/#Appium" term="Appium" /><category scheme="http://localhost:4000/tags/#Automation%20Testing" term="Automation Testing" />
   <content type="html">
   
     &lt;h2 id=&quot;section&quot;&gt;前言&lt;/h2&gt;
@@ -1255,23 +1359,23 @@
 &lt;p&gt;&lt;a href=&quot;https://github.com/Ouch1978/MobileAppUnitTestWithAppium/&quot;&gt;&lt;img src=&quot;/images/blog-images/source-code-link.png&quot; alt=&quot;Sample&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2017/05/10/mobile-app-automation-testing-with-vs2017-and-appium/&quot;&gt;透過 Visual Studio 2017 與 Appium 測試安卓手機上的 App&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on May 10, 2017.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2017/05/10/mobile-app-automation-testing-with-vs2017-and-appium/&quot;&gt;透過 Visual Studio 2017 與 Appium 測試安卓手機上的 App&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on May 10, 2017.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[透過 Gorilla Player 在裝置上即時預覽 Xamarin Forms 介面]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2017/05/08/design-xamarin-forms-with-gorilla-player/"/>
-  <id>http://ouch1978.github.io/2017/05/08/design-xamarin-forms-with-gorilla-player</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2017/05/08/design-xamarin-forms-with-gorilla-player/"/>
+  <id>http://localhost:4000/2017/05/08/design-xamarin-forms-with-gorilla-player</id>
   <published>2017-05-08T23:30:00+08:00</published>
   <updated>2017-05-08 23:30:00 +0800T00:00:00-00:00</updated>
   
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#Visual%20Studio%202017" term="Visual Studio 2017" /><category scheme="http://ouch1978.github.io/tags/#Xamarin" term="Xamarin" /><category scheme="http://ouch1978.github.io/tags/#XAML" term="XAML" /><category scheme="http://ouch1978.github.io/tags/#Gorilla%20Player" term="Gorilla Player" />
+  <category scheme="http://localhost:4000/tags/#Visual%20Studio%202017" term="Visual Studio 2017" /><category scheme="http://localhost:4000/tags/#Xamarin" term="Xamarin" /><category scheme="http://localhost:4000/tags/#XAML" term="XAML" /><category scheme="http://localhost:4000/tags/#Gorilla%20Player" term="Gorilla Player" />
   <content type="html">
   
     &lt;h2 id=&quot;section&quot;&gt;前言&lt;/h2&gt;
@@ -1413,23 +1517,23 @@
 &lt;p&gt;&lt;a href=&quot;https://github.com/Ouch1978/PlayXamarinFormsWithGorilla/&quot;&gt;&lt;img src=&quot;/images/blog-images/source-code-link.png&quot; alt=&quot;Sample&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2017/05/08/design-xamarin-forms-with-gorilla-player/&quot;&gt;透過 Gorilla Player 在裝置上即時預覽 Xamarin Forms 介面&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on May 08, 2017.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2017/05/08/design-xamarin-forms-with-gorilla-player/&quot;&gt;透過 Gorilla Player 在裝置上即時預覽 Xamarin Forms 介面&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on May 08, 2017.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[透過 Visual Studio 2017 與 Appium 測試安卓手機上的行動版網頁]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2017/04/17/mobile-web-automation-testing-with-vs2017-and-appium/"/>
-  <id>http://ouch1978.github.io/2017/04/17/mobile-web-automation-testing-with-vs2017-and-appium</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2017/04/17/mobile-web-automation-testing-with-vs2017-and-appium/"/>
+  <id>http://localhost:4000/2017/04/17/mobile-web-automation-testing-with-vs2017-and-appium</id>
   <published>2017-04-17T23:50:00+08:00</published>
   <updated>2017-04-17 23:50:00 +0800T00:00:00-00:00</updated>
   
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#Visual%20Studio%202017" term="Visual Studio 2017" /><category scheme="http://ouch1978.github.io/tags/#Appium" term="Appium" /><category scheme="http://ouch1978.github.io/tags/#Automation%20Testing" term="Automation Testing" />
+  <category scheme="http://localhost:4000/tags/#Visual%20Studio%202017" term="Visual Studio 2017" /><category scheme="http://localhost:4000/tags/#Appium" term="Appium" /><category scheme="http://localhost:4000/tags/#Automation%20Testing" term="Automation Testing" />
   <content type="html">
   
     &lt;h2 id=&quot;section&quot;&gt;前言&lt;/h2&gt;
@@ -1708,23 +1812,23 @@
 &lt;p&gt;&lt;a href=&quot;https://github.com/Ouch1978/MobileWebUnitTestWithAppium/&quot;&gt;&lt;img src=&quot;/images/blog-images/source-code-link.png&quot; alt=&quot;Sample&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2017/04/17/mobile-web-automation-testing-with-vs2017-and-appium/&quot;&gt;透過 Visual Studio 2017 與 Appium 測試安卓手機上的行動版網頁&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on April 17, 2017.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2017/04/17/mobile-web-automation-testing-with-vs2017-and-appium/&quot;&gt;透過 Visual Studio 2017 與 Appium 測試安卓手機上的行動版網頁&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on April 17, 2017.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[回來吧!! Creator Update 開始按鈕右鍵選單裡的控制台選項!!]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2017/04/07/add-control-panel-back-after-creator-update/"/>
-  <id>http://ouch1978.github.io/2017/04/07/add-control-panel-back-after-creator-update</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2017/04/07/add-control-panel-back-after-creator-update/"/>
+  <id>http://localhost:4000/2017/04/07/add-control-panel-back-after-creator-update</id>
   <published>2017-04-07T23:50:00+08:00</published>
   <updated>2017-04-07 23:50:00 +0800T00:00:00-00:00</updated>
   
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#Windows%2010" term="Windows 10" />
+  <category scheme="http://localhost:4000/tags/#Windows%2010" term="Windows 10" />
   <content type="html">
   
     &lt;h2 id=&quot;section&quot;&gt;前言&lt;/h2&gt;
@@ -1799,23 +1903,23 @@
 &lt;p&gt;以上，希望對跟我一樣習慣能從開始按鈕開啟控制台的你有幫助喔!!~&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2017/04/07/add-control-panel-back-after-creator-update/&quot;&gt;回來吧!! Creator Update 開始按鈕右鍵選單裡的控制台選項!!&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on April 07, 2017.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2017/04/07/add-control-panel-back-after-creator-update/&quot;&gt;回來吧!! Creator Update 開始按鈕右鍵選單裡的控制台選項!!&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on April 07, 2017.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[XAML 的過去、現在與未來]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2017/03/28/the-future-of-xaml/"/>
-  <id>http://ouch1978.github.io/2017/03/28/the-future-of-xaml</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2017/03/28/the-future-of-xaml/"/>
+  <id>http://localhost:4000/2017/03/28/the-future-of-xaml</id>
   <published>2017-03-28T23:50:00+08:00</published>
   <updated>2017-03-28 23:50:00 +0800T00:00:00-00:00</updated>
   
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#XAML" term="XAML" /><category scheme="http://ouch1978.github.io/tags/#Visual%20Studio" term="Visual Studio" /><category scheme="http://ouch1978.github.io/tags/#%E8%A8%AD%E8%A8%88" term="設計" />
+  <category scheme="http://localhost:4000/tags/#XAML" term="XAML" /><category scheme="http://localhost:4000/tags/#Visual%20Studio" term="Visual Studio" /><category scheme="http://localhost:4000/tags/#%E8%A8%AD%E8%A8%88" term="設計" />
   <content type="html">
   
     &lt;h2 id=&quot;section&quot;&gt;前言&lt;/h2&gt;
@@ -1886,23 +1990,23 @@
 &lt;/ul&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2017/03/28/the-future-of-xaml/&quot;&gt;XAML 的過去、現在與未來&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on March 28, 2017.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2017/03/28/the-future-of-xaml/&quot;&gt;XAML 的過去、現在與未來&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on March 28, 2017.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[透過 Material Design Xaml Toolkit 讓你的 WPF 應用程式潮又有料]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2017/03/25/material-design-xaml-toolkit/"/>
-  <id>http://ouch1978.github.io/2017/03/25/material-design-xaml-toolkit</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2017/03/25/material-design-xaml-toolkit/"/>
+  <id>http://localhost:4000/2017/03/25/material-design-xaml-toolkit</id>
   <published>2017-03-25T23:50:00+08:00</published>
   <updated>2017-03-28 23:50:00 +0800T00:00:00-00:00</updated>
   
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#C%23" term="C#" /><category scheme="http://ouch1978.github.io/tags/#WPF" term="WPF" /><category scheme="http://ouch1978.github.io/tags/#Visual%20Studio" term="Visual Studio" /><category scheme="http://ouch1978.github.io/tags/#Material%20Design%20Xaml%20Toolkit" term="Material Design Xaml Toolkit" /><category scheme="http://ouch1978.github.io/tags/#%E8%A8%AD%E8%A8%88" term="設計" />
+  <category scheme="http://localhost:4000/tags/#C%23" term="C#" /><category scheme="http://localhost:4000/tags/#WPF" term="WPF" /><category scheme="http://localhost:4000/tags/#Visual%20Studio" term="Visual Studio" /><category scheme="http://localhost:4000/tags/#Material%20Design%20Xaml%20Toolkit" term="Material Design Xaml Toolkit" /><category scheme="http://localhost:4000/tags/#%E8%A8%AD%E8%A8%88" term="設計" />
   <content type="html">
   
     &lt;h2 id=&quot;section&quot;&gt;前言&lt;/h2&gt;
@@ -2203,23 +2307,23 @@
 &lt;p&gt;&lt;a href=&quot;https://github.com/Ouch1978/Wpf_MaterialDesignXamlToolkitSample/&quot;&gt;&lt;img src=&quot;/images/blog-images/source-code-link.png&quot; alt=&quot;Wpf_MaterialDesignXamlToolkitSample&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2017/03/25/material-design-xaml-toolkit/&quot;&gt;透過 Material Design Xaml Toolkit 讓你的 WPF 應用程式潮又有料&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on March 25, 2017.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2017/03/25/material-design-xaml-toolkit/&quot;&gt;透過 Material Design Xaml Toolkit 讓你的 WPF 應用程式潮又有料&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on March 25, 2017.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[透過 Sikuli4Net 對 Flash UI 進行自動化測試]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2017/02/04/automation-flash-ui-test-with-sikuli4net/"/>
-  <id>http://ouch1978.github.io/2017/02/04/automation-flash-ui-test-with-sikuli4net</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2017/02/04/automation-flash-ui-test-with-sikuli4net/"/>
+  <id>http://localhost:4000/2017/02/04/automation-flash-ui-test-with-sikuli4net</id>
   <published>2017-02-04T23:50:00+08:00</published>
   <updated>2017-02-04 23:50:00 +0800T00:00:00-00:00</updated>
   
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#C%23" term="C#" /><category scheme="http://ouch1978.github.io/tags/#Sikuli4Net" term="Sikuli4Net" /><category scheme="http://ouch1978.github.io/tags/#Visual%20Studio" term="Visual Studio" /><category scheme="http://ouch1978.github.io/tags/#Coded%20UI%20Test" term="Coded UI Test" />
+  <category scheme="http://localhost:4000/tags/#C%23" term="C#" /><category scheme="http://localhost:4000/tags/#Sikuli4Net" term="Sikuli4Net" /><category scheme="http://localhost:4000/tags/#Visual%20Studio" term="Visual Studio" /><category scheme="http://localhost:4000/tags/#Coded%20UI%20Test" term="Coded UI Test" />
   <content type="html">
   
     &lt;h2 id=&quot;section&quot;&gt;前言&lt;/h2&gt;
@@ -2505,23 +2609,23 @@
 &lt;p&gt;當然，如果你有更好用、更簡便的方法或工具，也歡迎不吝分享喔!!~&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2017/02/04/automation-flash-ui-test-with-sikuli4net/&quot;&gt;透過 Sikuli4Net 對 Flash UI 進行自動化測試&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on February 04, 2017.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2017/02/04/automation-flash-ui-test-with-sikuli4net/&quot;&gt;透過 Sikuli4Net 對 Flash UI 進行自動化測試&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on February 04, 2017.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[部落格備份/搬家小工具 - Html to MD Exporter]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2017/02/03/html-to-md-exporter/"/>
-  <id>http://ouch1978.github.io/2017/02/03/html-to-md-exporter</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2017/02/03/html-to-md-exporter/"/>
+  <id>http://localhost:4000/2017/02/03/html-to-md-exporter</id>
   <published>2017-02-03T22:30:00+08:00</published>
   <updated>2017-02-03 22:30:00 +0800T00:00:00-00:00</updated>
   
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#C%23" term="C#" />
+  <category scheme="http://localhost:4000/tags/#C%23" term="C#" />
   <content type="html">
   
     &lt;h2 id=&quot;section&quot;&gt;前言&lt;/h2&gt;
@@ -2588,23 +2692,23 @@
 &lt;p&gt;如果，你也在尋找一個以開發者為主要客群的部落格平台，而且你已經習慣使用 Web 上的編輯工具作為你主要的寫作工具的話，依據我個人的經驗，點部落絕對是你的首選。&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2017/02/03/html-to-md-exporter/&quot;&gt;部落格備份/搬家小工具 - Html to MD Exporter&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on February 03, 2017.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2017/02/03/html-to-md-exporter/&quot;&gt;部落格備份/搬家小工具 - Html to MD Exporter&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on February 03, 2017.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[初探 Visual Studio 2017 RC - 程式撰寫體驗篇]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2017/01/31/first-look-on-vs2017-rc-general-coding-enhancement/"/>
-  <id>http://ouch1978.github.io/2017/01/31/first-look-on-vs2017-rc-general-coding-enhancement</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2017/01/31/first-look-on-vs2017-rc-general-coding-enhancement/"/>
+  <id>http://localhost:4000/2017/01/31/first-look-on-vs2017-rc-general-coding-enhancement</id>
   <published>2017-01-31T06:30:00+08:00</published>
   <updated>2017-01-31 06:30:00 +0800T00:00:00-00:00</updated>
   
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#Visual%20Studio" term="Visual Studio" />
+  <category scheme="http://localhost:4000/tags/#Visual%20Studio" term="Visual Studio" />
   <content type="html">
   
     &lt;p&gt;繼兩篇分別討論安裝與使用者體驗增強的文章之後，接下來要和大家分享的是 Visual Studio 2017 RC 在程式碼撰寫體驗增強的部份。&lt;/p&gt;
@@ -2746,23 +2850,23 @@
 &lt;p&gt;以上就是這次和各位分享關於 Visual Studio 2017 RC 中，關於一般程式碼撰寫體驗的部份，心動了嗎? 快點一起安裝體驗一下吧!!~&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2017/01/31/first-look-on-vs2017-rc-general-coding-enhancement/&quot;&gt;初探 Visual Studio 2017 RC - 程式撰寫體驗篇&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on January 31, 2017.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2017/01/31/first-look-on-vs2017-rc-general-coding-enhancement/&quot;&gt;初探 Visual Studio 2017 RC - 程式撰寫體驗篇&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on January 31, 2017.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[初探 Visual Studio 2017 RC - IDE 使用者體驗篇]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2017/01/29/first-look-on-vs2017-rc-ide-ux-enhancement/"/>
-  <id>http://ouch1978.github.io/2017/01/29/first-look-on-vs2017-rc-ide-ux-enhancement</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2017/01/29/first-look-on-vs2017-rc-ide-ux-enhancement/"/>
+  <id>http://localhost:4000/2017/01/29/first-look-on-vs2017-rc-ide-ux-enhancement</id>
   <published>2017-01-29T06:30:00+08:00</published>
   <updated>2017-01-29 06:30:00 +0800T00:00:00-00:00</updated>
   
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#Visual%20Studio" term="Visual Studio" />
+  <category scheme="http://localhost:4000/tags/#Visual%20Studio" term="Visual Studio" />
   <content type="html">
   
     &lt;p&gt;在 &lt;a href=&quot;http://ouch1978.github.io/2017/01/20/first-look-on-vs2017-rc-installation/&quot; title=&quot;初探 VISUAL STUDIO 2017 RC - 安裝篇&quot;&gt;初探 VISUAL STUDIO 2017 RC - 安裝篇&lt;/a&gt; Visual Studio 2017 RC 的安裝體驗，這篇就要針對基本 IDE 的使用者體驗增強部份來作一些分享。&lt;/p&gt;
@@ -2837,23 +2941,23 @@
 
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2017/01/29/first-look-on-vs2017-rc-ide-ux-enhancement/&quot;&gt;初探 Visual Studio 2017 RC - IDE 使用者體驗篇&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on January 29, 2017.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2017/01/29/first-look-on-vs2017-rc-ide-ux-enhancement/&quot;&gt;初探 Visual Studio 2017 RC - IDE 使用者體驗篇&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on January 29, 2017.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[初探 Visual Studio 2017 RC - 安裝篇]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2017/01/20/first-look-on-vs2017-rc-installation/"/>
-  <id>http://ouch1978.github.io/2017/01/20/first-look-on-vs2017-rc-installation</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2017/01/20/first-look-on-vs2017-rc-installation/"/>
+  <id>http://localhost:4000/2017/01/20/first-look-on-vs2017-rc-installation</id>
   <published>2017-01-20T05:30:00+08:00</published>
   <updated>2017-01-20 05:30:00 +0800T00:00:00-00:00</updated>
   
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#Visual%20Studio" term="Visual Studio" />
+  <category scheme="http://localhost:4000/tags/#Visual%20Studio" term="Visual Studio" />
   <content type="html">
   
     &lt;p&gt;在 2016 年的 11月，微軟藉由 Connect 大會發佈了”地表最強開發工具” Visual Studio 2017 的 RC (發行候選)版本。&lt;/p&gt;
@@ -2954,23 +3058,23 @@
 &lt;p&gt;以上是我簡短的安裝心得，有興趣的朋友也不妨安裝玩玩吧。&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2017/01/20/first-look-on-vs2017-rc-installation/&quot;&gt;初探 Visual Studio 2017 RC - 安裝篇&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on January 20, 2017.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2017/01/20/first-look-on-vs2017-rc-installation/&quot;&gt;初探 Visual Studio 2017 RC - 安裝篇&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on January 20, 2017.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[更改 UWP PowerPoint 設計範本中內建的 AppBar 圖示顏色]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2016/12/29/change-built-in-icon-color-in-uwp-ppt-template/"/>
-  <id>http://ouch1978.github.io/2016/12/29/change-built-in-icon-color-in-uwp-ppt-template</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2016/12/29/change-built-in-icon-color-in-uwp-ppt-template/"/>
+  <id>http://localhost:4000/2016/12/29/change-built-in-icon-color-in-uwp-ppt-template</id>
   <published>2016-12-29T05:30:00+08:00</published>
   <updated>2016-14-28T21:30:00.000ZT00:00:00-00:00</updated>
   
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#UWP" term="UWP" /><category scheme="http://ouch1978.github.io/tags/#%E8%A8%AD%E8%A8%88" term="設計" /><category scheme="http://ouch1978.github.io/tags/#PowerPoint" term="PowerPoint" />
+  <category scheme="http://localhost:4000/tags/#UWP" term="UWP" /><category scheme="http://localhost:4000/tags/#%E8%A8%AD%E8%A8%88" term="設計" /><category scheme="http://localhost:4000/tags/#PowerPoint" term="PowerPoint" />
   <content type="html">
   
     &lt;p&gt;之前介紹的 UWP 的 PowerPoint 設計範本裡面內建了不少設計 App 時所需要的圖示。然而，它們有部份是圖形元件，可以直接修改顏色；但是有些是圖片，沒有辦法直接透過填色功能來改變它的顏色。&lt;/p&gt;
@@ -3006,23 +3110,23 @@
 &lt;p&gt;這個小技巧不只能使用在設計 App 的階段，平常製作投影片的時候也是很實用的喔!!~&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/12/29/change-built-in-icon-color-in-uwp-ppt-template/&quot;&gt;更改 UWP PowerPoint 設計範本中內建的 AppBar 圖示顏色&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on December 29, 2016.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2016/12/29/change-built-in-icon-color-in-uwp-ppt-template/&quot;&gt;更改 UWP PowerPoint 設計範本中內建的 AppBar 圖示顏色&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on December 29, 2016.&lt;/p&gt;</content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[使用 Dev Center 提供的 PowerPoint 設計範本製作 UWP 的 UI 雛型]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2016/12/14/using-powerpoint-template-for-designing-uwp-app/"/>
-  <id>http://ouch1978.github.io/2016/12/14/using-powerpoint-template-for-designing-uwp-app</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/2016/12/14/using-powerpoint-template-for-designing-uwp-app/"/>
+  <id>http://localhost:4000/2016/12/14/using-powerpoint-template-for-designing-uwp-app</id>
   <published>2016-12-14T21:30:00+08:00</published>
   <updated>2016-14-14T13:30:00.000ZT00:00:00-00:00</updated>
   
   <author>
     <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
+    <uri>http://localhost:4000</uri>
     <email>ouch1978@hotmail.com</email>
   </author>
-  <category scheme="http://ouch1978.github.io/tags/#UWP" term="UWP" /><category scheme="http://ouch1978.github.io/tags/#%E8%A8%AD%E8%A8%88" term="設計" />
+  <category scheme="http://localhost:4000/tags/#UWP" term="UWP" /><category scheme="http://localhost:4000/tags/#%E8%A8%AD%E8%A8%88" term="設計" />
   <content type="html">
   
     &lt;p&gt;設計和點子這種東西往往都是靈光一閃，在那一閃的瞬間往往只能透過紙筆來勾勒出心中的想法，但是對於像我這種懶人來說，如果能有一個方便製作/記錄雛型的工具，應該會是很有幫助的一件事。&lt;/p&gt;
@@ -3101,52 +3205,7 @@
 &lt;p&gt;是不是很方便呢!?&lt;/p&gt;
 
   
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/12/14/using-powerpoint-template-for-designing-uwp-app/&quot;&gt;使用 Dev Center 提供的 PowerPoint 設計範本製作 UWP 的 UI 雛型&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on December 14, 2016.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[透過 Roaming Extension Manager 在不同機器上同步 Visual Studio 2015 的擴充功能]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2016/11/01/roaming-extension-manager/"/>
-  <id>http://ouch1978.github.io/2016/11/01/roaming-extension-manager</id>
-  <published>2016-11-01T23:00:00+08:00</published>
-  <updated>2016-11-01T23:00:00+08:00</updated>
-  <author>
-    <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
-    <email>ouch1978@hotmail.com</email>
-  </author>
-  <category scheme="http://ouch1978.github.io/tags/#Visual%20Studio%202015" term="Visual Studio 2015" />
-  <content type="html">
-  
-    &lt;p&gt;常常在工作的時候找到不錯用的 Visual Studio 擴充功能，但是往往回家又得再安裝一次，有時候忙過頭隔個幾天想安裝就忘記名字叫什麼了。一直在想說怎麼沒有一個功能可以在不同的電腦之間同步安裝過的擴充功能，果不其然，還真的有耶!!&lt;/p&gt;
-
-&lt;p&gt;前一陣子重灌了工作機的作業系統，也重新安裝了 Visual Studio 2015 ，雖說 Visual Studio 會自動透過 Microsoft Account 把我的設定同步回來，但是卻不包含擴充功能的同步，所以之後又得要再手動把之前裝過的擴充功能一個一個安裝回來，真的是蠻花時間也蠻讓我頭痛的。&lt;/p&gt;
-
-&lt;p&gt;向谷歌大神求救之後，發現有不少人有相同的問題，而微軟也從善如流的就開發出了這樣的一個擴充功能，也就是我們今天的主角 – &lt;a href=&quot;https://visualstudiogallery.msdn.microsoft.com/7b421a95-c32c-4433-a2be-a41b276013ab&quot; title=&quot;Roaming Extension Manager&quot;&gt;Roaming Extension Manager&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;安裝了這個擴充功能之後，在 Visual Studio 2015 的擴充功能管理視窗裡面會多出現一個名為 &lt;code&gt;Roaming Extension Manager&lt;/code&gt; 的分類。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/images/blog-images/2016-11-01-roaming-extension-manager/roaming-extension-manager.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-11-01-roaming-extension-manager/roaming-extension-manager.png&quot; alt=&quot;Roaming Extension Manager 設定面版&quot; title=&quot;Roaming Extension Manager 設定面版&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;而所有已安裝的擴充功能上都會多出一個小圖示，以用來顯示它被同步的狀態為何，圖示與狀態共有三種，分別如下：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;img src=&quot;https://visualstudiogallery.msdn.microsoft.com/site/view/file/172147/1/cloud.png&quot; alt=&quot;Roamed&quot; /&gt;：此擴充功能已同步到你的雲端設定中，但是尚未在目前的機器上安裝該擴充功能。可以透過右邊的 &lt;code&gt;Download&lt;/code&gt; 按鈕進行下載安裝。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;img src=&quot;https://visualstudiogallery.msdn.microsoft.com/site/view/file/172148/1/Cloud%20n%20Checkbox.png&quot; alt=&quot;Roamed &amp;amp; Installed&quot; /&gt;：此擴充功能已經同步到雲端設定，並且也已經安裝到本機。可以透過右方的 &lt;code&gt;Stop Roaming&lt;/code&gt; 按鈕停止同步。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;img src=&quot;https://visualstudiogallery.msdn.microsoft.com/site/view/file/172150/1/Checkbox.png&quot; alt=&quot;Installed&quot; /&gt;：此擴充功能已經安裝到本機，但是並未同步到雲端設定。可以透過右方的 &lt;code&gt;Start Roaming&lt;/code&gt; 按鈕進行同步。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;以上。希望能幫到有需要的朋友喔!!~&lt;/p&gt;
-
-  
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/11/01/roaming-extension-manager/&quot;&gt;透過 Roaming Extension Manager 在不同機器上同步 Visual Studio 2015 的擴充功能&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on November 01, 2016.&lt;/p&gt;</content>
+  &lt;p&gt;&lt;a href=&quot;http://localhost:4000/2016/12/14/using-powerpoint-template-for-designing-uwp-app/&quot;&gt;使用 Dev Center 提供的 PowerPoint 設計範本製作 UWP 的 UI 雛型&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://localhost:4000&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on December 14, 2016.&lt;/p&gt;</content>
 </entry>
 
 </feed>

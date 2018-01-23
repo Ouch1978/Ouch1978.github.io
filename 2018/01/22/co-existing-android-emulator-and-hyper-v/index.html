@@ -2,23 +2,23 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>使用 DEV CENTER 提供的 POWERPOINT 設計範本製作 UWP 的 UI 雛型 &vert; OUCH1978 @ GITHUB</title>
-<meta name="description" content="在構思 App 的 UI 時，如果能有一個方便製作/記錄雛型的工具，應該會是很有幫助的一件事，在 Dev Center 裡就有這麼一個東西....">
-<meta name="keywords" content="UWP, 設計">
+<title>誰說魚與熊掌不可兼得? 讓你的安卓模擬器與 HYPER-V 可以和平共處 &vert; OUCH1978 @ GITHUB</title>
+<meta name="description" content="有在使用 Visual Studio 2017 和 Xamarin 進行開發的朋友們可能會跟我一樣遇過同樣的問題：如果使用 Visual Studio 2017 裡面內建的安卓模擬器，就得把 Hyper-V 給關掉...">
+<meta name="keywords" content="Visual Studio, Xamarin, Hyper-V, Intel HAXM">
 
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://localhost:4000/images/logo.png">
-<meta name="twitter:title" content="使用 Dev Center 提供的 PowerPoint 設計範本製作 UWP 的 UI 雛型">
-<meta name="twitter:description" content="在構思 App 的 UI 時，如果能有一個方便製作/記錄雛型的工具，應該會是很有幫助的一件事，在 Dev Center 裡就有這麼一個東西....">
+<meta name="twitter:title" content="誰說魚與熊掌不可兼得? 讓你的安卓模擬器與 Hyper-V 可以和平共處">
+<meta name="twitter:description" content="有在使用 Visual Studio 2017 和 Xamarin 進行開發的朋友們可能會跟我一樣遇過同樣的問題：如果使用 Visual Studio 2017 裡面內建的安卓模擬器，就得把 Hyper-V 給關掉...">
 <meta name="twitter:creator" content="@Ouch1978">
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用 Dev Center 提供的 PowerPoint 設計範本製作 UWP 的 UI 雛型">
-<meta property="og:description" content="在構思 App 的 UI 時，如果能有一個方便製作/記錄雛型的工具，應該會是很有幫助的一件事，在 Dev Center 裡就有這麼一個東西....">
-<meta property="og:url" content="http://localhost:4000/2016/12/14/using-powerpoint-template-for-designing-uwp-app/">
+<meta property="og:title" content="誰說魚與熊掌不可兼得? 讓你的安卓模擬器與 Hyper-V 可以和平共處">
+<meta property="og:description" content="有在使用 Visual Studio 2017 和 Xamarin 進行開發的朋友們可能會跟我一樣遇過同樣的問題：如果使用 Visual Studio 2017 裡面內建的安卓模擬器，就得把 Hyper-V 給關掉...">
+<meta property="og:url" content="http://localhost:4000/2018/01/22/co-existing-android-emulator-and-hyper-v/">
 <meta property="og:site_name" content="Ouch1978 @ Github">
 <meta property="og:image" content="http://localhost:4000/images/cover3.jpg">
 
@@ -26,7 +26,7 @@
 
 
 
-<link rel="canonical" href="http://localhost:4000/2016/12/14/using-powerpoint-template-for-designing-uwp-app/">
+<link rel="canonical" href="http://localhost:4000/2018/01/22/co-existing-android-emulator-and-hyper-v/">
 <link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Ouch1978 @ Github Feed">
 <link rel="author" href="https://plus.google.com/u/0/110363696453312268733?rel=author">
 
@@ -104,88 +104,97 @@
                 <div class="notepad-post-title-simple row">
                     <div class="small-12 columns">
                         <div class="notepad-post-meta-simple">
-                            <h1>使用 Dev Center 提供的 PowerPoint 設計範本製作 UWP 的 UI 雛型</h1>
-                            <p>by <strong>Ouch Liu (劉耀群)</strong> &#8212; on <a href="http://localhost:4000/tags/index.html#UWP" data-toggle="tooltip" title="Posts tagged with UWP" rel="tag">UWP</a>&nbsp;&comma;&nbsp;<a href="http://localhost:4000/tags/index.html#設計" data-toggle="tooltip" title="Posts tagged with 設計" rel="tag">設計</a> <strong><time datetime="2016-12-14T21:30:00+08:00">14 Dec 2016</time></strong></p>
+                            <h1>誰說魚與熊掌不可兼得? 讓你的安卓模擬器與 Hyper-V 可以和平共處</h1>
+                            <p>by <strong>Ouch Liu (劉耀群)</strong> &#8212; on <a href="http://localhost:4000/tags/index.html#Visual Studio" data-toggle="tooltip" title="Posts tagged with Visual Studio" rel="tag">Visual Studio</a>&nbsp;&comma;&nbsp;<a href="http://localhost:4000/tags/index.html#Xamarin" data-toggle="tooltip" title="Posts tagged with Xamarin" rel="tag">Xamarin</a>&nbsp;&comma;&nbsp;<a href="http://localhost:4000/tags/index.html#Hyper-V" data-toggle="tooltip" title="Posts tagged with Hyper-V" rel="tag">Hyper-V</a>&nbsp;&comma;&nbsp;<a href="http://localhost:4000/tags/index.html#Intel HAXM" data-toggle="tooltip" title="Posts tagged with Intel HAXM" rel="tag">Intel HAXM</a> <strong><time datetime="2018-01-22T23:30:00+08:00">22 Jan 2018</time></strong></p>
                         </div>
                     </div>
                 </div>
             </header>
 
         <article class="notepad-post-content post tag-simple">
-            <div><p>設計和點子這種東西往往都是靈光一閃，在那一閃的瞬間往往只能透過紙筆來勾勒出心中的想法，但是對於像我這種懶人來說，如果能有一個方便製作/記錄雛型的工具，應該會是很有幫助的一件事。</p>
+            <div><h2 id="section">前言</h2>
 
-<p>最好是裡面包含了所有 UWP 裡能使用的控制項，讓我只要透過簡單的拖拉就可以把我的想法清楚的描述出來。</p>
+<p>有在使用 Visual Studio 2017 和 Xamarin 進行開發的朋友們可能會跟我一樣遇過同樣的問題：如果使用 Visual Studio 2017 裡面內建的安卓模擬器，就得把 Hyper-V 給關掉，不然就無法啟用 Intel® Hardware Accelerated Execution Manager 來替安卓模擬器加速。</p>
 
-<p>而在 Dev Center 裡就有這麼一個神奇的東西，可以讓我們透過再也熟悉不過的工具 - PowerPoint 來刻出 UI 的雛型。</p>
+<p>畢竟，要支援 Intel® Hardware Accelerated Execution Manager ，才能啟用 Visual Studio 2017 中內建模擬器工具裡的 Atom x86 架構安卓虛擬機，以達到媲美真機的效能(官方說法是效能會差上十倍，不信邪的朋友也可以試著開啟 ARM 架構的模擬器來比較看看，效能真的會讓人很想哭)。</p>
 
-<p>其實這個樣版已經存在蠻久的了，只是可能大部份的人可能不是找不到它，就是會忽略它，或是不知道該怎麼使用它。</p>
+<p>但是身為一個工程師，透過 VM 來架設實驗環境應該是家常便飯的事。從微軟在 Windows 8 內建了 Hyper-V 之後，它就一直是我架設 VM 的首選工具。</p>
 
-<h2 id="section">下載</h2>
+<p>所以當看到 Hyper-V 和 Intel® Hardware Accelerated Execution Manager 無法共存的訊息出現，我就一直在想：「到底有什麼其它的方式能讓我不用每次都得要為了開啟安卓模擬器就得先手動關閉 Hypervisor 功能；而在要使用虛擬機器的時候又得先手動開啟 Hypervisor?」。</p>
 
-<p>在 Windows 開發人員中心裡的 <a href="https://msdn.microsoft.com/windows/uwp/design-downloads/index" title="UWP app 的設計下載">UWP app 的設計下載</a> 一區裡面其實有不少設計相關的資源。</p>
+<p>在網路上爬了一些文章之後，歸納出了下面兩種解法。</p>
 
-<p>例如給 PhotoShop 和 Illustrator 使用的設計範本、磚與圖示產生器，以及 UWP App 的範例等等。</p>
+<h2 id="section-1">解法一：建立多重開機選單</h2>
 
-<p>而今天的主角呢，就是我個人覺得很方便的 <a href="https://go.microsoft.com/fwlink/p/?LinkId=534632" title="點此直接下載">PowerPoint 設計範本</a> 啦。</p>
+<p>我們可以透過建立多重開機的方式，建立出一個預設把 Hypervisor 關閉的設定，專門用來執行安卓模擬器。</p>
 
-<h2 id="section-1">使用說明</h2>
-
-<p>該檔案下載下來是一個壓縮檔，解壓縮之後會看到裡面有<code>兩個說明檔</code>，<code>三個給不同平台使用的 PowerPoint pptx 檔</code>，以及一個名為 <code>Storyboard shapes</code> 的資料夾。</p>
-
-<p><a href="/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/files-in-zip.png"><img src="/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/files-in-zip.png" alt="壓縮檔中包含的檔案" title="壓縮檔中包含的檔案" /></a></p>
-
-<p>打開任何一個 PowerPoint 檔 (接下來，以設計 PC 版的 App 為例，打開 UWP app templates for PCs.pptx ) 之後，應該會看到裡面包含了四張投影片。</p>
-
-<p>蝦毀，內容都是英文!!? 沒關係，先喝杯茶壓壓驚，基本上裡面也是在講解該怎麼使用這份投影片。</p>
-
-<p>簡單翻譯如下：</p>
+<p>方法如下：</p>
 
 <ol>
-  <li>
-    <p>將投影片<code>另存新檔</code>，注意別蓋到原來的檔案。</p>
-  </li>
-  <li>
-    <p>確認你已經安裝了 <code>Visual Studio 2013 Premium 或以上</code>的版本。</p>
-  </li>
-  <li>
-    <p>切換到 <code>Storyboarding</code> 頁籤，並且打開 <code>Storyboard Shapes</code> 面板。
-<a href="/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/oepn-the-storyboard-shapes-panel.png"><img src="/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/oepn-the-storyboard-shapes-panel.png" alt="開啟 Storyboard Shapes 面版" title="開啟 Storyboard Shapes 面版" /></a></p>
-  </li>
-  <li>
-    <p>按下 <code>Import Shapes</code> 並且選取 Storyboard shapes 中的 <code>Windows Controls Shapes.sbsx</code> 檔進行控制項圖庫的匯入。
-<a href="/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/the-import-shapes-button.png"><img src="/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/the-import-shapes-button.png" alt="按下 Import Shapes 按鈕進行匯入" title="按下 Import Shapes 按鈕進行匯入" /></a></p>
-  </li>
-  <li>
-    <p>Storyboard Shapes 面板中應該會多出一個名為 <code>TOOLKIT Windows Control Shapes_vX.x.x.x</code> 的分類。
-<a href="/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/control-shapes-category-added.png"><img src="/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/control-shapes-category-added.png" alt="匯入成功後出現的分類" title="匯入成功後出現的分類" /></a></p>
-  </li>
-  <li>
-    <p>使用名為 <code>Device Frames</code> 的頁面來設計你的 UI。
-<a href="/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/the-device-frames-page.png"><img src="/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/the-device-frames-page.png" alt="Device Frames 頁" title="Device Frames 頁" /></a></p>
-  </li>
-  <li>
-    <p>在<code>檢視</code>頁籤中開啟<code>輔助線</code>功能，並確保你設計的 UI 不要超出輔助線的邊界。
-<a href="/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/turn-on-the-guides.png"><img src="/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/turn-on-the-guides.png" alt="開啟輔助線" title="開啟輔助線" /></a></p>
-  </li>
-  <li>
-    <p>從 Storyboard Shapes 面板中透過拖拉的方式把控制項放到 Device Frames 頁面中。
-<a href="/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/drag-control-into-the-device-frames-page.png"><img src="/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/drag-control-into-the-device-frames-page.png" alt="以拖拉的方式新增控制項到頁面中" title="以拖拉的方式新增控制項到頁面中" /></a></p>
-  </li>
-  <li>
-    <p>透過<code>常用</code> -&gt; <code>選取</code> -&gt; <code>選取窗格</code> 面板確認你的 Device Frame 圖層為置頂圖層。
-<a href="/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/make-sure-the-device-frame-on-top-level.png"><img src="/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/make-sure-the-device-frame-on-top-level.png" alt="透過選取窗格確認 Device Frame 為置頂圖層" title="透過選取窗格確認 Device Frame 為置頂圖層" /></a></p>
-  </li>
-  <li>
-    <p>當你完成設計之後，可以透過另存新檔的功能，將設計好的畫面另存為 PNG 檔 (匯出投影片時選擇<code>僅此投影片</code>)。</p>
-  </li>
+  <li>以系統管理員的身份開啟命令提示字元，並且輸入下列指令：</li>
 </ol>
 
-<p>另外，你也可以透過投影片裡面的 Type styles 和 Color swatches ，來作為字體大小和配色的參考喔!!</p>
+<blockquote>
+  <p>從現有的開機設定複製出一組新的設定</p>
+</blockquote>
 
-<p>大功告成啦!!~
-<a href="/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/a-simple-sample-of-ui-design.png"><img src="/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/a-simple-sample-of-ui-design.png" alt="大功告成" title="大功告成" /></a></p>
+<figure class="highlight"><pre><code class="language-batchfile" data-lang="batchfile"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>bcdedit /copy {current} /d "Microsoft Windows 10 – No Hypervisor"<span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
 
-<p>是不是很方便呢!?</p>
+<p>執行成功之後會得到一串機碼值，如下圖。</p>
+
+<p><a href="/images/blog-images/2018-01-22-co-existing-android-emulator-and-hyper-v/01-copy-a-new-boot-setting.png" title="建立一組新的開機設定"><img src="/images/blog-images/2018-01-22-co-existing-android-emulator-and-hyper-v/01-copy-a-new-boot-setting.png" alt="建立一組新的開機設定" title="建立一組新的開機設定" /></a></p>
+
+<ol>
+  <li>複製步驟一產生的機碼，並且接著輸入：</li>
+</ol>
+
+<blockquote>
+  <p>將新的開機設定檔中的 Hypervisor 功能關閉</p>
+</blockquote>
+
+<figure class="highlight"><pre><code class="language-batchfile" data-lang="batchfile"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1</pre></td><td class="code"><pre>bcdedit /set {步驟一產生的機碼} hypervisorlaunchtype off<span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<p>如果出現操作順利完成的訊息，就代表完成啦!!~</p>
+
+<p><a href="/images/blog-images/2018-01-22-co-existing-android-emulator-and-hyper-v/02-set-hypervisor-launchtype-off.png" title="將新的開機設定中的 Hypervisor 啟動方式設定為 Off"><img src="/images/blog-images/2018-01-22-co-existing-android-emulator-and-hyper-v/02-set-hypervisor-launchtype-off.png" alt="將新的開機設定中的 Hypervisor 啟動方式設定為 Off" title="將新的開機設定中的 Hypervisor 啟動方式設定為 Off" /></a></p>
+
+<p>之後只要重新開機，就會出現像下圖的選單，這時候我們就可以在要使用安卓模擬器的時候用關閉 Hypervisor 的設定來開機囉!!~</p>
+
+<p><a href="/images/blog-images/2018-01-22-co-existing-android-emulator-and-hyper-v/03-can-choose-between-enable-hypervisor-or-not.png" title="之後開機時就能選擇是否要開啟 Hypervisor 囉!!"><img src="/images/blog-images/2018-01-22-co-existing-android-emulator-and-hyper-v/03-can-choose-between-enable-hypervisor-or-not.png" alt="之後開機時就能選擇是否要開啟 Hypervisor 囉!!" title="之後開機時就能選擇是否要開啟 Hypervisor 囉!!" /></a></p>
+
+<h2 id="visual-studio-emulator-for-android">解法二：安裝 Visual Studio Emulator for Android</h2>
+
+<p>對於使用 AMD CPU 的朋友們來說，天生就無法透過安裝 Intel® Hardware Accelerated Execution Manager 來啟用 x86 架構的安卓模擬器。</p>
+
+<p>不過幸好我們還是可以手動下載之前在 Visual Studio 2015 裡內建的 Visual Studio Emulator for Android。</p>
+
+<p><a href="/images/blog-images/2018-01-22-co-existing-android-emulator-and-hyper-v/04-visual-studio-emulator-for-android.png" title="Visual Studio Emulator for Android 的模擬器外觀"><img src="/images/blog-images/2018-01-22-co-existing-android-emulator-and-hyper-v/04-visual-studio-emulator-for-android.png" alt="Visual Studio Emulator for Android 的模擬器外觀" title="Visual Studio Emulator for Android 的模擬器外觀" /></a></p>
+
+<p>更讓人開心的是，它原生就支援 x86 架構的安卓模擬器，有了它，就不用再忍受 ARM 架構模擬器的龜速囉!!</p>
+
+<p><a href="/images/blog-images/2018-01-22-co-existing-android-emulator-and-hyper-v/05-x86-architecture-supported-for-visual-studio-emulator-for-android.png" title="Visual Studio Emulator for Android 原生就支援 x86 架構"><img src="/images/blog-images/2018-01-22-co-existing-android-emulator-and-hyper-v/05-x86-architecture-supported-for-visual-studio-emulator-for-android.png" alt="Visual Studio Emulator for Android 原生就支援 x86 架構" title="Visual Studio Emulator for Android 原生就支援 x86 架構" /></a></p>
+
+<p>尤於 Visual Studio Emulator for Android 也是基於 Hyper-V 技術打造出來的，所以它和 Hyper-V 完全不會互相衝突。</p>
+
+<p>而且它也內建了加速器、GPS、電量、相機等等相關的模擬功能，用起來並不輸給 Google 原生的模擬器喔!!</p>
+
+<p><a href="/images/blog-images/2018-01-22-co-existing-android-emulator-and-hyper-v/06-built-in-accelerometer-simulator.png" title="Visual Studio Emulator for Android 內建的加速器模擬功能"><img src="/images/blog-images/2018-01-22-co-existing-android-emulator-and-hyper-v/06-built-in-accelerometer-simulator.png" alt="Visual Studio Emulator for Android 內建的加速器模擬功能" title="Visual Studio Emulator for Android 內建的加速器模擬功能" /></a></p>
+
+<p>Visual Studio Emulator for Android 的下載點<a href="https://aka.ms/vscomemudownload" title="Visual Studio Emulator for Android 下載連結">在此</a>。</p>
+
+<h2 id="section-2">總結</h2>
+
+<p>上面兩種方法「基本上」都可以解決 Hyper-V 和安卓模擬器無法並存的問題。</p>
+
+<p>但是至於哪個方式比較好用，或是哪個方式比較適合你，就得要看你的環境條件和使用習慣了。</p>
+
+<p>如果是使用 Intel CPU 的朋友，可能建立多重開機選單會比較能壓榨出電腦的效能，而且可以享受到 Intel® Hardware Accelerated Execution Manager 帶來的快感。</p>
+
+<p>而對於使用 AMD CPU 的朋友們，可能 Visual Studio Emulator for Android 會是一個更好的選擇，因為它原生就支援 x86 的模擬器，而且 Intel® Hardware Accelerated Execution Manager 對你來說是看得到但是卻吃不到的東西。</p>
+
+<p>以上，希望對有跟我遇到相同煩惱的朋友們有幫助喔~</p>
 
             </div>
         </article>
@@ -193,15 +202,15 @@
         <div class="cf"></div>
         <div class="row text-center">
             <section class="notepad-post-share">
-                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;使用 Dev Center 提供的 PowerPoint 設計範本製作 UWP 的 UI 雛型&quot;%20http://localhost:4000/2016/12/14/using-powerpoint-template-for-designing-uwp-app/%20via%20&#64;Ouch1978"
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;誰說魚與熊掌不可兼得? 讓你的安卓模擬器與 Hyper-V 可以和平共處&quot;%20http://localhost:4000/2018/01/22/co-existing-android-emulator-and-hyper-v/%20via%20&#64;Ouch1978"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
                     <i class="fa fa-twitter"></i>
                 </a>
-                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2016/12/14/using-powerpoint-template-for-designing-uwp-app/"
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2018/01/22/co-existing-android-emulator-and-hyper-v/"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
                     <i class="fa fa-facebook"></i>
                 </a>
-                <a class="google-icon" href="https://plus.google.com/share?url=http://localhost:4000/2016/12/14/using-powerpoint-template-for-designing-uwp-app/"
+                <a class="google-icon" href="https://plus.google.com/share?url=http://localhost:4000/2018/01/22/co-existing-android-emulator-and-hyper-v/"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
                     <i class="fa fa-google-plus"></i>
                 </a>
@@ -212,10 +221,8 @@
 
         <div class="PageNavigation">
           
-            <a class="prev" href="/2016/11/01/roaming-extension-manager/">&laquo; 透過 Roaming Extension Manager 在不同機器上同步 Visual Studio 2015 的擴充功能</a>
+            <a class="prev" href="/2018/01/08/xaml-standard-preview-in-xamarin-forms/">&laquo; 透過 Xamarin.Forms 來玩玩傳說中的 XAML Standard (preview) 吧!!</a>
           
-          
-            <a class="next" href="/2016/12/29/change-built-in-icon-color-in-uwp-ppt-template/">更改 UWP PowerPoint 設計範本中內建的 AppBar 圖示顏色 &raquo;</a>
           
         </div>
 
