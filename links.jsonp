@@ -173,6 +173,11 @@ callback([
   {
     "text": "誰說魚與熊掌不可兼得? 讓你的安卓模擬器與 Hyper-V 可以和平共處",
     "href": "http://ouch1978.github.io/2018/01/22/co-existing-android-emulator-and-hyper-v/"
+  } ,
+
+  {
+    "text": "五分鐘看完 C# 7.2",
+    "href": "http://ouch1978.github.io/2018/01/31/understand-csharp-7.2-in-5-minutes/"
   } 
 
 ])

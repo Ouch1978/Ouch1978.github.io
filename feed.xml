@@ -7,13 +7,210 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://ouch1978.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://ouch1978.github.io/" />
-<updated>2018-01-23T11:45:09+08:00</updated>
+<updated>2018-01-31T20:38:31+08:00</updated>
 <id>http://ouch1978.github.io/</id>
 <author>
   <name>Ouch Liu (劉耀群)</name>
   <uri>http://ouch1978.github.io/</uri>
   <email>ouch1978@hotmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[五分鐘看完 C# 7.2]]></title>
+  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2018/01/31/understand-csharp-7.2-in-5-minutes/"/>
+  <id>http://ouch1978.github.io/2018/01/31/understand-csharp-7.2-in-5-minutes</id>
+  <published>2018-01-31T23:30:00+08:00</published>
+  <updated>2018-01-31 23:30:00 +0800T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Ouch Liu (劉耀群)</name>
+    <uri>http://ouch1978.github.io</uri>
+    <email>ouch1978@hotmail.com</email>
+  </author>
+  <category scheme="http://ouch1978.github.io/tags/#Visual%20Studio" term="Visual Studio" /><category scheme="http://ouch1978.github.io/tags/#C%23" term="C#" />
+  <content type="html">
+  
+    &lt;h2 id=&quot;section&quot;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;微軟在 2017 年 12 月發佈了 Visual Studio 2017 的 15.5 版，裡面有一項重要的功能是 C# 編譯器加入了對 C# 7.2 的支援。&lt;/p&gt;
+
+&lt;p&gt;就讓我們很快的來了解一下 C# 7.2 為我們帶來了哪些實用的新功能吧!!~&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;P.S. 後面的廢話很多，如果想要在五分鐘裡面看完所有新功能的話，不妨直接看程式碼範例的部份就好。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;準備工作&lt;/h2&gt;
+
+&lt;p&gt;首先，如果要在 Visual Studio 2017 裡面使用 C# 7.2 進行開發的話，得要先在專案中指定使用的語言版本。&lt;/p&gt;
+
+&lt;p&gt;方法是：點選 &lt;code&gt;Project&lt;/code&gt;(專案) -&amp;gt; &lt;code&gt;Properties&lt;/code&gt;(屬性) -&amp;gt; &lt;code&gt;Build&lt;/code&gt;(建置) -&amp;gt; &lt;code&gt;Advanced...&lt;/code&gt;(進階…)&lt;/p&gt;
+
+&lt;p&gt;接著在彈出來的 Advanced Build Settings(進階建置設定) 視窗中的 Language version(語言版本) 下拉選單中挑選 C# 7.2 後按下 OK 按鈕。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2018-01-31-understand-csharp-7.2-in-5-minutes/01-set-language-version-to-csharp-7.2.png&quot; title=&quot;設定專案支援的語言版本為 C# 7.2&quot;&gt;&lt;img src=&quot;/images/blog-images/2018-01-31-understand-csharp-7.2-in-5-minutes/01-set-language-version-to-csharp-7.2.png&quot; alt=&quot;設定專案支援的語言版本為 C# 7.2&quot; title=&quot;設定專案支援的語言版本為 C# 7.2&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;之後就可以在專案中使用 C# 7.2 進行開發囉!!&lt;/p&gt;
+
+&lt;h2 id=&quot;c-72-&quot;&gt;C# 7.2 新功能介紹&lt;/h2&gt;
+
+&lt;h3 id=&quot;readonly-ref-in-&quot;&gt;Readonly Ref (in 參數)&lt;/h3&gt;
+
+&lt;p&gt;通常在傳遞某個變數到某個方法的時候，我們可以透過在變數前面加上 ref 關鍵字，直接將該變數傳到方法中操作(Passing an argument by reference)而不是另外複製一份(Pass by value)，進而能從該方法中對變數的值進行修改。&lt;/p&gt;
+
+&lt;p&gt;但是在某些狀況下，我們可能會希望將變數直接傳遞給方法，但是又不希望它的值在該方法中被修改。&lt;/p&gt;
+
+&lt;p&gt;這時候，聰明的工程師可能會聯想到可以把 readonly 這個關鍵字拿出來用，組成 readonly ref；這樣一來，就既可以將變數直接傳遞到方法中使用，而且又可以防止它的值在方法中被修改。&lt;/p&gt;
+
+&lt;p&gt;沒錯，就是這個概念!! 所以在 C# 未來發展的討論中就有人提出這樣的想法。&lt;/p&gt;
+
+&lt;p&gt;然後經過了一番討論之後，最終得到的結果是新增了 &lt;code&gt;in&lt;/code&gt; 這個關鍵字，取代原來 readonly ref 的構想。&lt;/p&gt;
+
+&lt;p&gt;所以，我們可以藉由下面這段程式碼來快速了解一下 in 這個關鍵字帶來的新特性。&lt;/p&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;Readonly Ref (in 參數) 範例&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c#&quot; data-lang=&quot;c#&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Point&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;AddPoints&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Point&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Point&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//非法，會出現編譯錯誤!!
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;v1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Point&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;//非法，會出現編譯錯誤!!
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;v1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;//非法，會出現編譯錯誤!!
+&lt;/span&gt;    &lt;span class=&quot;nf&quot;&gt;Foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ref&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;//合法
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Point&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Y&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Y&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;non-trailing-named-arguments&quot;&gt;Non-Trailing Named Arguments&lt;/h3&gt;
+
+&lt;p&gt;自從 C# 4.0 之後，我們開始可以使用具名與非具名參數來呼叫方法。&lt;/p&gt;
+
+&lt;p&gt;但是使用上有一個限制，就是具名的參數一定得要放在後面，如果沒照作的話，進行編譯時就會出現 &lt;code&gt;CS1738 - Named argument specifications must appear after all fixed arguments have been specified&lt;/code&gt; 錯誤。&lt;/p&gt;
+
+&lt;p&gt;但是到了 C# 7.2，這個限制就不再存在了，之後我們就可以在呼叫方法的時候，在任意位置使用具名參數囉!!&lt;/p&gt;
+
+&lt;p&gt;詳細的狀況可以參考下面的範例：&lt;/p&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;Non-Trailing Named Arguments 範例&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c#&quot; data-lang=&quot;c#&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;DoSomething&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isEmployed&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;personName&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;personAge&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//do something  
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nf&quot;&gt;DoSomething&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Ouch Liu&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;38&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//合法    
+&lt;/span&gt;    &lt;span class=&quot;nf&quot;&gt;DoSomething&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;personAge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;38&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;personName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Ouch Liu&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//合法
+&lt;/span&gt;    &lt;span class=&quot;nf&quot;&gt;DoSomething&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;personAge&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;38&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;personName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Ouch Liu&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isEmployed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//合法
+&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;//DoSomething( isEmployed: false , &quot;Ouch Liu&quot; , 38 ); //C# 7.2 之前會出現 CS1738 錯誤，C# 7.2 之後會變合法
+&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;//DoSomething( true , personName: &quot;Ouch Liu&quot; , 38 ); //C# 7.2 之前會出現 CS1738 錯誤，C# 7.2 之後會變合法
+&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;//DoSomething( &quot;Ouch Liu&quot; , isEmployed: true , 38 ); //依然不合法
+&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;//DoSomething( &quot;Ouch Liu&quot; , 38 , isEmployed: true ); //依然不合法
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;leading-separator&quot;&gt;Leading Separator&lt;/h3&gt;
+
+&lt;p&gt;在 C# 7.0 的時候，有一個新增的小功能，讓我們可以在使用位元或是二進制值的時候用底線來區隔，以方便閱讀，如下例：&lt;/p&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;C# 7.0 Leading Separator 範例&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c#&quot; data-lang=&quot;c#&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;//Binary Literal
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_binaryNumbers&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b10&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b100&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b1000&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b100000&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b1000000&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;//Digit Separators
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_binaryWithSeparaters&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b0000_0001&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b0000_0010&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b0000_0100&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b0000_1000&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b0010_0000&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b1000_0000&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;但是眼尖的朋友或是比較謹慎的朋友們可能會發現，在 prefix(如 0b) 的後面就直接接著數值還是有一點難讀。&lt;/p&gt;
+
+&lt;p&gt;所以在 C# 7.2 就針對 Leading Separator 又再作了多一次的優化，讓我們可以直接在 prefix 之後就直接加入一個底線。如下例：&lt;/p&gt;
+
+&lt;blockquote class=&quot;filename&quot;&gt;
+  &lt;p&gt;C# 7.2 Leading Separator 範例&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c#&quot; data-lang=&quot;c#&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;//Binary Literal
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_binaryNumbers&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b_1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b_10&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b_100&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b_1000&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b_100000&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b_1000000&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;//Digit Separators
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;_binaryWithSeparaters&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b_0000_0001&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b_0000_0010&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b_0000_0100&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b_0000_1000&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b_0010_0000&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b_1000_0000&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;和 C# 7.0 的寫法比起來，這樣是不是更好讀了不少呢?&lt;/p&gt;
+
+&lt;h3 id=&quot;private-protected&quot;&gt;Private Protected&lt;/h3&gt;
+
+&lt;p&gt;最後一個要介紹在 C# 7.2 中新增的功能則是從 C++ 抄來的概念 - private protected。&lt;/p&gt;
+
+&lt;p&gt;原本在 C# 中就有 protected 或是 internal 這兩個修飾詞可以使用。&lt;/p&gt;
+
+&lt;p&gt;然而，internal 修飾詞可以讓我們限制該類別只能被同一個組件中的類別繼承；而 protected 修飾詞則可以讓我們限制該類別只能在同類別的被存取。&lt;/p&gt;
+
+&lt;p&gt;如果想要同時達到兩個需求呢，就可以使用新增的 private protected 修飾詞了。&lt;/p&gt;
+
+&lt;p&gt;所以目前 C# 7.2 所支援的各種修飾詞和提供的組合及效果如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2018-01-31-understand-csharp-7.2-in-5-minutes/02-modifiers-in-csharp-7.2.png&quot; title=&quot;設定專案支援的語言版本為 C# 7.2&quot;&gt;&lt;img src=&quot;/images/blog-images/2018-01-31-understand-csharp-7.2-in-5-minutes/02-modifiers-in-csharp-7.2.png&quot; alt=&quot;設定專案支援的語言版本為 C# 7.2&quot; title=&quot;設定專案支援的語言版本為 C# 7.2&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;後記&lt;/h2&gt;
+
+&lt;p&gt;小弟有幸在 2018 年的 1 月 8 號在 Study4 所舉辦的與大師對談活動後的 Light Talk 階段分享這個主題。
+在此也將當天的&lt;a href=&quot;https://github.com/Study4/study4love-2018/blob/master/light%20talk/%E4%BA%94%E5%88%86%E9%90%98%E7%9C%8B%E5%AE%8C%20C%23%207.2.pptx&quot; title=&quot;五分鐘看完 C# 7.2 投影片&quot;&gt;投影片&lt;/a&gt;和&lt;a href=&quot;https://github.com/Study4/study4love-2018 &amp;quot;Study4.TW Study4Love - 與大師對談 投影片&quot;&gt;活動投影片連結&lt;/a&gt;分享出來，有興趣的朋友不妨也下載來看看。&lt;/p&gt;
+
+&lt;p&gt;”&lt;/p&gt;
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2018/01/31/understand-csharp-7.2-in-5-minutes/&quot;&gt;五分鐘看完 C# 7.2&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on January 31, 2018.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -53,7 +250,7 @@
   &lt;li&gt;以系統管理員的身份開啟命令提示字元，並且輸入下列指令：&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;blockquote&gt;
+&lt;blockquote class=&quot;filename&quot;&gt;
   &lt;p&gt;從現有的開機設定複製出一組新的設定&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -68,7 +265,7 @@
   &lt;li&gt;複製步驟一產生的機碼，並且接著輸入：&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;blockquote&gt;
+&lt;blockquote class=&quot;filename&quot;&gt;
   &lt;p&gt;將新的開機設定檔中的 Hypervisor 功能關閉&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -3111,101 +3308,6 @@
 
   
   &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/12/29/change-built-in-icon-color-in-uwp-ppt-template/&quot;&gt;更改 UWP PowerPoint 設計範本中內建的 AppBar 圖示顏色&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on December 29, 2016.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[使用 Dev Center 提供的 PowerPoint 設計範本製作 UWP 的 UI 雛型]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2016/12/14/using-powerpoint-template-for-designing-uwp-app/"/>
-  <id>http://ouch1978.github.io/2016/12/14/using-powerpoint-template-for-designing-uwp-app</id>
-  <published>2016-12-14T21:30:00+08:00</published>
-  <updated>2016-14-14T13:30:00.000ZT00:00:00-00:00</updated>
-  
-  <author>
-    <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
-    <email>ouch1978@hotmail.com</email>
-  </author>
-  <category scheme="http://ouch1978.github.io/tags/#UWP" term="UWP" /><category scheme="http://ouch1978.github.io/tags/#%E8%A8%AD%E8%A8%88" term="設計" />
-  <content type="html">
-  
-    &lt;p&gt;設計和點子這種東西往往都是靈光一閃，在那一閃的瞬間往往只能透過紙筆來勾勒出心中的想法，但是對於像我這種懶人來說，如果能有一個方便製作/記錄雛型的工具，應該會是很有幫助的一件事。&lt;/p&gt;
-
-&lt;p&gt;最好是裡面包含了所有 UWP 裡能使用的控制項，讓我只要透過簡單的拖拉就可以把我的想法清楚的描述出來。&lt;/p&gt;
-
-&lt;p&gt;而在 Dev Center 裡就有這麼一個神奇的東西，可以讓我們透過再也熟悉不過的工具 - PowerPoint 來刻出 UI 的雛型。&lt;/p&gt;
-
-&lt;p&gt;其實這個樣版已經存在蠻久的了，只是可能大部份的人可能不是找不到它，就是會忽略它，或是不知道該怎麼使用它。&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;下載&lt;/h2&gt;
-
-&lt;p&gt;在 Windows 開發人員中心裡的 &lt;a href=&quot;https://msdn.microsoft.com/windows/uwp/design-downloads/index&quot; title=&quot;UWP app 的設計下載&quot;&gt;UWP app 的設計下載&lt;/a&gt; 一區裡面其實有不少設計相關的資源。&lt;/p&gt;
-
-&lt;p&gt;例如給 PhotoShop 和 Illustrator 使用的設計範本、磚與圖示產生器，以及 UWP App 的範例等等。&lt;/p&gt;
-
-&lt;p&gt;而今天的主角呢，就是我個人覺得很方便的 &lt;a href=&quot;https://go.microsoft.com/fwlink/p/?LinkId=534632&quot; title=&quot;點此直接下載&quot;&gt;PowerPoint 設計範本&lt;/a&gt; 啦。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;使用說明&lt;/h2&gt;
-
-&lt;p&gt;該檔案下載下來是一個壓縮檔，解壓縮之後會看到裡面有&lt;code&gt;兩個說明檔&lt;/code&gt;，&lt;code&gt;三個給不同平台使用的 PowerPoint pptx 檔&lt;/code&gt;，以及一個名為 &lt;code&gt;Storyboard shapes&lt;/code&gt; 的資料夾。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/files-in-zip.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/files-in-zip.png&quot; alt=&quot;壓縮檔中包含的檔案&quot; title=&quot;壓縮檔中包含的檔案&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;打開任何一個 PowerPoint 檔 (接下來，以設計 PC 版的 App 為例，打開 UWP app templates for PCs.pptx ) 之後，應該會看到裡面包含了四張投影片。&lt;/p&gt;
-
-&lt;p&gt;蝦毀，內容都是英文!!? 沒關係，先喝杯茶壓壓驚，基本上裡面也是在講解該怎麼使用這份投影片。&lt;/p&gt;
-
-&lt;p&gt;簡單翻譯如下：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;將投影片&lt;code&gt;另存新檔&lt;/code&gt;，注意別蓋到原來的檔案。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;確認你已經安裝了 &lt;code&gt;Visual Studio 2013 Premium 或以上&lt;/code&gt;的版本。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;切換到 &lt;code&gt;Storyboarding&lt;/code&gt; 頁籤，並且打開 &lt;code&gt;Storyboard Shapes&lt;/code&gt; 面板。
-&lt;a href=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/oepn-the-storyboard-shapes-panel.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/oepn-the-storyboard-shapes-panel.png&quot; alt=&quot;開啟 Storyboard Shapes 面版&quot; title=&quot;開啟 Storyboard Shapes 面版&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;按下 &lt;code&gt;Import Shapes&lt;/code&gt; 並且選取 Storyboard shapes 中的 &lt;code&gt;Windows Controls Shapes.sbsx&lt;/code&gt; 檔進行控制項圖庫的匯入。
-&lt;a href=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/the-import-shapes-button.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/the-import-shapes-button.png&quot; alt=&quot;按下 Import Shapes 按鈕進行匯入&quot; title=&quot;按下 Import Shapes 按鈕進行匯入&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Storyboard Shapes 面板中應該會多出一個名為 &lt;code&gt;TOOLKIT Windows Control Shapes_vX.x.x.x&lt;/code&gt; 的分類。
-&lt;a href=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/control-shapes-category-added.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/control-shapes-category-added.png&quot; alt=&quot;匯入成功後出現的分類&quot; title=&quot;匯入成功後出現的分類&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;使用名為 &lt;code&gt;Device Frames&lt;/code&gt; 的頁面來設計你的 UI。
-&lt;a href=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/the-device-frames-page.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/the-device-frames-page.png&quot; alt=&quot;Device Frames 頁&quot; title=&quot;Device Frames 頁&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;在&lt;code&gt;檢視&lt;/code&gt;頁籤中開啟&lt;code&gt;輔助線&lt;/code&gt;功能，並確保你設計的 UI 不要超出輔助線的邊界。
-&lt;a href=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/turn-on-the-guides.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/turn-on-the-guides.png&quot; alt=&quot;開啟輔助線&quot; title=&quot;開啟輔助線&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;從 Storyboard Shapes 面板中透過拖拉的方式把控制項放到 Device Frames 頁面中。
-&lt;a href=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/drag-control-into-the-device-frames-page.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/drag-control-into-the-device-frames-page.png&quot; alt=&quot;以拖拉的方式新增控制項到頁面中&quot; title=&quot;以拖拉的方式新增控制項到頁面中&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;透過&lt;code&gt;常用&lt;/code&gt; -&amp;gt; &lt;code&gt;選取&lt;/code&gt; -&amp;gt; &lt;code&gt;選取窗格&lt;/code&gt; 面板確認你的 Device Frame 圖層為置頂圖層。
-&lt;a href=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/make-sure-the-device-frame-on-top-level.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/make-sure-the-device-frame-on-top-level.png&quot; alt=&quot;透過選取窗格確認 Device Frame 為置頂圖層&quot; title=&quot;透過選取窗格確認 Device Frame 為置頂圖層&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;當你完成設計之後，可以透過另存新檔的功能，將設計好的畫面另存為 PNG 檔 (匯出投影片時選擇&lt;code&gt;僅此投影片&lt;/code&gt;)。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;另外，你也可以透過投影片裡面的 Type styles 和 Color swatches ，來作為字體大小和配色的參考喔!!&lt;/p&gt;
-
-&lt;p&gt;大功告成啦!!~
-&lt;a href=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/a-simple-sample-of-ui-design.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-12-14-using-powerpoint-template-for-designing-uwp-app/a-simple-sample-of-ui-design.png&quot; alt=&quot;大功告成&quot; title=&quot;大功告成&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;是不是很方便呢!?&lt;/p&gt;
-
-  
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/12/14/using-powerpoint-template-for-designing-uwp-app/&quot;&gt;使用 Dev Center 提供的 PowerPoint 設計範本製作 UWP 的 UI 雛型&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on December 14, 2016.&lt;/p&gt;</content>
 </entry>
 
 </feed>
