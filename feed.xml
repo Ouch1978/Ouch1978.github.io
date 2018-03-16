@@ -7,13 +7,182 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://ouch1978.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://ouch1978.github.io/" />
-<updated>2018-01-31T20:47:11+08:00</updated>
+<updated>2018-03-16T19:11:14+08:00</updated>
 <id>http://ouch1978.github.io/</id>
 <author>
   <name>Ouch Liu (劉耀群)</name>
   <uri>http://ouch1978.github.io/</uri>
   <email>ouch1978@hotmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[軟體工程師們不可不知道的 Windows 10 設定小撇步]]></title>
+  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2018/03/16/windows-10-configuration-tips-for-developers/"/>
+  <id>http://ouch1978.github.io/2018/03/16/windows-10-configuration-tips-for-developers</id>
+  <published>2018-03-16T23:30:00+08:00</published>
+  <updated>2018-03-16 23:30:00 +0800T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Ouch Liu (劉耀群)</name>
+    <uri>http://ouch1978.github.io</uri>
+    <email>ouch1978@hotmail.com</email>
+  </author>
+  <category scheme="http://ouch1978.github.io/tags/#Windows%2010" term="Windows 10" />
+  <content type="html">
+  
+    &lt;h2 id=&quot;section&quot;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;對於靠電腦吃飯的工程師來說，重灌電腦應該是一件避免不了的小事(?)。&lt;/p&gt;
+
+&lt;p&gt;除了平常好好燒香拜拜和勤作備份之外，儘可能汲取和 Windows 環境相關設定的知識在重灌的時候也是很有幫助的。&lt;/p&gt;
+
+&lt;p&gt;所以，常常動不動就會踩到莫名地雷而得重灌電腦的我就把在重灌的時候會用到的小技巧拿出來和大家分享啦!!&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;將程式設定為自動啟動&lt;/h3&gt;
+
+&lt;p&gt;在 Windows 裡面有一個資料夾，只要我們把應用程式的捷徑放進去，在開機的時候就可以讓它自動啟動。&lt;/p&gt;
+
+&lt;p&gt;這個資料夾的路徑是 &lt;code&gt;%UserProfile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;不過我們也可以透過按下 Windows 按鈕 + R 鍵，並且輸入 &lt;code&gt;shell:startup&lt;/code&gt; 來叫出。&lt;/p&gt;
+
+&lt;p&gt;只要把想要在一開始就自動執行的程式捷徑丟進去就行囉。&lt;/p&gt;
+
+&lt;h3 id=&quot;pin--windows-hello-&quot;&gt;在網域下啟用 PIN 密碼與 Windows Hello 指紋解鎖功能&lt;/h3&gt;
+
+&lt;p&gt;自從 Windows 10 1607 (年度更新版)之後， Windows 10 就把加入網域的使用者使用 PIN 登入 Windows 的功能關掉了。&lt;/p&gt;
+
+&lt;p&gt;(新增 PIN 按鈕會被反灰，旁邊可能還會出現因為群組原則，該功能已被關閕，請洽系統管理員之類的訊息。不過我來不及擷圖了…)&lt;/p&gt;
+
+&lt;p&gt;因為 PIN 被禁止使用，所以連帶的使得指紋解鎖的功能也沒辦法被啟用。&lt;/p&gt;
+
+&lt;p&gt;要把 PIN 重新打開的話，有兩個可以選擇的方式。&lt;/p&gt;
+
+&lt;p&gt;第一個方式是透過群組原則裡面的設定來進行修改，方法如下：&lt;/p&gt;
+
+&lt;p&gt;按下 Windows 按鈕 + R 鍵，輸入 &lt;code&gt;gpedit.msc&lt;/code&gt; 來開啟 Windows 10 的本機群組原則編輯器。&lt;/p&gt;
+
+&lt;p&gt;再來找到&lt;code&gt;電腦設定&lt;/code&gt; -&amp;gt; &lt;code&gt;系統管理範本&lt;/code&gt; -&amp;gt; &lt;code&gt;系統&lt;/code&gt; -&amp;gt; &lt;code&gt;登入&lt;/code&gt; -&amp;gt; &lt;code&gt;開啟方便的 PIN 登入&lt;/code&gt; 項目，把狀態改為&lt;code&gt;已啟用&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2018-03-16-windows-10-configuration-tips-for-developers/01-enable-pin-with-group-policy-editor.png&quot; title=&quot;透過本機群組原則編輯器啟用 PIN&quot;&gt;&lt;img src=&quot;/images/blog-images/2018-03-16-windows-10-configuration-tips-for-developers/01-enable-pin-with-group-policy-editor.png&quot; alt=&quot;透過本機群組原則編輯器啟用 PIN&quot; title=&quot;透過本機群組原則編輯器啟用 PIN&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;第二個方式是直接修改登錄機碼，方法如下：&lt;/p&gt;
+
+&lt;p&gt;按下 Windows 按鈕 + R 鍵，輸入 &lt;code&gt;regedit&lt;/code&gt; 來 開啟登錄編輯程式。&lt;/p&gt;
+
+&lt;p&gt;找到 &lt;code&gt;HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System&lt;/code&gt; 機碼，並且將 &lt;code&gt;AllowDomainPINLogon&lt;/code&gt; 的值改成 &lt;code&gt;1&lt;/code&gt; 即可。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2018-03-16-windows-10-configuration-tips-for-developers/02-enable-pin-with-registry-editor.png&quot; title=&quot;透過修改登錄機碼啟用 PIN&quot;&gt;&lt;img src=&quot;/images/blog-images/2018-03-16-windows-10-configuration-tips-for-developers/02-enable-pin-with-registry-editor.png&quot; alt=&quot;透過修改登錄機碼啟用 PIN&quot; title=&quot;透過修改登錄機碼啟用 PIN&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;沒有意外的話，原本被禁用的 PIN 應該就可以使用囉!!&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;為多螢幕設定不同的桌布&lt;/h3&gt;
+
+&lt;p&gt;之前的 Windows 在桌布設定的功能裡，只要針對圖片按下滑鼠右鍵，就可以選擇對特定的螢幕套用。&lt;/p&gt;
+
+&lt;p&gt;而在 Windows 10 裡面，雖然自訂桌布的功能已經和設定一起被重新設計為更符合 Fluent Design Language 的使用者界面，不過這個功能還是完整的被保存了下來喔!!&lt;/p&gt;
+
+&lt;p&gt;我們一樣可以在圖片上按下滑鼠右鍵，從彈出的選單中選擇要將桌布套用到哪一顆螢幕上。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2018-03-16-windows-10-configuration-tips-for-developers/03-choose-which-monitor-to-be-applied-with-context-menu.png&quot; title=&quot;透過右鍵選單選擇要套用桌布的螢幕&quot;&gt;&lt;img src=&quot;/images/blog-images/2018-03-16-windows-10-configuration-tips-for-developers/03-choose-which-monitor-to-be-applied-with-context-menu.png&quot; alt=&quot;透過右鍵選單選擇要套用桌布的螢幕&quot; title=&quot;透過右鍵選單選擇要套用桌布的螢幕&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;那如果想要一顆螢幕用圖片當桌布，另一個螢幕用純色背景呢?&lt;/p&gt;
+
+&lt;p&gt;很簡單，作一張純色的圖片就行啦!!&lt;/p&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;檔案總管相關&lt;/h3&gt;
+
+&lt;p&gt;以下的部份可以讓我們自訂一些和檔案總管相關的設定，像我自己是很不喜歡左邊的瀏覽窗格裡面出現一大堆東西，所以特別把這個部份也分享出來。&lt;/p&gt;
+
+&lt;h4 id=&quot;downloadsdesktop&quot;&gt;修改預設的下載(Downloads)和桌面(Desktop)資料夾路徑&lt;/h4&gt;
+
+&lt;p&gt;有勤作備份的同學們應該都不會忘記&lt;code&gt;下載&lt;/code&gt;和&lt;code&gt;桌面&lt;/code&gt;這兩個資料夾吧?&lt;/p&gt;
+
+&lt;p&gt;像我自己的習慣是把這兩個資料夾都存放在系統碟之外的地方，如 &lt;code&gt;D:\Downloads&lt;/code&gt; 和 &lt;code&gt;D:\Desktop&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;這樣的好處是，在重灌完 Windows 10 之後，不需要透過複製貼上來搬移檔案，只需要把系統預設的路徑改過去就行了。&lt;/p&gt;
+
+&lt;p&gt;修改 Windows 10 內建的下載資料夾路徑的方法如下：&lt;/p&gt;
+
+&lt;p&gt;首先開啟檔案總管，在下載資料夾上按下滑鼠右鍵，點選&lt;code&gt;內容&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;接著點選屬性視窗中的&lt;code&gt;位置&lt;/code&gt;頁籤，按下&lt;code&gt;移動(M)...&lt;/code&gt;按鈕後，選取新的資料夾位置後按下&lt;code&gt;確定&lt;/code&gt;按鈕。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2018-03-16-windows-10-configuration-tips-for-developers/04-modify-the-path-of-downloads-folder.png&quot; title=&quot;修改下載資料夾的路徑&quot;&gt;&lt;img src=&quot;/images/blog-images/2018-03-16-windows-10-configuration-tips-for-developers/04-modify-the-path-of-downloads-folder.png&quot; alt=&quot;修改下載資料夾的路徑&quot; title=&quot;修改下載資料夾的路徑&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;然後 Windows 10 就會很貼心的問你要不要把檔案從舊的位置移到新位置，這邊當然選要囉!!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2018-03-16-windows-10-configuration-tips-for-developers/05-confirm-if-move-files-or-not.png&quot; title=&quot;移動資料夾對話視窗&quot;&gt;&lt;img src=&quot;/images/blog-images/2018-03-16-windows-10-configuration-tips-for-developers/05-confirm-if-move-files-or-not.png&quot; alt=&quot;移動資料夾對話視窗&quot; title=&quot;移動資料夾對話視窗&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;至於桌面資料夾也是依樣畫葫蘆就可以了。&lt;/p&gt;
+
+&lt;h4 id=&quot;section-4&quot;&gt;修改檔案總管起始的位置為本機，而不是快速存取&lt;/h4&gt;
+
+&lt;p&gt;如果沒經過任何調整的話，預設開啟檔案總管的時候會直接看到的應該是快速存取裡面的內容。&lt;/p&gt;
+
+&lt;p&gt;不過微軟其實提供了另一個選項，只需要在檔案總管裡面設定一下，就可以把起始的位置換成本機。&lt;/p&gt;
+
+&lt;p&gt;方法如下：&lt;/p&gt;
+
+&lt;p&gt;在檔案總管的&lt;code&gt;檢視&lt;/code&gt;頁籤中點選&lt;code&gt;選項&lt;/code&gt;，再透過&lt;code&gt;開啟檔案管以：&lt;/code&gt;這個下拉選單選取&lt;code&gt;本機&lt;/code&gt;後按下&lt;code&gt;確定&lt;/code&gt;鈕就搞定啦!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2018-03-16-windows-10-configuration-tips-for-developers/06-change-the-value-of-open-explorer-to.png&quot; title=&quot;修改檔案總管起始的路徑為本機&quot;&gt;&lt;img src=&quot;/images/blog-images/2018-03-16-windows-10-configuration-tips-for-developers/06-change-the-value-of-open-explorer-to.png&quot; alt=&quot;修改檔案總管起始的路徑為本機&quot; title=&quot;修改檔案總管起始的路徑為本機&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;section-5&quot;&gt;修改工作列的檔案總管捷徑起始的位置為某一磁碟槽或路徑&lt;/h4&gt;
+
+&lt;p&gt;如果想要按下工作列釘選的檔案總管捷徑之後就直接瀏覽到某一個磁碟槽或是特定的路徑(例如 C:)呢?&lt;/p&gt;
+
+&lt;p&gt;這個就稍微複雜一點點了，首先得要先建立該磁碟槽或是路徑的捷徑。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2018-03-16-windows-10-configuration-tips-for-developers/07-create-a-shortcut-of-a-drive.png&quot; title=&quot;建立磁碟的捷徑&quot;&gt;&lt;img src=&quot;/images/blog-images/2018-03-16-windows-10-configuration-tips-for-developers/07-create-a-shortcut-of-a-drive.png&quot; alt=&quot;建立磁碟的捷徑&quot; title=&quot;建立磁碟的捷徑&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;接著我們要來更改捷徑的圖示，首先在建立出來的捷徑上按下滑鼠右鍵 -&amp;gt; 點選 &lt;code&gt;內容&lt;/code&gt; -&amp;gt; &lt;code&gt;變更圖示&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;接著在變更圖示對話視窗裡的文字欄位輸入&lt;code&gt;%SystemRoot%\Explorer.exe&lt;/code&gt;，並且選取檔案總管的圖示後按下確定鈕，再按下檔案總管-內容視窗的確定鈕。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2018-03-16-windows-10-configuration-tips-for-developers/08-change-the-icon-of-the-shortcut.png&quot; title=&quot;更改捷徑的圖示為檔案總管的圖示&quot;&gt;&lt;img src=&quot;/images/blog-images/2018-03-16-windows-10-configuration-tips-for-developers/08-change-the-icon-of-the-shortcut.png&quot; alt=&quot;更改捷徑的圖示為檔案總管的圖示&quot; title=&quot;更改捷徑的圖示為檔案總管的圖示&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;將捷徑的名稱更改為&lt;code&gt;File Explorer&lt;/code&gt;(注意，一定要一模一樣喔!!)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2018-03-16-windows-10-configuration-tips-for-developers/09-rename-the-shortcut-to-file-explorer.png&quot; title=&quot;將捷徑的名稱改為 File Explorer&quot;&gt;&lt;img src=&quot;/images/blog-images/2018-03-16-windows-10-configuration-tips-for-developers/09-rename-the-shortcut-to-file-explorer.png&quot; alt=&quot;將捷徑的名稱改為 File Explorer&quot; title=&quot;將捷徑的名稱改為 File Explorer&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;最後剪下捷徑，並且貼到 &lt;code&gt;%UserProfile%\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar&lt;/code&gt; 裡，出現是否取代原來檔案的時候用力按下取代就行了!!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2018-03-16-windows-10-configuration-tips-for-developers/10-cut-and-paste-the-shortcut-to-user-pinned-taskbar-folder.png&quot; title=&quot;將捷徑的名稱改為 File Explorer&quot;&gt;&lt;img src=&quot;/images/blog-images/2018-03-16-windows-10-configuration-tips-for-developers/10-cut-and-paste-the-shortcut-to-user-pinned-taskbar-folder.png&quot; alt=&quot;將捷徑的名稱改為 File Explorer&quot; title=&quot;將捷徑的名稱改為 File Explorer&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;section-6&quot;&gt;不在快速存取中顯示最近使用的檔案和資料夾&lt;/h4&gt;
+
+&lt;p&gt;檔案總管預設的設定會把最近存取的檔案和資料夾都顯示在快速存取區，但是我個人並不是很喜歡這個功能，所以都會把它關了。&lt;/p&gt;
+
+&lt;p&gt;關閉的方式如下：&lt;/p&gt;
+
+&lt;p&gt;在快速存取上按下滑鼠右鍵，點選&lt;code&gt;選項&lt;/code&gt;，然後把一般頁籤中隱私權區裡面的&lt;code&gt;在「快速存取」中顯示最近使用的檔案&lt;/code&gt;和&lt;code&gt;在「快速存取」中顯示經常使用的資料夾&lt;/code&gt;這兩個項目取消勾選再按下確定按鈕就行了。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2018-03-16-windows-10-configuration-tips-for-developers/11-stop-adding-recent-used-files-and-folders-to-quick-access.png&quot; title=&quot;停止把最近使用的檔案和資料夾加入快速存取&quot;&gt;&lt;img src=&quot;/images/blog-images/2018-03-16-windows-10-configuration-tips-for-developers/11-stop-adding-recent-used-files-and-folders-to-quick-access.png&quot; alt=&quot;停止把最近使用的檔案和資料夾加入快速存取&quot; title=&quot;停止把最近使用的檔案和資料夾加入快速存取&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;如果快速存取下面已經有一堆項目的話，也可以按下&lt;code&gt;清除&lt;/code&gt;按鈕把裡面的項目清光喔!!&lt;/p&gt;
+
+&lt;h4 id=&quot;section-7&quot;&gt;隱藏在本機底下內建的資料夾(如音樂、影片等)&lt;/h4&gt;
+
+&lt;p&gt;隨著 Windows 10 不同版本的演進，在本機下預設會顯示的項目也跟著越來越多，除了常見的下載、文件、圖片、影片之外，最近又多了一個 3D 物件。&lt;/p&gt;
+
+&lt;p&gt;但是除了下載之外，像是音樂、圖片和影片這幾個資料夾我幾乎都是沒在用的，但是它就是會出現在那邊佔位置，所以我也都會選擇把它們隱藏起來。&lt;/p&gt;
+
+&lt;p&gt;要隱藏這些資料夾，得透過修改機碼值來達成。&lt;/p&gt;
+
+&lt;p&gt;不過如果不想手動去修改登錄機碼的話，也是可以透過 &lt;a href=&quot;https://winaero.com/request.php?1796&quot; title=&quot;下載 Winaero Tweaker&quot;&gt;Winaero Tweaker&lt;/a&gt; 這個免費的小工具來幫我們作到這件事。&lt;/p&gt;
+
+&lt;p&gt;Winaero Tweaker 裡面的 &lt;code&gt;File Explorer&lt;/code&gt; -&amp;gt; &lt;code&gt;Customize This PC Folders&lt;/code&gt; 提供了一個直覺又方便的使用者界面來讓我們決定要顯示/隱藏哪些資料夾。&lt;/p&gt;
+
+&lt;p&gt;只需要選取要隱藏的資料夾(可多選)之後，按下 Remove Selected 按鈕就大功告成啦!!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2018-03-16-windows-10-configuration-tips-for-developers/12-use-winaero-tweaker-to-hide-folders-under-this-pc.png&quot; title=&quot;透過 Winaero Tweaker 隱藏本機下面的資料夾&quot;&gt;&lt;img src=&quot;/images/blog-images/2018-03-16-windows-10-configuration-tips-for-developers/12-use-winaero-tweaker-to-hide-folders-under-this-pc.png&quot; alt=&quot;透過 Winaero Tweaker 隱藏本機下面的資料夾&quot; title=&quot;透過 Winaero Tweaker 隱藏本機下面的資料夾&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2018/03/16/windows-10-configuration-tips-for-developers/&quot;&gt;軟體工程師們不可不知道的 Windows 10 設定小撇步&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on March 16, 2018.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -3255,58 +3424,6 @@
 
   
   &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2017/01/20/first-look-on-vs2017-rc-installation/&quot;&gt;初探 Visual Studio 2017 RC - 安裝篇&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on January 20, 2017.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[更改 UWP PowerPoint 設計範本中內建的 AppBar 圖示顏色]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2016/12/29/change-built-in-icon-color-in-uwp-ppt-template/"/>
-  <id>http://ouch1978.github.io/2016/12/29/change-built-in-icon-color-in-uwp-ppt-template</id>
-  <published>2016-12-29T05:30:00+08:00</published>
-  <updated>2016-14-28T21:30:00.000ZT00:00:00-00:00</updated>
-  
-  <author>
-    <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
-    <email>ouch1978@hotmail.com</email>
-  </author>
-  <category scheme="http://ouch1978.github.io/tags/#UWP" term="UWP" /><category scheme="http://ouch1978.github.io/tags/#%E8%A8%AD%E8%A8%88" term="設計" /><category scheme="http://ouch1978.github.io/tags/#PowerPoint" term="PowerPoint" />
-  <content type="html">
-  
-    &lt;p&gt;之前介紹的 UWP 的 PowerPoint 設計範本裡面內建了不少設計 App 時所需要的圖示。然而，它們有部份是圖形元件，可以直接修改顏色；但是有些是圖片，沒有辦法直接透過填色功能來改變它的顏色。&lt;/p&gt;
-
-&lt;p&gt;內建的圖示都是黑色的，但是很不幸的，預設的 AppBar 是黑底，所以得搭配白色的圖示。&lt;/p&gt;
-
-&lt;p&gt;這個時候，怎麼把圖片從黑轉白，或是從白轉黑，甚至改成其它的色彩，考驗的就是使用 PowerPoint 的功力啦。&lt;/p&gt;
-
-&lt;p&gt;說穿了，只要把圖片重新上色，再調整它的亮度和對比就可以達到我們的目的，而且這些功能 PowerPoint 都有內建，不用透過其他的繪圖軟體就能辦到囉。&lt;/p&gt;
-
-&lt;p&gt;這邊就透過下面的例子來作示範，看看怎麼把一個黑色的圖示改成白的：&lt;/p&gt;
-
-&lt;p&gt;先從 Storyboad 內建的 Windows App Icon 圖示中拉出訊息和刪除這兩個圖示。
-&lt;a href=&quot;/images/blog-images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/01-two-icons-with-different-types.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/01-two-icons-with-different-types.png&quot; alt=&quot;左邊的圖示是圖形元件，右邊則是圖片&quot; title=&quot;左邊的圖示是圖形元件，右邊則是圖片&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;左邊的訊息圖示是圖形元件，可以直接透過圖案填滿的功能來修改它的顏色。
-&lt;a href=&quot;/images/blog-images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/02-the-left-one-could-edit-the-color-directly.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/02-the-left-one-could-edit-the-color-directly.png&quot; alt=&quot;左邊的圖示是圖形元件，可以直接修改顏色&quot; title=&quot;左邊的圖示是圖形元件，可以直接修改顏色&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;右邊的是圖片，直接使用圖案填滿的功能的話只會改到背景色。
-&lt;a href=&quot;/images/blog-images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/03-the-right-one-could-not-edit-the-color-directly.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/03-the-right-one-could-not-edit-the-color-directly.png&quot; alt=&quot;右邊的圖示是圖片，無法直接修改顏色&quot; title=&quot;右邊的圖示是圖片，無法直接修改顏色&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;這時候，我們就可以開啟工具列的 &lt;code&gt;格式&lt;/code&gt; -&amp;gt; &lt;code&gt;色彩&lt;/code&gt; 選單來進行初步的顏色調整，點選下面的&lt;code&gt;圖片色彩選項&lt;/code&gt;。(也可以透過重新著色的功能改變成其它顏色喔!!)
-&lt;a href=&quot;/images/blog-images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/04-the-recolor-options.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/04-the-recolor-options.png&quot; alt=&quot;顏色選單&quot; title=&quot;顏色選單&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;接著在設定圖片格式面板中調整圖片的&lt;code&gt;亮度&lt;/code&gt;，把亮度調整為&lt;code&gt;100&lt;/code&gt;就是白色啦!!
-&lt;a href=&quot;/images/blog-images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/05-the-picture-color-options-panel.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/05-the-picture-color-options-panel.png&quot; alt=&quot;調整圖片的亮度&quot; title=&quot;調整圖片的亮度&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;噹噹，大功告成!!
-&lt;a href=&quot;/images/blog-images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/06-here-we-are.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2016-12-28-change-built-in-icon-color-in-uwp-ppt-template/06-here-we-are.png&quot; alt=&quot;大功告成&quot; title=&quot;大功告成&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;是不是很簡單啊!?&lt;/p&gt;
-
-&lt;p&gt;這個小技巧不只能使用在設計 App 的階段，平常製作投影片的時候也是很實用的喔!!~&lt;/p&gt;
-
-  
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2016/12/29/change-built-in-icon-color-in-uwp-ppt-template/&quot;&gt;更改 UWP PowerPoint 設計範本中內建的 AppBar 圖示顏色&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on December 29, 2016.&lt;/p&gt;</content>
 </entry>
 
 </feed>

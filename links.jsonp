@@ -178,6 +178,11 @@ callback([
   {
     "text": "五分鐘看完 C# 7.2",
     "href": "http://ouch1978.github.io/2018/01/31/understand-csharp-7.2-in-5-minutes/"
+  } ,
+
+  {
+    "text": "軟體工程師們不可不知道的 Windows 10 設定小撇步",
+    "href": "http://ouch1978.github.io/2018/03/16/windows-10-configuration-tips-for-developers/"
   } 
 
 ])
