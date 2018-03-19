@@ -7,7 +7,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://ouch1978.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://ouch1978.github.io/" />
-<updated>2018-03-16T19:11:14+08:00</updated>
+<updated>2018-03-19T10:38:19+08:00</updated>
 <id>http://ouch1978.github.io/</id>
 <author>
   <name>Ouch Liu (劉耀群)</name>
@@ -362,7 +362,7 @@
 
 &lt;p&gt;原本在 C# 中就有 protected 或是 internal 這兩個修飾詞可以使用。&lt;/p&gt;
 
-&lt;p&gt;然而，internal 修飾詞可以讓我們限制該類別只能被同一個組件中的類別繼承；而 protected 修飾詞則可以讓我們限制該類別只能在同類別的被存取。&lt;/p&gt;
+&lt;p&gt;然而，internal 修飾詞可以讓我們限制該類別只能被同一個組件中的類別繼承；而 protected 修飾詞則可以讓我們限制該類別只能在同類別或衍生類別中被存取。&lt;/p&gt;
 
 &lt;p&gt;如果想要同時達到兩個需求呢，就可以使用新增的 private protected 修飾詞了。&lt;/p&gt;
 
