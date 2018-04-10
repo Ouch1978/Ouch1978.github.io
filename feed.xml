@@ -7,13 +7,76 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://ouch1978.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://ouch1978.github.io/" />
-<updated>2018-03-19T10:38:19+08:00</updated>
+<updated>2018-04-10T16:57:43+08:00</updated>
 <id>http://ouch1978.github.io/</id>
 <author>
   <name>Ouch Liu (劉耀群)</name>
   <uri>http://ouch1978.github.io/</uri>
   <email>ouch1978@hotmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[解決傳統桌面版 Skype 在更新時出現 1603 "The specified Account already exists" 錯誤]]></title>
+  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2018/04/10/fix-skype-update-error-1603/"/>
+  <id>http://ouch1978.github.io/2018/04/10/fix-skype-update-error-1603</id>
+  <published>2018-04-10T23:30:00+08:00</published>
+  <updated>2018-04-10 23:30:00 +0800T00:00:00-00:00</updated>
+  
+  <author>
+    <name>Ouch Liu (劉耀群)</name>
+    <uri>http://ouch1978.github.io</uri>
+    <email>ouch1978@hotmail.com</email>
+  </author>
+  <category scheme="http://ouch1978.github.io/tags/#Windows%2010" term="Windows 10" /><category scheme="http://ouch1978.github.io/tags/#Skype" term="Skype" />
+  <content type="html">
+  
+    &lt;h2 id=&quot;section&quot;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;今天心血來潮想說檢查一下傳統桌面版的 Skype 有沒有更新，結果照著平常的更新步驟按下更新按鈕之後，卻出乎意料的無法順利更新成功，取而代之的是我之前沒看過的  “The specified Account already exists” 錯誤訊息…  &lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/images/blog-images/2018-04-10-fix-skype-update-error-1603/01-the-specified-account-already-exists-error.png&quot; title=&quot;The specified Account already exists 錯誤&quot;&gt;&lt;img src=&quot;/images/blog-images/2018-04-10-fix-skype-update-error-1603/01-the-specified-account-already-exists-error.png&quot; alt=&quot;The specified Account already exists 錯誤&quot; title=&quot;The specified Account already exists 錯誤&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;向 Google 大神求助之後，找到微軟的 Answers 網站上也有人遇到相同的問題，而且重試了好幾次都沒辦法解決。&lt;/p&gt;
+
+&lt;p&gt;經過一番反覆試驗之後，總算是安裝成功了。&lt;/p&gt;
+
+&lt;p&gt;以下就來分享我成功安裝成最新版本的方法。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;解決方法&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;從 &lt;code&gt;%Temp%&lt;/code&gt; 資料夾中找到 Skype 安裝檔。(透過正常的 Skype 更新流程更新的話，安裝檔會被存放在 Temp 資料夾裡面，我們可以先取出備用)
+ &lt;a href=&quot;/images/blog-images/2018-04-10-fix-skype-update-error-1603/02-get-installer-from-temp-folder.png&quot; title=&quot;從 %Temp% 資料夾中取出 Skype 安裝檔&quot;&gt;&lt;img src=&quot;/images/blog-images/2018-04-10-fix-skype-update-error-1603/02-get-installer-from-temp-folder.png&quot; alt=&quot;從 %Temp% 資料夾中取出 Skype 安裝檔&quot; title=&quot;從 %Temp% 資料夾中取出 Skype 安裝檔&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;關閉 Skype ，並且備份 &lt;code&gt;%UserProfile%\AppData\Roaming\Skype&lt;/code&gt; 資料夾
+ &lt;a href=&quot;/images/blog-images/2018-04-10-fix-skype-update-error-1603/03-backup-skype-folder-in-appdata.png&quot; title=&quot;備份 Skype 資料夾&quot;&gt;&lt;img src=&quot;/images/blog-images/2018-04-10-fix-skype-update-error-1603/03-backup-skype-folder-in-appdata.png&quot; alt=&quot;備份 Skype 資料夾&quot; title=&quot;備份 Skype 資料夾&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;透過程式和功能移除 Skype。
+ &lt;a href=&quot;/images/blog-images/2018-04-10-fix-skype-update-error-1603/04-uninstall-skype.png&quot; title=&quot;移除 Skype&quot;&gt;&lt;img src=&quot;/images/blog-images/2018-04-10-fix-skype-update-error-1603/04-uninstall-skype.png&quot; alt=&quot;移除 Skype&quot; title=&quot;移除 Skype&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;以&lt;code&gt;系統管理員&lt;/code&gt;身份執行 &lt;code&gt;%Temp%&lt;/code&gt; 資料夾裡的 Skype 安裝檔。
+ &lt;a href=&quot;/images/blog-images/2018-04-10-fix-skype-update-error-1603/05-install-skype-with-run-as-administrator.png&quot; title=&quot;以系統管理員身份安裝 Skype&quot;&gt;&lt;img src=&quot;/images/blog-images/2018-04-10-fix-skype-update-error-1603/05-install-skype-with-run-as-administrator.png&quot; alt=&quot;以系統管理員身份安裝 Skype&quot; title=&quot;以系統管理員身份安裝 Skype&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;很神奇的是，先前我安裝 Skype 的時候都可以一路安裝到底，但是今天卻遇到安裝程式出現無法存取 C:\Program Files (x86)\Skype\Phone 資料夾的錯誤，改以系統管理員權限執行就正常了。&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;將備份的 &lt;code&gt;%UserProfile%\AppData\Roaming\Skype&lt;/code&gt; 資夾中的內容複蓋回去。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;以上，如果沒有其它意外的話， Skype 應該就可以更新到最新的版本囉!!&lt;/p&gt;
+
+
+  
+  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2018/04/10/fix-skype-update-error-1603/&quot;&gt;解決傳統桌面版 Skype 在更新時出現 1603 "The specified Account already exists" 錯誤&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on April 10, 2018.&lt;/p&gt;</content>
+</entry>
 
 
 <entry>
@@ -3307,123 +3370,6 @@
 
   
   &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2017/01/29/first-look-on-vs2017-rc-ide-ux-enhancement/&quot;&gt;初探 Visual Studio 2017 RC - IDE 使用者體驗篇&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on January 29, 2017.&lt;/p&gt;</content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[初探 Visual Studio 2017 RC - 安裝篇]]></title>
-  <link rel="alternate" type="text/html" href="http://ouch1978.github.io/2017/01/20/first-look-on-vs2017-rc-installation/"/>
-  <id>http://ouch1978.github.io/2017/01/20/first-look-on-vs2017-rc-installation</id>
-  <published>2017-01-20T05:30:00+08:00</published>
-  <updated>2017-01-20 05:30:00 +0800T00:00:00-00:00</updated>
-  
-  <author>
-    <name>Ouch Liu (劉耀群)</name>
-    <uri>http://ouch1978.github.io</uri>
-    <email>ouch1978@hotmail.com</email>
-  </author>
-  <category scheme="http://ouch1978.github.io/tags/#Visual%20Studio" term="Visual Studio" />
-  <content type="html">
-  
-    &lt;p&gt;在 2016 年的 11月，微軟藉由 Connect 大會發佈了”地表最強開發工具” Visual Studio 2017 的 RC (發行候選)版本。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Visual Studio 2017 支援的平台和相容性可以參考 &lt;a href=&quot;https://www.visualstudio.com/zh-tw/productinfo/vs2017-compatibility-vs&quot; title=&quot;Visual Studio 2017 平台目標及相容性&quot;&gt;這個連結&lt;/a&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;code&gt;這個版本的 Visual Studio 不支援 Silverlight 專案。 若要維護 Silverlight 應用程式，請繼續使用 Visual Studio 2015。&lt;/code&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;code&gt;這個版本不支援 Windows 市集 8.1 和 8.0 以及 Windows Phone 8.1 和 8.0 專案。 若要維護這些應用程式，請繼續使用 Visual Studio 2015。 若要維護 Windows Phone 7.x 專案，請使用 Visual Studio 2012。&lt;/code&gt;&lt;/p&gt;
-
-  &lt;p&gt;已哭…&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;如果沒什麼意外的話，應該在接下來的一兩個月裡面，我們就可以看到正式版出現了。&lt;/p&gt;
-
-&lt;p&gt;在正式版出現之前，先用相對穩定的 RC 版來熟悉一下之後將要使用的工具是蠻值得一試的一件事。&lt;/p&gt;
-
-&lt;p&gt;接下來就各位分享一下安裝和試用的心得。&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;下載&lt;/h2&gt;
-
-&lt;p&gt;首先，這次釋出的 RC 版和之前的版本有些不同，在官網上並沒有官方的 ISO 檔可供下載，也沒有官方的離線安裝檔，只有線上安裝檔可供下載。&lt;/p&gt;
-
-&lt;p&gt;下載連結如下：&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://aka.ms/vs/15/release/vs_Community.exe&quot; title=&quot;下載 Visual Studio Community 2017 RC&quot;&gt;Visual Studio Community 2017 RC&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://aka.ms/vs/15/release/vs_Professional.exe&quot; title=&quot;下載 Visual Studio Professional 2017 RC&quot;&gt;Visual Studio Professional 2017 RC&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://aka.ms/vs/15/release/vs_Enterprise.exe&quot; title=&quot;下載 Visual Studio Enterprise 2017 RC&quot;&gt;Visual Studio Enterprise 2017 RC&lt;/a&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;雖然說官方並不提供離線安裝檔，但還是很佛心的寫了一篇文章教我們怎麼&lt;a href=&quot;https://docs.microsoft.com/zh-tw/visualstudio/install/create-an-offline-installation-of-visual-studio&quot; title=&quot;Create an offline installation of Visual Studio 2017 RC&quot;&gt;製作離線安裝檔&lt;/a&gt;。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;安裝&lt;/h2&gt;
-
-&lt;p&gt;接下來，就安裝 Enterprise 版來體驗一下吧!!&lt;/p&gt;
-
-&lt;p&gt;打開安裝檔之後，出現的是和以往截然不同設計的版權聲明畫面。
-&lt;a href=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/01-license-terms.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/01-license-terms.png&quot; alt=&quot;版權聲明畫面&quot; title=&quot;版權聲明畫面&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;按下同意按鈕的話，就會出現如下的畫面。(注意：&lt;code&gt;安裝之前請先關閉其它版本的 Visual Studio&lt;/code&gt; ，否則可能會因為衝突而無法繼續安裝。)
-&lt;a href=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/02-workloads.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/02-workloads.png&quot; alt=&quot;安裝模組選項&quot; title=&quot;安裝模組選項&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;和之前的版本有很大差異的地方是，這次的版本所有的功能都是以模組化的方式在 Workloads 頁籤中選擇是否要進行安裝。
-如果所有項目都不勾選，只安裝核心的編輯功能的話，大約會佔用 740 MB 的磁碟空間。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;眼尖的朋友們可能會發現畫面上有一個 Installation nickname 的文字輸入欄位，那是因為 Visual Studio 2017 支援不同版本共存，所以可以透過它來自訂開始功能表上顯示的名稱，例如 VS2017 Ent RC。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;在 Individual components 頁籤中可以針對細項進行微調。
-&lt;a href=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/03-individual-components.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/03-individual-components.png&quot; alt=&quot;各別元件微調&quot; title=&quot;各別元件微調&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;也可以在 Language packs 頁籤中選取想安裝的語言包。
-&lt;a href=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/04-language-packs.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/04-language-packs.png&quot; alt=&quot;語言包選單&quot; title=&quot;語言包選單&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;若選取 Universal Windows Platform development、.NET desktop development 、Web development 和 Mobile development with .NET (Preview) 這幾個項目的話，則會佔用 19.76 GB 的磁碟空間。&lt;/p&gt;
-
-&lt;p&gt;另外發現一個好玩的點，如果按下 Esc 鈕的話，還可以選擇不同的版本來安裝(所以不同版本的安裝檔只是預先幫我們選好該版本的意思?)。
-&lt;a href=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/05-versions-selection.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/05-versions-selection.png&quot; alt=&quot;版本選擇&quot; title=&quot;版本選擇&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;為了省硬碟，我就以上述的項目直接進行安裝啦。安裝畫面如下(看到下面還有兩個 Install 鈕可以按，讓我很好奇，難道可以同時安裝不同的版本嗎!?答案是不行…)：
-&lt;a href=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/06-installation.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/06-installation.png&quot; alt=&quot;安裝畫面&quot; title=&quot;安裝畫面&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;若想以其它語系進行安裝的話，可以透過命令提示視窗執行安裝檔，在後方加入 –locale 參數並且指定語系。
-如 vs_Enterprise.exe –locale zh-TW ，就可以用中文模式進行安裝。&lt;/p&gt;
-
-  &lt;p&gt;目前支援的語系有 zh-CN, zh-TW, cs-CZ, en-US, fr-FR, de-DE, it-IT, ja-JP, ko-KR, pl-PL, pt-BR, ru-RU, es-ES, and tr-TR&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;安裝完成之後，會需要重新開機。
-&lt;a href=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/07-reboot-required.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/07-reboot-required.png&quot; alt=&quot;安裝完成之後需要重新開機&quot; title=&quot;安裝完成之後需要重新開機&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;心得&lt;/h2&gt;
-
-&lt;p&gt;依照我選擇的功能，整個安裝的過程大約花了一個小時出頭，還包含各功能模組的下載時間，整個安裝的體驗比之前的版本要來得流暢許多。&lt;/p&gt;
-
-&lt;p&gt;首先，吸引到我眼球的是 Visual Studio 2017 的 Logo。新版 Logo 的莫比烏斯環看起來很明顯的比 Visual Studio 2015 的來得瘦了不少，不知道是不是有想要隱喻安裝所需要的硬碟空間變小的意味?變瘦的莫比烏斯環看起來也有比較敏捷的感覺。
-&lt;br /&gt;&lt;a href=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/08-the-logo-is-changed-for-vs2017.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/08-the-logo-is-changed-for-vs2017.png&quot; alt=&quot;Visual Studio 2017 的 Logo 與 Visual Studio 2015 的差異&quot; title=&quot;Visual Studio 2017 的 Logo 與 Visual Studio 2015 的差異&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;再來，Visual Studio 2017 RC 開啟的速度也很明顯的比 Visual Studio 2015 快了許多(不知道是不是因為還沒裝什麼擴充功能的關係?)，大概差了有十秒以上。&lt;/p&gt;
-
-&lt;p&gt;而且整個開始畫面也和 Visual Studio 2015 有蠻明顯的差異，資訊和每個項目之間的間距拉大了，看起來比較沒有壓迫感。
-&lt;a href=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/09-start-page-of-visual-studio-2017-rc.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/09-start-page-of-visual-studio-2017-rc.png&quot; alt=&quot;Visual Studio 2017 RC 的開始畫面&quot; title=&quot;[Visual Studio 2017 RC 的開始畫面&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;建立新專案時對話視窗的專案分類也和 Visual Studio 2015 有蠻大的差異，因為支援的專案類型變少了的關係，所以分類看起來也更加的簡潔了不少。
-不過我一直很期待看到的 UWP 懶人專案樣版還是沒有出現…
-&lt;a href=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/10-new-project-dialog.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/10-new-project-dialog.png&quot; alt=&quot;建立新專案的對話視窗&quot; title=&quot;[建立新專案的對話視窗&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;關於 Blend for Visual Studio 2017 RC 呢… 連開始畫面裡面的內容和連結都還是連到 2015 版的網頁(不過畫面上的確是寫著 2017 啦)…
-嗯~就之後再觀查看看囉!!
-&lt;a href=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/11-start-page-of-blend-for-vs2017-rc.png&quot;&gt;&lt;img src=&quot;/images/blog-images/2017-01-19-first-look-on-vs2017-rc-installation/11-start-page-of-blend-for-vs2017-rc.png&quot; alt=&quot;Blend for Visual Studio 2017 RC 的開始畫面&quot; title=&quot;[Blend for Visual Studio 2017 RC 的開始畫面&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;以上是我簡短的安裝心得，有興趣的朋友也不妨安裝玩玩吧。&lt;/p&gt;
-
-  
-  &lt;p&gt;&lt;a href=&quot;http://ouch1978.github.io/2017/01/20/first-look-on-vs2017-rc-installation/&quot;&gt;初探 Visual Studio 2017 RC - 安裝篇&lt;/a&gt; was originally published by Ouch Liu (劉耀群) at &lt;a href=&quot;http://ouch1978.github.io&quot;&gt;Ouch1978 @ Github&lt;/a&gt; on January 20, 2017.&lt;/p&gt;</content>
 </entry>
 
 </feed>

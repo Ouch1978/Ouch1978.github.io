@@ -183,6 +183,11 @@ callback([
   {
     "text": "軟體工程師們不可不知道的 Windows 10 設定小撇步",
     "href": "http://ouch1978.github.io/2018/03/16/windows-10-configuration-tips-for-developers/"
+  } ,
+
+  {
+    "text": "解決傳統桌面版 Skype 在更新時出現 1603 \"The specified Account already exists\" 錯誤",
+    "href": "http://ouch1978.github.io/2018/04/10/fix-skype-update-error-1603/"
   } 
 
 ])
