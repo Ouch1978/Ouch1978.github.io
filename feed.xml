@@ -7,7 +7,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://ouch1978.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://ouch1978.github.io/" />
-<updated>2018-06-29T10:49:38+08:00</updated>
+<updated>2018-06-29T11:57:19+08:00</updated>
 <id>http://ouch1978.github.io/</id>
 <author>
   <name>Ouch Liu (劉耀群)</name>
@@ -53,7 +53,7 @@
 
 &lt;h3 id=&quot;crx-&quot;&gt;下載 .CRX 檔&lt;/h3&gt;
 
-&lt;p&gt;目前 Chrome Web Store 裡面經有有不少可以用來翻牆的擴充功能，例如 [TunnelBear VPN][Link-01] 和 [Betternet Unlimited Free VPN Proxy][Link-02] 。&lt;/p&gt;
+&lt;p&gt;目前 Chrome Web Store 裡面經有有不少可以用來翻牆的擴充功能，例如 &lt;a href=&quot;https://chrome.google.com/webstore/detail/tunnelbear-vpn/omdakjcmkglenbhjadbccaookpfjihpa&quot; title=&quot;TunnelBear VPN&quot;&gt;TunnelBear VPN&lt;/a&gt; 和 &lt;a href=&quot;https://chrome.google.com/webstore/detail/betternet-unlimited-free/gjknjjomckknofjidppipffbpoekiipm&quot; title=&quot;Betternet Unlimited Free VPN Proxy&quot;&gt;Betternet Unlimited Free VPN Proxy&lt;/a&gt; 。&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;要使用 TunnelBear 的話必需要先建立帳號，免費帳號登入之後每個月會有 500 MB 的容量限制，而 Betternet 則沒有任何限制，也不需要登入就能使用。&lt;/p&gt;
